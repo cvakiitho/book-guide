@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title data-cs="Darúdžhistán a Černý Korál">Darujhistan and Black Coral</title>
+  <style>
+    text{font:600 17px Georgia,serif;fill:#373328;paint-order:stroke;stroke:#efe1ba;stroke-width:3;stroke-linejoin:round}
+    .heading{font-size:25px}.water{font-style:italic;fill:#20494e;stroke:#aec4b6}.small{font-size:14px}
+    .land{fill:#efe1ba;stroke:#627769;stroke-width:2.3}.river{fill:none;stroke:#658d87;stroke-width:3}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}.wall{fill:none;stroke:#8c7858;stroke-width:4}
+    .road{fill:none;stroke:#a58f65;stroke-width:2.5}.district{fill:url(#blocks);stroke:#b7a57e;stroke-width:2}
+  </style>
+  <defs>
+    <pattern id="ridge" width="25" height="18" patternUnits="userSpaceOnUse">
+      <path d="m1 12 5-9 5 7 5-5 8 8" fill="none" stroke="#8d7958" stroke-width="1.7"/>
+    </pattern>
+    <pattern id="blocks" width="28" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <path d="M2 2h8v7H2zm13 0h10v6H15zM2 13h10v7H2zm15 1h8v4h-8z" fill="#d9c690" stroke="#b49b6e" stroke-width=".7"/>
+    </pattern>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <!-- Daru Bay curves south between Maiten and the northeastern city wall. -->
+  <path class="land" d="M0 91l36 16 53 7 33 25 9 26-12 26 28 30 34 26 34 36 43 27 38-8 23-15 45-5 28-23 43-18 34-24 18-32 33-17 33 1L620 145v479H0zM545 110l25-16 28 2-13 18-30 10-12-6z"/>
+  <path class="district" d="M122 193l25 28 36 26 34 38 41 25 37-9 27-16 43-5 30-22 41-17 35-26 19-30 24 30 4 62 21 74-22 34-58 28-60 40-106-4-74-6-84 6-46-38-25-58 9-59 19-34z"/>
+  <path class="wall" d="M120 195l-26 51-23 38-9 58 26 59 46 44 81-6 76 7 107 4 66-39 58-30 20-31-19-73-4-60-27-33"/>
+  <path class="river" d="M0 351q74-45 97-91t27-65M218 624q-16-47 1-91t12-52l19-36 6-20"/>
+  <path class="road" d="M20 207q44-17 67 2l18 36 54 32 20 38 54 34 31 73m-200-63q69-12 143 13 65 5 141-19 64-24 81-67l62-81m-62 81q16 34 55 56l28 43m-241 65q7 27 31 47l82 3 55-22 67-37"/>
+  <path class="road" d="m520 171-65-24-22 12"/>
+  <g class="town"><circle cx="363" cy="364" r="5"/><circle cx="523" cy="268" r="5"/><circle cx="478" cy="326" r="5"/><circle cx="106" cy="245" r="4"/></g>
+  <text class="heading water" x="25" y="41" data-cs="Darúdžhistán">Darujhistan</text>
+  <text class="water" x="267" y="121" text-anchor="middle" data-cs="Azurové jezero">Lake Azur</text>
+  <text class="water" x="302" y="220" text-anchor="middle" data-cs="Darúnský záliv">Daru Bay</text>
+  <text class="small" x="120" y="238" data-cs="Brána Dvou volů">Two-Ox Gate</text>
+  <text class="small" x="137" y="320" data-cs="Gadrobská čtvrť">Gadrobi District</text>
+  <text class="small" x="158" y="423" data-cs="Slatina">Marsh District</text>
+  <text class="small" x="346" y="395" text-anchor="middle" data-cs="Hostinec U Fénixe">Phoenix Inn</text>
+  <text class="small" x="566" y="247" text-anchor="middle" data-cs="K’rulův bar">K’rul’s Bar</text>
+  <text class="small" x="490" y="356" data-cs="Barúkův palác">Baruk’s Estate</text>
+  <text x="409" y="529" text-anchor="middle" data-cs="Krkavčí vršky">Raven Hills</text>
+  <path d="m546 550 17-29-11 8m11-8-1 13" fill="none" stroke="#5d5846" stroke-width="2"/>
+  <text class="small" x="568" y="514" text-anchor="middle" data-cs="S">N</text>
+  <!-- Coral faces the bay. The pilgrim road runs north past the smaller mounds. -->
+  <path class="land" d="M620 0h420v450l-25-14-26-4-27-13-20 18-28 11-31-7-28-23-12-36-33-14-19-34-28-13-18 8-35 27-37 7-19 15L620 374z"/>
+  <path fill="url(#ridge)" d="m638 129 44-34 43 8 42-23 65 11 62 49 47 9-20 28-68-9-40-28-48-4-47 10-29 22-51-14zM917 74l35 7 38 20 40 5v38l-45-16-36-18-39-8zM641 353l41-34 46-9 42-20 41 13-37 25-36 15-44 16-45 13z"/>
+  <path fill="#c2c198" stroke="#8b8a66" stroke-width="1.5" d="M620 276l66-48 58-18 30 7-35 30 23 14 39 9-28 25-48 2-24-9-40 11-41 21z"/>
+  <path class="district" d="m832 367 35-10 18-31 37-23 40 7 32 28 18 32-22 27-28 22-21 20-40 4-30-17-23-22z"/>
+  <path class="road" d="m810 348 54 6 23-27 33-23 42 7 35 23 30 28m-155 62 33-49 14-23 29-19"/>
+  <path fill="none" stroke="#8d7958" stroke-width="2" stroke-dasharray="5 4" d="M948 333q18-33 10-63l-7-27 3-33-8-24 17-34"/>
+  <ellipse cx="954" cy="210" rx="13" ry="9" fill="#ba9e6d" stroke="#8b7656" stroke-width="2"/>
+  <path fill="#ba9e6d" d="m905 282 7-8 6 10-7 4zm19-19 7-9 7 9-8 4zm-32 10 6-7 7 8-8 4z"/>
+  <circle class="town" cx="918" cy="386" r="5"/>
+  <text class="heading" x="805" y="41" text-anchor="middle" data-cs="Černý Korál a okolí">Black Coral and Environs</text>
+  <text x="742" y="178" text-anchor="middle" data-cs="Zákopy">Trench Rises</text>
+  <text class="small" x="839" y="200" text-anchor="middle" data-cs="Poutnický tábor">Pilgrim Camp</text>
+  <text class="small" x="971" y="184" text-anchor="middle" data-cs="Velká mohyla">Great Barrow</text>
+  <text class="small" x="1024" y="257" text-anchor="end" data-cs="Poutnická cesta">Pilgrims’ Track</text>
+  <text class="small" x="862" y="280" text-anchor="end" data-cs="Mohyly">Barrows</text>
+  <text x="721" y="277" text-anchor="middle" data-cs="Les">Forest</text>
+  <text class="water" x="818" y="496" text-anchor="middle" data-cs="Korálový záliv">Coral Bay</text>
+  <text class="water small" x="840" y="427" text-anchor="end" data-cs="Přístav">Harbour</text>
+  <text class="water" x="947" y="469" text-anchor="middle" data-cs="Černý Korál">Black Coral</text>
+  <path d="M649 499v28m-6-16 6-12 6 12" fill="none" stroke="#5d5846" stroke-width="2"/>
+  <text class="small" x="649" y="490" text-anchor="middle" data-cs="S">N</text>
+  <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1zM620 1v622"/>
+</svg>

@@ -94,7 +94,8 @@
   .flagbtn svg{display:block; height:21px; width:auto}
 
   /* book switcher (volumes) */
-  .volbar{max-width:1080px; margin:0 auto; padding:2px clamp(12px,3vw,26px) 0; display:flex; gap:6px; flex-wrap:wrap; align-items:center}
+  .volpicker{max-width:1080px; margin:0 auto; padding:2px clamp(12px,3vw,26px) 0}
+  .volbar{display:flex; gap:6px; flex-wrap:wrap; align-items:center}
   .vol{font-family:var(--ui); font-size:.8rem; font-weight:600; text-decoration:none; cursor:pointer;
     display:inline-flex; align-items:center; gap:7px; padding:5px 12px; border-radius:999px;
     border:1px solid var(--line-2); background:var(--panel-2); color:var(--ink-2); transition:.15s}
@@ -103,6 +104,18 @@
     font-size:.62rem; font-weight:800; background:var(--ink-3); color:var(--paper)}
   .vol.on{border-color:var(--gold-2); background:color-mix(in srgb,var(--gold) 16%,var(--panel)); color:var(--ink); cursor:default}
   .vol.on .voln{background:linear-gradient(180deg,var(--gold-2),var(--gold)); color:#2b2118}
+  .volpicker-toggle{display:none}
+  @media (max-width:640px){
+    .volpicker{padding-bottom:6px}
+    .volpicker-toggle.vol{display:flex; width:100%; min-height:44px; text-align:left; cursor:pointer}
+    .volpicker-toggle:hover{border-color:var(--gold)}
+    .volpicker-label{margin-inline-start:auto; color:var(--ink-2); font-weight:500}
+    .volpicker-toggle svg{width:16px; height:16px; flex:none}
+    .volpicker-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+    .volpicker-toggle[aria-expanded="false"] + .volbar{display:none}
+    .volbar{max-height:45vh; overflow:auto; padding:6px 3px 3px}
+    .volbar .vol{min-height:36px}
+  }
 
   /* progress "cesta" */
   .road{max-width:1080px; margin:0 auto; padding:0 clamp(12px,3vw,26px) 10px}
@@ -427,7 +440,14 @@
       <button class="iconbtn" id="themeToggle" type="button" title="Světlý / tmavý motiv" aria-label="Přepnout motiv"></button>
       <div class="langsel" id="langsel"></div>
     </div>
-    <nav class="volbar" id="volswitch" aria-label="Volumes"></nav>
+    <div class="volpicker" id="volpicker" hidden>
+      <button class="volpicker-toggle vol on" id="voltoggle" type="button" aria-expanded="false" aria-controls="volswitch">
+        <span class="voln" id="volnumber"></span><span id="voltitle"></span>
+        <span class="volpicker-label" data-i18n="volumes">Books</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <nav class="volbar" id="volswitch" aria-label="Books"></nav>
+    </div>
     <div class="road">
       <div class="road-in">
         <span data-i18n="journey">Saga</span>
@@ -1804,7 +1824,7 @@ var BOOK = {
       theme_to_light:"Switch to light theme", theme_to_dark:"Switch to dark theme",
       lang_switch:"Switch to Czech",
       journey:"Saga", chapters_of:"movements", miles_unit:"leagues",
-      guide_home:"Book Guide",
+      guide_home:"Book Guide", volumes:"Books",
       tab_map:"Map", tab_chapters:"Movements", tab_characters:"Characters", tab_world:"World",
       map_title:"The Malazan world", map_current:"This volume", map_earlier:"Earlier volumes",
       map_hint:"Drag to pan. Select a numbered stop to explore it.",
@@ -1840,7 +1860,7 @@ var BOOK = {
       theme_to_light:"Přepnout na světlý motiv", theme_to_dark:"Přepnout na tmavý motiv",
       lang_switch:"Přepnout do angličtiny",
       journey:"Sága", chapters_of:"částí", miles_unit:"lig",
-      guide_home:"Čtenářské průvodce",
+      guide_home:"Čtenářské průvodce", volumes:"Knihy",
       tab_map:"Mapa", tab_chapters:"Části", tab_characters:"Postavy", tab_world:"Svět",
       map_title:"Malazský svět", map_current:"Tento svazek", map_earlier:"Předchozí svazky",
       map_hint:"Tažením posuneš mapu. Výběrem čísla zobrazíš zastávku.",
@@ -2302,15 +2322,29 @@ var BOOK = {
     box.addEventListener('click',function(e){ var b=e.target.closest('.flagbtn'); if(!b)return; state.lang=b.getAttribute('data-lang'); save(); applyLang(); rerender(); });
   }
   function roman(n){ return ['','I','II','III','IV','V','VI','VII','VIII','IX','X'][n]||String(n); }
+  var volPicker=$('#volpicker'), volToggle=$('#voltoggle');
+  volToggle.addEventListener('click',function(){
+    volToggle.setAttribute('aria-expanded',volToggle.getAttribute('aria-expanded')==='false');
+  });
+  volPicker.addEventListener('keydown',function(e){
+    if(e.key!=='Escape' || volToggle.getAttribute('aria-expanded')!=='true' || !volToggle.offsetWidth) return;
+    volToggle.setAttribute('aria-expanded','false');
+    volToggle.focus();
+  });
   function buildVolSwitch(){
-    var box=$('#volswitch'); if(!box) return;
-    if(!VOLUMES || VOLUMES.length<2){ box.style.display='none'; return; }
+    if(VOLUMES.length<2) return;
+    var box=$('#volswitch');
+    var current=VOLUMES.find(function(v){return v.current;});
+    $('#volnumber').textContent=roman(current.order);
+    $('#voltitle').textContent=t(current.short);
+    box.setAttribute('aria-label',T('volumes'));
     var fragment='#prefs=1&mode='+encodeURIComponent(state.mode)+'&theme='+encodeURIComponent(state.theme||'system')+'&lang='+encodeURIComponent(state.lang);
     box.innerHTML=VOLUMES.map(function(v){
       var inner='<span class="voln">'+esc(roman(v.order))+'</span><span>'+esc(t(v.short))+'</span>';
       return v.current ? '<span class="vol on" aria-current="page">'+inner+'</span>'
                        : '<a class="vol" href="'+esc(v.file+fragment)+'">'+inner+'</a>';
     }).join('');
+    volPicker.hidden=false;
   }
   function applyLang(){
     document.documentElement.lang = state.lang;

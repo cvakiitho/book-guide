@@ -29,7 +29,7 @@
     <circle cx="881" cy="279" r="4"/>
   </g>
   <text class="heading water" x="35" y="47" data-cs="Sedmiměstí">Seven Cities</text>
-  <text class="water" x="135" y="77" data-cs="Drydžhanský oceán">Dryjhna Ocean</text>
+  <text class="water" x="135" y="77" data-cs="Drydžhnanský oceán">Dryjna Ocean</text>
   <text class="water small" x="87" y="234" data-cs="Sepiské moře">Sepik Sea</text>
   <text class="small" x="230" y="380">Jhag Odhan</text>
   <text class="water small" x="347" y="418" data-cs="Klatarské moře">Clatar Sea</text>
@@ -39,7 +39,7 @@
   <text class="small" x="632" y="242" text-anchor="end">Raraku</text>
   <text class="small" x="720" y="313" text-anchor="end" data-cs="Karašiměš">Karaschimesh</text>
   <text x="842" y="302">Hissar</text>
-  <text class="small" x="889" y="300">Dosin Pali</text>
+  <text class="small" x="899" y="311">Dosin Pali</text>
   <text class="water" x="883" y="363" data-cs="Sahulské moře">Sahul Sea</text>
   <text class="small" x="569" y="348" text-anchor="middle" data-cs="Vatharský hvozd">Vathar Forest</text>
   <text class="small" x="655" y="405" data-cs="Ubarýd">Ubaryd</text>

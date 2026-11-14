@@ -314,7 +314,7 @@
     <use href="#city" x="852" y="936"/><text x="867" y="931">Kolanse</text>
   </g>
   <g class="ocean">
-    <text x="332" y="78" data-cs="DRYDŽHANSKÝ OCEÁN">DRYJNA OCEAN</text><text x="1150" y="333" data-cs="MENINGALLESKÝ OCEÁN">MENINGALLE OCEAN</text>
+    <text x="332" y="78" data-cs="DRYDŽHNANSKÝ OCEÁN">DRYJNA OCEAN</text><text x="1150" y="333" data-cs="MENINGALLESKÝ OCEÁN">MENINGALLE OCEAN</text>
     <text x="250" y="530" data-cs="ROŽSKÝ OCEÁN">HORN OCEAN</text><text x="1159" y="537" data-cs="ŠÁHŮV OCEÁN">REACHER’S OCEAN</text>
     <text x="1417" y="709" data-cs="RIVANSKÉ MOŘE">RIVAN SEA</text><text x="1010" y="1036" data-cs="BÍLÉ VĚŽE MOŘSKÉ">WHITE SPIRES OCEAN</text>
     <text x="1876" y="520" transform="rotate(90 1876 520)" data-cs="REZAVÝ OCEÁN">RUST OCEAN</text>

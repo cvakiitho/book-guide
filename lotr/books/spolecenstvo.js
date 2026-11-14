@@ -1,519 +1,42 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="description" content="An interactive guide to The Fellowship of the Ring for reading aloud to kids — a map of the journey, characters, chapters in two modes, and the world of Middle-earth.">
-<title>The Ring’s Journey — a guide to The Fellowship of the Ring</title>
-<style>
-  /* ===== Tokens: light "parchment" and dark "campfire" ===== */
-  :root{
-    --paper:#e8e0cc; --paper-2:#f1ead7; --panel:#f5efdf; --panel-2:#ebe3ce;
-    --ink:#2b2118; --ink-2:#5c4a34; --ink-3:#8a755a;
-    --line:rgba(43,33,24,.16); --line-2:rgba(43,33,24,.30);
-    --gold:#a9791c; --gold-2:#c9a24b; --ember:#9d2b25; --ember-2:#c0492f;
-    --elven:#3c6b57; --shadow:rgba(43,33,24,.20);
-    --radius:16px;
-    --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Cambria,Georgia,serif;
-    --display:"Trajan Pro","Cinzel","Palatino Linotype","Book Antiqua",Cambria,Georgia,serif;
-    --ui:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --paper:#1b1710; --paper-2:#231e15; --panel:#26201a; --panel-2:#2f281f;
-      --ink:#ede1c7; --ink-2:#c4b28e; --ink-3:#8f7d5f;
-      --line:rgba(236,224,198,.14); --line-2:rgba(236,224,198,.26);
-      --gold:#d9b45a; --gold-2:#eccf8a; --ember:#d2553f; --ember-2:#e0745a;
-      --elven:#7cba9e; --shadow:rgba(0,0,0,.5);
+// Fellowship (The Fellowship of the Ring) — per-book data for engine.template.html.
+// Built into spolecenstvo.html by build.mjs. Structural data (gi, book split, map coords) is shared across languages.
+var BOOK = {
+  // ===== Fellowship (The Fellowship of the Ring) =====
+  meta: {
+    slug: 'spolecenstvo',
+    vol: 1,
+    key: 'stredozem_v1',                       // keep the existing localStorage key (preserves progress)
+    mapFrame: { x0: 0.15, x1: 0.68, y0: 0.17, y1: 0.82 }, // region of the shared map to frame
+    timelineMin: 2                              // gi from which the Ring-history timeline shows in Kids mode
+  },
+  ui: {
+    en: {
+      brand_sub: 'A read-aloud guide to The Fellowship of the Ring',
+      info_names: "<b>Names.</b> We use Tolkien’s original English names (Baggins, Gamgee, Bree, Rivendell, Strider…). The map labels are in English too."
+    },
+    cs: {
+      brand_sub: 'Průvodce Společenstvem Prstenu — pro předčítání',
+      info_names: "<b>Jména.</b> Držíme se překladu <b>Stanislavy Pošustové</b> (Pytlík, Křepelka, Hůrka, Roklinka, Chodec…). Mapa má popisky anglicky."
     }
-  }
-  :root[data-theme="light"]{
-    --paper:#e8e0cc; --paper-2:#f1ead7; --panel:#f5efdf; --panel-2:#ebe3ce;
-    --ink:#2b2118; --ink-2:#5c4a34; --ink-3:#8a755a;
-    --line:rgba(43,33,24,.16); --line-2:rgba(43,33,24,.30);
-    --gold:#a9791c; --gold-2:#c9a24b; --ember:#9d2b25; --ember-2:#c0492f;
-    --elven:#3c6b57; --shadow:rgba(43,33,24,.20);
-  }
-  :root[data-theme="dark"]{
-    --paper:#1b1710; --paper-2:#231e15; --panel:#26201a; --panel-2:#2f281f;
-    --ink:#ede1c7; --ink-2:#c4b28e; --ink-3:#8f7d5f;
-    --line:rgba(236,224,198,.14); --line-2:rgba(236,224,198,.26);
-    --gold:#d9b45a; --gold-2:#eccf8a; --ember:#d2553f; --ember-2:#e0745a;
-    --elven:#7cba9e; --shadow:rgba(0,0,0,.5);
-  }
-
-  *{box-sizing:border-box}
-  body{margin:0}
-  .app{
-    font-family:var(--serif); color:var(--ink); background:var(--paper);
-    background-image:
-      radial-gradient(120% 80% at 50% -10%, rgba(201,162,75,.10), transparent 60%),
-      radial-gradient(60% 50% at 100% 100%, rgba(157,43,37,.06), transparent 60%);
-    min-height:100vh; line-height:1.55; -webkit-text-size-adjust:100%;
-  }
-  .wrap{max-width:1080px; margin:0 auto; padding:18px clamp(12px,3vw,26px) 60px}
-
-  /* ===== Header ===== */
-  header.top{
-    position:sticky; top:0; z-index:40; backdrop-filter:blur(6px);
-    background:color-mix(in srgb, var(--paper) 86%, transparent);
-    border-bottom:1px solid var(--line);
-  }
-  .top-in{max-width:1080px; margin:0 auto; padding:10px clamp(12px,3vw,26px);
-    display:flex; align-items:center; gap:14px; flex-wrap:wrap}
-  .brand{display:flex; align-items:center; gap:12px; margin-right:auto; min-width:0}
-  .crest{width:42px; height:42px; flex:none; color:var(--gold)}
-  .brand h1{font-family:var(--display); font-weight:700; letter-spacing:.06em;
-    font-size:clamp(1.05rem,2.4vw,1.5rem); margin:0; text-transform:uppercase; text-wrap:balance}
-  .brand p{margin:0; font-size:.78rem; color:var(--ink-2); font-family:var(--ui); letter-spacing:.02em}
-  .saga-link{padding:7px 12px; border:1px solid var(--line-2); border-radius:999px;
-    background:var(--panel-2); color:var(--ink-2); font-family:var(--ui); font-size:.8rem; font-weight:600; text-decoration:none}
-  .saga-link:hover,.saga-link:focus-visible{border-color:var(--gold); color:var(--ink)}
-
-  /* mode toggle = seal-style switch */
-  .modeswitch{display:inline-flex; background:var(--panel-2); border:1px solid var(--line-2);
-    border-radius:999px; padding:3px; font-family:var(--ui); font-size:.8rem; box-shadow:inset 0 1px 2px var(--shadow)}
-  .modeswitch button{border:0; background:transparent; color:var(--ink-2); cursor:pointer;
-    padding:7px 14px; border-radius:999px; font-weight:600; letter-spacing:.02em; display:flex; align-items:center; gap:7px}
-  .modeswitch button.on{color:#fff; background:linear-gradient(180deg,var(--ember-2),var(--ember));
-    box-shadow:0 1px 4px var(--shadow)}
-  .modeswitch button.on.kids{background:linear-gradient(180deg,var(--gold-2),var(--gold))}
-  .modeswitch svg{width:16px;height:16px}
-  /* round icon button (theme toggle) */
-  .iconbtn{width:38px; height:38px; flex:none; border-radius:999px; border:1px solid var(--line-2);
-    background:var(--panel-2); color:var(--ink-2); cursor:pointer; display:flex; align-items:center; justify-content:center;
-    box-shadow:inset 0 1px 2px var(--shadow)}
-  .iconbtn:hover{border-color:var(--gold); color:var(--ink)}
-  .iconbtn svg{width:18px; height:18px}
-  .langsel{display:inline-flex; gap:5px; align-items:center}
-  .flagbtn{height:21px; padding:0; border-radius:5px; overflow:hidden; cursor:pointer; flex:none;
-    border:1px solid var(--line-2); background:var(--panel-2); display:inline-block; opacity:.5; transition:opacity .15s,box-shadow .15s,border-color .15s}
-  .flagbtn:hover{opacity:.85; border-color:var(--gold)}
-  .flagbtn.on{opacity:1; border-color:var(--gold-2); box-shadow:0 0 0 2px color-mix(in srgb,var(--gold) 40%,transparent)}
-  .flagbtn svg{display:block; height:21px; width:auto}
-
-  /* progress "cesta" */
-  .road{max-width:1080px; margin:0 auto; padding:0 clamp(12px,3vw,26px) 10px}
-  .road-in{display:flex; align-items:center; gap:12px; font-family:var(--ui); font-size:.78rem; color:var(--ink-2)}
-  .road-track{flex:1; height:9px; border-radius:99px; background:var(--panel-2);
-    border:1px solid var(--line); overflow:hidden; position:relative}
-  .road-fill{height:100%; width:0%; border-radius:99px;
-    background:repeating-linear-gradient(90deg,var(--ember),var(--ember) 7px,var(--ember-2) 7px,var(--ember-2) 14px);
-    transition:width .5s ease}
-  .road b{color:var(--ink); font-variant-numeric:tabular-nums}
-
-  /* ===== Tabs ===== */
-  nav.tabs{display:flex; gap:6px; margin:16px 0 18px; flex-wrap:wrap; font-family:var(--ui)}
-  nav.tabs button{border:1px solid var(--line-2); background:var(--panel); color:var(--ink-2);
-    padding:9px 16px; border-radius:11px; cursor:pointer; font-weight:600; font-size:.9rem;
-    display:flex; align-items:center; gap:8px; transition:.15s}
-  nav.tabs button svg{width:17px;height:17px}
-  nav.tabs button:hover{border-color:var(--gold); color:var(--ink)}
-  nav.tabs button.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
-  nav.tabs button.on{background:linear-gradient(180deg,#3a2c1e,#2b2118); color:var(--paper-2)}
-
-  .view{display:none; animation:fade .3s ease}
-  .view.on{display:block}
-  @keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
-
-  /* ===== Map ===== */
-  .map-viewport{position:relative; height:min(64vh,560px); border:1px solid var(--line-2);
-    border-radius:var(--radius); overflow:hidden; background:var(--paper-2); box-shadow:0 8px 30px -14px var(--shadow);
-    touch-action:none; cursor:grab; user-select:none}
-  .map-viewport.grabbing{cursor:grabbing}
-  .map-stage{position:absolute; top:0; left:0; transform-origin:0 0; will-change:transform}
-  .map-img{display:block; width:100%; height:auto; pointer-events:none;
-    filter:saturate(1.02) contrast(1.02)}
-  :root[data-theme="dark"] .map-img{filter:saturate(.9) brightness(.82) contrast(1.02)}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .map-img{filter:saturate(.9) brightness(.82) contrast(1.02)}}
-  .route{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible}
-
-  /* ===== Map: route + axis ===== */
-  .map-stage.smooth{transition:transform .45s ease}
-  .hereM{position:absolute; z-index:3}
-  .hm-in{position:absolute; left:0; top:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%;
-    background:radial-gradient(circle at 34% 30%, var(--ember-2), var(--ember)); border:2px solid var(--gold-2);
-    box-shadow:0 1px 4px var(--shadow); transform-origin:center center; cursor:pointer}
-  .hm-in::after{content:""; position:absolute; inset:-3px; border-radius:50%;
-    box-shadow:0 0 0 0 rgba(157,43,37,.5); animation:pulseH 1.9s ease-in-out infinite}
-  @keyframes pulseH{0%,100%{box-shadow:0 0 0 0 rgba(157,43,37,.5)}50%{box-shadow:0 0 0 7px rgba(157,43,37,0)}}
-  .mapstrip{display:flex; gap:6px; overflow-x:auto; padding:12px 2px 4px; margin-top:10px; scrollbar-width:thin}
-  .mapstrip::-webkit-scrollbar{height:7px}
-  .mapstrip::-webkit-scrollbar-thumb{background:var(--line-2); border-radius:99px}
-  .strip-empty{font-family:var(--ui); font-size:.85rem; color:var(--ink-3); padding:10px 4px}
-  .mchip{flex:none; width:82px; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 4px;
-    border:1px solid var(--line-2); border-radius:11px; background:var(--panel-2); color:var(--ink); cursor:pointer;
-    font-family:var(--ui); text-align:center; transition:.12s; position:relative}
-  .mchip:hover{border-color:var(--gold)}
-  .mchip .mchip-n{width:22px; height:22px; border-radius:50%; background:var(--ember); color:#fff; font-weight:800; font-size:.72rem; display:flex; align-items:center; justify-content:center}
-  .mchip .mchip-ic{width:16px; height:16px; color:var(--gold)}
-  .mchip small{font-size:.68rem; line-height:1.12; color:var(--ink)}
-  .mchip.future{opacity:.6}
-  .mchip.future .mchip-n{background:var(--ink-3)}
-  .mchip.on{border-color:var(--gold); background:color-mix(in srgb,var(--gold) 16%,var(--panel)); box-shadow:0 2px 8px -4px var(--gold)}
-  .mchip.on .mchip-n{background:var(--gold)}
-  .mchip.sel{outline:2px solid var(--gold-2); outline-offset:1px}
-  .mchip-here{font-size:.58rem; color:var(--elven); font-weight:700}
-
-  .map-ctrls{position:absolute; right:10px; bottom:10px; display:flex; flex-direction:column; gap:6px; z-index:5}
-  .map-ctrls button{width:34px; height:34px; border-radius:9px; border:1px solid var(--line-2);
-    background:color-mix(in srgb,var(--panel) 92%,transparent); color:var(--ink); font-size:1.1rem; cursor:pointer;
-    font-family:var(--ui); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px var(--shadow)}
-  .map-ctrls button:hover{border-color:var(--gold)}
-  .map-hint{font-family:var(--ui); font-size:.82rem; color:var(--ink-2); margin:0 2px 10px;
-    display:flex; align-items:center; gap:8px}
-  .map-hint svg{width:16px;height:16px;color:var(--gold);flex:none}
-  .map-hint b{color:var(--ink)}
-
-  .place-panel{margin-top:14px; border:1px solid var(--line-2); border-radius:var(--radius);
-    background:var(--panel); padding:16px 18px; box-shadow:0 6px 20px -14px var(--shadow)}
-  .place-panel.empty{color:var(--ink-2); font-style:italic}
-  .place-head{display:flex; align-items:center; gap:12px; margin-bottom:6px}
-  .place-ic{width:40px;height:40px; color:var(--gold); flex:none}
-  .place-head h3{margin:0; font-family:var(--display); font-size:1.2rem; letter-spacing:.02em}
-  .place-head .en{font-family:var(--ui); font-size:.76rem; color:var(--ink-3); letter-spacing:.03em}
-
-  /* ===== Chapters ===== */
-  .booktitle{font-family:var(--display); text-transform:uppercase; letter-spacing:.12em; font-size:.95rem;
-    color:var(--gold); margin:22px 2px 12px; display:flex; align-items:center; gap:12px}
-  .booktitle::after{content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--line-2),transparent)}
-  .ch{border:1px solid var(--line-2); border-radius:var(--radius); background:var(--panel); margin-bottom:12px;
-    overflow:hidden; box-shadow:0 4px 16px -14px var(--shadow)}
-  .ch-head{display:flex; align-items:center; gap:14px; padding:14px 16px; cursor:pointer}
-  .ch-num{font-family:var(--display); font-weight:700; font-size:.95rem; color:var(--paper);
-    background:linear-gradient(180deg,#3a2c1e,#2b2118); min-width:44px; height:44px; border-radius:10px;
-    display:flex; align-items:center; justify-content:center; flex:none; letter-spacing:.02em}
-  :root[data-theme="dark"] .ch-num{background:linear-gradient(180deg,#4a3a26,#332818); color:var(--gold-2)}
-  .ch-t{flex:1; min-width:0}
-  .ch-t h3{margin:0; font-size:1.06rem; font-family:var(--serif); font-weight:700; text-wrap:balance}
-  .ch-t .en{font-family:var(--ui); font-size:.74rem; color:var(--ink-3); letter-spacing:.02em}
-  .fear{display:flex; align-items:center; gap:3px; margin-top:4px}
-  .fear .lab{font-family:var(--ui); font-size:.68rem; color:var(--ink-3); margin-right:4px; letter-spacing:.02em}
-  .flame{width:13px; height:13px; color:var(--ember)}
-  .flame.off{color:var(--line-2)}
-  .ch-read{flex:none; font-family:var(--ui); font-size:.76rem; font-weight:700; cursor:pointer;
-    border:1px solid var(--line-2); background:var(--panel-2); color:var(--ink-2); border-radius:9px; padding:8px 11px;
-    display:flex; align-items:center; gap:6px; white-space:nowrap}
-  .ch-read.done{background:linear-gradient(180deg,var(--elven),color-mix(in srgb,var(--elven) 70%, #000));
-    color:#fff; border-color:transparent}
-  .ch-read svg{width:15px;height:15px}
-  .ch-body{display:none; padding:2px 16px 18px; border-top:1px solid var(--line)}
-  .ch.open .ch-body{display:block; animation:fade .25s ease}
-  .ch.locked .ch-head{opacity:.62}
-  .caret{width:18px;height:18px;color:var(--ink-3); transition:transform .2s; flex:none}
-  .ch.open .caret{transform:rotate(90deg)}
-
-  .block{margin-top:14px}
-  .block h4{font-family:var(--ui); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem;
-    color:var(--gold); margin:0 0 6px; display:flex; align-items:center; gap:7px}
-  .app h4 svg{width:15px; height:15px; flex:none}
-  .place-ic svg{width:100%; height:100%}
-  .caret svg{width:100%; height:100%}
-  .block p{margin:0}
-  .bullets{margin:0; padding-left:2px; list-style:none}
-  .bullets li{position:relative; padding-left:22px; margin:5px 0}
-  .bullets li::before{content:""; position:absolute; left:4px; top:.55em; width:7px; height:7px; border-radius:2px;
-    background:var(--gold); transform:rotate(45deg)}
-  .q-list li::before{background:var(--elven)}
-  .words{display:flex; flex-wrap:wrap; gap:8px}
-  .word{font-family:var(--ui); font-size:.82rem; background:var(--panel-2); border:1px solid var(--line);
-    border-radius:9px; padding:6px 10px}
-  .word b{color:var(--ink)}
-  .word span{color:var(--ink-2)}
-  .fearnote{background:color-mix(in srgb,var(--ember) 12%, var(--panel)); border:1px solid color-mix(in srgb,var(--ember) 30%, transparent);
-    border-radius:10px; padding:10px 12px; font-size:.92rem}
-
-  .kidbox{background:linear-gradient(180deg,color-mix(in srgb,var(--gold) 10%,var(--panel)),var(--panel));
-    border:1px dashed var(--gold-2); border-radius:12px; padding:14px 16px; margin-top:10px}
-  .kidbox .teaser{font-size:1.05rem}
-  .kidbox .block:first-child{margin-top:2px}
-  .kidrecap{font-size:1.02rem; line-height:1.62; margin:0 0 .7em}
-  .kidrecap:last-child{margin-bottom:0}
-  .locknote{font-family:var(--ui); font-size:.86rem; color:var(--ink-2); display:flex; align-items:center; gap:8px; padding:6px 0}
-  .locknote svg{width:16px;height:16px;color:var(--gold)}
-
-  /* quiz */
-  .quiz{margin-top:12px}
-  .quiz .qq{margin:12px 0}
-  .quiz .qtext{font-weight:700; margin-bottom:7px}
-  .opts{display:flex; flex-wrap:wrap; gap:8px}
-  .opt{font-family:var(--ui); font-size:.9rem; cursor:pointer; border:1px solid var(--line-2);
-    background:var(--panel-2); color:var(--ink); border-radius:10px; padding:9px 13px; transition:.12s}
-  .opt:hover{border-color:var(--gold)}
-  .opt.correct{background:linear-gradient(180deg,var(--elven),color-mix(in srgb,var(--elven) 70%,#000)); color:#fff; border-color:transparent}
-  .opt.wrong{background:color-mix(in srgb,var(--ember) 22%,var(--panel)); border-color:var(--ember); text-decoration:line-through}
-  .opt:disabled{cursor:default}
-
-  /* ===== Characters ===== */
-  .charhint{font-family:var(--ui); font-size:.85rem; color:var(--ink-2); margin:0 2px 16px}
-  .char-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(146px,1fr)); gap:16px}
-  .char{border:1px solid var(--line-2); border-radius:16px; background:var(--panel); padding:9px 9px 10px;
-    text-align:center; cursor:pointer; transition:transform .18s,box-shadow .18s,border-color .18s;
-    box-shadow:0 18px 28px -24px var(--shadow)}
-  .char:hover{border-color:var(--gold); transform:translateY(-4px); box-shadow:0 26px 36px -22px var(--shadow)}
-  .char:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
-  /* large portrait image frame */
-  .pframe{aspect-ratio:3/4; border-radius:12px; overflow:hidden; background:var(--panel-2); position:relative;
-    box-shadow:inset 0 0 0 1px var(--line)}
-  .pframe img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block}
-  .pframe.fallback{display:flex; align-items:center; justify-content:center; color:var(--ink-3)}
-  .pframe.fallback svg.portrait{width:100%; height:100%}
-  .pframe.fallback>svg:not(.portrait){width:38px; height:38px}
-  .char h4{margin:11px 4px 0; font-family:var(--serif); font-size:1.02rem; font-weight:600; line-height:1.16; text-wrap:balance}
-  .char .race{font-family:var(--ui); font-size:.67rem; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); margin-top:3px; font-weight:600}
-  .char.locked{cursor:default; box-shadow:0 10px 20px -20px var(--shadow)}
-  .char.locked h4{color:var(--ink-3)}
-  .char.locked .race{visibility:hidden}
-
-  /* medallion — kept for Relations nodes and World races */
-  .medallion{width:66px; height:66px; margin:0 auto 9px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    background:radial-gradient(circle at 35% 30%, var(--panel-2), color-mix(in srgb,var(--gold) 22%,var(--panel)));
-    border:2px solid var(--gold-2); color:var(--gold); box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--gold) 12%,transparent)}
-  .medallion svg{width:34px; height:34px}
-  .medallion.pm{overflow:hidden; padding:0}
-  .medallion.pm svg.portrait{width:100%; height:100%; display:block}
-  .medallion.pm img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block}
-  .char-detail{grid-column:1/-1}
-  .cd{border:1px solid var(--gold-2); border-radius:18px; background:var(--panel);
-    padding:18px; display:flex; gap:20px; align-items:flex-start; box-shadow:0 26px 44px -28px var(--shadow)}
-  .cd-pimg{flex:none; width:min(280px,42vw); aspect-ratio:3/4; border-radius:14px; overflow:hidden;
-    border:1px solid var(--gold-2); box-shadow:0 22px 36px -24px var(--shadow)}
-  .cd-pimg img{width:100%; height:100%; object-fit:cover; object-position:top center; display:block}
-  .cd .medallion{width:110px; height:110px; margin:0; flex:none}
-  .cd .cdbody{flex:1; min-width:0}
-  .cd h3{margin:0 0 2px; font-family:var(--display); font-size:1.35rem; letter-spacing:.01em}
-  .cd .en{font-family:var(--ui); font-size:.78rem; color:var(--ink-3)}
-  .cd .say{font-family:var(--ui); font-size:.82rem; color:var(--elven); margin:5px 0 9px}
-  .cd .say b{color:var(--ink-2); font-weight:600}
-  .cd .close{cursor:pointer; border:1px solid var(--line-2); background:var(--panel-2);
-    color:var(--ink-2); border-radius:9px; width:32px; height:32px; font-size:1rem; flex:none; align-self:flex-start}
-
-  /* race accents (Relations nodes + World races) */
-  .r-hobit .medallion{border-color:var(--elven); color:var(--elven)}
-  .r-carodej .medallion{border-color:var(--gold-2); color:var(--gold)}
-  .r-clovek .medallion{border-color:#9c7b4e; color:#9c7b4e}
-  .r-elf .medallion{border-color:#7fa8c9; color:#5f86ad}
-  .r-trpaslik .medallion{border-color:#b08d5a; color:#8a6b3c}
-  .r-zlo .medallion{border-color:var(--ember-2); color:var(--ember)}
-  .r-orc .medallion{border-color:var(--ember-2); color:var(--ember)}
-
-  /* ===== Sub-segment (Gallery / Relations) ===== */
-  .subseg{display:inline-flex; background:var(--panel-2); border:1px solid var(--line-2); border-radius:999px;
-    padding:3px; margin-bottom:16px; font-family:var(--ui); font-size:.84rem}
-  .subseg button{border:0; background:transparent; color:var(--ink-2); cursor:pointer; padding:7px 16px; border-radius:999px; font-weight:600}
-  .subseg button.on{background:linear-gradient(180deg,#3a2c1e,#2b2118); color:var(--paper-2)}
-
-  /* ===== World (lore) ===== */
-  .lore-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px}
-  .lore{border:1px solid var(--line-2); border-radius:var(--radius); background:var(--panel); padding:16px 18px;
-    box-shadow:0 4px 16px -14px var(--shadow)}
-  .lore.wide{grid-column:1/-1}
-  .lore-head{display:flex; align-items:center; gap:12px; margin-bottom:8px}
-  .lore-ic{width:44px;height:44px;border-radius:12px; display:flex;align-items:center;justify-content:center; flex:none;
-    background:radial-gradient(circle at 35% 30%, var(--panel-2), color-mix(in srgb,var(--gold) 20%,var(--panel)));
-    border:1px solid var(--gold-2); color:var(--gold)}
-  .lore-ic svg{width:26px;height:26px}
-  .lore h3{margin:0; font-family:var(--display); font-size:1.1rem; letter-spacing:.01em}
-  .lore p{margin:0; font-size:.95rem}
-  .race-list{display:flex; flex-direction:column; gap:10px; margin-top:4px}
-  .race-row{display:flex; align-items:center; gap:12px}
-  .race-row .medallion{width:46px;height:46px;margin:0;flex:none}
-  .race-row .medallion svg{width:24px;height:24px}
-  .race-row b{font-family:var(--serif)}
-  .race-row span{color:var(--ink-2); font-size:.9rem}
-  .timeline{margin:6px 0 0; padding:0; list-style:none; position:relative}
-  .timeline::before{content:"";position:absolute; left:7px; top:6px; bottom:10px; width:2px; background:linear-gradient(var(--gold-2),transparent)}
-  .timeline li{position:relative; padding:0 0 14px 30px}
-  .timeline li::before{content:"";position:absolute; left:2px; top:4px; width:12px;height:12px;border-radius:50%; background:var(--ember); border:2px solid var(--gold-2)}
-  .timeline .tage{font-family:var(--ui); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--gold); display:block}
-  .timeline .tt{font-weight:700}
-
-  /* ===== Relations ===== */
-  .rel-block{margin-bottom:24px}
-  .rel-block h3{font-family:var(--display); font-size:1.05rem; letter-spacing:.02em; margin:0 0 4px; color:var(--ink)}
-  .rel-block .rsub{font-family:var(--ui); font-size:.82rem; color:var(--ink-2); margin:0 0 12px}
-  .chain{display:flex; flex-wrap:wrap; align-items:flex-start; gap:4px}
-  .node{display:flex; flex-direction:column; align-items:center; width:86px; text-align:center; flex:none}
-  .node .medallion{width:54px;height:54px;margin:0 0 5px}
-  .node .medallion svg{width:27px;height:27px}
-  .node small{font-family:var(--ui); font-size:.72rem; line-height:1.15; color:var(--ink)}
-  .node.locked .medallion{background:var(--panel-2);border-color:var(--line-2);color:var(--ink-3)}
-  .node.locked small{color:var(--ink-3)}
-  .arrow{display:flex; flex-direction:column; align-items:center; justify-content:flex-start; color:var(--gold); flex:none; min-width:52px; padding-top:16px}
-  .arrow svg{width:28px;height:12px}
-  .arrow em{font-style:normal; font-family:var(--ui); font-size:.62rem; color:var(--ink-2); text-align:center; line-height:1.1; margin-top:3px}
-  .nine{display:grid; grid-template-columns:repeat(auto-fill,minmax(90px,1fr)); gap:12px;
-    border:1px solid var(--line-2); border-radius:var(--radius); background:var(--panel); padding:16px}
-  .nine .node{width:auto}
-  .ninecap{font-family:var(--ui); font-size:.78rem; color:var(--ink-3); margin-top:10px; text-align:center}
-
-  /* ===== Character diary (in detail) ===== */
-  .cd .arc{margin-top:14px}
-  .cd .arc h4{font-family:var(--ui); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem;
-    color:var(--gold); margin:0 0 8px; display:flex; align-items:center; gap:7px}
-  .arc-tl{margin-top:0}
-  .arc-tl li{padding-bottom:11px}
-  .arc-tl .tage{font-size:.67rem}
-  .ahead{margin-top:12px; display:flex; gap:9px; align-items:flex-start; font-size:.92rem;
-    background:color-mix(in srgb,var(--elven) 12%, var(--panel));
-    border:1px solid color-mix(in srgb,var(--elven) 32%, transparent); border-radius:10px; padding:10px 12px}
-  .ahead svg{width:16px; height:16px; color:var(--elven); flex:none; margin-top:2px}
-  .ahead b{color:var(--ink)}
-
-  /* ===== Chapter illustration ===== */
-  .illus{margin:6px 0 16px; border:1px solid var(--line-2); border-radius:14px; overflow:hidden;
-    background:var(--panel-2); box-shadow:0 10px 24px -16px var(--shadow)}
-  .illus svg, .illus img{display:block; width:100%; height:auto}
-  .illus figcaption{padding:11px 15px; font-size:.92rem; color:var(--ink); line-height:1.5; background:var(--panel)}
-  .illus figcaption b{color:var(--ember); font-family:var(--ui); font-size:.7rem; text-transform:uppercase;
-    letter-spacing:.06em; margin-right:4px}
-
-  /* ===== Info ===== */
-  .info{margin-top:26px; border:1px solid var(--line); border-radius:12px; background:var(--panel-2); padding:12px 16px;
-    font-family:var(--ui); font-size:.82rem; color:var(--ink-2)}
-  .info summary{cursor:pointer; font-weight:700; color:var(--ink)}
-  .info a{color:var(--ember)}
-  .foot{text-align:center; font-family:var(--ui); font-size:.72rem; color:var(--ink-3); margin-top:26px}
-
-  @media (max-width:560px){
-    .brand p{display:none}
-    .cd{flex-direction:column; align-items:stretch}
-    .cd-pimg{width:min(260px,62vw); align-self:center}
-    .char-grid{grid-template-columns:repeat(auto-fill,minmax(45%,1fr))}
-  }
-  @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
-</style>
-</head>
-<body>
-<div class="app">
-  <header class="top">
-    <div class="top-in">
-      <div class="brand">
-        <svg class="crest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><path d="M12 3.8v2M12 18.2v2M3.8 12h2M18.2 12h2" stroke-linecap="round"/></svg>
-        <div>
-          <h1 data-i18n="brand_title">Cesta Prstenu</h1>
-          <p data-i18n="brand_sub">Průvodce Společenstvem Prstenu — pro předčítání</p>
-        </div>
-      </div>
-      <a class="saga-link" href="malazan/index.html" data-i18n="other_saga">Malazská Kniha padlých</a>
-      <div class="modeswitch" id="modeswitch">
-        <button data-mode="tata" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M5 8l7-4 7 4M6 20h12" stroke-linecap="round"/></svg><span data-i18n="mode_parent">Táta</span></button>
-        <button data-mode="kluci" class="kids"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.4"/><path d="M3.5 20c.4-3 2.8-5 5.5-5s5.1 2 5.5 5M14 20c.3-2.2 1.8-3.7 3.6-3.9" stroke-linecap="round"/></svg><span data-i18n="mode_kids">Kluci</span></button>
-      </div>
-      <button class="iconbtn" id="themeToggle" type="button" title="Světlý / tmavý motiv" aria-label="Přepnout motiv"></button>
-      <div class="langsel" id="langsel"></div>
-    </div>
-    <div class="road">
-      <div class="road-in">
-        <span data-i18n="journey">Cesta</span>
-        <div class="road-track"><div class="road-fill" id="roadFill"></div></div>
-        <span><b id="chDone">0</b>/22 <span data-i18n="chapters_of">kapitol</span> · <b id="miles">0</b> <span data-i18n="miles_unit">mil</span></span>
-      </div>
-    </div>
-  </header>
-
-  <div class="wrap">
-    <nav class="tabs" id="tabs" role="tablist" aria-label="Sekce">
-      <button data-view="mapa" class="on" role="tab" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg><span data-i18n="tab_map">Mapa</span></button>
-      <button data-view="kapitoly" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5c2-1 5-1 8 1 3-2 6-2 8-1v14c-2-1-5-1-8 1-3-2-6-2-8-1z"/><path d="M12 7v13"/></svg><span data-i18n="tab_chapters">Kapitoly</span></button>
-      <button data-view="postavy" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c.6-3.6 3.2-6 6.5-6s5.9 2.4 6.5 6"/></svg><span data-i18n="tab_characters">Postavy</span></button>
-      <button data-view="svet" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span data-i18n="tab_world">Svět</span></button>
-    </nav>
-
-    <!-- MAPA -->
-    <section class="view on" id="view-mapa">
-      <p class="map-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21c5-4.5 7-8 7-11a7 7 0 10-14 0c0 3 2 6.5 7 11z"/></svg><span data-i18n-html="map_hint">Na mapě je vyznačená <b>cesta</b> a značka „Tady jsme". Zastávky najdeš na <b>liště pod mapou</b> — klikni a mapa tě k místu zaveze. Mapu můžeš i tahat a přiblížit.</span></p>
-      <div class="map-viewport" id="mapVp">
-        <div class="map-stage" id="mapStage">
-          <img class="map-img" id="mapImg" src="__MAP_DATA_URI__" alt="Mapa Středozemě" draggable="false">
-          <svg class="route" id="routeSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
-          <div id="hereLayer"></div>
-        </div>
-        <div class="map-ctrls">
-          <button id="zin" data-i18n-title="zoom_in" title="Přiblížit" aria-label="Přiblížit">+</button>
-          <button id="zout" data-i18n-title="zoom_out" title="Oddálit" aria-label="Oddálit">−</button>
-          <button id="zreset" data-i18n-title="zoom_reset" title="Zaměřit cestu" aria-label="Zaměřit cestu">⤢</button>
-        </div>
-      </div>
-      <div class="mapstrip" id="mapstrip"></div>
-      <div class="place-panel empty" id="placePanel">Klikni na zastávku pod mapou a mapa tě k ní zaveze.</div>
-    </section>
-
-    <!-- KAPITOLY -->
-    <section class="view" id="view-kapitoly"><div id="chapters"></div></section>
-
-    <!-- POSTAVY -->
-    <section class="view" id="view-postavy">
-      <div class="subseg" id="subseg">
-        <button data-sub="galerie" class="on" data-i18n="subseg_gallery">Galerie</button>
-        <button data-sub="vztahy" data-i18n="subseg_relations">Vztahy</button>
-      </div>
-      <div id="sub-galerie">
-        <p class="charhint" id="charHint"></p>
-        <div class="char-grid" id="charGrid"></div>
-      </div>
-      <div id="sub-vztahy" hidden>
-        <p class="charhint" id="relHint"></p>
-        <div id="relations"></div>
-      </div>
-    </section>
-
-    <!-- SVĚT -->
-    <section class="view" id="view-svet">
-      <p class="charhint" data-i18n="world_intro">Malá encyklopedie světa — hoď děti do obrazu. V režimu Děti se odkrývá postupně: co by prozradilo děj, zůstává skryté, dokud k tomu nedočtete.</p>
-      <div id="world"></div>
-    </section>
-
-    <details class="info">
-      <summary data-i18n="info_summary">Jak to funguje · o jménech</summary>
-      <p data-i18n-html="info_modes"><b>Dva režimy.</b> <i>Rodiče</i> = příprava na čtení (shrnutí, na co se zaměřit, otázky pro děti, „metr strašidelnosti“). <i>Děti</i> = bez spoilerů, jen to, co jste už četli, plus kvízy a sbírání postav.</p>
-      <p data-i18n-html="info_unlock"><b>Odemykání.</b> U každé kapitoly klikni na <i>Přečteno</i> — tím se na mapě posune „Tady jsme“, přibudou míle a odemknou se nové postavy a místa. Postup se ukládá v prohlížeči.</p>
-      <p data-i18n-html="info_names"><b>Jména.</b> Držíme se překladu <b>Stanislavy Pošustové</b> (Pytlík, Křepelka, Hůrka, Roklinka, Chodec…). Mapa má popisky anglicky.</p>
-    </details>
-    <p class="foot" data-i18n="footer">Postaveno s láskou k předčítání · v1</p>
-  </div>
-</div>
-
-<script>
-(function(){
-  "use strict";
-  // ===== icons =====
-  var IC = {
-    town:'<path d="M4 20h16M6 20v-8l6-4 6 4v8M10 20v-4h4v4"/>',
-    forest:'<path d="M12 3l5 8H7zM12 8l6 9H6zM12 17v3"/>',
-    mountain:'<path d="M3 19l6-11 4 6 3-5 5 10z"/>',
-    water:'<path d="M3 8c3-3 6 3 9 0s6 3 9 0M3 13c3-3 6 3 9 0s6 3 9 0M3 18c3-3 6 3 9 0s6 3 9 0"/>',
-    star:'<path d="M12 3l2.4 5.6 6 .5-4.6 4 1.4 5.9L12 16.9 6.8 19l1.4-5.9L3.6 9.1l6-.5z"/>',
-    ring:'<circle cx="12" cy="12" r="7.6"/><circle cx="12" cy="12" r="4"/>',
-    hobit:'<circle cx="12" cy="12" r="8"/><circle cx="15" cy="12" r="1.1" fill="currentColor" stroke="none"/>',
-    carodej:'<path d="M12 3L7 19h10zM5 19h14"/><circle cx="12" cy="12.5" r=".9" fill="currentColor" stroke="none"/>',
-    clovek:'<path d="M12 3v10M9.5 13h5M12 13v6M12 19l-1.4 1M12 19l1.4 1"/>',
-    elf:'<path d="M6 18C6 10 12 5 19 5c0 7-5 13-13 13z"/><path d="M7 17c3-3 6-6 9-8"/>',
-    trpaslik:'<path d="M9 4v16"/><path d="M9 6c4 0 7 2 7 4.5S13 15 9 15"/>',
-    eye:'<path d="M2 12c3-5 7-7 10-7s7 2 10 7c-3 5-7 7-10 7s-7-2-10-7z"/><ellipse cx="12" cy="12" rx="1.5" ry="3.6" fill="currentColor" stroke="none"/>',
-    wraith:'<path d="M12 3c-3.4 0-5.4 3-5.4 7v10h10.8V10c0-4-2-7-5.4-7z"/><path d="M9.4 11.4l1.4 1.2M14.6 11.4l-1.4 1.2"/>',
-    flame:'<path d="M12 3c1 4-3 5-3 9a3 3 0 006 0c0-2-1-3-1.2-4.5C16 9 17 11 17 13a5 5 0 01-10 0c0-5 3-6 5-10z"/>',
-    orc:'<path d="M6 10c0-3 2.7-5 6-5s6 2 6 5c0 4-3 7-6 7s-6-3-6-7z"/><path d="M9.3 10.5h.01M14.7 10.5h.01"/><path d="M10 14l2 1 2-1"/>',
-    scroll:'<path d="M7 4h9a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2V6"/><path d="M6 6a2 2 0 002 2h2"/><path d="M10 11h5M10 14h5"/>',
-    lock:'<rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
-    sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/>',
-    moon:'<path d="M20 14.5A8 8 0 019.5 4 7 7 0 1020 14.5z"/>',
-    globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
-    check:'<path d="M4 12l5 5L20 6"/>'
-  };
-  function icon(name,cls){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"'+(cls?' class="'+cls+'"':'')+'>'+(IC[name]||IC.star)+'</svg>';}
-
-  // ===== painted portraits (inlined at build time from Midjourney) =====
-  var PORTRAITS={
-    frodo:'__IMG_frodo__',sam:'__IMG_sam__',merry:'__IMG_merry__',pippin:'__IMG_pippin__',bilbo:'__IMG_bilbo__',
-    gandalf:'__IMG_gandalf__',aragorn:'__IMG_aragorn__',boromir:'__IMG_boromir__',legolas:'__IMG_legolas__',gimli:'__IMG_gimli__',
-    elrond:'__IMG_elrond__',glorfindel:'__IMG_glorfindel__',galadriel:'__IMG_galadriel__',glum:'__IMG_glum__',bombadil:'__IMG_bombadil__',
-    nazgul:'__IMG_nazgul__',sauron:'__IMG_sauron__',balrog:'__IMG_balrog__','stara-vrba':'__IMG_stara-vrba__'
-  };
-  function hasPortrait(id){var u=PORTRAITS[id];return !!(u&&u.slice(0,5)==='data:');}
-  function imgPortrait(id,alt){return hasPortrait(id)?'<img src="'+PORTRAITS[id]+'" alt="'+esc(alt||'')+'" loading="lazy">':null;}
-  var ILLUS={
+  },
+  relations: {
+    blocks: [
+      { title: { en: 'The Ring’s journey', cs: 'Cesta Prstenu' },
+        sub: { en: 'How the Ring travelled from the dark lord all the way to Frodo.', cs: 'Jak prsten putoval od temného pána až k Frodovi.' },
+        chain: [ {id:'sauron'}, {arrow:{en:'forged it',cs:'vyrobil ho'}}, {id:'ring'}, {arrow:{en:'held it long',cs:'dlouho měl'}}, {id:'glum'}, {arrow:{en:'found it',cs:'našel ho'}}, {id:'bilbo'}, {arrow:{en:'passed it on',cs:'předal'}}, {id:'frodo'}, {arrow:{en:'guards it',cs:'chrání ho'}}, {id:'sam'} ] },
+      { title: { en: 'Who hunts the Ring', cs: 'Kdo prsten loví' },
+        sub: { en: 'Sauron wants the Ring back — and sends his servants after it.', cs: 'Sauron chce prsten zpátky — a posílá za ním své služebníky.' },
+        chain: [ {id:'nazgul'}, {arrow:{en:'hunts',cs:'loví'}}, {id:'ring'} ] }
+    ],
+    ensemble: {
+      title: { en: 'The Fellowship of the Ring', cs: 'Společenstvo Prstenu' },
+      sub: { en: 'Nine companions who vowed to help destroy the Ring.', cs: 'Devět společníků, kteří slíbili pomoct prsten zničit.' },
+      ids: ['frodo','sam','merry','pippin','gandalf','aragorn','boromir','legolas','gimli'],
+      cap: { en: '4 hobbits · 1 wizard · 2 men · 1 elf · 1 dwarf', cs: '4 hobiti · 1 čaroděj · 2 lidé · 1 elf · 1 trpaslík' }
+    }
+  },
+  loreExtra: [],
+  ILLUS: {
     1:{cap:{en:'Bilbo’s grand party for his 111th birthday. Gandalf’s fireworks blaze over Hobbiton — and in the middle of his speech Bilbo slips on the magic ring and vanishes before everyone’s eyes!',cs:'Bilbův velkolepý dýchánek k 111. narozeninám. Gandalfův ohňostroj září nad Hobitínem — a uprostřed slavnostního proslovu si Bilbo navlékne kouzelný prsten a všem rázem zmizí před očima!'}},
     2:{cap:{en:'Seventeen years after the party. Gandalf throws the ring into the fire and fiery writing glows on the gold — that is how Frodo learns his ring is the One, the most dangerous in the world.',cs:'Sedmnáct let po oslavě. Gandalf hodí prsten do ohně a na zlatě se rozzáří ohnivé písmo — tak Frodo pozná, že jeho prsten je ten Jeden, nejnebezpečnější na světě.'}},
     3:{cap:{en:'On the way out of the Shire the hobbits must hide under a tree — the first Black Rider is sniffing along the road, searching for the ring.',cs:'Cestou z Kraje se hobiti musí schovat pod stromem — po silnici čenichá první Černý jezdec, který hledá prsten.'}},
@@ -536,268 +59,50 @@
     20:{cap:{en:'As a farewell each gets a magic gift. Frodo a phial with the light of a star — and the Fellowship sails off down the Great River in elven boats.',cs:'Na rozloučenou dostane každý kouzelný dar. Frodo lahvičku se světlem hvězdy — a Společenstvo vyplouvá po Velké řece na elfských loďkách.'}},
     21:{cap:{en:'The boats sail down the Great River past the Argonath — two giant statues of ancient kings. And Gollum secretly watches them from the water.',cs:'Loďky plují po Velké řece kolem Argonathu — dvou obřích soch dávných králů. A ve vodě je potají sleduje Glum.'}},
     22:{cap:{en:'By the waterfalls the Fellowship breaks apart. Frodo decides to go to Mordor alone — but loyal Sam wades after him through the water and won’t let him go.',cs:'U vodopádů se Společenstvo rozpadá. Frodo se rozhodne jít do Mordoru sám — ale věrný Sam se za ním brodí vodou a nenechá ho odejít.'}}
-  };
-  // ===== painted chapter scenes (inlined at build time from Midjourney) =====
-  var SCENES={1:'__SCENE_1__',2:'__SCENE_2__',3:'__SCENE_3__',4:'__SCENE_4__',5:'__SCENE_5__',6:'__SCENE_6__',7:'__SCENE_7__',8:'__SCENE_8__',9:'__SCENE_9__',10:'__SCENE_10__',11:'__SCENE_11__',12:'__SCENE_12__',13:'__SCENE_13__',14:'__SCENE_14__',15:'__SCENE_15__',16:'__SCENE_16__',17:'__SCENE_17__',18:'__SCENE_18__',19:'__SCENE_19__',20:'__SCENE_20__',21:'__SCENE_21__',22:'__SCENE_22__'};
-  function hasScene(n){var u=SCENES[n];return !!(u&&u.slice(0,5)==='data:');}
-  function illusFigure(gi){
-    if(!hasScene(gi)) return '';
-    var il=ILLUS[gi]; var cap=il?t(il.cap):'';
-    var capHtml=cap?'<figcaption><b>'+esc(T('key_moment'))+'</b> '+esc(cap)+'</figcaption>':'';
-    return '<figure class="illus"><img src="'+SCENES[gi]+'" alt="'+esc(T('illus_alt'))+'" loading="lazy">'+capHtml+'</figure>';
-  }
-
-  // ===== data: places (order = the route) =====
-  var PLACES = [
-    {id:'hobitin',name:{en:'Hobbiton',cs:'Hobitín'},en:'Hobbiton / Bag End',x:31.5,y:31,ic:'town',gi:1,mile:0,
+  },
+  SCENES: {1:'__SCENE_1__',2:'__SCENE_2__',3:'__SCENE_3__',4:'__SCENE_4__',5:'__SCENE_5__',6:'__SCENE_6__',7:'__SCENE_7__',8:'__SCENE_8__',9:'__SCENE_9__',10:'__SCENE_10__',11:'__SCENE_11__',12:'__SCENE_12__',13:'__SCENE_13__',14:'__SCENE_14__',15:'__SCENE_15__',16:'__SCENE_16__',17:'__SCENE_17__',18:'__SCENE_18__',19:'__SCENE_19__',20:'__SCENE_20__',21:'__SCENE_21__',22:'__SCENE_22__'},
+  PLACES: [
+    {id:'hobitin',name:{en:'Hobbiton',cs:'Hobitín'},en:'Hobbiton / Bag End',x:30.5,y:28,ic:'town',gi:1,mile:0,
       dad:{en:'The start of the journey. Bag End is Bilbo’s home in the Shire, and later Frodo’s.',cs:'Start cesty. Dno pytle (Bag End) je Bilbův a pak Frodův domov v Kraji.'},
       kid:{en:'The hobbits’ home — green hills, round doors and heaps of good food. This is where Frodo sets out with the Ring.',cs:'Domov hobitů — zelené kopečky, kulaté dveře a spousta jídla. Odsud vyráží Frodo s prstenem na cestu.'}},
-    {id:'radovsko',name:{en:'Buckland',cs:'Rádovsko'},en:'Buckland',x:34,y:32,ic:'town',gi:4,mile:40,
+    {id:'radovsko',name:{en:'Buckland',cs:'Rádovsko'},en:'Buckland',x:33.5,y:28,ic:'town',gi:4,mile:40,
       dad:{en:'A corner of the Shire across the Brandywine. In a secret little house it turns out the friends know everything and are coming along.',cs:'Kraj za řekou Brandyvínou. V tajném domku vyjde najevo, že kamarádi o všem vědí a jdou s Frodem.'},
       kid:{en:'A tucked-away corner of the Shire beyond the big river. The friends meet in a hidden house before heading into the Old Forest.',cs:'Kout Kraje za velkou řekou. V tajném domku se sejdou kamarádi, než se vydají do Starého hvozdu.'}},
-    {id:'starahvozd',name:{en:'The Old Forest',cs:'Starý hvozd'},en:'The Old Forest',x:35,y:29,ic:'forest',gi:6,mile:90,
+    {id:'starahvozd',name:{en:'The Old Forest',cs:'Starý hvozd'},en:'The Old Forest',x:34.5,y:28.5,ic:'forest',gi:6,mile:90,
       dad:{en:'A living, unfriendly wood beyond the Shire’s edge. Old Man Willow lurks here; Tom Bombadil rescues them.',cs:'Živý, nepřátelský les za hranicí Kraje. Tady číhá Stará vrba; zachrání je Tom Bombadil.'},
       kid:{en:'A magic wood that is alive and loses you on purpose. Jolly, singing Tom Bombadil lives here.',cs:'Kouzelný les, který je živý a schválně vás ztratí. Bydlí tu veselý Tom Bombadil.'}},
-    {id:'mohyly',name:{en:'The Barrow-downs',cs:'Mohylové vrchy'},en:'The Barrow-downs',x:36.5,y:34.5,ic:'mountain',gi:8,mile:110,
+    {id:'mohyly',name:{en:'The Barrow-downs',cs:'Mohylové vrchy'},en:'The Barrow-downs',x:35.5,y:29.5,ic:'mountain',gi:8,mile:110,
       dad:{en:'Old graves on the hills. A barrow-wight traps the hobbits; Tom frees them and gives them blades.',cs:'Staré hroby na kopcích. Hobity uvězní mohylový duch; Tom je vysvobodí a dá jim dýky.'},
       kid:{en:'Misty hills full of ancient graves. A tense place — but the hobbits leave with magic daggers.',cs:'Mlžné kopce se starými hroby. Napínavé místo — ale hobiti odsud odejdou s kouzelnými dýkami.'}},
-    {id:'hurka',name:{en:'Bree',cs:'Hůrka'},en:'Bree',x:39,y:27,ic:'town',gi:9,mile:150,
+    {id:'hurka',name:{en:'Bree',cs:'Hůrka'},en:'Bree',x:36.5,y:30,ic:'town',gi:9,mile:150,
       dad:{en:'A town of Men and the Prancing Pony inn. Here they meet Strider (Aragorn).',cs:'Lidské městečko a hostinec U Skákavého poníka. Tady potkají Chodce (Aragorna).'},
       kid:{en:'The first town of Men and a cosy inn. A mysterious traveller called Strider sits in the corner.',cs:'První lidské městečko a útulný hostinec. V koutě sedí záhadný pocestný Chodec.'}},
-    {id:'vetrov',name:{en:'Weathertop',cs:'Větrov'},en:'Weathertop',x:43,y:24.5,ic:'mountain',gi:11,mile:270,
+    {id:'vetrov',name:{en:'Weathertop',cs:'Větrov'},en:'Weathertop',x:40.5,y:23.5,ic:'mountain',gi:11,mile:270,
       dad:{en:'A lonely hill with the ruins of a tower. At night the Black Riders wound Frodo with a cursed knife.',cs:'Osamělý kopec se zbytky věže. V noci tu Černí jezdci zraní Froda prokletým nožem.'},
       kid:{en:'A lonely hill with an old tower. After dark, something very tense happens here…',cs:'Osamělý kopec se starou věží. Za tmy se tu stane něco moc napínavého…'}},
-    {id:'roklinka',name:{en:'Rivendell',cs:'Roklinka'},en:'Rivendell',x:50,y:26,ic:'star',gi:12,mile:460,
+    {id:'roklinka',name:{en:'Rivendell',cs:'Roklinka'},en:'Rivendell',x:49.5,y:25,ic:'star',gi:12,mile:460,
       dad:{en:'The elves’ hidden valley (Lord Elrond). Frodo heals here, the Council is held, the Fellowship is formed.',cs:'Skryté údolí elfů (pán Elrond). Frodo se tu uzdraví, koná se Rada, vzniká Společenstvo.'},
       kid:{en:'A magic elven valley where you can rest. Here Frodo gets better and finds new friends.',cs:'Kouzelné údolí elfů, kde se dá odpočinout. Tady se Frodo uzdraví a najde nové přátele.'}},
-    {id:'eregion',name:{en:'Hollin',cs:'Eregion'},en:'Hollin / Cesmír',x:48,y:33,ic:'forest',gi:15,mile:500,
+    {id:'eregion',name:{en:'Hollin',cs:'Eregion'},en:'Hollin / Cesmír',x:48,y:36,ic:'forest',gi:15,mile:500,
       dad:{en:'The land of Eregion (Hollin) at the foot of the Misty Mountains. The Nine march south — and dark birds spy on them.',cs:'Kraj Eregion (Cesmír) na úpatí Mlžných hor. Devítka tudy táhne na jih — a špehují ji černí ptáci.'},
       kid:{en:'On the way south below the mountains. Suspicious black birds circle overhead, carrying word to someone.',cs:'Cestou na jih pod horami. Nad hlavami krouží podezřelí černí ptáci, co někomu donášejí.'}},
-    {id:'caradhras',name:{en:'Caradhras',cs:'Caradhras'},en:'Redhorn Pass',x:47.5,y:36.5,ic:'mountain',gi:16,mile:520,
+    {id:'caradhras',name:{en:'Caradhras',cs:'Caradhras'},en:'Redhorn Pass',x:47,y:37.5,ic:'mountain',gi:16,mile:520,
       dad:{en:'A high mountain they try to cross. A blizzard drives them back — they must go under it, into Moria.',cs:'Vysoká hora, kterou se pokusí přejít. Sněhová bouře je zažene — musí jít pod horu, do Morie.'},
       kid:{en:'A huge snowy mountain. It is so cruel there is no getting over it.',cs:'Obrovská zasněžená hora. Je tak zlá, že se přes ni nedá přejít.'}},
-    {id:'moria',name:{en:'Moria',cs:'Doly morijské'},en:'Moria / Khazad-dûm',x:51,y:40.5,ic:'mountain',gi:16,mile:560,
+    {id:'moria',name:{en:'Moria',cs:'Doly morijské'},en:'Moria / Khazad-dûm',x:46.5,y:41,ic:'mountain',gi:16,mile:560,
       dad:{en:'The dark underground city of the dwarves. A tentacle waits at the gate; inside are orcs, a troll and the Balrog.',cs:'Temné podzemní město trpaslíků. U brány číhá chapadlo; uvnitř skřeti, troll a Balrog.'},
       kid:{en:'A vast, dark underground. Mysterious and a little scary — with a narrow bridge over a chasm.',cs:'Obrovské temné podzemí. Tajemné, trochu strašidelné — a je tu úzký most nad propastí.'}},
-    {id:'lorien',name:{en:'Lothlórien',cs:'Lothlórien'},en:'Lórien',x:52,y:44.5,ic:'forest',gi:18,mile:620,
+    {id:'lorien',name:{en:'Lothlórien',cs:'Lothlórien'},en:'Lórien',x:49,y:44,ic:'forest',gi:18,mile:620,
       dad:{en:'Lady Galadriel’s magic golden wood. A safe refuge after the loss in Moria; gifts for the road.',cs:'Kouzelný zlatý les paní Galadriel. Bezpečné útočiště po ztrátě v Morii; dary na cestu.'},
       kid:{en:'A magic golden forest where the elves live high in the trees. Wise Lady Galadriel rules here.',cs:'Kouzelný zlatý les, kde elfové bydlí vysoko ve stromech. Vládne tu moudrá paní Galadriel.'}},
-    {id:'velkareka',name:{en:'The Great River',cs:'Velká řeka'},en:'Anduin',x:55.5,y:50,ic:'water',gi:21,mile:720,
+    {id:'velkareka',name:{en:'The Great River',cs:'Velká řeka'},en:'Anduin',x:53,y:51,ic:'water',gi:21,mile:720,
       dad:{en:'Sailing down the Anduin in elven boats. They pass the statues of the kings (the Argonath); Gollum trails them.',cs:'Plavba po Anduině na elfských lodích. Míjejí sochy králů (Argonath); Glum je sleduje.'},
       kid:{en:'A wide river they sail down in little boats, past giant statues of ancient kings.',cs:'Široká řeka, po které plují na loďkách kolem obřích soch dávných králů.'}},
-    {id:'amonhen',name:{en:'Amon Hen',cs:'Amon Hen'},en:'Rauros / Parth Galen',x:56.5,y:60,ic:'water',gi:22,mile:860,
+    {id:'amonhen',name:{en:'Amon Hen',cs:'Amon Hen'},en:'Rauros / Parth Galen',x:56.5,y:58,ic:'water',gi:22,mile:860,
       dad:{en:'The falls of Rauros. Boromir gives in to the Ring; Frodo leaves alone with Sam — the Fellowship breaks.',cs:'Vodopády Rauros. Boromir podlehne prstenu; Frodo odchází sám se Samem — Společenstvo se rozpadá.'},
       kid:{en:'A hill by great waterfalls. Here the paths split — and loyal Sam will not let Frodo go alone.',cs:'Kopec u velkých vodopádů. Tady se cesta rozdělí — a věrný Sam nenechá Froda jít samotného.'}}
-  ];
-  PLACES.forEach(function(p,i){ p.seq=i+1; }); // stop numbers by order in the array
-
-  // ===== data: characters =====
-  var CHARS = [
-    {id:'bilbo',gi:1,name:{en:'Bilbo Baggins',cs:'Bilbo Pytlík'},en:'Bilbo Baggins',race:'hobit',rlab:{en:'Hobbit',cs:'Hobit'},ic:'hobit',say:{cs:'BIL-bo'},
-      kid:{en:'An old adventurer and Frodo’s uncle. He once found the magic Ring. He loves stories, poems and a quiet life.',cs:'Starý dobrodruh a Frodův strýček. Kdysi ten kouzelný prsten našel. Miluje příběhy, básničky a klid.'},
-      dad:{en:'The Ring’s original finder, and Frodo’s relative. After the party he leaves for Rivendell.',cs:'Původní nálezce Prstenu, Frodův příbuzný. Po oslavě odchází do Roklinky.'}},
-    {id:'frodo',gi:1,name:{en:'Frodo Baggins',cs:'Frodo Pytlík'},en:'Frodo Baggins',race:'hobit',rlab:{en:'Hobbit',cs:'Hobit'},ic:'hobit',say:{cs:'FRO-do'},
-      kid:{en:'The hero. A young hobbit who agrees to carry the dangerous Ring. Small, but brave and kind.',cs:'Hlavní hrdina. Mladý hobit, který se uvolí odnést nebezpečný prsten. Malý, ale statečný a hodný.'},
-      dad:{en:'The Ring-bearer.',cs:'Nositel Prstenu.'}},
-    {id:'gandalf',gi:1,name:{en:'Gandalf the Grey',cs:'Gandalf Šedý'},en:'Gandalf the Grey',race:'carodej',rlab:{en:'Wizard',cs:'Čaroděj'},ic:'carodej',say:{cs:'GEN-dalf'},
-      kid:{en:'A wise wizard with a long beard, a hat and a staff. He can do fireworks and mighty magic. A friend to hobbits.',cs:'Moudrý čaroděj s dlouhým vousem, kloboukem a holí. Umí ohňostroje i mocná kouzla. Přítel hobitů.'},
-      dad:{en:'The Grey wizard, guide and protector. In Moria he falls with the Balrog into the deep.',cs:'Šedý čaroděj, průvodce a ochránce. V Morii padá s Balrogem do hlubiny.'}},
-    {id:'sam',gi:2,name:{en:'Samwise Gamgee',cs:'Samvěd „Sam" Křepelka'},en:'Samwise Gamgee',race:'hobit',rlab:{en:'Hobbit',cs:'Hobit'},ic:'hobit',say:{cs:'SAM-věd'},
-      kid:{en:'Frodo’s gardener and truest friend. A brave heart who never leaves Frodo’s side.',cs:'Frodův zahradník a nejvěrnější kamarád. Statečné srdce, které Froda nikdy neopustí.'},
-      dad:{en:'Frodo’s loyal companion; his gardener. A key character in the whole story.',cs:'Frodův věrný společník; zahradník. Klíčová postava celého příběhu.'}},
-    {id:'glum',gi:2,name:{en:'Gollum',cs:'Glum'},en:'Gollum',race:'zlo',rlab:{en:'Creature',cs:'Tvor'},ic:'wraith',say:{cs:'GLUM'},
-      kid:{en:'A scrawny little creature the Ring has completely taken over. He whispers “my precious” and longs to get it back.',cs:'Vyzáblý tvoreček, kterého prsten úplně ovládl. Šeptá si „miláššku" a touží prsten získat zpátky.'},
-      dad:{en:'Sméagol — a former bearer of the Ring. He shadows the company from afar.',cs:'Sméagol — dřívější nositel Prstenu. Zpovzdálí sleduje výpravu.'}},
-    {id:'sauron',gi:2,name:{en:'Sauron',cs:'Sauron'},en:'Sauron',race:'zlo',rlab:{en:'Dark Lord',cs:'Temný pán'},ic:'eye',say:{cs:'SAU-ron'},
-      kid:{en:'The evil dark lord who long ago made the One Ring. He hunts for it to rule the whole land. We see him as a great fiery eye.',cs:'Zlý temný pán, který kdysi vyrobil Jeden prsten. Hledá ho, aby ovládl celou zem. Vídáme ho jako velké ohnivé oko.'},
-      dad:{en:'The Enemy, maker of the One Ring. He never appears in person, but his shadow lies over everything.',cs:'Nepřítel, tvůrce Jednoho prstenu. Přímo se neobjeví, ale jeho stín leží nad vším.'}},
-    {id:'pippin',gi:3,name:{en:'Pippin Took',cs:'Peregrin „Pipin" Bral'},en:'Pippin Took',race:'hobit',rlab:{en:'Hobbit',cs:'Hobit'},ic:'hobit',say:{cs:'PI-pin'},
-      kid:{en:'The youngest and most curious of the hobbits. He loves to eat and gets up to the odd bit of mischief.',cs:'Nejmladší a nejzvědavější z hobitů. Rád jí a občas provede nějakou lumpárnu.'},
-      dad:{en:'The youngest member of the company.',cs:'Nejmladší člen výpravy.'}},
-    {id:'nazgul',gi:3,name:{en:'The Black Riders (Nazgûl)',cs:'Černí jezdci (Nazgûl)'},en:'Ringwraiths',race:'zlo',rlab:{en:'Wraiths',cs:'Přízraky'},ic:'wraith',say:{cs:'NAZ-gúl'},
-      kid:{en:'Nine cloaked riders on black horses. They have no faces, they sniff out the Ring and spread terror.',cs:'Devět zahalených jezdců na černých koních. Nemají tvář, čenichají prsten a nahánějí hrůzu.'},
-      dad:{en:'The Ringwraiths, Sauron’s servants. They hunt Frodo for the Ring.',cs:'Prstenové přízraky, Sauronovi služebníci. Honí Froda za Prstenem.'}},
-    {id:'merry',gi:5,name:{en:'Merry Brandybuck',cs:'Smíšek Brandorád'},en:'Merry Brandybuck',race:'hobit',rlab:{en:'Hobbit',cs:'Hobit'},ic:'hobit',say:{cs:'SMÍ-šek'},
-      kid:{en:'A clever, reliable hobbit and Pippin’s best friend. He’s good at making plans.',cs:'Chytrý a spolehlivý hobit, Pipinův nejlepší kamarád. Umí dobře plánovat.'},
-      dad:{en:'Meriadoc Brandybuck; a member of the company.',cs:'Meriadok Brandorád; člen výpravy.'}},
-    {id:'bombadil',gi:6,name:{en:'Tom Bombadil',cs:'Tom Bombadil'},en:'Tom Bombadil',race:'carodej',rlab:{en:'Enigma',cs:'Záhada'},ic:'star',say:{cs:'TOM'},
-      kid:{en:'A merry lord of the forest who is always singing. He is very old and powerful — and the Ring simply doesn’t work on him!',cs:'Veselý pán lesa, co pořád zpívá. Je moc starý a mocný — a prsten na něj vůbec nefunguje!'},
-      dad:{en:'The oldest and most mysterious of all. The Ring has no power over him. He saves the hobbits from Old Man Willow and from the barrow.',cs:'Nejstarší a nejzáhadnější. Prsten nad ním nemá moc. Zachrání hobity od Staré vrby i z mohyly.'}},
-    {id:'stara-vrba',gi:6,name:{en:'Old Man Willow',cs:'Stará vrba'},en:'Old Man Willow',race:'zlo',rlab:{en:'Danger',cs:'Nebezpečí'},ic:'forest',say:{cs:'—'},
-      kid:{en:'A wicked old willow in the Old Forest that lulls hobbits to sleep and swallows them into its trunk.',cs:'Zlá stará vrba ve Starém hvozdu, co uspává a polyká hobity do svého kmene.'},
-      dad:{en:'The malevolent tree of the Old Forest.',cs:'Zlovolný strom Starého hvozdu.'}},
-    {id:'aragorn',gi:9,name:{en:'Aragorn, called Strider',cs:'Aragorn zvaný Chodec'},en:'Aragorn / Strider',race:'clovek',rlab:{en:'Man',cs:'Člověk'},ic:'clovek',say:{cs:'A-ra-gorn'},
-      kid:{en:'A mysterious hooded traveller who is really a great hero and protector. He can both fight and heal.',cs:'Tajemný pocestný v kápi, který je ve skutečnosti velký hrdina a ochránce. Umí bojovat i léčit.'},
-      dad:{en:'A Ranger, and the future king. He leads the hobbits to Rivendell, then joins the Fellowship.',cs:'Hraničář, budoucí král. Vede hobity do Roklinky, pak je součástí Společenstva.'}},
-    {id:'glorfindel',gi:12,name:{en:'Glorfindel',cs:'Glorfindel'},en:'Glorfindel',race:'elf',rlab:{en:'Elf',cs:'Elf'},ic:'elf',say:{cs:'GLOR-fin-del'},
-      kid:{en:'A shining elf-rider who races to Frodo’s aid and carries him to safety.',cs:'Zářivý elfský jezdec, který přispěchá Frodovi na pomoc a doveze ho k bezpečí.'},
-      dad:{en:'A mighty elf of Rivendell; he helps during the flight to the Ford.',cs:'Mocný elf z Roklinky; pomůže při útěku k Brodu.'}},
-    {id:'elrond',gi:13,name:{en:'Elrond',cs:'Elrond'},en:'Elrond',race:'elf',rlab:{en:'Elf',cs:'Elf'},ic:'star',say:{cs:'EL-rond'},
-      kid:{en:'The wise and kind lord of the elves of Rivendell. He can heal, and he remembers ancient tales.',cs:'Moudrý a laskavý pán elfů z Roklinky. Umí léčit a pamatuje si dávné příběhy.'},
-      dad:{en:'The lord of Rivendell. He heals Frodo and calls the Council.',cs:'Pán Roklinky. Uzdraví Froda a svolá Radu.'}},
-    {id:'boromir',gi:14,name:{en:'Boromir',cs:'Boromir'},en:'Boromir',race:'clovek',rlab:{en:'Man',cs:'Člověk'},ic:'clovek',say:{cs:'BO-ro-mir'},
-      kid:{en:'A strong, brave warrior from the southern land of Gondor. He wants to protect his people — and the Ring tempts him.',cs:'Silný a statečný válečník z jižní země Gondor. Chce chránit svůj lid — a prsten ho svádí.'},
-      dad:{en:'Son of the Steward of Gondor. He gives in to the Ring’s temptation at Amon Hen.',cs:'Syn gondorského správce. Podlehne pokušení Prstenu u Amon Hen.'}},
-    {id:'legolas',gi:14,name:{en:'Legolas',cs:'Legolas'},en:'Legolas',race:'elf',rlab:{en:'Elf',cs:'Elf'},ic:'elf',say:{cs:'LE-go-las'},
-      kid:{en:'An elf archer with keen eyes. He is nimble, quiet and a brilliant shot with a bow.',cs:'Elfí lučištník s bystrým zrakem. Je hbitý, tichý a skvěle střílí z luku.'},
-      dad:{en:'An elf of Mirkwood; a member of the Fellowship.',cs:'Elf z Temného hvozdu; člen Společenstva.'}},
-    {id:'gimli',gi:14,name:{en:'Gimli',cs:'Gimli'},en:'Gimli',race:'trpaslik',rlab:{en:'Dwarf',cs:'Trpaslík'},ic:'trpaslik',say:{cs:'GIM-li'},
-      kid:{en:'A brave dwarf with an axe and a proper beard. Stout-hearted and loyal.',cs:'Statečný trpaslík se sekerou a pořádným plnovousem. Srdnatý a věrný.'},
-      dad:{en:'A dwarf, son of Glóin; a member of the Fellowship.',cs:'Trpaslík, syn Glóina; člen Společenstva.'}},
-    {id:'balrog',gi:17,name:{en:'Balrog',cs:'Balrog'},en:'Balrog',race:'zlo',rlab:{en:'Demon',cs:'Démon'},ic:'flame',say:{cs:'BAL-rog'},
-      kid:{en:'A huge, ancient monster of fire and shadow that sleeps deep in Moria. Terribly powerful and fearsome.',cs:'Obrovský dávný netvor z ohně a stínu, který spí hluboko v Morii. Strašně mocný a hrozivý.'},
-      dad:{en:'A demon of Moria. On the bridge it drags Gandalf into the deep.',cs:'Démon z Morie. Na mostě strhne Gandalfa do hlubiny.'}},
-    {id:'galadriel',gi:18,name:{en:'Galadriel',cs:'Galadriel'},en:'Galadriel',race:'elf',rlab:{en:'Elf',cs:'Elf'},ic:'star',say:{cs:'Ga-LAD-ri-el'},
-      kid:{en:'A beautiful and powerful lady of the elves from the golden wood. She has a magic mirror and great wisdom.',cs:'Krásná a mocná paní elfů ze zlatého lesa. Má kouzelné zrcadlo a velkou moudrost.'},
-      dad:{en:'The Lady of Lórien. She resists the Ring and gives the Fellowship gifts.',cs:'Paní Lórienu. Odolá Prstenu a obdaruje Společenstvo.'}}
-  ];
-  var CHARMAP={}; CHARS.forEach(function(c){CHARMAP[c.id]=c;});
-  var SHORT={frodo:{en:'Frodo',cs:'Frodo'},sam:{en:'Sam',cs:'Sam'},merry:{en:'Merry',cs:'Smíšek'},pippin:{en:'Pippin',cs:'Pipin'},bilbo:{en:'Bilbo',cs:'Bilbo'},gandalf:{en:'Gandalf',cs:'Gandalf'},aragorn:{en:'Aragorn',cs:'Aragorn'},boromir:{en:'Boromir',cs:'Boromir'},legolas:{en:'Legolas',cs:'Legolas'},gimli:{en:'Gimli',cs:'Gimli'},sauron:{en:'Sauron',cs:'Sauron'},nazgul:{en:'Nazgûl',cs:'Nazgûl'},glum:{en:'Gollum',cs:'Glum'}};
-
-  // ===== Character diary: what they went through, by chapter (gi) + a question to ponder =====
-  var ARC={
-    frodo:{ahead:{en:'Can such a small hobbit walk that huge road all the way to the end?',cs:'Dokáže tak malý hobit tu obrovskou cestu ujít až do konce?'},beats:[
-      [1,{en:'At the party, Bilbo gives him the magic Ring and the house at Bag End.',cs:'Na oslavě dostane od Bilba kouzelný prsten a domek Dno pytle.'}],
-      [2,{en:'Gandalf tells him how dangerous the Ring is — he must leave the Shire.',cs:'Od Gandalfa se dozví, jak nebezpečný prsten je — musí odejít z Kraje.'}],
-      [3,{en:'He sets out; for the first time a Black Rider appears before him.',cs:'Vyráží na cestu; poprvé se před ním objeví Černý jezdec.'}],
-      [4,{en:'He hurries across the fields and mushrooms down to the river.',cs:'Utíká přes pole a houby až k řece.'}],
-      [5,{en:'He finds out his friends know everything and will go with him.',cs:'Zjistí, že kamarádi o všem vědí a půjdou s ním.'}],
-      [6,{en:'In the Old Forest he tries to free his friends from Old Man Willow.',cs:'Ve Starém hvozdu se snaží vysvobodit kamarády ze Staré vrby.'}],
-      [7,{en:'He rests at Tom Bombadil’s; his Ring has no power over Tom.',cs:'Odpočine si u Toma Bombadila; jeho prsten na Toma nefunguje.'}],
-      [8,{en:'In the barrow a wight nearly gets him — bravely he calls for Tom.',cs:'V mohyle ho málem dostane duch — statečně přivolá Toma.'}],
-      [9,{en:'In the inn the Ring slips onto his finger by accident and he vanishes.',cs:'V hospodě mu omylem sklouzne prsten na prst a zmizí.'}],
-      [10,{en:'He decides to trust the mysterious Strider.',cs:'Rozhodne se věřit tajemnému Chodci.'}],
-      [11,{en:'On Weathertop a Black Rider stabs him with a cursed knife.',cs:'Na Větrově ho Černý jezdec bodne prokletým nožem.'}],
-      [12,{en:'Wounded, he escapes on an elven horse to the Ford.',cs:'Zraněný unikne na elfském koni k Brodu.'}],
-      [13,{en:'He wakes up healed in Rivendell, among friends.',cs:'Probudí se uzdravený v Roklince mezi přáteli.'}],
-      [14,{en:'He offers, himself, to carry the Ring to Mordor.',cs:'Sám se nabídne, že odnese prsten do Mordoru.'}],
-      [15,{en:'He sets out south with the Nine companions.',cs:'Vyráží s Devíti společníky na jih.'}],
-      [16,{en:'At Moria’s gate a tentacle grabs him — he only just escapes.',cs:'U brány Morie ho chytí chapadlo — jen tak tak unikne.'}],
-      [17,{en:'In Moria he loses Gandalf.',cs:'V Morii přijde o Gandalfa.'}],
-      [18,{en:'He finds comfort in the magic wood of Lórien.',cs:'Najde útěchu v kouzelném lese Lórien.'}],
-      [19,{en:'He offers the Ring to Galadriel; she resists.',cs:'Nabídne prsten Galadriel; ta odolá.'}],
-      [20,{en:'He is given a phial of light and sails off down the river.',cs:'Dostane lahvičku se světlem a vyplouvá po řece.'}],
-      [21,{en:'He sails the Great River and feels someone is watching.',cs:'Pluje po Velké řece a cítí, že je někdo sleduje.'}],
-      [22,{en:'He decides to go on alone — so as not to endanger his friends.',cs:'Rozhodne se jít dál sám — aby neohrozil přátele.'}]]},
-    sam:{ahead:{en:'Could you be as good a friend as Sam?',cs:'Dokázali byste být takový kamarád jako Sam?'},beats:[
-      [2,{en:'Caught under the window — and at once becomes Frodo’s companion.',cs:'Přistižen pod oknem — a hned se stane Frodovým společníkem.'}],
-      [3,{en:'Sets out on the road with Frodo.',cs:'Vyráží s Frodem na cestu.'}],
-      [6,{en:'Comes through the dangerous Old Forest with the others.',cs:'S ostatními projde nebezpečným Starým hvozdem.'}],
-      [8,{en:'Survives the barrow thanks to Tom.',cs:'Přežije mohylu díky Tomovi.'}],
-      [11,{en:'On Weathertop he helps fend off the Riders.',cs:'Na Větrově pomáhá bránit se jezdcům.'}],
-      [13,{en:'In Rivendell he never takes his eyes off Frodo.',cs:'V Roklince nespustí z Froda oči.'}],
-      [15,{en:'Joins the Fellowship.',cs:'Přidá se ke Společenstvu.'}],
-      [17,{en:'Grieves for Gandalf with the others.',cs:'Truchlí s ostatními pro Gandalfa.'}],
-      [19,{en:'In Galadriel’s mirror he glimpses home.',cs:'V Galadrielině zrcadle zahlédne domov.'}],
-      [20,{en:'Galadriel gives him seeds and a rope.',cs:'Dostane od Galadriel semínka a provaz.'}],
-      [22,{en:'Won’t let Frodo leave alone, and goes with him.',cs:'Nenechá Froda odejít samotného a jde s ním.'}]]},
-    gandalf:{ahead:{en:'What would you do if someone so wise suddenly vanished?',cs:'Co byste dělali, kdyby vám najednou zmizel někdo tak moudrý?'},beats:[
-      [1,{en:'Brings the fireworks and helps Bilbo slip away.',cs:'Přiveze ohňostroj a pomůže Bilbovi odejít.'}],
-      [2,{en:'Reveals that Frodo’s ring is the One.',cs:'Odhalí, že Frodův prsten je ten Jeden.'}],
-      [13,{en:'Meets Frodo again in Rivendell.',cs:'Znovu se sejde s Frodem v Roklince.'}],
-      [14,{en:'At the Council he helps decide the Ring’s fate.',cs:'Na Radě pomáhá rozhodnout o osudu prstenu.'}],
-      [15,{en:'Leads the Nine companions south.',cs:'Vede Devět společníků na jih.'}],
-      [16,{en:'Leads them into Moria when the mountain won’t let them pass.',cs:'Zavede je do Morie, když je hora nepustí.'}],
-      [17,{en:'On the bridge he faces the Balrog and falls with it into the deep.',cs:'Na mostě se postaví Balrogovi a padne s ním do hlubiny.'}]]},
-    aragorn:{ahead:{en:'Do you know a good person by their looks, or by their deeds?',cs:'Pozná se dobrý člověk podle vzhledu, nebo podle činů?'},beats:[
-      [9,{en:'As the mysterious Strider he watches the hobbits in the inn.',cs:'Jako tajemný Chodec pozoruje hobity v hospodě.'}],
-      [10,{en:'Reveals he is a friend of Gandalf and offers to guide them.',cs:'Svěří se, že je přítel Gandalfa, a nabídne se je vést.'}],
-      [11,{en:'On Weathertop he drives the Riders off with fire.',cs:'Na Větrově zažene jezdce ohněm.'}],
-      [12,{en:'Brings the wounded Frodo to the Ford.',cs:'Dovede zraněného Froda k Brodu.'}],
-      [14,{en:'At the Council he joins the Fellowship.',cs:'Na Radě se přidá ke Společenstvu.'}],
-      [15,{en:'Helps lead the company south.',cs:'Pomáhá vést výpravu na jih.'}],
-      [17,{en:'After Gandalf’s fall he leads the company on.',cs:'Po Gandalfově pádu vede společenstvo dál.'}],
-      [18,{en:'Leads the weary friends to Lórien.',cs:'Zavede unavené druhy do Lórienu.'}],
-      [22,{en:'Tries to hold the breaking Fellowship together.',cs:'Snaží se udržet rozpadající se společenstvo pohromadě.'}]]},
-    merry:{ahead:{en:'How handy is it to have a friend who’s good at making plans?',cs:'K čemu je dobré mít kamaráda, co umí dobře plánovat?'},beats:[
-      [5,{en:'Reveals that the friends have known about the Ring all along.',cs:'Odhalí, že s kamarády celou dobu vědí o prstenu.'}],
-      [6,{en:'In the Old Forest, Old Man Willow swallows him.',cs:'Ve Starém hvozdu ho spolkne Stará vrba.'}],
-      [8,{en:'Survives the barrow.',cs:'Přežije mohylu.'}],
-      [13,{en:'Meets Frodo again in Rivendell.',cs:'Znovu se setká s Frodem v Roklince.'}],
-      [15,{en:'Joins the Fellowship.',cs:'Přidá se ke Společenstvu.'}],
-      [22,{en:'Stays with the group when the paths divide.',cs:'Zůstává s partou, když se cesty dělí.'}]]},
-    pippin:{ahead:{en:'Can even the youngest and most curious one be a hero?',cs:'Může i ten nejmladší a nejzvědavější být hrdina?'},beats:[
-      [3,{en:'Sets out on the road with Frodo and Sam.',cs:'Vyráží na cestu s Frodem a Samem.'}],
-      [6,{en:'In the Old Forest, Old Man Willow swallows him.',cs:'Ve Starém hvozdu ho spolkne Stará vrba.'}],
-      [8,{en:'Survives the barrow.',cs:'Přežije mohylu.'}],
-      [13,{en:'Rests in Rivendell.',cs:'Odpočívá v Roklince.'}],
-      [15,{en:'Joins the Fellowship.',cs:'Přidá se ke Společenstvu.'}],
-      [16,{en:'Out of curiosity he drops a stone down a well in Moria.',cs:'Ze zvědavosti hodí kámen do studny v Morii.'}],
-      [22,{en:'Stays with the group at the parting.',cs:'Zůstává s partou při rozdělení.'}]]},
-    bilbo:{ahead:{en:'Why is it sometimes so hard to give up something we love?',cs:'Proč je někdy tak těžké vzdát se něčeho, co máme rádi?'},beats:[
-      [1,{en:'Celebrates his 111th birthday and vanishes using the Ring.',cs:'Oslaví 111. narozeniny a pomocí prstenu zmizí.'}],
-      [2,{en:'It comes up that he was the one who found the Ring long ago.',cs:'Připomene se, že prsten kdysi našel právě on.'}],
-      [13,{en:'Happily meets Frodo again in Rivendell.',cs:'Znovu se šťastně setká s Frodem v Roklince.'}],
-      [14,{en:'Offers to carry the Ring — but he’s grown too old.',cs:'Nabídne se, že prsten odnese — ale je už moc starý.'}]]},
-    bombadil:{ahead:{en:'Why do you think the Ring doesn’t work on Tom at all?',cs:'Proč asi prsten na Toma vůbec nefunguje?'},beats:[
-      [6,{en:'Frees the hobbits from Old Man Willow and takes them home.',cs:'Vysvobodí hobity ze Staré vrby a odvede je domů.'}],
-      [7,{en:'Feasts the hobbits; the Ring has no power over him.',cs:'Pohostí hobity; prsten na něj nemá žádnou moc.'}],
-      [8,{en:'Rushes to the barrow, saves the hobbits and gives them daggers.',cs:'Přispěchá do mohyly, zachrání hobity a dá jim dýky.'}]]},
-    glum:{ahead:{en:'What does wanting something so badly do to a creature?',cs:'Co s tvorem udělá, když po něčem strašně touží?'},beats:[
-      [2,{en:'The story goes that the Ring once completely took him over.',cs:'Vypráví se, že ho prsten kdysi úplně ovládl.'}],
-      [21,{en:'He secretly swims after the boats down the Great River.',cs:'Potají plave za loďmi po Velké řece.'}]]},
-    sauron:{ahead:{en:'Why does evil grow stronger once we start to fear it?',cs:'Proč bývá zlo silnější, když se ho začneme bát?'},beats:[
-      [2,{en:'It’s revealed that he is the one who made the Ring and now hunts for it.',cs:'Odhalí se, že je to on, kdo prsten vyrobil a teď ho hledá.'}]]},
-    nazgul:{ahead:{en:'What makes the Black Riders so frightening?',cs:'Co dělá Černé jezdce tak děsivé?'},beats:[
-      [3,{en:'The first of them sniffs after the hobbits on the road.',cs:'První z nich čenichá po hobitech na cestě.'}],
-      [11,{en:'On Weathertop they wound Frodo with a cursed knife.',cs:'Na Větrově zraní Froda prokletým nožem.'}],
-      [12,{en:'At the Ford a magic wave washes them away.',cs:'V Brodu je odplaví kouzelná vlna.'}]]},
-    elrond:{ahead:{en:'Why is it good to have someone wise to give advice?',cs:'Proč je dobré mít někoho moudrého, kdo poradí?'},beats:[
-      [13,{en:'With his power he heals the wounded Frodo.',cs:'Svou mocí uzdraví zraněného Froda.'}],
-      [14,{en:'He calls the great Council and helps decide about the Ring.',cs:'Svolá velkou Radu a pomůže rozhodnout o prstenu.'}]]},
-    boromir:{ahead:{en:'Can even a brave hero make a mistake?',cs:'Může i statečný hrdina udělat chybu?'},beats:[
-      [14,{en:'At the Council he joins the Fellowship to protect his people.',cs:'Na Radě se přidá ke Společenstvu, aby chránil svůj lid.'}],
-      [15,{en:'Sets out south with the company.',cs:'Vyráží s výpravou na jih.'}],
-      [16,{en:'In Moria he helps carry the younger hobbits.',cs:'V Morii pomáhá nést mladší hobity.'}],
-      [17,{en:'After Gandalf’s fall he keeps the group together.',cs:'Po Gandalfově pádu drží partu při sobě.'}],
-      [22,{en:'At the falls he gives in to his longing for the Ring.',cs:'U vodopádů podlehne touze po prstenu.'}]]},
-    legolas:{ahead:{en:'How useful is it to have someone with such keen eyes in the group?',cs:'Jak se hodí mít v partě někoho s tak bystrým zrakem?'},beats:[
-      [14,{en:'At the Council he joins the Fellowship as the elf archer.',cs:'Na Radě se přidá ke Společenstvu jako elfí lučištník.'}],
-      [15,{en:'Sets out south with the company.',cs:'Vyráží s výpravou na jih.'}],
-      [16,{en:'With his sharp eyes he watches the path in dark Moria.',cs:'Svým zrakem hlídá cestu v temné Morii.'}],
-      [18,{en:'In Lórien he is among his own — the elves.',cs:'V Lórienu je mezi svými — elfy.'}]]},
-    gimli:{ahead:{en:'Can a dwarf and an elf end up as friends?',cs:'Můžou být trpaslík a elf nakonec kamarádi?'},beats:[
-      [14,{en:'At the Council he joins the Fellowship with his axe.',cs:'Na Radě se přidá ke Společenstvu se svou sekerou.'}],
-      [15,{en:'Sets out south with the company.',cs:'Vyráží s výpravou na jih.'}],
-      [16,{en:'In Moria he grieves at the tomb of his kinsman Balin.',cs:'V Morii truchlí nad hrobem svého příbuzného Balina.'}],
-      [18,{en:'In Lórien, Lady Galadriel enchants him.',cs:'V Lórienu ho okouzlí paní Galadriel.'}]]},
-    glorfindel:{ahead:{en:'When is it good for help to arrive at the very last moment?',cs:'Kdy se hodí, aby přišla pomoc na poslední chvíli?'},beats:[
-      [12,{en:'Finds the wounded Frodo and lends him his swift horse.',cs:'Najde zraněného Froda a půjčí mu svého rychlého koně.'}],
-      [13,{en:'In Rivendell he is among Elrond’s people.',cs:'V Roklince je mezi Elrondovým lidem.'}]]},
-    galadriel:{ahead:{en:'Can you resist when someone offers you great power?',cs:'Dá se odolat, když nám někdo nabízí velkou moc?'},beats:[
-      [18,{en:'Welcomes the weary Fellowship into her golden wood.',cs:'Přivítá unavené společenstvo ve svém zlatém lese.'}],
-      [19,{en:'Shows Frodo the magic mirror and resists the Ring.',cs:'Ukáže Frodovi kouzelné zrcadlo a odolá prstenu.'}],
-      [20,{en:'Gives everyone a gift for the road and says farewell.',cs:'Obdaruje každého na cestu a rozloučí se.'}]]},
-    balrog:{ahead:{en:'Why was Gandalf willing to face such a monster alone?',cs:'Proč byl Gandalf ochotný postavit se takové obludě sám?'},beats:[
-      [17,{en:'It wakes in the depths of Moria and clashes with Gandalf.',cs:'Probudí se v hlubinách Morie a utká se s Gandalfem.'}]]},
-    'stara-vrba':{ahead:{en:'Can even an ordinary tree be dangerous?',cs:'Může být nebezpečný i obyčejný strom?'},beats:[
-      [6,{en:'Lulls the hobbits to sleep and traps two of them in its trunk.',cs:'Uspí hobity a dva z nich polapí do svého kmene.'}]]}
-  };
-
-  // ===== data: World (lore) =====
-  var RACES=[
-    ['hobit',{en:'Hobbits',cs:'Hobiti'},{en:'A small, cheerful people from the Shire. They love food, peace and round doors. Unassuming, but with brave hearts.',cs:'Malý veselý národ z Kraje. Milují jídlo, klid a kulaté dveře. Nenápadní, ale se statečným srdcem.'}],
-    ['clovek',{en:'Men',cs:'Lidé'},{en:'Ordinary people like us — warriors, kings and rangers. Sometimes brave, sometimes easily led astray by evil.',cs:'Obyčejní lidé jako my — bojovníci, králové i hraničáři. Někdy stateční, jindy je snadno svede zlo.'}],
-    ['elf',{en:'Elves',cs:'Elfové'},{en:'Beautiful, wise and almost immortal. They work magic, sing beautifully and live in forests and hidden valleys.',cs:'Krásní, moudří a skoro nesmrtelní. Umí kouzla, krásně zpívají a žijí v lesích a skrytých údolích.'}],
-    ['trpaslik',{en:'Dwarves',cs:'Trpaslíci'},{en:'Stocky miners and smiths with long beards. They live in the mountains, love gold and stone, and are loyal friends.',cs:'Podsadití horníci a kováři s plnovousy. Žijí v horách, milují zlato a kámen a jsou věrní přátelé.'}],
-    ['carodej',{en:'Wizards',cs:'Čarodějové'},{en:'Wise old men with staffs (Gandalf, Saruman). Really ancient beings sent to help against evil.',cs:'Moudří starci s holí (Gandalf, Saruman). Ve skutečnosti dávné bytosti poslané pomáhat proti zlu.'}],
-    ['orc',{en:'Orcs (goblins)',cs:'Skřeti (orkové)'},{en:'Ugly, wicked servants of the dark lords. They fear the sun and serve whoever is strongest.',cs:'Oškliví a zlí služebníci temných pánů. Bojí se slunce a slouží tomu, kdo je nejsilnější.'}]
-  ];
-  var TL=[
-    [{en:'Long ago',cs:'Dávno'},{en:'The forging of the rings',cs:'Ukování prstenů'},{en:'The elves made magic rings. Sauron secretly forged the One Ring to rule them all.',cs:'Elfové vyrobili kouzelné prsteny. Sauron k nim tajně ukoval Jeden prsten, aby je všechny ovládl.'}],
-    [{en:'The great battle',cs:'Velká bitva'},{en:'The Ring cut off',cs:'Prsten uříznut'},{en:'Men and elves defeated Sauron and cut the One Ring from his hand. He was beaten — but the Ring was not lost.',cs:'Lidé a elfové Saurona porazili a Jeden prsten mu usekli z ruky. Byl poražen — ale prsten se neztratil.'}],
-    [{en:'Lost',cs:'Ztracen'},{en:'The Ring disappears',cs:'Prsten mizí'},{en:'The Ring fell into a river and vanished for long centuries. Then the wretched creature Gollum owned it for ages.',cs:'Prsten spadl do řeky a na dlouhá staletí zmizel. Pak ho dlouho vlastnil ubohý tvor Glum.'}],
-    [{en:'By chance',cs:'Náhoda'},{en:'Bilbo finds it',cs:'Bilbo ho najde'},{en:'In a cave the hobbit Bilbo finds it by accident. He has no idea what a treasure — and danger — he carries in his pocket.',cs:'V jeskyni ho náhodou najde hobit Bilbo. Netuší, jakou vzácnost a nebezpečí nosí v kapse.'}],
-    [{en:'Now',cs:'Teď'},{en:'Frodo’s journey',cs:'Frodova cesta'},{en:'Bilbo passes the Ring to Frodo — and our story begins. The Ring must be destroyed before Sauron gets it.',cs:'Bilbo prsten předá Frodovi — a náš příběh začíná. Prsten musí být zničen dřív, než ho Sauron získá.'}]
-  ];
-  var LORE=[
-    {ic:'ring',min:2,title:{en:'The One Ring',cs:'Jeden prsten'},text:{en:'The most powerful ring in the world. Whoever puts it on vanishes — but the Ring slowly corrupts the heart and longs to return to its master. It can only be destroyed in the fire of the mountain where it was forged.',cs:'Nejmocnější prsten na světě. Kdo si ho navlékne, zmizí — jenže prsten pomalu kazí srdce a touží se vrátit ke svému pánovi. Zničit se dá jedině v ohni hory, kde byl ukován.'}},
-    {ic:'eye',min:2,title:{en:'Sauron, the Dark Lord',cs:'Sauron, temný pán'},text:{en:'The evil lord who made the Ring to rule all of Middle-earth. It was once cut from his hand, and he has hunted for it ever since. We see him as a huge blazing eye.',cs:'Zlý pán, který prsten vyrobil, aby ovládl celou Středozem. Prsten mu kdysi usekli z ruky a on ho od té doby hledá. Vídáme ho jako obrovské planoucí oko.'}},
-    {ic:'wraith',min:3,title:{en:'The Black Riders (Nazgûl)',cs:'Černí jezdci (Nazgûl)'},text:{en:'Nine wraiths on black horses. They were once men, but the rings turned them into Sauron’s servants. They have no faces and they sniff out the One Ring.',cs:'Devět přízraků na černých koních. Kdysi to byli lidé, ale prsteny je proměnily v Sauronovy služebníky. Nemají tvář a čenichají Jeden prsten.'}}
-  ];
-
-  // ===== data: chapters =====
-  var CH = [
+  ],
+  CH: [
     // BOOK ONE
     ({book:1,n:1,title:{en:'A Long-expected Party',cs:'Dlouho očekávaný dýchánek'},en:'A Long-expected Party',fear:0,
       sum:{en:'Old Bilbo throws a huge party for all of Hobbiton to mark his 111th birthday. In the middle of his speech he slips on the magic Ring, vanishes before everyone’s eyes and quietly leaves the Shire. Gandalf talks him into leaving the Ring to Frodo. No one yet suspects how dangerous it is.',cs:'Starý Bilbo slaví 111. narozeniny velkou oslavou pro celý Hobitín. Uprostřed proslovu si navlékne kouzelný prsten, zmizí všem před očima a potají odejde z Kraje. Gandalf ho přemluví, aby prsten nechal Frodovi. Nikdo zatím netuší, jak je ten prsten nebezpečný.'},
@@ -806,7 +111,7 @@
       words:{en:[['the Shire','the green land where the hobbits live'],['invisible','when nobody can see you at all']],cs:[['dýchánek','oslava, večírek s pohoštěním'],['Kraj','domovina hobitů']]},
       teaser:{en:'A big party, fireworks — and one magic ring that makes you invisible! Who do you think will end up with it?',cs:'Velká oslava, ohňostroj — a jeden kouzelný prsten, po kterém se člověk stane neviditelným! Kdo ho asi dostane?'},
       quiz:{en:[['Why does Bilbo slip on the ring during his speech?',['To vanish and secretly leave the Shire','To play a trick on Gandalf','To keep it safe from thieves'],0],['What does Bilbo leave to young Frodo?',['His pony','His house and the ring','His old maps'],1]],cs:[['Proč si Bilbo uprostřed proslovu navlékne prsten?',['Aby zmizel a potají odešel z Kraje','Aby vyzrál na Gandalfa','Aby ho schoval před zloději'],0],['Co Bilbo nechá mladému Frodovi?',['Svého poníka','Svůj dům a prsten','Své staré mapy'],1]]}}),
-    ({book:1,n:2,title:{en:'The Shadow of the Past',cs:'Stín minulosti'},en:'The Shadow of the Past',fear:2,
+    ({book:1,n:2,title:{en:'The Shadow of the Past',cs:'Stíny minulosti'},en:'The Shadow of the Past',fear:2,
       sum:{en:'Seventeen years pass. Gandalf comes back with grave news: Frodo’s ring is the One Ring, forged long ago by the dark lord Sauron to rule all of Middle-earth. Frodo must leave and carry the Ring to safety. Sam the gardener is caught listening at the window — and becomes Frodo’s companion.',cs:'Uběhne sedmnáct let. Gandalf se vrací s vážnou zprávou: Frodův prsten je Jeden prsten, který kdysi ukoval temný pán Sauron, aby ovládl celou Středozem. Frodo se musí vydat pryč a prsten odnést do bezpečí. Zahradník Sam je přistižen, jak poslouchá za oknem — a stane se Frodovým společníkem.'},
       focus:{en:['What the One Ring really is and why it is so dangerous','Who Sauron (the Enemy) is, and who Gollum is','Loyal Sam joins Frodo'],cs:['Co doopravdy je Jeden prsten a proč je tak nebezpečný','Kdo je Sauron (Nepřítel) a kdo je Glum','Věrný Sam se přidává k Frodovi']},
       q:{en:['Why can’t even a good person use the Ring?','Why did Sam burst into tears when Gandalf caught him?'],cs:['Proč nemůže prsten používat nikdo hodný?','Proč se Sam rozbrečel, když ho Gandalf přistihl?']},
@@ -822,7 +127,7 @@
       fearnote:{en:'The first Black Rider appears — sniffing about and raising goosebumps. Tense and a little scary, nothing gory.',cs:'Objeví se první Černý jezdec — čenichá a nahání husí kůži. Napínavé a trochu strašidelné, nic krvavého.'},
       teaser:{en:'The journey begins! But the first Black Rider is already on the trail. Who will protect the hobbits?',cs:'Cesta začíná! Ale po stopě už jde první Černý jezdec. Kdo hobity ochrání?'},
       quiz:{en:[['Why do the hobbits hide from the Black Rider?',['They are playing a game','They sense it is dangerous and hunting for something','They are shy'],1],['Who keeps them safe on their first night out?',['Dwarves','Gandalf','Elves, who feast them under the stars'],2]],cs:[['Proč se hobiti před Černým jezdcem schovají?',['Hrají si na schovávanou','Cítí, že je nebezpečný a něco hledá','Stydí se'],1],['Kdo je první noc na cestě ochrání?',['Trpaslíci','Gandalf','Elfové, kteří je pod hvězdami pohostí'],2]]}}),
-    ({book:1,n:4,title:{en:'A Short Cut to Mushrooms',cs:'Zkratka k houbám'},en:'A Short Cut to Mushrooms',fear:2,
+    ({book:1,n:4,title:{en:'A Short Cut to Mushrooms',cs:'Zkratkou na houby'},en:'A Short Cut to Mushrooms',fear:2,
       sum:{en:'To avoid the Riders, the hobbits go across fields and copses. Along the way a kind farmer (Maggot) helps them, feeds them mushrooms and gives them a lift to the river Brandywine. A ferryman takes them across to the far bank, closer to Buckland.',cs:'Aby se vyhnuli jezdcům, jdou hobiti napříč poli a lesíky. Cestou pomůže hodný sedlák (Maggot), který je pohostí houbami a sveze k řece Brandyvíně. Převozník je přeplaví na druhý břeh, blíž k Rádovsku.'},
       focus:{en:['Cleverly dodging the Riders across the fields','Mushrooms and hospitality — hobbits love food','The river and the next stretch of road draw near'],cs:['Chytré vyhýbání se jezdcům přes pole','Houby a pohostinnost — hobiti milují jídlo','Blíží se řeka a další úsek cesty']},
       q:{en:['Why did the hobbits go across the fields instead of the easy road?'],cs:['Proč šli hobiti raději přes pole než po pohodlné cestě?']},
@@ -852,7 +157,7 @@
       words:{en:[['Goldberry','Tom’s wife, the lady of the river and the wood']],cs:[['Zlatěnka','Tomova žena, paní řeky a lesa']]},
       teaser:{en:'Odd, merry Tom puts on that mighty ring — and nothing! How come it doesn’t work on him?',cs:'Divný veselý Tom si navlékne ten mocný prsten — a nic! Jak to, že na něj nefunguje?'},
       quiz:{en:[['What happens when Tom puts on the ring?',['He turns invisible','Nothing — he does not vanish','He falls asleep'],1],['Who is Goldberry?',['A talking horse','Tom\'s wife, the lady of the river and wood','A witch'],1]],cs:[['Co se stane, když si Tom navlékne prsten?',['Zneviditelní se','Vůbec nic — nezmizí','Usne'],1],['Kdo je Zlatěnka?',['Mluvící kůň','Tomova žena, paní řeky a lesa','Čarodějnice'],1]]}}),
-    ({book:1,n:8,title:{en:'Fog on the Barrow-downs',cs:'Mlha na Mohylových vrších'},en:'Fog on the Barrow-downs',fear:4,
+    ({book:1,n:8,title:{en:'Fog on the Barrow-downs',cs:'Mlha padá na Mohylové vrchy'},en:'Fog on the Barrow-downs',fear:4,
       sum:{en:'In the fog a barrow-wight traps the hobbits and shuts them in an ancient tomb under a hill. Frodo wakes beside an icy-cold hand — and almost gives up. But he remembers Tom’s song, calls him, and Tom frees them. As a parting gift they are given old magic daggers.',cs:'V mlze hobity polapí mohylový duch a uvězní je v dávné hrobce pod kopcem. Frodo se probudí vedle ledově studené ruky — a málem podlehne. Vzpomene si ale na Tomovu písničku, přivolá ho, a Tom je vysvobodí. Na rozloučenou dostanou staré kouzelné dýky.'},
       focus:{en:['The barrow-wight and the tomb (a tense peak of the first part)','Frodo’s courage — he won’t betray his friends','Magic daggers that will come in handy again'],cs:['Mohylový duch a hrobka (napínavý vrchol první části)','Frodova statečnost — nezradí kamarády','Kouzelné dýky, které se ještě budou hodit']},
       q:{en:['What helped Frodo keep his head in the dark?'],cs:['Co Frodovi pomohlo neztratit hlavu ve tmě?']},
@@ -883,7 +188,7 @@
       fearnote:{en:'⚠️ A strong, tense fight: Riders, fire, Frodo stabbed with a knife. Menacing, but bloodless. Be ready for the kids to freeze up here.',cs:'⚠️ Silný, napínavý souboj: jezdci, oheň, Frodo zraněn nožem. Hrozivé, ale bez krve. Připrav se, že tady kluci ztuhnou.'},
       teaser:{en:'On the hill in the dark, the Black Riders attack! Frodo is wounded — will they save him in time?',cs:'Na kopci ve tmě zaútočí Černí jezdci! Frodo je zraněný — stihnou ho zachránit?'},
       quiz:{en:[['How does Aragorn drive the Riders off?',['With water','With fire','With a song'],1],['Why is Frodo\'s wound so worrying?',['It won\'t stop bleeding','It is a magic wound that makes him worse and worse','It is on his foot'],1]],cs:[['Čím Aragorn jezdce odežene?',['Vodou','Ohněm','Písničkou'],1],['Proč je Frodova rána tak zlá?',['Nepřestává krvácet','Je kouzelná a Frodovi je čím dál hůř','Je na noze'],1]]}}),
-    ({book:1,n:12,title:{en:'Flight to the Ford',cs:'Útěk k Brodu'},en:'Flight to the Ford',fear:4,
+    ({book:1,n:12,title:{en:'Flight to the Ford',cs:'Útěk k brodu'},en:'Flight to the Ford',fear:4,
       sum:{en:'The elf-rider Glorfindel finds the wounded Frodo and sets him on his swift horse. A race for life to the river by Rivendell follows. When the Black Riders ride into the ford, the river rises in a mighty wave and washes them away. Frodo, unconscious, crosses to the far bank — to safety. (The end of Book One.)',cs:'Zraněného Froda najde elfský jezdec Glorfindel a posadí ho na svého rychlého koně. Následuje závod o život k řece u Roklinky. Když Černí jezdci vjedou do brodu, řeka se vzedme v mohutné vlně a odplaví je. Frodo v bezvědomí přejede na druhý břeh — do bezpečí. (Konec první knihy.)'},
       focus:{en:['A race for life on an elven horse','A magic flood in the ford sweeps the Riders away','Rescue on the threshold of Rivendell'],cs:['Závod o život na elfském koni','Kouzelná povodeň v brodu smete jezdce','Záchrana na prahu Roklinky']},
       q:{en:['Who do you think called up that wave in the river?'],cs:['Kdo asi tu vlnu v řece přivolal?']},
@@ -914,7 +219,7 @@
       words:{en:[['the Fellowship of Nine','four hobbits, two men, an elf, a dwarf and a wizard']],cs:[['Společenstvo devíti','čtyři hobiti, dva lidé, elf, trpaslík a čaroděj']]},
       teaser:{en:'Nine heroes set out! But suspicious black birds are spying on them from the sky…',cs:'Devět hrdinů vyráží! Jenže po obloze je špehují podezřelí černí ptáci…'},
       quiz:{en:[['How many companions are in the Fellowship?',['Three','Nine','Twenty'],1],['What spies on them from the sky?',['Dragons','Eagles','Suspicious black birds'],2]],cs:[['Kolik členů má Společenstvo?',['Tři','Devět','Dvacet'],1],['Co je špehuje z oblohy?',['Draci','Orli','Podezřelí černí ptáci'],2]]}}),
-    ({book:2,n:4,title:{en:'A Journey in the Dark',cs:'Cesta v temnotě'},en:'A Journey in the Dark',fear:4,
+    ({book:2,n:4,title:{en:'A Journey in the Dark',cs:'Cesta tmou'},en:'A Journey in the Dark',fear:4,
       sum:{en:'The Fellowship tries to cross the high pass of Mount Caradhras, but a cruel blizzard drives them back. There is nothing for it but to go under the mountains through the dark Mines of Moria. At the gate a monstrous tentacle attacks from the water and the Fellowship only just slips inside — the gate falls shut behind them.',cs:'Společenstvo se pokusí přejít vysoký průsmyk hory Caradhras, ale krutá sněhová bouře je zažene zpět. Nezbývá než jít pod horami temnými Doly morijskými. U brány je ve vodě přepadne obludné chapadlo a Společenstvo jen tak tak vklouzne dovnitř — brána za nimi zapadne.'},
       focus:{en:['Caradhras won’t let them pass (the mountain as an enemy)','The decision to go through Moria','The tentacle in the water at the gate (tense!)'],cs:['Caradhras je nepustí (hora jako nepřítel)','Rozhodnutí jít skrz Morii','Chapadlo ve vodě u brány (napínavé!)']},
       q:{en:['Which is worse — crossing a freezing mountain, or going through the dark underground?'],cs:['Co je horší — přejít mrazivou horu, nebo jít temným podzemím?']},
@@ -922,7 +227,7 @@
       fearnote:{en:'⚠️ A freezing mountain and a scary tentacle that grabs Frodo. Tense; a dark, underground mood.',cs:'⚠️ Mrazivá hora a strašidelné chapadlo, které chytá Froda. Napínavé; temná atmosféra podzemí.'},
       teaser:{en:'A blizzard drives them off the mountain — so they will go through the dark underground. But something with tentacles lurks in the water at the gate…',cs:'Sněhová bouře je zažene z hory — tak půjdou temným podzemím. Jenže u brány číhá něco s chapadly ve vodě…'},
       quiz:{en:[['Why can\'t they cross Mount Caradhras?',['They get lost','A cruel blizzard drives them back','A bridge is broken'],1],['What attacks at the gate of Moria?',['A pack of wolves','A monstrous tentacle from the water','A giant eagle'],1]],cs:[['Proč nepřejdou horu Caradhras?',['Zabloudí','Zažene je krutá sněhová bouře','Je stržený most'],1],['Co zaútočí u brány Morie?',['Smečka vlků','Obludné chapadlo z vody','Obří orel'],1]]}}),
-    ({book:2,n:5,title:{en:'The Bridge of Khazad-dûm',cs:'Most v Khazad-dûm'},en:'The Bridge of Khazad-dûm',fear:5,
+    ({book:2,n:5,title:{en:'The Bridge of Khazad-dûm',cs:'Můstek v Khazad-dûm'},en:'The Bridge of Khazad-dûm',fear:5,
       sum:{en:'In dark Moria they find the tomb of the dwarf Balin and fall into a fight with orcs and a cave-troll. Then the Balrog appears — an ancient demon of fire. On a narrow bridge Gandalf faces it with the words “You shall not pass!”, breaks the bridge — but the Balrog drags him down into the deep with it. The Fellowship flees out in tears.',cs:'V temné Morii najdou hrob trpaslíka Balina a padnou do boje se skřety a jeskynním trollem. Pak se objeví Balrog — dávný ohnivý démon. Na úzkém mostě se mu Gandalf postaví se slovy „Neprojdeš!", zláme most — ale Balrog ho strhne s sebou do hlubiny. Společenstvo v slzách prchá ven.'},
       focus:{en:['Balin’s tomb, the fight with orcs and the troll','The Balrog — a demon of fire','Gandalf’s sacrifice on the bridge (a big, sad moment)'],cs:['Balinův hrob, boj se skřety a trollem','Balrog — ohnivý démon','Gandalfova oběť na mostě (velký smutný okamžik)']},
       q:{en:['Why did Gandalf stay on the bridge alone?','How do you think the others felt when Gandalf fell?'],cs:['Proč Gandalf zůstal na mostě sám?','Jak se asi ostatní cítili, když Gandalf spadl?']},
@@ -937,7 +242,7 @@
       words:{en:[['Lothlórien','the magic wood of the elves with golden trees']],cs:[['Lothlórien','kouzelný les elfů se zlatými stromy']]},
       teaser:{en:'After the sad underground comes a magic golden wood, where the elves live high in the trees.',cs:'Po smutném podzemí přijde kouzelný zlatý les, kde elfové bydlí vysoko ve stromech.'},
       quiz:{en:[['What is the wood of Lothlórien like?',['Dark and dead','Snowy and cold','Golden and magical'],2],['Where do its elves live?',['In caves','High up in the trees','Underground'],1]],cs:[['Jaký je les Lothlórien?',['Temný a mrtvý','Zasněžený a studený','Zlatý a kouzelný'],2],['Kde jeho elfové bydlí?',['V jeskyních','Vysoko ve stromech','Pod zemí'],1]]}}),
-    ({book:2,n:7,title:{en:'The Mirror of Galadriel',cs:'Galadrielino zrcadlo'},en:'The Mirror of Galadriel',fear:2,
+    ({book:2,n:7,title:{en:'The Mirror of Galadriel',cs:'Zrcadlo Galadriel'},en:'The Mirror of Galadriel',fear:2,
       sum:{en:'Here rules the Lady Galadriel, a mighty and wise elf. She shows Frodo and Sam the magic Mirror — water in which you can glimpse what was, what is, and what may yet be. Frodo offers Galadriel the Ring, but she resists the temptation to take it, even though she could be a queen.',cs:'Vládne tu paní Galadriel, mocná a moudrá elfka. Ukáže Frodovi a Samovi kouzelné Zrcadlo — vodu, v níž lze zahlédnout, co bylo, co je i co teprve možná bude. Frodo Galadriel nabídne prsten, ale ona odolá pokušení vzít si ho, i když by mohla být královnou.'},
       focus:{en:['Galadriel and her magic mirror','Visions in the mirror (what was / will be)','Galadriel resists the Ring — the strength to say no to power'],cs:['Galadriel a její kouzelné zrcadlo','Vidiny v zrcadle (co bylo/bude)','Galadriel odolá prstenu — síla odříct si moc']},
       q:{en:['Would you want to see the future, even if it were scary?'],cs:['Chtěli byste vidět budoucnost, i kdyby byla strašidelná?']},
@@ -960,7 +265,7 @@
       fearnote:{en:'Mild tension (Gollum, a few arrows). No horror.',cs:'Mírné napětí (Glum, pár šípů). Bez hrůzy.'},
       teaser:{en:'A voyage down the great river past giant statues of kings — and Gollum swimming secretly behind them in the water!',cs:'Plavba po veliké řece kolem obřích soch králů — a ve vodě za nimi tajně plave Glum!'},
       quiz:{en:[['Who secretly follows the boats?',['A Black Rider','Gollum','Bilbo'],1],['What are the Argonath?',['Waterfalls','Two giant statues of ancient kings','Elven towers'],1]],cs:[['Kdo tajně pluje za loďmi?',['Černý jezdec','Glum','Bilbo'],1],['Co jsou Argonath?',['Vodopády','Dvě obří sochy dávných králů','Elfské věže'],1]]}}),
-    ({book:2,n:10,title:{en:'The Breaking of the Fellowship',cs:'Rozpad Společenstva'},en:'The Breaking of the Fellowship',fear:3,
+    ({book:2,n:10,title:{en:'The Breaking of the Fellowship',cs:'Rozbití Společenstva'},en:'The Breaking of the Fellowship',fear:3,
       sum:{en:'By the waterfalls Boromir gives in to his longing for the Ring and tries to take it from Frodo. Frodo realises he must go to Mordor alone, so as not to endanger his friends — and secretly gets into a boat. But loyal Sam won’t let him leave alone and goes with him. With that, the Fellowship breaks. (Here the first part ends.)',cs:'U vodopádů podlehne Boromir touze po prstenu a pokusí se ho Frodovi vzít. Frodo pochopí, že do Mordoru musí jít sám, aby neohrozil přátele — a potají nasedne na loďku. Věrný Sam ho ale nenechá odejít samotného a vydá se s ním. Společenstvo se tím rozpadá. (Tady první díl končí.)'},
       focus:{en:['Boromir gives in to the Ring (a cautionary, sad moment)','Frodo decides to go alone — courage and sacrifice','Loyal Sam goes with him; the group divides'],cs:['Boromir podlehne prstenu (varovný, smutný okamžik)','Frodo se rozhodne jít sám — statečnost i obětavost','Věrný Sam jde s ním; parta se dělí']},
       q:{en:['Why did Frodo want to leave secretly and alone?','Would you have done what Sam did?'],cs:['Proč chtěl Frodo odejít potají a sám?','Udělali byste to jako Sam?']},
@@ -968,12 +273,8 @@
       fearnote:{en:'Tense and sad (Boromir, the group splitting), but no horror. A beautiful theme of loyalty.',cs:'Napínavé a smutné (Boromir, rozdělení party), ale bez hrůzy. Krásné téma věrnosti.'},
       teaser:{en:'The group splits up! Frodo decides to go on alone… but guess who won’t let him leave by himself.',cs:'Party se rozdělí! Frodo se rozhodne jít dál sám… ale hádej, kdo ho nenechá odejít samotného.'},
       quiz:{en:[['Why does Frodo decide to go on alone?',['He is angry at his friends','So the ring won\'t put his friends in danger','He is lost'],1],['Who won\'t let him leave alone?',['Aragorn','Legolas','Loyal Sam'],2]],cs:[['Proč se Frodo rozhodne jít dál sám?',['Zlobí se na kamarády','Aby prsten neohrozil jeho přátele','Ztratil se'],1],['Kdo ho nenechá odejít samotného?',['Aragorn','Legolas','Věrný Sam'],2]]}})
-  ];
-  CH.forEach(function(c){ c.gi = c.book===1 ? c.n : 12+c.n; });
-  var GIMETA={}; CH.forEach(function(c){ GIMETA[c.gi]={lab:(c.book===1?'I':'II')+'·'+c.n, title:c.title}; });
-
-  // ===== Kids' chapter recap "What happened in this chapter" (after reading) =====
-  var KIDSUM={
+  ],
+  KIDSUM: {
     1:{en:['In the village of Hobbiton, the biggest party anyone could remember was getting ready. Old Bilbo the hobbit was turning a whole 111 years old, and he had invited almost the entire Shire! There were tables piled with food and drink, music playing, and the wizard Gandalf had prepared a wonderful firework show — even a dragon made of sparks that roared over the guests’ heads. Everyone was having a marvellous time and laughing.',
       'But in the middle of his birthday speech, Bilbo did something nobody expected: he slipped on his old magic ring — and vanished from sight in a flash! It was his little goodbye joke. In secret he had decided to leave the Shire and go off adventuring, and he left his house, and the ring, to his young cousin Frodo. No one back then had any idea that the ordinary-looking ring was really very, very dangerous.'],cs:['Ve vesnici Hobitín se chystala ta největší oslava, jakou kdo pamatoval. Starý hobit Bilbo slavil rovnou 111. narozeniny a pozval skoro celý Kraj! Byly tam plné stoly jídla a pití, hrála hudba a čaroděj Gandalf připravil nádherný ohňostroj — dokonce i draka z jisker, který s rachotem přeletěl nad hlavami hostů. Všichni se výborně bavili a smáli.',
       'Uprostřed slavnostního proslovu ale Bilbo udělal něco nečekaného: navlékl si svůj starý kouzelný prsten — a rázem všem zmizel před očima! Byl to jeho žertík na rozloučenou. Potají se totiž rozhodl odejít z Kraje za dobrodružstvím a svůj dům i s prstenem nechal svému mladému příbuznému Frodovi. Nikdo tehdy netušil, že ten obyčejně vypadající prsten je ve skutečnosti moc a moc nebezpečný.']},
@@ -1040,204 +341,8 @@
     22:{en:['By the waterfalls something sad happened. The warrior Boromir longed so much for the power of the ring that he tried to take it from Frodo. That ring can tempt even brave heroes. Frodo took fright and ran. In that moment he understood something very important: the ring is so dangerous that if he stayed with the others, it might in the end hurt even his own friends.',
       'And so Frodo bravely decided that he would rather go to Mordor alone, so as not to put anyone in danger. Quietly he got into a boat and was about to row away. But loyal Sam saw right through him! He ran after him straight into the water, even though he couldn’t really swim, and would not let Frodo leave alone. “Where you go, I go,” he told him. Here the Fellowship of the Ring split apart — and the first great part of the story ends. At least Frodo was not left alone.'],cs:['U vodopádů se stalo něco smutného. Bojovník Boromir tolik zatoužil po síle prstenu, že se ho pokusil Frodovi vzít. Ten prsten totiž dokáže zlákat i statečné hrdiny. Frodo se lekl a utekl. V tu chvíli pochopil něco moc důležitého: prsten je tak nebezpečný, že kdyby zůstal s ostatními, mohl by nakonec ublížit i vlastním kamarádům.',
       'A tak se Frodo statečně rozhodl, že do Mordoru půjde radši sám, aby nikoho neohrozil. Potichu nasedl do loďky a chtěl odplout. Jenže věrný Sam ho prokoukl! Rozběhl se za ním rovnou do vody, i když neuměl pořádně plavat, a nenechal Froda odejít samotného. „Kam ty, tam já," řekl mu. Tady se Společenstvo Prstenu rozdělilo — a první velký díl příběhu končí. Frodo aspoň nezůstal sám.']}
-  };
-
-  // ===== state =====
-  var KEY='stredozem_v1';
-  var state={mode:'tata', theme:null, lang:'en', read:{}};
-  try{var s=JSON.parse(localStorage.getItem(KEY)); if(s){state.mode=s.mode||'tata'; state.theme=s.theme||null; state.lang=s.lang||'en'; state.read=s.read||{};}}catch(e){}
-  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
-  function reachedGi(){var m=0; for(var k in state.read){if(state.read[k]&&+k>m)m=+k;} return m;}
-  function readCount(){var n=0; for(var k in state.read){if(state.read[k])n++;} return n;}
-
-  var $=function(s,r){return (r||document).querySelector(s);};
-  function el(tag,cls,html){var e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;}
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-
-  // ===== i18n: UI dictionary + helpers =====
-  // t(v): translates a data field ({en,cs} map; a plain string/array passes through — for gradual migration)
-  // T(key): translates a UI string from the UI dictionary
-  var UI = {
-    en: {
-      brand_title:"The Ring's Journey",
-      brand_sub:"A read-aloud guide to The Fellowship of the Ring",
-        other_saga:"Malazan Book of the Fallen",
-      mode_parent:"Parent", mode_kids:"Kids",
-      theme_to_light:"Switch to light theme", theme_to_dark:"Switch to dark theme",
-      lang_switch:"Switch to Czech",
-      journey:"Journey", chapters_of:"chapters", miles_unit:"miles",
-      tab_map:"Map", tab_chapters:"Chapters", tab_characters:"Characters", tab_world:"World",
-      map_hint:"The map shows the marked <b>route</b> and a “You are here” pin. The stops are on the <b>strip below the map</b> — tap one and the map carries you there. You can also drag and zoom the map.",
-      zoom_in:"Zoom in", zoom_out:"Zoom out", zoom_reset:"Frame the journey",
-      subseg_gallery:"Gallery", subseg_relations:"Relations",
-      world_intro:"A little encyclopedia of the world — to fill the kids in. In Kids mode it opens up bit by bit: anything that would give the story away stays hidden until you’ve read that far.",
-      info_summary:"How it works · about the names",
-      info_modes:"<b>Two modes.</b> <i>Parent</i> = getting ready to read (summary, what to look out for, questions for the kids, a “scariness meter”). <i>Kids</i> = no spoilers, only what you’ve already read, plus quizzes and collecting characters.",
-      info_unlock:"<b>Unlocking.</b> On each chapter, tap <i>Read</i> — that moves the “You are here” pin on the map, adds miles, and unlocks new characters and places. Progress is saved in your browser.",
-      info_names:"<b>Names.</b> We use Tolkien’s original English names (Baggins, Gamgee, Bree, Rivendell, Strider…). The map labels are in English too.",
-      footer:"Made with love for reading aloud · v1",
-      here_label:"You are here", strip_empty:"We haven’t set out yet — stops appear here once you’ve read a chapter.", stop_word:"Stop", place_locked:"They haven’t got here yet — read the chapter to unlock more.", place_empty:"Tap a stop below the map and it will carry you there.", fear_label:"Scariness",
-      charhint_kids:"Characters unlock as you meet them in the story. Tap one to learn more!",
-      charhint_parent:"An overview of the characters (Parent mode shows them all). Tap one for detail.",
-      h_story_so_far:"The story so far", char_locked_arc:"We don’t know this character well yet — keep reading and their story will fill in here.",
-      talk_label:"To talk about together:", say_label:"Say:", close:"Close", ring_name:"The One Ring",
-      world_races:"Peoples of Middle-earth", world_history:"A short history of the Ring",
-      relhint_kids:"How the characters connect. Whatever you haven’t read yet stays veiled.",
-      relhint_parent:"How the characters connect (Parent mode shows everything).",
-      rel_journey_title:"The Ring’s journey", rel_journey_sub:"How the Ring travelled from the dark lord all the way to Frodo.",
-      rel_hunt_title:"Who hunts the Ring", rel_hunt_sub:"Sauron wants the Ring back — and sends his servants after it.",
-      rel_fellowship_title:"The Fellowship of the Ring", rel_fellowship_sub:"Nine companions who vowed to help destroy the Ring.",
-      rel_ninecap:"4 hobbits · 1 wizard · 2 men · 1 elf · 1 dwarf",
-      rel_forged:"forged it", rel_held:"held it long", rel_found:"found it", rel_passed:"passed it on", rel_guards:"guards it", rel_hunts:"hunts",
-      book1:"Book One", book2:"Book Two", read_q:"Read?", read_done:"Read",
-      h_summary:"Summary", h_focus:"What to look out for", h_questions:"Questions for the kids", h_words:"Words",
-      h_prev:"Previously", h_before_start:"Before we set out", h_whats_next:"What’s coming", h_what_happened:"What happened in this chapter", h_quiz:"Quiz — do you remember?",
-      locked_chapter:"We haven’t read this chapter yet. Let’s read it with a grown-up first!",
-      unlock_hint:"Once we’ve read the chapter, tap <b>Read</b> and the summary, quiz and new characters unlock.",
-      read_done_msg:"Read! Great job, traveller.",
-      fear_ok:"all good.", fear_mid:"tense, nothing terrible.", fear_high:"a stronger scene, get ready.",
-      key_moment:"Key moment:", illus_alt:"Painted illustration for the chapter", map_alt:"Map of Middle-earth"
-    },
-    cs: {
-      brand_title:"Cesta Prstenu",
-      brand_sub:"Průvodce Společenstvem Prstenu — pro předčítání",
-        other_saga:"Malazská Kniha padlých",
-      mode_parent:"Rodiče", mode_kids:"Děti",
-      theme_to_light:"Přepnout na světlý motiv", theme_to_dark:"Přepnout na tmavý motiv",
-      lang_switch:"Přepnout do angličtiny",
-      journey:"Cesta", chapters_of:"kapitol", miles_unit:"mil",
-      tab_map:"Mapa", tab_chapters:"Kapitoly", tab_characters:"Postavy", tab_world:"Svět",
-      map_hint:"Na mapě je vyznačená <b>cesta</b> a značka „Tady jsme“. Zastávky najdeš na <b>liště pod mapou</b> — klikni a mapa tě k místu zaveze. Mapu můžeš i tahat a přiblížit.",
-      zoom_in:"Přiblížit", zoom_out:"Oddálit", zoom_reset:"Zaměřit cestu",
-      subseg_gallery:"Galerie", subseg_relations:"Vztahy",
-      world_intro:"Malá encyklopedie světa — hoď děti do obrazu. V režimu Děti se odkrývá postupně: co by prozradilo děj, zůstává skryté, dokud k tomu nedočtete.",
-      info_summary:"Jak to funguje · o jménech",
-      info_modes:"<b>Dva režimy.</b> <i>Rodiče</i> = příprava na čtení (shrnutí, na co se zaměřit, otázky pro děti, „metr strašidelnosti“). <i>Děti</i> = bez spoilerů, jen to, co jste už četli, plus kvízy a sbírání postav.",
-      info_unlock:"<b>Odemykání.</b> U každé kapitoly klikni na <i>Přečteno</i> — tím se na mapě posune „Tady jsme“, přibudou míle a odemknou se nové postavy a místa. Postup se ukládá v prohlížeči.",
-      info_names:"<b>Jména.</b> Držíme se překladu <b>Stanislavy Pošustové</b> (Pytlík, Křepelka, Hůrka, Roklinka, Chodec…). Mapa má popisky anglicky.",
-      footer:"Postaveno s láskou k předčítání · v1",
-      here_label:"Tady jsme", strip_empty:"Zatím jsme nevyrazili — po přečtení kapitoly se tu objeví zastávky.", stop_word:"zastávka", place_locked:"Sem ještě nedošli — přečti kapitolu a odemkne se víc.", place_empty:"Klikni na zastávku pod mapou a mapa tě k ní zaveze.", fear_label:"Strašidelnost",
-      charhint_kids:"Postavy se odemykají, jakmile je v příběhu potkáte. Klikni a dozvíš se víc!",
-      charhint_parent:"Přehled postav (v režimu Rodiče vidíš všechny). Klikni pro detail; u jmen je i výslovnost pro děti.",
-      h_story_so_far:"Příběh zatím", char_locked_arc:"Tuhle postavu ještě moc neznáme — čtěte dál a její příběh se tu bude připisovat.",
-      talk_label:"K popovídání s dětmi:", say_label:"Vyslov:", close:"Zavřít", ring_name:"Jeden prsten",
-      world_races:"Rasy Středozemě", world_history:"Krátká historie Prstenu",
-      relhint_kids:"Jak spolu postavy souvisejí. Co jste ještě nečetli, zůstává zahalené.",
-      relhint_parent:"Jak spolu postavy souvisejí (v režimu Rodiče vidíš vše).",
-      rel_journey_title:"Cesta Prstenu", rel_journey_sub:"Jak prsten putoval od temného pána až k Frodovi.",
-      rel_hunt_title:"Kdo prsten loví", rel_hunt_sub:"Sauron chce prsten zpátky — a posílá za ním své služebníky.",
-      rel_fellowship_title:"Společenstvo Prstenu", rel_fellowship_sub:"Devět společníků, kteří slíbili pomoct prsten zničit.",
-      rel_ninecap:"4 hobiti · 1 čaroděj · 2 lidé · 1 elf · 1 trpaslík",
-      rel_forged:"vyrobil ho", rel_held:"dlouho měl", rel_found:"našel ho", rel_passed:"předal", rel_guards:"chrání ho", rel_hunts:"loví",
-      book1:"Kniha první", book2:"Kniha druhá", read_q:"Přečteno?", read_done:"Přečteno",
-      h_summary:"Shrnutí", h_focus:"Na co se zaměřit", h_questions:"Otázky pro děti", h_words:"Slovíčka",
-      h_prev:"Co bylo minule", h_before_start:"Než vyrazíme na cestu", h_whats_next:"Co nás čeká", h_what_happened:"Co se v kapitole stalo", h_quiz:"Kvíz — pamatuješ si?",
-      locked_chapter:"Tuhle kapitolu jsme ještě nečetli. Nejdřív si ji přečteme s rodičem!",
-      unlock_hint:"Až kapitolu přečteme, klikni na <b>Přečteno</b> a odemkne se shrnutí, kvíz i nové postavy.",
-      read_done_msg:"Přečteno! Skvělá práce, poutníku.",
-      fear_ok:"v pohodě.", fear_mid:"napínavé, nic hrozného.", fear_high:"silnější scéna, připrav se.",
-      key_moment:"Klíčový moment:", illus_alt:"Malovaná ilustrace ke kapitole", map_alt:"Mapa Středozemě"
-    }
-  };
-  function T(key){ var d=UI[state.lang]||UI.en; return d[key]!=null ? d[key] : (UI.en[key]!=null?UI.en[key]:key); }
-  function t(v){ if(v==null) return ''; if(Array.isArray(v)) return v; if(typeof v!=='object') return v; var L=state.lang; return v[L]!=null ? v[L] : (v.en!=null?v.en:''); }
-
-  // ===== render: progress + map markers =====
-  function updateProgress(){
-    var rc=readCount();
-    $('#chDone').textContent=rc;
-    $('#roadFill').style.width=(rc/22*100)+'%';
-    var rg=reachedGi(), mile=0;
-    PLACES.forEach(function(p){ if(p.gi<=rg && p.mile>mile) mile=p.mile; });
-    $('#miles').textContent=mile;
-  }
-
-  function buildRoute(){
-    var svg=$('#routeSvg');
-    // Parent sees the whole route; Kids only up to where they have read (no spoilers ahead)
-    var pts = state.mode==='tata' ? PLACES : PLACES.filter(function(p){return p.gi<=reachedGi();});
-    if(pts.length<2){ svg.innerHTML=''; return; }
-    var d=pts.map(function(p,i){return (i?'L':'M')+p.x+','+p.y;}).join(' ');
-    svg.innerHTML='<path d="'+d+'" fill="none" style="stroke:var(--ember)" stroke-width="2.4" '+
-      'stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.1 3.2" '+
-      'vector-effect="non-scaling-stroke" opacity="0.9"/>';
-  }
-
-  function currentPlace(){ var rg=reachedGi(),cur=null; PLACES.forEach(function(p){ if(p.gi<=rg&&(!cur||p.seq>cur.seq))cur=p; }); return cur; }
-  function renderHere(){
-    // On the map there is just one small "You are here" marker; the other stops are on the strip below.
-    var box=$('#hereLayer'); box.innerHTML='';
-    var cur=currentPlace(); if(!cur) return;
-    var m=el('div','hereM'); m.style.left=cur.x+'%'; m.style.top=cur.y+'%';
-    m.innerHTML='<span class="hm-in" title="'+esc(T('here_label')+': '+t(cur.name))+'"></span>';
-    $('.hm-in',m).addEventListener('click',function(ev){ev.stopPropagation(); showPlace(cur,true);});
-    box.appendChild(m); applyHereScale();
-  }
-  // The marker is inside the zoomed stage — counter-scale keeps it the same small size even when zoomed in.
-  function applyHereScale(){ var inn=$('#hereLayer .hm-in'); if(inn) inn.style.transform='scale('+(1/scale)+')'; }
-  function renderStrip(){
-    var rg=reachedGi(), cur=currentPlace();
-    var strip=$('#mapstrip'); if(!strip) return; strip.innerHTML='';
-    var list = state.mode==='tata' ? PLACES : PLACES.filter(function(p){return p.gi<=rg;});
-    if(!list.length){ strip.innerHTML='<div class="strip-empty">'+esc(T('strip_empty'))+'</div>'; return; }
-    list.forEach(function(p){
-      var reached=p.gi<=rg, isCur=!!(cur&&cur.id===p.id);
-      var c=el('button','mchip'+(reached?'':' future')+(isCur?' on':''));
-      c.innerHTML='<span class="mchip-n">'+p.seq+'</span>'+icon(p.ic,'mchip-ic')+'<small>'+esc(t(p.name))+'</small>'+(isCur?'<span class="mchip-here">'+esc(T('here_label'))+'</span>':'');
-      c.addEventListener('click',function(){ goToPlace(p); showPlace(p,reached); Array.prototype.forEach.call(strip.children,function(x){x.classList.toggle('sel',x===c);}); });
-      strip.appendChild(c);
-    });
-    var on=strip.querySelector('.mchip.on'); if(on&&on.scrollIntoView) on.scrollIntoView({inline:'center',block:'nearest'});
-  }
-
-  function showPlace(p, reached){
-    var pan=$('#placePanel'); pan.className='place-panel';
-    var txt = t(state.mode==='kluci' ? p.kid : p.dad);
-    var sub = state.lang==='en' ? (T('stop_word')+' '+p.seq) : (esc(p.en)+' · '+T('stop_word')+' '+p.seq);
-    pan.innerHTML='<div class="place-head"><span class="place-ic">'+icon(p.ic)+'</span>'+
-      '<div><h3>'+esc(t(p.name))+'</h3><span class="en">'+sub+'</span></div></div>'+
-      '<p>'+esc(txt)+'</p>'+
-      (state.mode==='kluci'&&!reached?'<p class="locknote">'+icon('lock')+esc(T('place_locked'))+'</p>':'');
-  }
-
-  // ===== render: chapters =====
-  function flames(n){var h='<span class="lab">'+esc(T('fear_label'))+'</span>'; for(var i=0;i<5;i++){h+=icon('flame','flame'+(i<n?'':' off'));} return h;}
-
-  function renderChapters(){
-    var box=$('#chapters'); box.innerHTML='';
-    var rg=reachedGi();
-    [1,2].forEach(function(bk){
-      box.appendChild(el('div','booktitle',T(bk===1?'book1':'book2')));
-      CH.filter(function(c){return c.book===bk;}).forEach(function(c){
-        var done=!!state.read[c.gi];
-        var peek = state.mode==='tata' || c.gi<=rg+1;   // kids: see the current + next chapter
-        var full = state.mode==='tata' || done;         // plný obsah (obrázek + shrnutí) až po označení „Přečteno" u TÉTO kapitoly
-        var card=el('div','ch'+(peek?'':' locked'));
-        card.setAttribute('data-gi',c.gi);
-        var head=el('div','ch-head');
-        head.innerHTML='<span class="ch-num">'+(bk===1?'I':'II')+'·'+c.n+'</span>'+
-          '<div class="ch-t"><h3>'+esc(t(c.title))+'</h3>'+(state.lang==='cs'?'<span class="en">'+esc(c.en)+'</span>':'')+
-          '<div class="fear">'+flames(c.fear)+'</div></div>';
-        var right=el('div',null,'');
-        var rd=el('button','ch-read'+(done?' done':''), (done?icon('check')+T('read_done'):T('read_q')));
-        rd.addEventListener('click',function(ev){ev.stopPropagation(); state.read[c.gi]=!state.read[c.gi]; save(); rerender();});
-        var car=el('span','caret','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>');
-        right.appendChild(rd);
-        head.appendChild(right); head.appendChild(car);
-        card.appendChild(head);
-        var body=el('div','ch-body');
-        body.innerHTML = chapterBody(c, full, peek);
-        card.appendChild(body);
-        if(peek){
-          head.addEventListener('click',function(){ card.classList.toggle('open'); });
-        }
-        box.appendChild(card);
-      });
-    });
-  }
-
-  // ===== before reading (Kids mode): a recap + a hook, no spoilers =====
-  var KIDINTRO={
+  },
+  KIDINTRO: {
     1:{en:['Our story begins in the Shire — a green, peaceful land where the hobbits live. They are small, cheerful folk who love good food, comfort and round doors, and like it best when nothing much is happening.',
        'But today the biggest party anyone can remember is getting ready in Hobbiton — and old adventurer Bilbo has one big surprise in store for his guests. Whatever could it be? And what part will one unassuming little gold ring play in it all?'],cs:['Náš příběh začíná v Kraji — v zelené a klidné zemi, kde bydlí hobiti. Jsou to malí veselí lidičkové, kteří milují dobré jídlo, pohodlí a kulaté dveře, a nejradši mají, když se zrovna nic neděje.',
        'Jenže dnes se v Hobitíně chystá největší oslava, jakou kdo pamatuje — a starý dobrodruh Bilbo má pro hosty nachystané jedno velké překvapení. Copak to asi bude? A jakou roli v tom sehraje jeden nenápadný zlatý prstýnek?']},
@@ -1304,279 +409,5 @@
     22:{en:['Last time, the boats sailed down the Great River past the giant stone kings — and Gollum was secretly watching them from the water.',
         'Now the road comes to a place where everyone will have to make a hard choice. The ring tempts and lures more and more… Will the Fellowship hold together, or will each go their own way? This part closes off the whole first book.'],cs:['Minule pluly loďky po Velké řece kolem obřích kamenných králů — a ve vodě je potají sledoval Glum.',
         'Cesta teď dojde k místu, kde se každý bude muset těžko rozhodnout. Prsten totiž svádí a láká čím dál víc… Vydrží Společenstvo pohromadě, nebo se každý vydá svou cestou? Tahle část uzavře celou první knihu.']}
-  };
-
-  // small helper: a block with an icon heading (unifies a repeated pattern in the render layer)
-  function blk(ic,title,inner){ return '<div class="block"><h4>'+icon(ic)+esc(title)+'</h4>'+inner+'</div>'; }
-
-  function chapterBody(c, full, peek){
-    if(state.mode==='tata'){
-      var h=illusFigure(c.gi)+blk('star',T('h_summary'),'<p>'+esc(t(c.sum))+'</p>');
-      h+=blk('star',T('h_focus'),'<ul class="bullets">'+t(c.focus).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
-      if(c.q)h+=blk('star',T('h_questions'),'<ul class="bullets q-list">'+t(c.q).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
-      if(c.words)h+=blk('star',T('h_words'),'<div class="words">'+t(c.words).map(function(w){return '<span class="word"><b>'+esc(w[0])+'</b> — <span>'+esc(w[1])+'</span></span>';}).join('')+'</div>');
-      h+='<div class="block"><div class="fearnote">'+ (c.fearnote?esc(t(c.fearnote)):esc(T('fear_label'))+' '+c.fear+'/5 — '+esc(T(c.fear<=1?'fear_ok':c.fear<=3?'fear_mid':'fear_high'))) +'</div></div>';
-      return h;
-    }
-    // KIDS
-    if(!peek){ return '<p class="locknote">'+icon('lock')+esc(T('locked_chapter'))+'</p>'; }
-    if(!full){
-      var intro=t(KIDINTRO[c.gi]);
-      var kb='<div class="kidbox">';
-      if(intro){
-        kb+=blk('scroll',T(c.gi===1?'h_before_start':'h_prev'),'<p class="kidrecap">'+esc(intro[0])+'</p>')+
-            blk('star',T('h_whats_next'),'<p class="kidrecap">'+esc(intro[1])+'</p>');
-      } else { kb+='<p class="teaser">'+esc(t(c.teaser))+'</p>'; }
-      kb+='</div>';
-      return kb+'<p class="locknote">'+icon('lock')+T('unlock_hint')+'</p>';
-    }
-    var k=illusFigure(c.gi);
-    var ks=t(KIDSUM[c.gi]);
-    if(ks) k+=blk('scroll',T('h_what_happened'),ks.map(function(pp){return '<p class="kidrecap">'+esc(pp)+'</p>';}).join(''));
-    if(c.quiz){ k+=quizHtml(c); }
-    else{ k+='<p class="locknote">'+icon('check')+esc(T('read_done_msg'))+'</p>'; }
-    return k;
   }
-
-  function quizHtml(c){
-    var h='<div class="quiz"><h4 class="block">'+icon('star')+' '+esc(T('h_quiz'))+'</h4>';
-    t(c.quiz).forEach(function(q,qi){
-      h+='<div class="qq" data-q="'+qi+'"><div class="qtext">'+esc(q[0])+'</div><div class="opts">';
-      q[1].forEach(function(opt,oi){ h+='<button class="opt" data-c="'+c.gi+'" data-qi="'+qi+'" data-oi="'+oi+'" data-ok="'+(oi===q[2]?1:0)+'">'+esc(opt)+'</button>'; });
-      h+='</div></div>';
-    });
-    return h+'</div>';
-  }
-
-  // quiz click delegation
-  document.addEventListener('click',function(ev){
-    var o=ev.target.closest('.opt'); if(!o||o.disabled)return;
-    var wrap=o.closest('.qq'); var btns=wrap.querySelectorAll('.opt');
-    btns.forEach(function(b){b.disabled=true; if(b.getAttribute('data-ok')==='1')b.classList.add('correct');});
-    if(o.getAttribute('data-ok')!=='1')o.classList.add('wrong');
-  });
-
-  // ===== render: characters =====
-  function renderChars(){
-    var rg=reachedGi();
-    $('#charHint').textContent = T(state.mode==='kluci' ? 'charhint_kids' : 'charhint_parent');
-    var grid=$('#charGrid'); grid.innerHTML='';
-    CHARS.forEach(function(ch){
-      var unlocked = ch.gi<=rg || state.mode==='tata';
-      var card=el('div','char r-'+ch.race+(unlocked?'':' locked'));
-      var frame;
-      if(!unlocked){ frame='<div class="pframe fallback">'+icon('lock')+'</div>'; }
-      else { var im=imgPortrait(ch.id,t(ch.name));
-        frame = im ? '<div class="pframe">'+im+'</div>'
-                   : '<div class="pframe fallback">'+icon('lock')+'</div>'; }
-      card.innerHTML=frame+
-        '<h4>'+(unlocked?esc(t(ch.name)):'? ? ?')+'</h4><div class="race">'+esc(t(ch.rlab))+'</div>';
-      if(unlocked){ card.setAttribute('tabindex','0'); card.setAttribute('role','button');
-        card.addEventListener('click',function(){ toggleChar(ch, card); });
-        card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleChar(ch, card); } }); }
-      grid.appendChild(card);
-    });
-  }
-  function arcHtml(ch){
-    var a=ARC[ch.id]; if(!a) return '';
-    var maxG = state.mode==='tata' ? 99 : reachedGi();
-    var beats=a.beats.filter(function(b){return b[0]<=maxG;});
-    var h='';
-    if(beats.length){
-      h+='<div class="arc"><h4>'+icon('scroll')+esc(T('h_story_so_far'))+'</h4><ul class="timeline arc-tl">'+
-        beats.map(function(b){var m=GIMETA[b[0]]||{lab:'',title:''}; return '<li><span class="tage">'+esc(m.lab+' · '+t(m.title))+'</span>'+esc(t(b[1]))+'</li>';}).join('')+'</ul></div>';
-    } else {
-      h+='<p class="locknote">'+icon('lock')+esc(T('char_locked_arc'))+'</p>';
-    }
-    if(a.ahead) h+='<div class="ahead">'+icon('star')+'<span><b>'+esc(T('talk_label'))+'</b> '+esc(t(a.ahead))+'</span></div>';
-    return h;
-  }
-  var openCharId=null;
-  function toggleChar(ch, card){
-    var ex=$('#charDetail'); if(ex){ex.remove();}
-    if(openCharId===ch.id){ openCharId=null; return; }
-    openCharId=ch.id;
-    var d=el('div','char-detail'); d.id='charDetail';
-    var txt = t(state.mode==='kluci'? ch.kid : ch.dad);
-    var im=imgPortrait(ch.id,t(ch.name));
-    var visual = im ? '<div class="cd-pimg">'+im+'</div>'
-                    : '<div class="medallion">'+icon(ch.ic)+'</div>';
-    var say=t(ch.say);
-    d.innerHTML='<div class="cd r-'+ch.race+'">'+visual+
-      '<div class="cdbody"><h3>'+esc(t(ch.name))+'</h3><div class="en">'+(state.lang==='en'?'':esc(ch.en)+' · ')+esc(t(ch.rlab))+'</div>'+
-      (say&&say!=='—'?'<div class="say">'+esc(T('say_label'))+' <b>'+esc(say)+'</b></div>':'')+
-      '<p>'+esc(txt)+'</p>'+arcHtml(ch)+'</div>'+
-      '<button class="close" aria-label="'+esc(T('close'))+'">✕</button></div>';
-    card.after(d);
-    $('.close',d).addEventListener('click',function(e){e.stopPropagation(); d.remove(); openCharId=null;});
-    d.scrollIntoView({behavior:'smooth',block:'nearest'});
-  }
-
-  // ===== map: pan & zoom =====
-  var scale=1,minS=1,maxS=4,tx=0,ty=0;
-  var stage=$('#mapStage'), vp=$('#mapVp');
-  function clamp(){
-    // Stage width = viewport width (img has width:100%), height from the map ratio.
-    var vw=vp.clientWidth, vh=vp.clientHeight, stageH=stage.offsetHeight;
-    var minX=Math.min(0, vw - vw*scale), minY=Math.min(0, vh - stageH*scale);
-    if(tx>0) tx=0; else if(tx<minX) tx=minX;
-    if(ty>0) ty=0; else if(ty<minY) ty=minY;
-  }
-  function applyT(){clamp(); stage.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')'; applyHereScale();}
-  function setStageWidth(){
-    stage.style.width=vp.clientWidth+'px';
-    var h=stage.offsetHeight;
-    if(h){ vp.style.height=Math.min(h, Math.round(window.innerHeight*0.72), 580)+'px'; }
-  }
-  function zoomAt(cx,cy,ns){
-    ns=Math.max(minS,Math.min(maxS,ns));
-    var rx=(cx-tx)/scale, ry=(cy-ty)/scale;
-    tx=cx-rx*ns; ty=cy-ry*ns; scale=ns; applyT();
-  }
-  function frameJourney(){
-    var W0=vp.clientWidth, H0=stage.offsetHeight, vpW=vp.clientWidth, vpH=vp.clientHeight;
-    if(!H0){return;}
-    var fx0=0.29,fx1=0.60,fy0=0.20,fy1=0.66;      // the region containing the route
-    var regW=(fx1-fx0)*W0, regH=(fy1-fy0)*H0;
-    var s=Math.min(vpW/regW, vpH/regH)*0.96;
-    s=Math.max(minS,Math.min(maxS,s));
-    scale=s;
-    tx=vpW/2 - ((fx0+fx1)/2)*W0*s;
-    ty=vpH/2 - ((fy0+fy1)/2)*H0*s;
-    applyT();
-  }
-  function goToPlace(p){
-    var natW=vp.clientWidth, natH=stage.offsetHeight; if(!natH)return;
-    scale=Math.min(maxS,3.4);
-    tx=vp.clientWidth/2 - (p.x/100)*natW*scale;
-    ty=vp.clientHeight/2 - (p.y/100)*natH*scale;
-    stage.classList.add('smooth'); applyT();
-  }
-  $('#zin').addEventListener('click',function(){zoomAt(vp.clientWidth/2,vp.clientHeight/2,scale*1.4);});
-  $('#zout').addEventListener('click',function(){zoomAt(vp.clientWidth/2,vp.clientHeight/2,scale/1.4);});
-  $('#zreset').addEventListener('click',function(){frameJourney();});
-  vp.addEventListener('wheel',function(e){e.preventDefault(); stage.classList.remove('smooth'); var r=vp.getBoundingClientRect(); zoomAt(e.clientX-r.left,e.clientY-r.top, scale*(e.deltaY<0?1.15:0.87));},{passive:false});
-  // drag
-  var drag=false,lx=0,ly=0,moved=0,pid=null;
-  vp.addEventListener('pointerdown',function(e){drag=true;moved=0;lx=e.clientX;ly=e.clientY;pid=e.pointerId;vp.setPointerCapture(pid);vp.classList.add('grabbing'); stage.classList.remove('smooth');});
-  vp.addEventListener('pointermove',function(e){if(!drag)return; var dx=e.clientX-lx,dy=e.clientY-ly; lx=e.clientX;ly=e.clientY; moved+=Math.abs(dx)+Math.abs(dy); tx+=dx;ty+=dy; applyT();});
-  function endDrag(){drag=false;vp.classList.remove('grabbing'); if(pid!=null){try{vp.releasePointerCapture(pid);}catch(e){}pid=null;}}
-  vp.addEventListener('pointerup',endDrag); vp.addEventListener('pointercancel',endDrag);
-  window.addEventListener('resize',function(){setStageWidth(); frameJourney();});
-
-  // ===== toggles =====
-  $('#modeswitch').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return;
-    state.mode=b.getAttribute('data-mode'); save(); syncMode(); rerender();});
-
-  // light/dark theme — manual toggle; with no choice it follows the system (prefers-color-scheme)
-  function effectiveTheme(){ return state.theme || (window.matchMedia && matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); }
-  function applyTheme(){
-    var root=document.documentElement;
-    if(state.theme) root.setAttribute('data-theme',state.theme); else root.removeAttribute('data-theme');
-    var btn=$('#themeToggle'); if(!btn) return;
-    var eff=effectiveTheme();
-    btn.innerHTML=icon(eff==='dark'?'sun':'moon');
-    var lab = eff==='dark' ? T('theme_to_light') : T('theme_to_dark');
-    btn.setAttribute('aria-label', lab); btn.title = lab;
-  }
-  $('#themeToggle').addEventListener('click',function(){ state.theme=effectiveTheme()==='dark'?'light':'dark'; save(); applyTheme(); });
-
-  // language — flag selector (data-driven; add a language by extending LANGS). Inline SVG flags so they render everywhere (incl. Windows, where emoji flags don't).
-  var LANGS=[
-    {code:'en', label:'English', flag:'<svg viewBox="0 0 60 30" preserveAspectRatio="none"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.5"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg>'},
-    {code:'cs', label:'Čeština', flag:'<svg viewBox="0 0 3 2" preserveAspectRatio="none"><rect width="3" height="2" fill="#fff"/><rect y="1" width="3" height="1" fill="#d7141a"/><path d="M0,0 L1.5,1 L0,2 Z" fill="#11457e"/></svg>'}
-  ];
-  function buildLangSel(){
-    var box=$('#langsel'); if(!box) return;
-    box.innerHTML=LANGS.map(function(l){ return '<button class="flagbtn" type="button" data-lang="'+l.code+'" title="'+esc(l.label)+'" aria-label="'+esc(l.label)+'">'+l.flag+'</button>'; }).join('');
-    box.addEventListener('click',function(e){ var b=e.target.closest('.flagbtn'); if(!b)return; state.lang=b.getAttribute('data-lang'); save(); applyLang(); rerender(); });
-  }
-  function applyLang(){
-    document.documentElement.lang = state.lang;
-    document.title = T('brand_title');
-    document.querySelectorAll('[data-i18n]').forEach(function(e){ e.textContent = T(e.getAttribute('data-i18n')); });
-    document.querySelectorAll('[data-i18n-html]').forEach(function(e){ e.innerHTML = T(e.getAttribute('data-i18n-html')); });
-    document.querySelectorAll('[data-i18n-title]').forEach(function(e){ var s=T(e.getAttribute('data-i18n-title')); e.title=s; e.setAttribute('aria-label',s); });
-    document.querySelectorAll('#langsel .flagbtn').forEach(function(b){ var on=b.getAttribute('data-lang')===state.lang; b.classList.toggle('on',on); if(on) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current'); });
-    var pp=$('#placePanel'); if(pp && pp.classList.contains('empty')) pp.textContent=T('place_empty');
-    var mi=$('#mapImg'); if(mi) mi.alt=T('map_alt');
-    applyTheme();
-  }
-  function syncMode(){
-    Array.prototype.forEach.call($('#modeswitch').children,function(b){b.classList.toggle('on',b.getAttribute('data-mode')===state.mode);});
-  }
-  $('#tabs').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return;
-    var v=b.getAttribute('data-view');
-    Array.prototype.forEach.call($('#tabs').children,function(x){x.classList.toggle('on',x===b); x.setAttribute('aria-selected', x===b?'true':'false');});
-    ['mapa','kapitoly','postavy','svet'].forEach(function(id){$('#view-'+id).classList.toggle('on',id===v);});
-  });
-  $('#subseg').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return;
-    var s=b.getAttribute('data-sub');
-    Array.prototype.forEach.call($('#subseg').children,function(x){x.classList.toggle('on',x===b);});
-    $('#sub-galerie').hidden=(s!=='galerie'); $('#sub-vztahy').hidden=(s!=='vztahy');
-  });
-
-  // ===== render: World =====
-  function renderWorld(){
-    // In Kids mode we only reveal what will not spoil the story: lore by min-gi, the Ring history only from chapter 2.
-    var isDad=state.mode==='tata', rg=reachedGi();
-    var lore = isDad ? LORE : LORE.filter(function(l){return (l.min||0)<=rg;});
-    var h='<div class="lore-grid">';
-    lore.forEach(function(l){
-      h+='<div class="lore"><div class="lore-head"><span class="lore-ic">'+icon(l.ic)+'</span><h3>'+esc(t(l.title))+'</h3></div><p>'+esc(t(l.text))+'</p></div>';
-    });
-    h+='<div class="lore wide"><div class="lore-head"><span class="lore-ic">'+icon('elf')+'</span><h3>'+esc(T('world_races'))+'</h3></div><div class="race-list">'+
-      RACES.map(function(r){return '<div class="race-row r-'+r[0]+'"><div class="medallion">'+icon(r[0])+'</div><div><b>'+esc(t(r[1]))+'</b> — <span>'+esc(t(r[2]))+'</span></div></div>';}).join('')+'</div></div>';
-    if(isDad || rg>=2){
-      h+='<div class="lore wide"><div class="lore-head"><span class="lore-ic">'+icon('scroll')+'</span><h3>'+esc(T('world_history'))+'</h3></div><ul class="timeline">'+
-        TL.map(function(tl){return '<li><span class="tage">'+esc(t(tl[0]))+'</span><span class="tt">'+esc(t(tl[1]))+'</span> — '+esc(t(tl[2]))+'</li>';}).join('')+'</ul></div>';
-    }
-    h+='</div>';
-    $('#world').innerHTML=h;
-  }
-
-  // ===== render: Relations =====
-  function relNode(id, role){
-    var isRing=id==='ring';
-    var ch=CHARMAP[id];
-    var unlocked = isRing || state.mode==='tata' || (ch && ch.gi<=reachedGi());
-    var raceCls = isRing?'r-carodej':(ch?'r-'+ch.race:'');
-    if(!unlocked) return '<div class="node locked"><div class="medallion">'+icon('lock')+'</div><small>?</small></div>';
-    var nm = isRing ? T('ring_name') : t(SHORT[id]||ch.name);
-    var im = isRing?null:imgPortrait(id,nm);
-    var inner = im||icon(isRing?'ring':ch.ic);
-    return '<div class="node '+raceCls+'"><div class="medallion'+(im?' pm':'')+'">'+inner+'</div><small>'+esc(nm)+(role?'<br>'+esc(role):'')+'</small></div>';
-  }
-  function relArrow(label){
-    return '<div class="arrow"><svg viewBox="0 0 28 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h23M19 2l5 4-5 4"/></svg><em>'+esc(label)+'</em></div>';
-  }
-  function renderRelations(){
-    $('#relHint').textContent = T(state.mode==='kluci' ? 'relhint_kids' : 'relhint_parent');
-    var h='';
-    h+='<div class="rel-block"><h3>'+esc(T('rel_journey_title'))+'</h3><p class="rsub">'+esc(T('rel_journey_sub'))+'</p><div class="chain">'+
-      relNode('sauron')+relArrow(T('rel_forged'))+relNode('ring')+relArrow(T('rel_held'))+relNode('glum')+relArrow(T('rel_found'))+relNode('bilbo')+relArrow(T('rel_passed'))+relNode('frodo')+relArrow(T('rel_guards'))+relNode('sam')+'</div></div>';
-    h+='<div class="rel-block"><h3>'+esc(T('rel_hunt_title'))+'</h3><p class="rsub">'+esc(T('rel_hunt_sub'))+'</p><div class="chain">'+
-      relNode('nazgul')+relArrow(T('rel_hunts'))+relNode('ring')+'</div></div>';
-    var nine=['frodo','sam','merry','pippin','gandalf','aragorn','boromir','legolas','gimli'];
-    h+='<div class="rel-block"><h3>'+esc(T('rel_fellowship_title'))+'</h3><p class="rsub">'+esc(T('rel_fellowship_sub'))+'</p><div class="nine">'+
-      nine.map(function(id){return relNode(id, t(CHARMAP[id].rlab));}).join('')+'</div><p class="ninecap">'+esc(T('rel_ninecap'))+'</p></div>';
-    $('#relations').innerHTML=h;
-  }
-
-  function rerender(){ updateProgress(); buildRoute(); renderHere(); renderStrip(); renderChapters(); renderChars(); renderRelations(); renderWorld(); }
-
-  // ===== init =====
-  function init(){
-    buildLangSel(); applyLang(); syncMode(); // language + theme + mode; content goes through rerender()
-    var img=$('#mapImg');
-    var done=false;
-    function ready(){ setStageWidth(); frameJourney(); rerender(); done=true; }
-    if(img.complete && img.naturalWidth) ready(); else img.addEventListener('load',ready);
-    // fallback (kdyby load nedorazil)
-    setTimeout(function(){ if(!done) ready(); },400);
-  }
-  init();
-})();
-</script>
-</body>
-</html>
+};

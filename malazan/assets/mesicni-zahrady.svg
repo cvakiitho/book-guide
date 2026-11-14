@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title data-cs="Genabakis a Darúdžhistán">Genabackis and Darujhistan</title>
+  <style>
+    text{font:600 17px Georgia,serif;fill:#313327;paint-order:stroke;stroke:#eee0b9;stroke-width:4;stroke-linejoin:round}
+    .heading{font-size:25px}.water{fill:#20494e;stroke:#aec4b6;font-style:italic}.small{font-size:14px}
+    .land{fill:#eee0b9;stroke:#627769;stroke-width:2.5}.river{fill:none;stroke:#658d87;stroke-width:2.5}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}.ridge{fill:none;stroke:#887954;stroke-width:2;stroke-linejoin:round}
+  </style>
+  <defs>
+    <pattern id="mountains" width="32" height="22" patternUnits="userSpaceOnUse">
+      <path class="ridge" d="m1 16 8-11 7 9 4-6 8 10m-22-9 3 2 3-2"/>
+    </pattern>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <!-- Central Genabackis, with the northern and southern land continuing beyond the frame. -->
+  <path class="land" d="M129 0h450l-11 29 18 31-9 30 23 22-17 29-7 42-21 17 4 42-19 29 5 29-24 33 8 28-9 20 17 34 4 27 22 28-11 21 11 25-18 25-4 23-27 13 12 25-16 35H119l-17-25 6-32-19-39 6-44-20-43 2-45-23-19 21-40-9-41 20-34 6-46 21-38 6-39 22-41-9-30 18-33z"/>
+  <path fill="url(#mountains)" d="M140 15h61l-20 100-21 83-20 93-16 93 28 94-10 136H92l-7-128-29-118 31-91 10-129zM352 321l27-42 66-16 53-69 36 13-30 89-52 75-51 31-79-7-112-20 14-21 85 3zM378 553l88-6 63-30 13 30-30 53H374z"/>
+  <path class="river" d="M81 375q47 15 88 4l45 10m-36 174 45-45 49-38 39-34m0 0 57-12 45-16 40-19 32 9 49 38"/>
+  <path class="land" style="fill:#aec4b6" d="M211 380l17 4 20-12 27 4 32-4 30 8 19 2 13 18-12 18-24 3-22 25-10-19-21-7-31 10-25-12-3-19z"/>
+  <path fill="url(#mountains)" d="M328 417l27-3 17 20-17 21-37-2z"/>
+  <g class="town">
+    <circle cx="264" cy="306" r="5"/><circle cx="311" cy="446" r="5"/>
+    <circle cx="80" cy="317" r="4"/><circle cx="534" cy="446" r="4"/><circle cx="523" cy="561" r="4"/>
+  </g>
+  <text class="heading" x="209" y="53" data-cs="Genabakis">Genabackis</text>
+  <text class="water" x="31" y="296" text-anchor="middle" transform="rotate(-90 31 296)" data-cs="Meningalleský oceán">Meningalle Ocean</text>
+  <text class="water" x="609" y="318" text-anchor="middle" transform="rotate(90 609 318)" data-cs="Rezavý oceán">Rust Ocean</text>
+  <text class="small" x="223" y="248" data-cs="Rhivská pláň">Rhivi Plain</text>
+  <text x="282" y="309" data-cs="Dřevnov">Pale</text>
+  <text class="water small" x="287" y="401" text-anchor="middle" data-cs="Azurové jezero">Lake Azur</text>
+  <text x="297" y="480" text-anchor="end" data-cs="Darúdžhistán">Darujhistan</text>
+  <text class="small" x="366" y="454" data-cs="Gadrobská pahorkatina">Gadrobi Hills</text>
+  <text class="small" x="92" y="317" data-cs="Meningal">Mengal</text>
+  <text class="small" x="527" y="432" text-anchor="end">Capustan</text>
+  <text class="small" x="511" y="572" text-anchor="end" data-cs="Korál">Coral</text>
+  <path d="M57 575v-33l-6 12m6-12 6 12" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="57" y="532" text-anchor="middle" data-cs="S">N</text>
+  <!-- Darujhistan city plan, following the curve of Daru Bay and the city's tiers. -->
+  <path class="land" d="M662 0h378v624H662z"/>
+  <path fill="#aec4b6" stroke="#627769" stroke-width="2" d="M663 1h376v209l-33-5-22 16-30 20-27-8-33 24-23 40-27 30-32 25-29 11-29-8-24-36-16-24-24-16-27-34z"/>
+  <path fill="#d2bb89" stroke="#7d6e50" stroke-width="3" d="m673 270 17-11 24 21 34 42 29 34 20-2 45-28 30-31 29-53 29-11 24 10 16-11 11 76 5 78-24 30-47 35-55 36-171-5-32-58z"/>
+  <path fill="none" stroke="#f6eacb" stroke-width="7" d="M670 411q25-20 68-22l78-8 55-31 57-112m-86 233q-13-45 17-95l25-38m-153 136 16-55-9-30-24-31-24-88m178 175 20-31 49-16 47-23m-103-49 61 11 33-23"/>
+  <path fill="none" stroke="#7d6e50" stroke-width="2" d="M670 411q25-20 68-22l78-8 55-31 57-112m-86 233q-13-45 17-95l25-38"/>
+  <text class="heading water" x="851" y="79" text-anchor="middle" data-cs="Darúdžhistán">Darujhistan</text>
+  <text class="water" x="847" y="201" text-anchor="middle" data-cs="Azurové jezero">Lake Azur</text>
+  <text class="small" x="683" y="367" data-cs="Gadrobská čtvrť">Gadrobi District</text>
+  <text class="small" x="741" y="440" data-cs="Slatina">Marsh District</text>
+  <text class="small" x="960" y="281" text-anchor="end" data-cs="Zámecká čtvrť">Estate District</text>
+  <circle class="town" cx="924" cy="374" r="5"/>
+  <text class="small" x="914" y="421" text-anchor="middle" data-cs="Simtalin palác">Simtal’s Estate</text>
+  <text class="small" x="835" y="544" text-anchor="middle" data-cs="Krkavčí vršky">Raven Hills</text>
+  <path d="m1005 571 17-30-12 8m12-8-1 14" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="1020" y="531" text-anchor="middle" data-cs="S">N</text>
+  <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1z"/>
+</svg>

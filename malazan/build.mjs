@@ -45,19 +45,18 @@ const imageUri = (file) => {
 };
 const noBom = (s) => s.replace(/^\uFEFF/, '');
 
-const mapSvg = path.join(ASSETS, 'map.svg');
-const mapJpg = path.join(ASSETS, 'map.jpg');
-let mapUri = '', mapCsUri = '';
-if (fs.existsSync(mapSvg)) {
-  const svg = noBom(fs.readFileSync(mapSvg, 'utf8'));
+function localizedMap(file) {
+  const svg = noBom(fs.readFileSync(file, 'utf8'));
   // Replace only simple SVG text elements carrying a translation.
   const translatedLabel = /(<(text|title|desc)\b[^<>]*?) data-cs="([^"]*)"([^<>]*>)([^<]*)(<\/\2>)/g;
   const svgUri = (source) => 'data:image/svg+xml;base64,' + Buffer.from(source, 'utf8').toString('base64');
-  mapUri = svgUri(svg.replace(translatedLabel, '$1$4$5$6'));
-  mapCsUri = svgUri(svg.replace(translatedLabel, '$1$4$3$6'));
-} else if (fs.existsSync(mapJpg)) {
-  mapUri = imageUri(mapJpg);
+  return [svgUri(svg.replace(translatedLabel, '$1$4$5$6')), svgUri(svg.replace(translatedLabel, '$1$4$3$6'))];
 }
+const mapSvg = path.join(ASSETS, 'map.svg');
+const mapJpg = path.join(ASSETS, 'map.jpg');
+const worldMap = fs.existsSync(mapSvg)
+  ? localizedMap(mapSvg)
+  : [fs.existsSync(mapJpg) ? imageUri(mapJpg) : '', ''];
 
 // shared cast — needed by every volume, and used to decide which portraits to inline
 const CASTFILE = path.join(BOOKS, 'cast.js');
@@ -75,20 +74,21 @@ const routeColorsSrc = noBom(fs.readFileSync(path.join(BOOKS, 'routes.js'), 'utf
 const routeColors = new Function(routeColorsSrc + '\nreturn ROUTE_COLORS;')();
 const volumesWithRoutes = present.map((volume) => {
   const source = noBom(fs.readFileSync(bookData(volume), 'utf8'));
-  const { PLACES } = new Function('L', source + '\nreturn BOOK;')((en, cs) => ({ en, cs }));
+  const { PLACES, map } = new Function('L', source + '\nreturn BOOK;')((en, cs) => ({ en, cs }));
+  const worldStops = map ? map.worldStops.map(id => PLACES.find(place => place.id === id)) : PLACES;
   const route = {
     vol: volume.order,
     color: routeColors[volume.order - 1],
-    pts: PLACES.map(({ x, y, gi }) => [x, y, gi]),
+    pts: worldStops.map(({ x, y, gi }) => [x, y, gi]),
   };
-  return { volume, source, route };
+  return { volume, source, route, map };
 });
 const routes = volumesWithRoutes.map(({ route }) => route);
 const engineSrc = noBom(fs.readFileSync(ENGINE, 'utf8'));
 const switcher = present.map((v) => ({ file: v.file, order: v.order, short: v.short }));
 
 let hadError = false;
-for (const { volume: vol, source } of volumesWithRoutes) {
+for (const { volume: vol, source, map } of volumesWithRoutes) {
   let html = engineSrc;
 
   // 1) shared cast + shared routes, then this volume's data
@@ -100,8 +100,11 @@ for (const { volume: vol, source } of volumesWithRoutes) {
   const volumes = switcher.map((v) => ({ ...v, current: v.file === vol.file }));
   html = html.replace('__VOLUMES_JSON__', () => JSON.stringify(volumes));
 
-  // 3) shared Malazan world map in both languages
-  html = html.replace('__MAP_DATA_URI__', mapUri).replace('__MAP_CS_DATA_URI__', mapCsUri);
+  // 3) default map and world atlas, in both languages
+  const [worldEn, worldCs] = worldMap;
+  const [mapEn, mapCs] = map ? localizedMap(path.join(ASSETS, vol.slug + '.svg')) : worldMap;
+  html = html.replace('__MAP_DATA_URI__', mapEn).replace('__MAP_CS_DATA_URI__', mapCs)
+    .replace('__WORLD_DATA_URI__', map ? worldEn : '').replace('__WORLD_CS_DATA_URI__', map ? worldCs : '');
 
   // 4) portraits — only characters introduced up to this volume; missing (but wanted) → shot-list
   const missing = { portraits: [], scenes: [] };

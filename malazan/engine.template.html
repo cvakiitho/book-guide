@@ -151,6 +151,11 @@
     font-variant-numeric:tabular-nums; cursor:pointer}
   .map-pin.here,.map-pin:hover,.map-pin:focus-visible{z-index:2; background:var(--route-color,#a94336)}
   .map-pin.selected,.map-pin:focus-visible{outline:2px solid #ffedc8; outline-offset:2px}
+  @media(max-width:560px){
+    .map-viewport.regional{height:clamp(290px,76vw,425px)}
+    .map-viewport.regional .map-ctrls{flex-direction:row}
+    .map-viewport.regional .map-pin{font-size:.65rem;min-height:20px;min-width:20px;padding:0 3px}
+  }
   .mapstrip{display:flex; gap:6px; overflow-x:auto; padding:4px 3px; margin-top:9px; scrollbar-width:thin}
   .strip-empty{font:.85rem var(--ui); color:var(--ink-3); padding:10px 4px}
   .mchip{flex:1 0 100px; min-width:100px; display:grid; grid-template-columns:auto 1fr; align-items:center;
@@ -451,7 +456,7 @@
       </div>
       <div class="map-viewport" id="mapVp">
         <div class="map-stage" id="mapStage">
-          <img class="map-img" id="mapImg" src="__MAP_DATA_URI__" data-src-cs="__MAP_CS_DATA_URI__" alt="Map of the Malazan world" draggable="false">
+          <img class="map-img" id="mapImg" src="__MAP_DATA_URI__" data-src-cs="__MAP_CS_DATA_URI__" data-world-en="__WORLD_DATA_URI__" data-world-cs="__WORLD_CS_DATA_URI__" alt="Map of the Malazan world" draggable="false">
           <svg class="route" id="routeSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
           <div id="pinLayer"></div>
         </div>
@@ -753,7 +758,9 @@
 
   function buildRoute(){
     var rg=reachedGi(), guide=state.mode==='tata', h='', active=false, earlier=false;
-    ROUTES.forEach(function(leg){
+    var route=ROUTES.find(function(leg){return leg.vol===VOL;});
+    var legs=onRegionalMap() ? [{vol:VOL,color:route.color,pts:BOOK.map.route}] : ROUTES;
+    legs.forEach(function(leg){
       if(leg.vol>VOL) return;
       var current=leg.vol===VOL;
       var pts=leg.pts.filter(function(p){return !current || guide || p[2]<=rg;});
@@ -771,9 +778,10 @@
       }
     });
     $('#routeSvg').innerHTML=h;
+    var routeName=onRegionalMap() && BOOK.map.routeName;
+    $('#mapActiveKey b').textContent=routeName ? t(routeName) : T('map_current');
     $('#mapActiveKey').hidden=!active;
     $('#mapPastKey').hidden=!earlier;
-    var route=ROUTES.find(function(leg){return leg.vol===VOL;});
     if(route) $('#view-mapa').style.setProperty('--route-color',route.color);
   }
 
@@ -783,6 +791,9 @@
     goToPlace(p);
     showPlace(p,p.gi<=reachedGi());
     markSelectedStop();
+  }
+  function stopPoint(p){
+    return onRegionalMap() ? p.region : [p.x,p.y];
   }
   function markSelectedStop(){
     document.querySelectorAll('.map-pin, .mchip').forEach(function(b){
@@ -819,7 +830,7 @@
       c.addEventListener('click',function(){selectStop(p);});
       strip.appendChild(c);
 
-      var key=p.x+','+p.y;
+      var key=stopPoint(p).join(',');
       if(!groups.has(key)) groups.set(key,[]);
       groups.get(key).push(p);
     });
@@ -828,8 +839,9 @@
       var names=stops.map(function(p){return p.seq+' · '+t(p.name);}).join(' / ');
       var b=el('button','map-pin'+(here?' here':''));
       b.type='button';
-      b.style.left=stops[0].x+'%';
-      b.style.top=stops[0].y+'%';
+      var point=stopPoint(stops[0]);
+      b.style.left=point[0]+'%';
+      b.style.top=point[1]+'%';
       b.dataset.stops=stops.map(function(p){return p.id;}).join(' ');
       b.textContent=stops.map(function(p){return p.seq;}).join('·');
       b.title=(here?T('here_label')+' · ':'')+names;
@@ -1015,6 +1027,26 @@
   var scale=1,minS=1,maxS=5,tx=0,ty=0;
   var stage=$('#mapStage'), vp=$('#mapVp');
   var mapImg=$('#mapImg'), mapSrcEn=mapImg.getAttribute('src');
+  var showingWorld=false;
+  function onRegionalMap(){return BOOK.map && !showingWorld;}
+  function updateMapImage(){
+    var world=BOOK.map && showingWorld;
+    var en=world ? mapImg.dataset.worldEn : mapSrcEn;
+    var cs=world ? mapImg.dataset.worldCs : mapImg.dataset.srcCs;
+    var src=(state.lang==='cs' && cs) || en;
+    var title=onRegionalMap() ? t(BOOK.map.title) : T('map_title');
+    if(mapImg.getAttribute('src')!==src) mapImg.setAttribute('src',src);
+    mapImg.alt=onRegionalMap() ? title : T('map_alt');
+    vp.classList.toggle('regional',Boolean(onRegionalMap()));
+    $('.map-heading h2').textContent=title;
+  }
+  function setMapView(world){
+    if(showingWorld===world) return;
+    showingWorld=world;
+    updateMapImage();
+    buildRoute();
+    renderStops();
+  }
   function applyLayout(){stage.style.width=(vp.clientWidth*scale)+'px';}
   function boundAxis(offset, viewport, content){
     return content<=viewport ? (viewport-content)/2 : Math.max(viewport-content,Math.min(0,offset));
@@ -1051,11 +1083,13 @@
   var worldFrame={x0:0,x1:1,y0:0,y1:1};
   var mapWidth=0,mapHeight=0;
   function frameJourney(){
+    setMapView(false);
     vp.classList.remove('overview');
-    frameMap(BOOK.meta.mapFrame||worldFrame);
+    frameMap(onRegionalMap() ? worldFrame : BOOK.meta.mapFrame||worldFrame);
     mapWidth=vp.clientWidth; mapHeight=vp.clientHeight;
   }
   function frameWorld(){
+    setMapView(true);
     vp.classList.add('overview');
     frameMap(worldFrame);
     mapWidth=vp.clientWidth; mapHeight=vp.clientHeight;
@@ -1069,11 +1103,12 @@
     var oldScale=scale;
     vp.classList.remove('overview');
     mapHeight=vp.clientHeight;
-    scale=Math.max(scale,3.4);
+    scale=Math.max(scale,onRegionalMap()?1.6:3.4);
     stage.classList.toggle('smooth',scale===oldScale);
     applyLayout();
-    tx=vp.clientWidth/2-p.x/100*stage.offsetWidth;
-    ty=vp.clientHeight/2-p.y/100*stage.offsetHeight;
+    var point=stopPoint(p);
+    tx=vp.clientWidth/2-point[0]/100*stage.offsetWidth;
+    ty=vp.clientHeight/2-point[1]/100*stage.offsetHeight;
     applyT();
   }
   $('#zin').addEventListener('click',function(){zoomAt(vp.clientWidth/2,vp.clientHeight/2,scale*1.4);});
@@ -1153,9 +1188,7 @@
     document.querySelectorAll('[data-i18n-title]').forEach(function(e){ var s=T(e.getAttribute('data-i18n-title')); e.title=s; e.setAttribute('aria-label',s); });
     document.querySelectorAll('#langsel .flagbtn').forEach(function(b){ var on=b.getAttribute('data-lang')===state.lang; b.classList.toggle('on',on); if(on) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current'); });
     var pp=$('#placePanel'); if(pp && pp.classList.contains('empty')) pp.textContent=T('place_empty');
-    mapImg.alt=T('map_alt');
-    var mapSrc=(state.lang==='cs' && mapImg.dataset.srcCs) || mapSrcEn;
-    if(mapImg.getAttribute('src')!==mapSrc) mapImg.setAttribute('src',mapSrc);
+    updateMapImage();
     buildVolSwitch();
     applyTheme();
   }

@@ -64,6 +64,7 @@ Kontrolu hranic čtenářského postupu a trasy lze spustit z kořene příkazem
 České názvy v atlasu vycházejí z map a textu vydání Talpress. Například Genabakis, Dřevnov a Korál jsou na mapě v *Měsíčních zahradách* (str. 6), Sedmiměstí a Drydžhanský oceán v *Domě mrtvých* (str. 9), Rožský a Šáhův oceán v *Lovcích kostí* (str. 6) a Skleněná poušť a Bílé věže mořské v *Chromém bohu* (str. 6). Rivanské moře je překlad pro tento atlas.
 
 - *Měsíční zahrady* mají schéma středního Genabakis a výřez Darúdžhistánu podle map na stranách 6–8. Měsíční Kámen je u Darúdžhistánu podle děje závěrečné části. Dům Azath sdílí zastávku se Simtaliným palácem, na jehož pozemku vyroste. [Ukázka Talpress v překladu Dany Krejčové](https://static.artforum.sk/media/products-files/55/59/124681-DB68540.pdf#page=7)
+- *Dům mrtvých* má schéma Sedmiměstí a trasu Psího řetězu z Hissaru do Arenu podle obou map Coltainova pochodu (strany 8–11 souboru PDF) a mapy Sedmiměstí (strany 12–13). Lebeň je umístěna přibližně podle děje a Tremorlor sdílí značku s oblastí Raraku. [Ukázka Talpress v překladu Dany Krejčové](https://static.artforum.sk/media/products-files/5f/18/124717-DB68547.pdf#page=8)
 
 Chybějící ilustrace sestavení nezastaví; aplikace místo nich zobrazí ikonový náhradní prvek a skript vypíše seznam chybějících scén. Zájemci mohou vytvořit ilustrace a přidat je do příslušných složek `assets/scenes/`.
 

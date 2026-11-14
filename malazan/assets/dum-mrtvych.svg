@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title data-cs="Sedmiměstí">Seven Cities</title>
+  <style>
+    text{font:600 17px Georgia,serif;fill:#313327;paint-order:stroke;stroke:#eee0b9;stroke-width:4;stroke-linejoin:round}
+    .heading{font-size:27px}.water{fill:#20494e;stroke:#aec4b6;font-style:italic}.small{font-size:14px}
+    .land{fill:#eee0b9;stroke:#627769;stroke-width:2.5}.river{fill:none;stroke:#658d87;stroke-width:2.5}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}
+  </style>
+  <defs>
+    <pattern id="mountains" width="32" height="22" patternUnits="userSpaceOnUse">
+      <path d="m1 16 8-11 7 9 4-6 8 10m-22-9 3 2 3-2" fill="none" stroke="#887954" stroke-width="2" stroke-linejoin="round"/>
+    </pattern>
+    <pattern id="forest" width="21" height="17" patternUnits="userSpaceOnUse">
+      <path d="m3 13 4-9 4 9zM14 8l3-6 3 6z" fill="#8d9e72" stroke="#78875c"/>
+    </pattern>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <!-- North coast, Otataral Sea and the Sahul coast. -->
+  <path class="land" d="M0 434v-9l56-18 29-25 23-36 27-6 17-59 30-30 18-26-6-31 16-24-5-35 17-27 22 1 22-29 24-7 16 14 2 25-11 24 10 26-5 31 19 34 27 11 30-22 31-18 30 8 13-15-6-35 7-19 25-21 11-37 26-25 23 1 17-13 39-4 8 10-22 22 15 28-22 23 8 21 15 9 5 19-15 9 23 13 11-23 20-4 15 27 28-5 8-31 37-17 6-22 28-13 26-21 22 1 35 19 39-2 9-20-25-15-37-3-7-26 16-24-7-36h100l-11 21 10 23-18 15 3 21 18 23 44 10 26 19 47-6 28 17 43 13v180l-15-2-20 15-27-12-25 12-22-3-13-16-31 9-26-6 6-25-24-16-19-34-22-13 8-18-25-9-18 9-10-15-29 11-9 20-26-10-25 7-25-14-12 8 4 24 29 15 21-7 31 15 19 20-10 20 18 22-21 16-9 23-2 26-10 12-7-20-10-2-1-25-24-18-27 4-25-18-26 9-30-12-17 9-15 31 12 18-13 20 17 11 25 4 14 23-17 24-31-1-23 18-27 4-11 29-32 24-8 17 11 36 20 28H0z"/>
+  <path class="land" d="M1040 0v77l-35-30-44 2-22-24 12-25zM830 467l27-19 31 3 21 22-2 25-37 7-35-14zM584 123l8-19 28-12 26 8-9 15-9 26-33 2zM139 93l-8 24 15 9 16-11-7-18zM69 121l-21 11-9 33 20 14 16-16 17-9-1-22z"/>
+  <!-- Inland water and estuaries separate the western and eastern parts of the march. -->
+  <path fill="#aec4b6" stroke="#627769" stroke-width="2" d="M378 376l24-15 26 1 18 14 19-9 20 8-5 25 13 13 18 4-5 21-27 10-38-4-25 10-32-2-27 13-23-11 12-26 5-32zM730 295l13-13 13 15 8 22-12 17-13-5-9-22z"/>
+  <path class="river" d="M552 209q15 56 80 82l44 25m30-39q9 31 5 54l-35 48m-18 15q-20-17-48-24l-53-14-56 17m118 15q-3 36-16 68l-13 22"/>
+  <path fill="url(#mountains)" d="M190 184l52-44 49 29 20 63 34 32-48 30-92-48zM492 224l48-23 39 17 36 30 57 4 33 24-25 26-78-15-57-27-68-13zM708 271l54-22 32 28-33 20-51 3zM715 344l47-15 39 25 7 33-75-20zM920 156l35 9 47 46 27 43-26 33-38-37-18-55z"/>
+  <path fill="url(#forest)" d="M86 387l59-49 6-45 64-45 66 13 37 28-29 19-65 18-47 64-56 37-48 9zM512 378l46-22 62 4 44 27-20 18-64-21-53 6zM698 181l25 7 27 26-27 18-33-24z"/>
+  <g class="town">
+    <circle cx="715" cy="225" r="5"/><circle cx="825" cy="288" r="5"/><circle cx="590" cy="478" r="5"/>
+    <circle cx="738" cy="287" r="4"/><circle cx="650" cy="384" r="4"/><circle cx="545" cy="413" r="4"/>
+    <circle cx="881" cy="279" r="4"/>
+  </g>
+  <text class="heading water" x="35" y="47" data-cs="Sedmiměstí">Seven Cities</text>
+  <text class="water" x="135" y="77" data-cs="Drydžhanský oceán">Dryjhna Ocean</text>
+  <text class="water small" x="87" y="234" data-cs="Sepiské moře">Sepik Sea</text>
+  <text class="small" x="230" y="380">Jhag Odhan</text>
+  <text class="water small" x="347" y="418" data-cs="Klatarské moře">Clatar Sea</text>
+  <text class="water" x="779" y="188" data-cs="Otataralové moře">Otataral Sea</text>
+  <text class="small" x="936" y="224" text-anchor="middle" data-cs="Otataralová poušť">Otataral Desert</text>
+  <text class="small" x="702" y="211" text-anchor="end">Ehrlitan</text>
+  <text class="small" x="632" y="242" text-anchor="end">Raraku</text>
+  <text class="small" x="720" y="313" text-anchor="end" data-cs="Karašiměš">Karaschimesh</text>
+  <text x="842" y="302">Hissar</text>
+  <text class="small" x="889" y="300">Dosin Pali</text>
+  <text class="water" x="883" y="363" data-cs="Sahulské moře">Sahul Sea</text>
+  <text class="small" x="569" y="348" text-anchor="middle" data-cs="Vatharský hvozd">Vathar Forest</text>
+  <text class="small" x="655" y="405" data-cs="Ubarýd">Ubaryd</text>
+  <text class="small" x="532" y="418" text-anchor="end">Bylan</text>
+  <text class="water small" x="681" y="452" data-cs="Moře Dodžal Hading">Dojal Hading Sea</text>
+  <text x="574" y="497" text-anchor="end">Aren</text>
+  <path d="M58 548v-33l-6 12m6-12 6 12" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="58" y="505" text-anchor="middle" data-cs="S">N</text>
+  <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1z"/>
+</svg>

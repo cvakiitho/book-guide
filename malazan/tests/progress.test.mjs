@@ -61,3 +61,16 @@ test('regional maps embed both languages and every stop fits the map', () => {
     }
   }
 });
+
+test('Coltaine’s march follows the reading order from Hissar to Aren', () => {
+  const book = books.find(book => book.meta.slug === 'dum-mrtvych');
+  const { route } = book.map;
+  for (const [i, [x, y, gi]] of route.entries()) {
+    assert.ok(x >= 0 && x <= 100 && y >= 0 && y <= 100);
+    assert.ok(gi >= 4 && gi <= 5 && (i === 0 || gi >= route[i - 1][2]));
+  }
+  const hissar = book.PLACES.find(place => place.id === 'hissar');
+  const aren = book.PLACES.find(place => place.id === 'aren');
+  assert.deepEqual(Array.from(route[0]), [...hissar.region, hissar.gi]);
+  assert.deepEqual(Array.from(route.at(-1)), [...aren.region, aren.gi]);
+});

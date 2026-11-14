@@ -65,15 +65,15 @@ var CAST = [
   },
   {
     id: 'fiddler', intro: { vol: 1, gi: 1 },
-    name: L('Fiddler', 'Fiddler'), en: 'Fiddler',
+    name: L('Fiddler', 'Šumař'), en: 'Fiddler',
     race: 'malazan', rlab: L('Bridgeburner sapper', 'Ženista Paličů mostů'), ic: 'flame',
     kid: L('A soldier who loves explosions and cards. He looks ordinary, which is exactly why people keep underestimating him.', 'Voják, který miluje výbuchy a karty. Vypadá obyčejně, a právě proto ho lidé pořád podceňují.'),
-    dad: L('A sapper and squad mage with a gift for reading the Deck. He survives more massacres than anyone should and keeps choosing to march anyway.', 'Ženista a eskadronní mág s darem číst Balíček. Přežije víc masakrů, než by kdokoli měl, a přesto se pořád rozhoduje jít dál.'),
+    dad: L('A Bridgeburner sapper who has a gift for reading the Deck of Dragons.', 'Sapér Paličů mostů s nadáním vykládat Balíček draků.'),
     arc: { ahead: L('What keeps a veteran marching after he has seen enough?', 'Co drží veterána na pochodu, když už viděl dost?'),
       beats: [
         { vol: 1, gi: 1, text: L('Fights at Pale and later in the streets of Darujhistan.', 'Bojuje u Pale a později v ulicích Darujhistanu.') },
         { vol: 2, gi: 1, text: L('Sets out across Seven Cities with Kalam, Crokus and Apsalar.', 'Vydá se přes Sedm měst s Kalamem, Crokusem a Apsalar.') },
-        { vol: 3, gi: 5, text: L('Fights in the tunnels beneath Coral.', 'Bojuje v tunelech pod Coralem.') },
+        { vol: 4, gi: 2, text: L('Serves in Tavore’s Fourteenth Army under the name Sergeant Strings.', 'Slouží v Tavořině 14. armádě pod jménem seržant Struna.') },
         { vol: 6, gi: 1, text: L('Survives the fire of Y’Ghatan and becomes one of the Bonehunters.', 'Přežije požár Y’Ghatanu a stane se jedním z Lovců kostí.') },
         { vol: 9, gi: 1, text: L('Marches with Tavore into the Letherii wastelands.', 'Vyráží s Tavore do letherských pustin.') }
       ] }
@@ -137,16 +137,16 @@ var CAST = [
   },
   {
     id: 'crokus', intro: { vol: 1, gi: 2 },
-    name: L('Crokus', 'Crokus'), en: 'Crokus (Cutter)',
-    race: 'human', rlab: L('Darujhistan thief', 'Darujhistanský zloděj'), ic: 'sword',
+    name: L('Crokus', 'Kvítko'), en: 'Crokus (Cutter)',
+    race: 'human', rlab: L('Darujhistan thief', 'Darúdžhistánský zloděj'), ic: 'sword',
     kid: L('A young thief with a good heart and bad luck. He would rather be brave than sensible, especially when someone he cares about is in danger.', 'Mladý zloděj s dobrým srdcem a špatným štěstím. Radši je statečný než rozumný, zvlášť když je v nebezpečí někdo, na kom mu záleží.'),
-    dad: L('A Darujhistan thief touched by Oponn and later remade as the killer Cutter. His growing up is one of the saga’s quiet tragedies.', 'Darujhistanský zloděj poznamenaný Oponn a později přetvořený v zabijáka Cuttera. Jeho dospívání je jednou z tichých tragédií ságy.'),
+    dad: L('A young thief from Darujhistan whose life changes after a chance encounter with Oponn’s coin.', 'Mladý zloděj z Darúdžhistánu, jemuž změní život nález Oponnovy mince.'),
     arc: { ahead: L('What does love cost when it asks you to become someone else?', 'Co stojí láska, když po tobě chce, abys byl někým jiným?'),
       beats: [
         { vol: 1, gi: 2, text: L('Steals a foreign coin and catches the attention of Oponn.', 'Ukradne cizí minci a upoutá pozornost Oponn.') },
         { vol: 1, gi: 5, text: L('Fights through the fête beside Apsalar and the Bridgeburners.', 'Probojuje se slavností po boku Apsalar a Paličů mostů.') },
         { vol: 2, gi: 1, text: L('Travels into Seven Cities with Fiddler, Kalam and Apsalar.', 'Cestuje do Sedmi měst s Fiddlerem, Kalamem a Apsalar.') },
-        { vol: 4, gi: 3, text: L('Guards the Throne of Shadow and takes the name Cutter.', 'Střeží Trůn stínu a přijme jméno Cutter.') },
+        { vol: 4, gi: 3, text: L('Takes the name Cutter and helps defend the Throne of Shadow.', 'Přijme jméno Řezník a pomáhá bránit Trůn stínu.') },
         { vol: 8, gi: 2, text: L('Returns to Darujhistan as a very different man.', 'Vrátí se do Darúdžhistánu jako velmi jiný muž.') }
       ] }
   },
@@ -180,7 +180,7 @@ var CAST = [
   },
   {
     id: 'cotillion', intro: { vol: 1, gi: 1 },
-    name: L('Cotillion', 'Cotillion'), en: 'Cotillion (The Rope)',
+    name: L('Cotillion', 'Kotilion'), en: 'Cotillion (The Rope)',
     race: 'god', rlab: L('God of assassins', 'Bůh vrahů'), ic: 'mask',
     kid: L('The patron god of assassins, who moves through the world on secret errands. He is not as cruel as his reputation suggests — but he is not safe either.', 'Patron vrahů, který světem prochází na tajných úkolech. Není tak krutý, jak tvrdí jeho pověst — ale ani bezpečný.'),
     dad: L('Dancer, the Emperor’s friend, who escaped death by ascending to godhood. He shares the House of Shadow with Shadowthrone and plays a very long game with the Crippled God.', 'Dancer, císařův přítel, který unikl smrti vystoupením mezi bohy. S Shadowthronem sdílí Dům stínu a hraje velmi dlouhou hru s Chromým bohem.'),
@@ -189,7 +189,7 @@ var CAST = [
         { vol: 1, gi: 1, text: L('Possesses Sorry and uses her to move through the Malazan camp.', 'Posedne Sorry a použije ji k pohybu v malazském táboře.') },
         { vol: 1, gi: 5, text: L('Withdraws from Sorry as part of a bargain with Rake.', 'Stáhne se ze Sorry v rámci dohody s Rakem.') },
         { vol: 2, gi: 3, text: L('Reveals that he and Shadowthrone were Kellanved and Dancer.', 'Prozradí, že on a Shadowthrone byli Kellanved a Dancer.') },
-        { vol: 4, gi: 3, text: L('Sends Cutter and Apsalar to guard the Throne of Shadow.', 'Pošle Cuttera a Apsalar střežit Trůn stínu.') },
+        { vol: 4, gi: 3, text: L('Sends Cutter to Drift Avalii, and Apsalar joins him.', 'Pošle Řezníka na Drift Avalii a Apsalar se k němu přidá.') },
         { vol: 10, gi: 5, text: L('Takes his place in the final game for the Crippled God.', 'Zaujme své místo v poslední hře o Chromého boha.') }
       ] }
   },
@@ -236,7 +236,7 @@ var CAST = [
   },
   {
     id: 'felisin', intro: { vol: 2, gi: 1 },
-    name: L('Felisin Paran', 'Felisin Paran'), en: 'Felisin Paran',
+    name: L('Felisin Paran', 'Felisín Paran'), en: 'Felisin Paran',
     race: 'human', rlab: L('Noble outcast', 'Vyvržená šlechtična'), ic: 'mask',
     kid: L('A young noble girl who loses everything and is sent to a terrible island prison. She is clever, angry and determined to survive.', 'Mladá šlechtična, která ztratí všechno a je poslána na hrozný ostrovní trestanecký tábor. Je chytrá, rozzlobená a rozhodnutá přežít.'),
     dad: L('The youngest Paran sister, handed to the otataral mines as a political prisoner. Her survival hardens into something the Whirlwind can use.', 'Nejmladší ze sester Paranových, vydaná otataralským dolům jako politický vězeň. Její přežití ztvrdne v něco, co Vichr dokáže využít.'),
@@ -250,7 +250,7 @@ var CAST = [
   },
   {
     id: 'heboric', intro: { vol: 2, gi: 1 },
-    name: L('Heboric Light Touch', 'Heboric Light Touch'), en: 'Heboric',
+    name: L('Heboric Light Touch', 'Heborik Lehkoruký'), en: 'Heboric',
     race: 'human', rlab: L('Excommunicated priest', 'Exkomunikovaný kněz'), ic: 'flask',
     kid: L('A former priest with no hands, exiled for telling the truth. He is bitter, brave and strangely gentle.', 'Bývalý kněz bez rukou, vyhnaný za to, že řekl pravdu. Je zatrpklý, statečný a podivně jemný.'),
     dad: L('A historian and High Priest of Fener whose hands were taken as punishment. His touch becomes a bridge between gods, jade and the dead.', 'Historik a velekněz Fenera, kterému byly jako trest odebrány ruce. Jeho dotek se stane mostem mezi bohy, jádem a mrtvými.'),
@@ -258,8 +258,7 @@ var CAST = [
       beats: [
         { vol: 2, gi: 1, text: L('Is shipped to the otataral mines with Felisin.', 'Je poslán do otataralských dolů s Felisin.') },
         { vol: 2, gi: 2, text: L('Touches the jade finger and pulls Fener into the mortal world.', 'Dotkne se jádrového prstu a vtáhne Fenera do smrtelného světa.') },
-        { vol: 2, gi: 6, text: L('Becomes Ghost Hands, a living relic of the Whirlwind.', 'Stane se Rukama duchů, živou relikvií Vichru.') },
-        { vol: 4, gi: 5, text: L('Witnesses the end of the Whirlwind and the death of Felisin.', 'Je svědkem konce Vichru a smrti Felisin.') }
+        { vol: 4, gi: 4, text: L('Is known as Ghost Hands and serves among Sha’ik’s followers.', 'Je známý jako Heborik Neviditelné ruce a patří ke stoupencům ša’ik.') }
       ] }
   },
   {
@@ -340,22 +339,22 @@ var CAST = [
       beats: [
         { vol: 2, gi: 3, text: L('Appears as the Toblakai guarding Sha’ik in Raraku.', 'Objeví se jako Toblakai střežící Ša’ik v Raraku.') },
         { vol: 4, gi: 1, text: L('Leaves his mountain home with two companions and a promise of glory.', 'Opustí svůj horský domov se dvěma druhy a slibem slávy.') },
-        { vol: 4, gi: 4, text: L('Refuses the Crippled God’s offer to become his Knight of Chains.', 'Odmítne nabídku Chromého boha stát se jeho Rytířem řetězů.') },
+        { vol: 4, gi: 4, text: L('Challenges the Seven and makes a flint blade that carries Bairoth and Delum.', 'Postaví se Sedmi a vytvoří pazourkovou čepel, v níž ho provázejí Bairot a Delum.') },
         { vol: 7, gi: 1, text: L('Comes to Letheras to challenge Emperor Rhulad.', 'Přijde do Letherasu vyzvat císaře Rhulada.') },
         { vol: 7, gi: 5, text: L('Cuts down Rhulad and walks away from the sword.', 'Sekne Rhulada a odejde od meče.') }
       ] }
   },
   {
     id: 'leoman', intro: { vol: 2, gi: 3 },
-    name: L('Leoman of the Flails', 'Leoman z cepů'), en: 'Leoman of the Flails',
-    race: 'human', rlab: L('Whirlwind commander', 'Velitel Vichru'), ic: 'flame',
+    name: L('Leoman of the Flails', 'Leoman S cepy'), en: 'Leoman of the Flails',
+    race: 'human', rlab: L('Whirlwind commander', 'Velitel Smršti'), ic: 'flame',
     kid: L('A rebel commander with a burning hatred of the empire. He is charming, ruthless and always thinking about the next battle.', 'Rebelský velitel s planoucí nenávistí k říši. Je okouzlující, nemilosrdný a pořád myslí na další bitvu.'),
     dad: L('Sha’ik’s most trusted captain, a master of desert war and betrayal. He believes in the Whirlwind long after its goddess stops believing in him.', 'Nejdůvěryhodnější kapitán Ša’ik, mistr pouštní války a zrady. Věří ve Vichr ještě dlouho poté, co v něj přestane věřit jeho bohyně.'),
     arc: { ahead: L('What remains of a holy war when the prophecy fails?', 'Co zůstane ze svaté války, když proroctví selže?'),
       beats: [
         { vol: 2, gi: 3, text: L('Guards Sha’ik in Raraku and receives the Book of the Apocalypse.', 'Střeží Ša’ik v Raraku a přijme Knihu apokalypsy.') },
         { vol: 2, gi: 5, text: L('Survives the fall of the old Sha’ik and keeps fighting.', 'Přežije pád staré Ša’ik a bojuje dál.') },
-        { vol: 4, gi: 5, text: L('Withdraws from Raraku with the last of the rebels.', 'Stáhne se z Raraku s posledními rebely.') },
+        { vol: 4, gi: 6, text: L('Leaves Raraku with his surviving followers.', 'Opustí Raraku se svými přeživšími stoupenci.') },
         { vol: 6, gi: 1, text: L('Turns Y’Ghatan into a trap for the 14th Army.', 'Promění Y’Ghatan v past pro 14. armádu.') }
       ] }
   },
@@ -514,44 +513,127 @@ var CAST = [
   {
     id: 'tavore', intro: { vol: 2, gi: 1 },
     name: L('Tavore Paran', 'Tavore Paran'), en: 'Tavore Paran',
-    race: 'human', rlab: L('Adjunct of the 14th', 'Pobočník 14. armády'), ic: 'crown',
+    race: 'human', rlab: L('Adjunct to the Empress', 'Pobočnice císařovny'), ic: 'crown',
     kid: L('A cold, controlled commander who never explains herself. She carries more guilt than anyone knows and keeps marching anyway.', 'Chladná, sebeovládaná velitelka, která se nikdy nevysvětluje. Nese víc viny, než kdokoli ví, a přesto jde dál.'),
-    dad: L('The Adjunct who takes command of the 14th Army and turns recruits into the Bonehunters. Her discipline hides a grief that will shape the end of the world.', 'Pobočník, který převezme velení 14. armády a promění rekruty v Lovce kostí. Její disciplína skrývá žal, který ovlivní konec světa.'),
+    dad: L('Ganoes and Felisin’s sister, appointed Adjunct by Empress Laseen.', 'Sestra Ganoese a Felisín, kterou císařovna Laseen jmenuje pobočnicí.'),
     arc: { ahead: L('How much of yourself can you sacrifice before there is nothing left to command?', 'Kolik ze sebe můžeš obětovat, než nezbude nic, čemu velet?'),
       beats: [
         { vol: 2, gi: 1, text: L('Is named Adjunct after her sister is sent to the mines.', 'Je jmenována pobočníkem poté, co je její sestra poslána do dolů.') },
-        { vol: 4, gi: 1, text: L('Takes the 14th Army into Seven Cities to end the Whirlwind.', 'Vede 14. armádu do Sedmi měst, aby ukončila Vichr.') },
-        { vol: 4, gi: 5, text: L('Kills Sha’ik without knowing it is Felisin.', 'Zabije Ša’ik, aniž by věděla, že je to Felisin.') },
+        { vol: 4, gi: 2, text: L('Takes command of the Fourteenth Army at Aren.', 'V Arenu převezme velení 14. armády.') },
+        { vol: 4, gi: 5, text: L('Kills Sha’ik without knowing it is Felisin.', 'Zabije ša’ik, aniž pozná Felisín.') },
         { vol: 6, gi: 1, text: L('Leads the Bonehunters out of the fire of Y’Ghatan.', 'Vyvede Lovce kostí z ohně Y’Ghatanu.') },
         { vol: 9, gi: 1, text: L('Marches into the Letherii wastelands on a mission no one understands.', 'Vyráží do letherských pustin na misi, které nikdo nerozumí.') }
       ] }
   },
   {
-    id: 'trull', intro: { vol: 4, gi: 2 },
+    id: 'trull', intro: { vol: 4, gi: 1 },
     name: L('Trull Sengar', 'Trull Sengar'), en: 'Trull Sengar',
     race: 'tiste', rlab: L('Tiste Edur exile', 'Tiste Edur ve vyhnanství'), ic: 'tiste',
-    kid: L('A Tiste Edur prince who was shamed and cast out by his own people. He is thoughtful, gentle and trying to understand a world that keeps hurting him.', 'Tiste Edur princ, který byl zahanben a vyhnán vlastním lidem. Je přemýšlivý, jemný a snaží se pochopit svět, který ho pořád zraňuje.'),
-    dad: L('A Tiste Edur warrior exiled for a crime he did not commit. His friendship with the T’lan Imass Onrack becomes one of the saga’s great partnerships.', 'Tiste Edur válečník vyhnaný za zločin, který nespáchal. Jeho přátelství s T’lan Imassem Onrackem se stane jedním z velkých partnerství ságy.'),
+    kid: L('A Tiste Edur warrior whose own kin cast him out.', 'Bojovník Tiste Edur, kterého zavrhli vlastní příbuzní.'),
+    dad: L('A Tiste Edur warrior condemned and left chained in the Nascent.', 'Bojovník Tiste Edur, odsouzený a ponechaný v okovech v Rodící se.'),
     arc: { ahead: L('Can an exile ever go home?', 'Může se vyhnanec někdy vrátit domů?'),
       beats: [
-        { vol: 4, gi: 2, text: L('Is freed from his imprisonment by Onrack.', 'Onrack ho osvobodí z vězení.') },
+        { vol: 4, gi: 4, text: L('Onrack finds him and breaks his chains.', 'Onrack ho najde a rozbije jeho okovy.') },
         { vol: 4, gi: 6, text: L('Reaches the First Throne with Onrack and begins his story.', 'Dostane se s Onrackem k Prvnímu trůnu a začne vyprávět svůj příběh.') },
-        { vol: 5, gi: 1, text: L('Returns to his brothers and the sword that will destroy them.', 'Vrátí se ke svým bratrům a meči, který je zničí.') },
+        { vol: 5, gi: 1, text: L('His account goes back to his life among the Sengar brothers.', 'Jeho vyprávění se vrací k životu mezi bratry Sengarovými.') },
         { vol: 7, gi: 5, text: L('Is stabbed in the ruins of Letheras.', 'Je bodnut v troskách Letherasu.') }
       ] }
   },
   {
-    id: 'onrack', intro: { vol: 4, gi: 2 },
+    id: 'onrack', intro: { vol: 4, gi: 4 },
     name: L('Onrack the Broken', 'Onrack Zlomený'), en: 'Onrack the Broken',
     race: 'imass', rlab: L('T’lan Imass warrior', 'T’lan Imasský bojovník'), ic: 'imass',
     kid: L('An undead warrior who has been alone for a very long time. He is patient, curious and surprisingly good company.', 'Nemrtvý bojovník, který byl velmi dlouho sám. Je trpělivý, zvědavý a překvapivě dobrá společnost.'),
-    dad: L('A T’lan Imass broken from his clan and his purpose. His journey with Trull restores something he thought long dead.', 'T’lan Imass odloučený od svého klanu i smyslu. Jeho cesta s Trollem obnoví něco, co považoval za dávno mrtvé.'),
+    dad: L('A T’lan Imass warrior who finds Trull in the Nascent and becomes his companion.', 'Bojovník T’lan Imass, který najde Trulla v Rodící se a stane se jeho druhem.'),
     arc: { ahead: L('What is a purpose worth after the war it served is over?', 'Co stojí účel po válce, které sloužil?'),
       beats: [
-        { vol: 4, gi: 2, text: L('Frees Trull Sengar from his long imprisonment.', 'Osvobodí Trulla Sengara z dlouhého vězení.') },
+        { vol: 4, gi: 4, text: L('Frees Trull Sengar from his long imprisonment.', 'Osvobodí Trulla Sengara z dlouhého zajetí.') },
         { vol: 4, gi: 6, text: L('Escorts Trull to the First Throne.', 'Doprovodí Trulla k Prvnímu trůnu.') },
         { vol: 7, gi: 3, text: L('Defends the Refugium against Silchas Ruin’s betrayal.', 'Brání Refugium proti zradě Silchase Ruina.') }
       ] }
+  },
+  {
+    id: 'bairoth', intro: { vol: 4, gi: 1 },
+    name: L('Bairoth Gild', 'Bairot Gild'), en: 'Bairoth Gild',
+    race: 'human', rlab: L('Uryd warrior', 'Urydský bojovník'), ic: 'sword',
+    kid: L('One of the two warriors who leave Laederon with Karsa.', 'Jeden ze dvou bojovníků, kteří s Karsou opustí Laederon.'),
+    dad: L('A young Uryd warrior who joins Karsa’s raid and is willing to question his decisions.', 'Mladý urydský bojovník, který se účastní Karsova nájezdu a umí se ozvat, když s ním nesouhlasí.')
+  },
+  {
+    id: 'delum', intro: { vol: 4, gi: 1 },
+    name: L('Delum Thord', 'Delum Thord'), en: 'Delum Thord',
+    race: 'human', rlab: L('Uryd warrior', 'Urydský bojovník'), ic: 'sword',
+    kid: L('A young Teblor who rides with Karsa and Bairoth.', 'Mladý Teblor, který vyrazí s Karsou a Bairotem.'),
+    dad: L('Delum’s loyalty to his companions is tested on the raid to Silver Lake.', 'Nájezd ke Stříbrnému jezeru prověří Delumovu věrnost druhům.')
+  },
+  {
+    id: 'torvald', intro: { vol: 4, gi: 1 },
+    name: L('Torvald Nom', 'Torvald Nom'), en: 'Torvald Nom',
+    race: 'human', rlab: L('Daru prisoner', 'Darúnský vězeň'), ic: 'chain',
+    kid: L('A prisoner who befriends Karsa and helps him escape.', 'Vězeň, který se s Karsou spřátelí a pomůže mu uprchnout.'),
+    dad: L('A Daru of House Nom. He meets Karsa in captivity and later helps free him and Leoman at Ehrlitan.', 'Darún z rodu Nomů. Pozná Karsu v zajetí a později v Ehrlitanu pomůže osvobodit jeho i Leomana.')
+  },
+  {
+    id: 'gamet', intro: { vol: 4, gi: 2 },
+    name: L('Gamet', 'Gamet'), en: 'Gamet',
+    race: 'malazan', rlab: L('Fist of the Fourteenth', 'Pěst 14. armády'), ic: 'crown',
+    kid: L('An old soldier who helps Tavore lead her new army.', 'Starý voják, který Tavore pomáhá vést nové vojsko.'),
+    dad: L('A veteran of House Paran’s guard whom Tavore appoints as one of her Fists.', 'Veterán gardy rodu Paranů, kterého Tavore jmenuje jednou ze svých pěstí.')
+  },
+  {
+    id: 'lostara', intro: { vol: 2, gi: 2 },
+    name: L('Lostara Yil', 'Lostara Yil'), en: 'Lostara Yil',
+    race: 'malazan', rlab: L('Red Blade officer', 'Důstojnice Rudých čepelí'), ic: 'sword',
+    kid: L('A soldier in the Red Blades who can track people across the desert.', 'Vojákyně Rudých čepelí, která dokáže sledovat lidi přes poušť.'),
+    dad: L('An officer of the Red Blades who serves in Seven Cities.', 'Důstojnice Rudých čepelí, která slouží v Sedmiměstí.'),
+    arc: { beats: [
+      { vol: 4, gi: 2, text: L('Investigates Felisin’s disappearance with Pearl.', 'Pátrá s Perelem po zmizelé Felisín.') }
+    ] }
+  },
+  {
+    id: 'pearl', intro: { vol: 4, gi: 2 },
+    name: L('Pearl', 'Perel'), en: 'Pearl',
+    race: 'malazan', rlab: L('Claw agent', 'Agent Spáru'), ic: 'mask',
+    kid: L('An imperial agent sent to look for Tavore’s sister.', 'Říšský agent vyslaný pátrat po Tavořině sestře.'),
+    dad: L('A Claw operative assigned to accompany Lostara Yil on Tavore’s investigation.', 'Člen Spáru, který na Tavořin rozkaz pátrá po Felisín spolu s Lostarou Yil.')
+  },
+  {
+    id: 'andarist', intro: { vol: 4, gi: 3 },
+    name: L('Andarist', 'Darist'), en: 'Andarist',
+    race: 'tiste', rlab: L('Guardian of the Throne of Shadow', 'Strážce Trůnu stínu'), ic: 'moon',
+    kid: L('An old Tiste Andii who protects the throne on Drift Avalii.', 'Starý Tiste Andii, který na Drift Avalii chrání trůn.'),
+    dad: L('Anomander Rake’s brother, who guards the Throne of Shadow with a small company of Tiste Andii.', 'Bratr Anomandera Dlouhého vlasu, který střeží Trůn stínu s malou skupinou Tiste Andii.'),
+    arc: { beats: [
+      { vol: 4, gi: 3, text: L('Falls defending Drift Avalii from the Edur.', 'Padne při obraně Drift Avalii před Edur.') }
+    ] }
+  },
+  {
+    id: 'traveller', intro: { vol: 4, gi: 3 },
+    name: L('Traveller', 'Poutník'), en: 'Traveller',
+    race: 'human', rlab: L('Wandering swordsman', 'Potulný šermíř'), ic: 'sword',
+    kid: L('A swordsman who helps the defenders of Drift Avalii.', 'Šermíř, který pomůže obráncům Drift Avalii.'),
+    dad: L('A swordsman who joins the defense of the Throne of Shadow and stays on the island afterward.', 'Šermíř, který pomáhá bránit Trůn stínu a po boji na ostrově zůstane.')
+  },
+  {
+    id: 'felisin-younger', intro: { vol: 4, gi: 4 },
+    name: L('Felisin Younger', 'Felisín mladší'), en: 'Felisin Younger',
+    race: 'human', rlab: L('Sha’ik’s adopted daughter', 'Adoptivní dcera ša’ik'), ic: 'human',
+    kid: L('The young girl whom Sha’ik has taken into her care.', 'Dívka, kterou ša’ik přijala do své péče.'),
+    dad: L('Sha’ik’s adopted daughter, who lives among the rebels at Pan’arak.', 'Adoptivní dcera ša’ik, která žije mezi povstalci v oáze Pan’arak.')
+  },
+  {
+    id: 'loric', intro: { vol: 4, gi: 4 },
+    name: L('L’oric', 'L’orik'), en: 'L’oric',
+    race: 'tiste', rlab: L('High Mage in Sha’ik’s army', 'Velemág vojska ša’ik'), ic: 'warren',
+    kid: L('A mage who watches the other leaders at Pan’arak closely.', 'Mág, který pozorně sleduje ostatní velitele v oáze Pan’arak.'),
+    dad: L('A High Mage among Sha’ik’s followers who moves carefully through the rivalries in her camp.', 'Velemág mezi stoupenci ša’ik, který si v soupeřícím táboře musí dávat pozor na každý krok.')
+  },
+  {
+    id: 'bidithal', intro: { vol: 4, gi: 4 },
+    name: L('Bidithal', 'Bidithal'), en: 'Bidithal',
+    race: 'human', rlab: L('High Mage in Sha’ik’s army', 'Velemág vojska ša’ik'), ic: 'warren',
+    kid: L('A mage with his own plans for the rebel camp.', 'Mág, který má v táboře povstalců vlastní plány.'),
+    dad: L('A High Mage in Sha’ik’s camp who seeks to restore his sect of Shadow worshippers.', 'Velemág v táboře ša’ik, který se snaží obnovit vlastní sektu uctívačů stínu.')
   },
   {
     id: 'tehol', intro: { vol: 5, gi: 1 },

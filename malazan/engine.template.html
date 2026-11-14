@@ -793,7 +793,7 @@
     markSelectedStop();
   }
   function stopPoint(p){
-    return onRegionalMap() ? p.region : [p.x,p.y];
+    return onRegionalMap() ? p.region : (p.x==null ? null : [p.x,p.y]);
   }
   function markSelectedStop(){
     document.querySelectorAll('.map-pin, .mchip').forEach(function(b){
@@ -830,7 +830,9 @@
       c.addEventListener('click',function(){selectStop(p);});
       strip.appendChild(c);
 
-      var key=stopPoint(p).join(',');
+      var point=stopPoint(p);
+      if(!point) return;
+      var key=point.join(',');
       if(!groups.has(key)) groups.set(key,[]);
       groups.get(key).push(p);
     });
@@ -1100,13 +1102,14 @@
     else frameJourney();
   }
   function goToPlace(p){
+    var point=stopPoint(p);
+    if(!point) return;
     var oldScale=scale;
     vp.classList.remove('overview');
     mapHeight=vp.clientHeight;
     scale=Math.max(scale,onRegionalMap()?1.6:3.4);
     stage.classList.toggle('smooth',scale===oldScale);
     applyLayout();
-    var point=stopPoint(p);
     tx=vp.clientWidth/2-point[0]/100*stage.offsetWidth;
     ty=vp.clientHeight/2-point[1]/100*stage.offsetHeight;
     applyT();

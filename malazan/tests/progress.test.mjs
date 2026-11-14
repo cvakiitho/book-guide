@@ -36,6 +36,7 @@ test('each offline volume includes the atlas routes and keeps their stops in bou
     const routes = JSON.parse(html.match(/^  var ROUTES = (.+);$/m)[1]);
     assert.deepEqual(routes.map(({ vol, pts }) => ({ vol, pts })), expected);
     for (const { x, y, id } of book.PLACES) {
+      if (x === null && y === null) continue;
       assert.ok(x / 100 >= mapFrame.x0 && x / 100 <= mapFrame.x1 &&
         y / 100 >= mapFrame.y0 && y / 100 <= mapFrame.y1, `${slug}: ${id} is outside the regional frame`);
     }
@@ -56,6 +57,7 @@ test('regional maps embed both languages and every stop fits the map', () => {
     assert.match(img, /data-world-en="data:image\/svg\+xml;base64,/);
     assert.match(img, /data-world-cs="data:image\/svg\+xml;base64,/);
     for (const { id, region } of book.PLACES) {
+      if (region === null) continue;
       assert.ok(region.length === 2 && region.every(value => value >= 0 && value <= 100),
         `${slug}: ${id} is outside the regional map`);
     }

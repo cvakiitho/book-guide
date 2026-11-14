@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title data-cs="Genabakis, Malazská říše a Raraku">Genabackis, Malazan Empire and Raraku</title>
+  <style>
+    text{font:600 16px Georgia,serif;fill:#373328;paint-order:stroke;stroke:#efe1ba;stroke-width:3.5;stroke-linejoin:round}
+    .heading{font-size:21px}.water{font-style:italic;fill:#20494e;stroke:#aec4b6}.small{font-size:13px}
+    .coast{fill:#efe1ba;stroke:#627769;stroke-width:2.5}.river{fill:none;stroke:#658d87;stroke-width:2}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}.terrain{fill:none;stroke:#907c58;stroke-width:2}
+    .border{fill:none;stroke:#627769;stroke-width:2}.direction{fill:none;stroke:#5d5846;stroke-width:2;marker-end:url(#arrow)}
+  </style>
+  <defs>
+    <pattern id="ridge" width="30" height="22" patternUnits="userSpaceOnUse">
+      <path class="terrain" d="m1 16 7-11 7 9 5-6 8 10m-21-9 2 2 3-2"/>
+    </pattern>
+    <pattern id="trees" width="17" height="16" patternUnits="userSpaceOnUse">
+      <path fill="#7d8e62" d="m2 11 4-7 4 7zM10 16l3-6 3 6z"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" refX="9" refY="5" orient="auto"><path fill="#5d5846" d="m0 0 10 5-10 5 3-5z"/></marker>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <!-- Northwest Genabackis, from the coast through the Laederon Plateau and Owndos Sea. -->
+  <path class="coast" d="M43 0h303v624H11l18-35 14-36 21-27-20-18 14-29 7-27 16-14-4-34 15-20 4-39-12-24-30-16-2-34 14-23-14-31 18-25 8-25-9-36 12-21-18-24 15-35z"/>
+  <path fill="url(#ridge)" d="m54 148 62-24 35-33 71-20 96 4 28 18v33l-43-9-70 11-53 32-54 6-60 24zM64 280l40-7 60 24 22 31-22 16-66-31-42-12zM68 495l55 18 51 11 55 29 117-10v44l-90-3-50-18-51-20-86-21z"/>
+  <path fill="url(#trees)" d="M97 181l39-16 59-1 9 29-27 16-67 8-22-14zM171 318l40-25 42 36-3 30-52 1zM124 472l37-13 42 12 23 24-61 16z"/>
+  <path class="coast" style="fill:#aec4b6" d="m84 220 21-15 33 4 23 18-11 18-26 17-28-12-11-12zM126 462l30-13 21 6 28 21 27-5 41-15 38 14 18 25-25 25-39 5-51-10-32-22-42-12zM287 124l19-7 17 8 1 14-17 6-20-7z"/>
+  <path class="river" d="M300 139q-16 62-63 140 20 44 25 90l13 86m-58-297q-24 42-31 69 15 29 8 60-14 43-8 76-9 53-31 85"/>
+  <circle class="town" cx="66" cy="253" r="4"/><circle class="town" cx="312" cy="493" r="4"/>
+  <text class="heading" x="172" y="48" text-anchor="middle" data-cs="Severozápadní Genabakis">Northwest Genabackis</text>
+  <text x="218" y="164" text-anchor="middle" data-cs="Laederonská plošina">Laederon Plateau</text>
+  <text class="small" x="333" y="93" text-anchor="end" data-cs="Stříbrné jezero">Silver Lake</text>
+  <text class="small" x="80" y="285">Genabaris</text>
+  <text class="water small" x="117" y="234" text-anchor="middle" data-cs="Malynské moře">Malyn Sea</text>
+  <text class="water" x="230" y="498" text-anchor="middle" data-cs="Owndoské moře">Owndos Sea</text>
+  <text class="small" x="308" y="544" text-anchor="end">Owndos</text>
+  <path class="direction" d="M38 578v-27"/><text class="small" x="38" y="540" text-anchor="middle" data-cs="S">N</text>
+  <!-- The imperial chart shows bearings to Aren and Drift Avalii at its edges. -->
+  <path fill="#aec4b6" d="M346 0h341v624H346z"/>
+  <path class="coast" d="M346 67l35-3 25 13 34-10 25 4 29-13 47-5-23 19-42 23-43 3-30 18-23 5-34 28z"/>
+  <path class="coast" d="m418 253 25-30 26-1 24 19 8 26-24 15 13 22 39 5 21 24 12 24 18-18 31-11 38-1-9 30 10 24-9 51-25 17-34-9-19 27-41-6-9 23-32 1-48 24-45-3 19-38-11-27 11-23-13-24 9-30 25-20-8-30 24-21-15-31zM572 153l17-23 24 22 9 34-8 37-25 9-19-23-8-35zM628 220l8-18 9 14-3 24-12 20-12-12zM592 263l34 1-9 29-24 11-18-11-22 6-17-21zM629 490l13-14 12 3-3 20-10 14-15-6z"/>
+  <path fill="url(#ridge)" d="M433 240l39-6 37 70 38 40-30 28-36-45-48-29zM517 372l34 17 28 56-20 17-40-45zM566 160l26-14 26 34-13 27-27-7z"/>
+  <path class="river" d="M501 337q-10 44 16 74l16 26 30 31m23-103q3 35 31 54l21 0m-105 18-60-1-52-23"/>
+  <g class="town"><circle cx="640" cy="420" r="4"/><circle cx="633" cy="502" r="4"/><circle cx="521" cy="442" r="4"/></g>
+  <text class="heading" x="517" y="43" text-anchor="middle" data-cs="Malazská říše">Malazan Empire</text>
+  <path class="direction" d="M536 119l-10-28"/>
+  <text class="small" x="535" y="123" data-cs="Do Arenu">To Aren</text>
+  <text class="water" x="445" y="157" text-anchor="middle" data-cs="Skalisté moře">Cragg Sea</text>
+  <text class="water small" x="574" y="248" text-anchor="middle" data-cs="Stromské moře">Strom Sea</text>
+  <text class="small" x="670" y="281" text-anchor="end">Falar</text>
+  <text x="482" y="403">Quon Tali</text>
+  <text class="small" x="629" y="412" text-anchor="end">Unta</text>
+  <text class="small" x="510" y="457" text-anchor="end">Li Heng</text>
+  <text class="small" x="623" y="520" text-anchor="end" data-cs="Ostrov Malaz">Malaz Isle</text>
+  <path class="direction" d="M439 553l-31 28"/>
+  <text class="small" x="426" y="546" data-cs="Směr Drift Avalii">Toward Drift Avalii</text>
+  <path class="direction" d="M652 572v-27"/><text class="small" x="652" y="535" text-anchor="middle" data-cs="S">N</text>
+  <!-- Pan’arak inset, with the ruined city north of the basin and the camps along its edge. -->
+  <path fill="#efe1ba" d="M687 0h353v624H687z"/>
+  <path fill="url(#ridge)" d="m687 182 53-9 50-23 60 15 46 38 57 23 63 38 24 28v37l-23-10-59-39-64-31-60-37-69-10-58 22-20-1zM717 319l82 9 31 38 44 35 69 5 52-31 38-23 7 34-36 44-64 25-67-1-60-32-45-51-51-10z"/>
+  <path fill="#dfcb9a" stroke="#a68e63" stroke-width="2" d="m724 305 31-36 51-12 35-39 51 5 39 21 56 22 22 45-49 49-52 31-44-4-51-27-42-18z"/>
+  <path fill="url(#trees)" d="m727 246 27-35 38-11 39 14-10 20-42 5-45 29zM830 224l27-26 50 7 54 30-8 21-29-6-45-21-44 8z"/>
+  <path class="direction" d="M699 290q25 0 59-9l44-11"/>
+  <g fill="#ad9067" stroke="#725c40" stroke-width="1.5"><path d="M801 273v-14h14v14zM818 264v-17h13v17zM829 277v-11h14v11z"/></g>
+  <path class="terrain" d="M865 314l11-25 16 25m7 10 13-23 15 23m8 8 12-22 17 22"/>
+  <text class="heading" x="867" y="48" text-anchor="middle" data-cs="Oáza Pan’arak">Pan’arak Oasis</text>
+  <text x="866" y="76" text-anchor="middle" data-cs="Srdce Raraku">Raraku’s Heart</text>
+  <text class="small" x="731" y="163" data-cs="Starověký pobřežní hřeben">Ancient Coastal Ridge</text>
+  <text class="small" x="787" y="225" text-anchor="middle" data-cs="Kamenný les">Stone Forest</text>
+  <text class="small" x="826" y="290" text-anchor="middle" data-cs="Zbořené město">Ruined City</text>
+  <text class="small" x="918" y="280" text-anchor="middle" data-cs="Tábor Psobijců">Dogslayers’ Camp</text>
+  <text x="904" y="371" text-anchor="middle" data-cs="Kotlina">Basin</text>
+  <text class="small" x="885" y="460" text-anchor="middle" data-cs="Korálové ostrovy">Coral Islands</text>
+  <path class="direction" d="M1008 572v-27"/><text class="small" x="1008" y="535" text-anchor="middle" data-cs="S">N</text>
+  <path class="border" d="M1 1h1038v622H1zM346 1v622M687 1v622"/>
+</svg>

@@ -1199,7 +1199,7 @@ var CAST = [
   },
   {
     id: 'tehol', intro: { vol: 5, gi: 1 },
-    name: L('Tehol Beddict', 'Tehol Beddict'), en: 'Tehol Beddict',
+    name: L('Tehol Beddict', 'Tehol Beddikt'), en: 'Tehol Beddict',
     race: 'human', rlab: L('Letherii financier', 'Letherský finančník'), ic: 'book',
     kid: L('A brilliant, ragged man who lives on a roof and seems to own nothing. He is secretly smarter than everyone in the city.', 'Geniální otrhaný muž, který žije na střeše a zdá se, že nic nevlastní. Tajně je chytřejší než celé město.'),
     dad: L('A former financial genius who destroyed his own fortune and now works to destroy Lether’s economy from within. His jokes are a weapon and a shield.', 'Bývalý finanční génius, který zničil vlastní jmění a teď pracuje na zničení letherské ekonomiky zevnitř. Jeho vtipy jsou zbraň i štít.'),
@@ -1213,28 +1213,27 @@ var CAST = [
   },
   {
     id: 'bugg', intro: { vol: 5, gi: 1 },
-    name: L('Bugg', 'Bugg'), en: 'Bugg (Mael)',
-    race: 'god', rlab: L('Tehol’s manservant', 'Teholův sluha'), ic: 'water',
-    kid: L('Tehol’s quiet, polite servant. He does the washing, fixes the roof and is much, much more than he appears.', 'Teholův tichý, zdvořilý sluha. Pere prádlo, opravuje střechu a je mnohem, mnohem víc, než se zdá.'),
-    dad: L('Mael, the Elder God of the Sea, walking the world as a very patient manservant. He is one of the oldest powers in existence and prefers to be underestimated.', 'Mael, starý bůh moře, který chodí světem jako velmi trpělivý sluha. Je jednou z nejstarších mocností a radši je podceňován.'),
-    arc: { ahead: L('Why would a god choose to serve?', 'Proč by si bůh vybral sloužit?'),
+    name: L('Bugg', 'Bugg'), en: 'Bugg',
+    race: 'human', rlab: L('Tehol’s manservant', 'Teholův sluha'), ic: 'water',
+    kid: L('Tehol’s quiet, polite servant. He helps his employer with household chores and a risky business plan.', 'Teholův tichý, zdvořilý sluha. Pomáhá svému pánovi v domácnosti i s riskantním obchodním plánem.'),
+    dad: L('Tehol Beddict’s manservant and his partner in schemes in Letheras.', 'Sluha Tehola Beddikta a jeho společník při intrikách v Lederas.'),
+    arc: { ahead: L('Why does Bugg stay with Tehol?', 'Proč Bugg zůstává s Teholem?'),
       beats: [
         { vol: 5, gi: 1, text: L('Serves Tehol and quietly keeps him alive.', 'Slouží Teholovi a potichu ho drží naživu.') },
-        { vol: 5, gi: 4, text: L('Deals with the creatures escaping the Azath House.', 'Vypořádá se s bytostmi unikajícími z Domu Azath.') },
         { vol: 5, gi: 6, text: L('Reveals himself as Mael and saves Tehol’s life.', 'Odhalí se jako Mael a zachrání Teholovi život.') },
         { vol: 7, gi: 4, text: L('Returns to Letheras to face the Crippled God’s plans.', 'Vrátí se do Letherasu čelit plánům Chromého boha.') }
       ] }
   },
   {
     id: 'brys', intro: { vol: 5, gi: 1 },
-    name: L('Brys Beddict', 'Brys Beddict'), en: 'Brys Beddict',
+    name: L('Brys Beddict', 'Brys Beddikt'), en: 'Brys Beddict',
     race: 'human', rlab: L('King’s champion', 'Králův šampion'), ic: 'sword',
     kid: L('Tehol’s brother, a noble soldier who follows the rules and fights with a sword better than anyone. He is loyal to a kingdom that does not deserve him.', 'Teholův bratr, ušlechtilý voják, který dodržuje pravidla a umí šermovat lépe než kdokoli. Je věrný království, které si ho nezaslouží.'),
-    dad: L('The Letherii King’s champion, a man of duty caught between a rotten court and a family of plotters. His death and return are both very Letherii.', 'Šampion letherského krále, muž povinnosti mezi shnilým dvorem a rodinou intrikánů. Jeho smrt i návrat jsou velmi letherské.'),
+    dad: L('King Diskanar’s champion and the youngest of the three Beddict brothers.', 'Šampion krále Diskanara a nejmladší ze tří bratrů Beddiktových.'),
     arc: { ahead: L('What does honour mean in a state that has none?', 'Co znamená čest ve státě, který ji nemá?'),
       beats: [
         { vol: 5, gi: 1, text: L('Serves King Diskanar while trying to protect his brothers.', 'Slouží králi Diskanarovi a snaží se ochránit bratry.') },
-        { vol: 5, gi: 5, text: L('Fights Rhulad and is forced to drink poison.', 'Bojuje s Rhuladem a je donucen vypít jed.') },
+        { vol: 5, gi: 5, text: L('Disables Rhulad in the duel, then drinks from a poisoned cup.', 'V souboji znehybní Rhulada a pak se napije z otráveného poháru.') },
         { vol: 7, gi: 4, text: L('Returns from death, changed and claimed by a forgotten god.', 'Vrátí se ze smrti, změněný a nárokovaný zapomenutým bohem.') },
         { vol: 7, gi: 6, text: L('Helps bring down the old Letherii order.', 'Pomůže svrhnout starý letherský řád.') }
       ] }
@@ -1242,9 +1241,9 @@ var CAST = [
   {
     id: 'rhulad', intro: { vol: 5, gi: 1 },
     name: L('Rhulad Sengar', 'Rhulad Sengar'), en: 'Rhulad Sengar',
-    race: 'tiste', rlab: L('Emperor of the Edur', 'Císař Edurů'), ic: 'crown',
-    kid: L('The youngest Sengar brother, who wanted glory more than anything. A cursed sword gives him power — and takes everything else.', 'Nejmladší z bratrů Sengarů, který chtěl slávu víc než cokoli. Prokletý meč mu dá moc — a vezme všechno ostatní.'),
-    dad: L('A Tiste Edur prince resurrected by the Crippled God and made Emperor of a war he cannot stop. Every death remakes him, and every remaking costs him more of himself.', 'Tiste Edur princ vzkříšený Chromým bohem a učiněný císařem války, kterou nedokáže zastavit. Každá smrt ho přetvoří a každé přetvoření ho stojí víc z něj samého.'),
+    race: 'tiste', rlab: L('Youngest Sengar brother', 'Nejmladší z bratrů Sengarových'), ic: 'crown',
+    kid: L('The youngest Sengar brother, eager to prove himself to his family.', 'Nejmladší z bratrů Sengarových, který se chce před rodinou osvědčit.'),
+    dad: L('The youngest son of Tomad Sengar and Uruth. He joins his brothers on Hannan Mosag’s expedition to the ice fields.', 'Nejmladší syn Tomada Sengara a Uruth. Připojí se k bratrům na výpravě Hannana Mosaga na ledová pole.'),
     arc: { ahead: L('How many times can a man die before he stops being himself?', 'Kolikrát může člověk zemřít, než přestane být sám sebou?'),
       beats: [
         { vol: 5, gi: 1, text: L('Takes the cursed sword and is killed by the Jheck.', 'Vezme prokletý meč a zabijí ho Jheckové.') },
@@ -1254,31 +1253,93 @@ var CAST = [
       ] }
   },
   {
-    id: 'udinaas', intro: { vol: 5, gi: 2 },
+    id: 'udinaas', intro: { vol: 5, gi: 1 },
     name: L('Udinaas', 'Udinaas'), en: 'Udinaas',
     race: 'human', rlab: L('Indebted slave', 'Zadlužený otrok'), ic: 'eye',
     kid: L('A quiet slave who sees things others cannot. He is trying to survive a world that treats him as property.', 'Tichý otrok, který vidí věci, které jiní nevidí. Snaží se přežít ve světě, který s ním zachází jako s majetkem.'),
-    dad: L('A Letherii slave bound to the Sengar household, haunted by visions and marked by the Crippled God. His survival is a series of compromises he refuses to call surrender.', 'Letherský otrok připoutaný k domu Sengarů, pronásledovaný vidinami a poznamenaný Chromým bohem. Jeho přežití je série kompromisů, které odmítá nazvat kapitulací.'),
+    dad: L('A Letherii slave in the Sengar household who experiences visions after a Wyval attacks.', 'Lederský otrok v domácnosti Sengarových, který má po útoku wyvala vidiny.'),
     arc: { ahead: L('What is freedom worth if it costs someone else theirs?', 'Co stojí svoboda, když stojí někoho jiného tu jeho?'),
       beats: [
-        { vol: 5, gi: 2, text: L('Serves the Sengar brothers and witnesses Rhulad’s resurrection.', 'Slouží bratrům Sengarovým a je svědkem Rhuladova vzkříšení.') },
-        { vol: 5, gi: 4, text: L('Enters the Azath House and frees Silchas Ruin.', 'Vstoupí do Domu Azath a osvobodí Silchase Ruina.') },
+        { vol: 5, gi: 3, text: L('Prepares Rhulad for burial and witnesses his return to life.', 'Připraví Rhulada k pohřbu a je svědkem jeho návratu k životu.') },
         { vol: 5, gi: 6, text: L('Escapes Letheras with the survivors of the Azath.', 'Uteče z Letherasu s přeživšími z Azathu.') },
         { vol: 7, gi: 3, text: L('Flees through the Refugium with Silchas Ruin’s group.', 'Uteče přes Refugium se skupinou Silchase Ruina.') }
       ] }
   },
   {
     id: 'seren', intro: { vol: 5, gi: 2 },
-    name: L('Seren Pedac', 'Seren Pedac'), en: 'Seren Pedac',
-    race: 'human', rlab: L('Letherii envoy', 'Letherská vyslankyně'), ic: 'scroll',
+    name: L('Seren Pedac', 'Seren Pedak'), en: 'Seren Pedac',
+    race: 'human', rlab: L('Acquitor for Buruk the Pale', 'Akvizitorka Buruka Bledého'), ic: 'scroll',
     kid: L('A clever diplomat who is used to being the only woman in the room. She wants to stop a war, but nobody wants to listen.', 'Chytrá diplomatka, která je zvyklá být v místnosti jediná žena. Chce zastavit válku, ale nikdo ji neposlouchá.'),
-    dad: L('A Letherii envoy and translator who understands both the Edur and the empire better than their rulers do. Her greatest weapon is refusing to lie.', 'Letherská vyslankyně a překladatelka, která rozumí Edurům i říši lépe než jejich vládci. Její největší zbraní je odmítání lhát.'),
+    dad: L('An acquitor employed by the merchant Buruk the Pale on the northern frontier.', 'Akvizitorka obchodníka Buruka Bledého na severním pohraničí.'),
     arc: { ahead: L('Can words stop a war that has already begun?', 'Mohou slova zastavit válku, která už začala?'),
       beats: [
         { vol: 5, gi: 2, text: L('Negotiates with the Edur and watches the treaty collapse.', 'Vyjednává s Edury a sleduje zhroucení smlouvy.') },
         { vol: 5, gi: 5, text: L('Survives the fall of Letheras and the Edur conquest.', 'Přežije pád Letherasu a edurské dobytí.') },
-        { vol: 7, gi: 3, text: L('Travels through the Refugium with Trull and the survivors.', 'Cestuje přes Refugium s Trollem a přeživšími.') }
+        { vol: 7, gi: 3, text: L('Guides Silchas Ruin and the others away from Letheras.', 'Vede Silchase Zmara a ostatní pryč z Lederas.') }
       ] }
+  },
+  {
+    id: 'fear', intro: { vol: 5, gi: 1 },
+    name: L('Fear Sengar', 'Strach Sengar'), en: 'Fear Sengar',
+    race: 'tiste', rlab: L('Weapons master of the Edur', 'Mistr zbrojíř kmenů'), ic: 'sword',
+    kid: L('The eldest Sengar brother and Mayen’s betrothed. He leads his brothers into the north.', 'Nejstarší z bratrů Sengarových a Majenin snoubenec. Vede bratry na sever.'),
+    dad: L('The eldest Sengar brother and Mayen’s betrothed. He leads his brothers into the north.', 'Nejstarší z bratrů Sengarových a Majenin snoubenec. Vede bratry na sever.')
+  },
+  {
+    id: 'binadas', intro: { vol: 5, gi: 1 },
+    name: L('Binadas Sengar', 'Binadas Sengar'), en: 'Binadas Sengar',
+    race: 'tiste', rlab: L('Sengar brother', 'Jeden z bratrů Sengarových'), ic: 'sword',
+    kid: L('The third son of Tomad and Uruth. He joins the expedition to the ice fields.', 'Třetí syn Tomada a Uruth. Účastní se výpravy na ledová pole.'),
+    dad: L('The third son of Tomad and Uruth. He joins the expedition to the ice fields.', 'Třetí syn Tomada a Uruth. Účastní se výpravy na ledová pole.')
+  },
+  {
+    id: 'hannan', intro: { vol: 5, gi: 1 },
+    name: L('Hannan Mosag', 'Hannan Mosag'), en: 'Hannan Mosag',
+    race: 'tiste', rlab: L('Warlock King', 'Král-zaklínač'), ic: 'crown',
+    kid: L('The ruler who united six Tiste Edur tribes and sends the Sengar brothers to retrieve a gift.', 'Vládce, který sjednotil šest kmenů Tiste Edur a vyšle bratry Sengarovy pro dar.'),
+    dad: L('The ruler who united six Tiste Edur tribes and sends the Sengar brothers to retrieve a gift.', 'Vládce, který sjednotil šest kmenů Tiste Edur a vyšle bratry Sengarovy pro dar.')
+  },
+  {
+    id: 'hull', intro: { vol: 5, gi: 2 },
+    name: L('Hull Beddict', 'Hull Beddikt'), en: 'Hull Beddict',
+    race: 'human', rlab: L('Northern frontier warden', 'Strážce na severu'), ic: 'sword',
+    kid: L('The eldest Beddict brother. His work on the frontier has turned him against Lether’s expansion.', 'Nejstarší z bratrů Beddiktových. Práce na pohraničí ho přivedla k odporu proti rozpínání Lederu.'),
+    dad: L('The eldest Beddict brother. His work on the frontier has turned him against Lether’s expansion.', 'Nejstarší z bratrů Beddiktových. Práce na pohraničí ho přivedla k odporu proti rozpínání Lederu.')
+  },
+  {
+    id: 'kettle', intro: { vol: 5, gi: 4 },
+    name: L('Kettle', 'Konývka'), en: 'Kettle',
+    race: 'human', rlab: L('Child at the Azath', 'Dítě u Azathu'), ic: 'tower',
+    kid: L('A girl who looks after the dying Azath Tower and speaks with a prisoner buried underneath it.', 'Dívka, která pečuje o umírající azatskou věž a mluví s vězněm pohřbeným pod ní.'),
+    dad: L('A girl who looks after the dying Azath Tower and speaks with a prisoner buried underneath it.', 'Dívka, která pečuje o umírající azatskou věž a mluví s vězněm pohřbeným pod ní.')
+  },
+  {
+    id: 'silchas', intro: { vol: 5, gi: 4 },
+    name: L('Silchas Ruin', 'Silchas Zmar'), en: 'Silchas Ruin',
+    race: 'tiste', rlab: L('Azath prisoner', 'Vězeň Azathu'), ic: 'dragon',
+    kid: L('An ancient Tiste Andii imprisoned beneath the Azath in Letheras.', 'Dávný Tiste Andii vězněný pod Azathem v Lederas.'),
+    dad: L('An ancient Tiste Andii imprisoned beneath the Azath in Letheras.', 'Dávný Tiste Andii vězněný pod Azathem v Lederas.')
+  },
+  {
+    id: 'ceda', intro: { vol: 5, gi: 2 },
+    name: L('Kuru Qan', 'Kuru Qan'), en: 'Kuru Qan',
+    race: 'human', rlab: L('The king’s Ceda', 'Králův ceda'), ic: 'warren',
+    kid: L('King Diskanar’s mage and a student of Lether’s old magic.', 'Mág krále Diskanara, který zkoumá dávnou magii Lederu.'),
+    dad: L('King Diskanar’s mage and a student of Lether’s old magic.', 'Mág krále Diskanara, který zkoumá dávnou magii Lederu.')
+  },
+  {
+    id: 'feather-witch', intro: { vol: 5, gi: 1 },
+    name: L('Feather Witch', 'Péřová čarodějka'), en: 'Feather Witch',
+    race: 'human', rlab: L('Letherii slave and diviner', 'Lederská otrokyně a věštkyně'), ic: 'eye',
+    kid: L('A Letherii slave among the Edur who reads the Tiles.', 'Lederská otrokyně u Edur, která věští z destiček.'),
+    dad: L('A Letherii slave among the Edur who reads the Tiles.', 'Lederská otrokyně u Edur, která věští z destiček.')
+  },
+  {
+    id: 'mayen', intro: { vol: 5, gi: 1 },
+    name: L('Mayen', 'Majen'), en: 'Mayen',
+    race: 'tiste', rlab: L('Fear’s betrothed', 'Strachova snoubenka'), ic: 'tiste',
+    kid: L('Fear Sengar’s betrothed, whose life is caught up in Rhulad’s rise.', 'Snoubenka Stracha Sengara, jejíž život ovlivní Rhuladův vzestup.'),
+    dad: L('Fear Sengar’s betrothed, whose life is caught up in Rhulad’s rise.', 'Snoubenka Stracha Sengara, jejíž život ovlivní Rhuladův vzestup.')
   },
   {
     id: 'hellian', intro: { vol: 6, gi: 1 },
@@ -1494,7 +1555,7 @@ var VOLBOOKS = {
   ]
 };
 
-  var ROUTES = [{"vol":1,"color":"#a94336","pts":[[72.8,25,1],[73.8,32,3]]},{"vol":2,"color":"#9b611f","pts":[[37.8,22,4],[35.4,36,5]]},{"vol":3,"color":"#30587a","pts":[[82.4,32,2],[86.2,41,5]]},{"vol":4,"color":"#3e6955","pts":[[35.4,36,2],[36.55,24.5,4]]},{"vol":5,"color":"#72517d","pts":[[12.25,61.25,1],[15,71,2],[15,71,3],[18,67,4],[14.1,80.33,5],[28.85,73.17,6]]},{"vol":6,"color":"#a94336","pts":[[31.2,30,1],[37.25,16.08,2],[40.25,28.17,3],[43,61,4],[39.55,63.5,5],[33.45,62.42,6]]},{"vol":7,"color":"#9b611f","pts":[[22.1,73.25,1],[15,71,2],[23.75,74.92,3],[15,71,4],[14.1,80.33,5],[28.85,73.17,6]]},{"vol":8,"color":"#30587a","pts":[[73.8,32,1],[73.8,32,2],[86.2,41,3],[77,45.67,4],[73.8,32,5],[73.8,32,6]]},{"vol":9,"color":"#3e6955","pts":[[15,71,1],[28.85,73.17,2],[32.95,75.92,3],[25.5,72.5,4],[37.9,78.17,5],[37.7,80.67,6]]},{"vol":10,"color":"#72517d","pts":[[15,71,1],[28.85,73.17,2],[42.05,72.75,3],[42.6,78,4],[40.9,76.5,5],[42.6,78,6]]}];
+  var ROUTES = [{"vol":1,"color":"#a94336","pts":[[72.8,25,1],[73.8,32,3]]},{"vol":2,"color":"#9b611f","pts":[[37.8,22,4],[35.4,36,5]]},{"vol":3,"color":"#30587a","pts":[[82.4,32,2],[86.2,41,5]]},{"vol":4,"color":"#3e6955","pts":[[35.4,36,2],[36.55,24.5,4]]},{"vol":5,"color":"#72517d","pts":[]},{"vol":6,"color":"#a94336","pts":[[31.2,30,1],[37.25,16.08,2],[40.25,28.17,3],[43,61,4],[39.55,63.5,5],[33.45,62.42,6]]},{"vol":7,"color":"#9b611f","pts":[[22.1,73.25,1],[15,71,2],[23.75,74.92,3],[15,71,4],[14.1,80.33,5],[28.85,73.17,6]]},{"vol":8,"color":"#30587a","pts":[[73.8,32,1],[73.8,32,2],[86.2,41,3],[77,45.67,4],[73.8,32,5],[73.8,32,6]]},{"vol":9,"color":"#3e6955","pts":[[15,71,1],[28.85,73.17,2],[32.95,75.92,3],[25.5,72.5,4],[37.9,78.17,5],[37.7,80.67,6]]},{"vol":10,"color":"#72517d","pts":[[15,71,1],[28.85,73.17,2],[42.05,72.75,3],[42.6,78,4],[40.9,76.5,5],[42.6,78,6]]}];
   // ===== per-book data (injected at build time) =====
   // The Bonehunters — volume 6.
 var BOOK = {

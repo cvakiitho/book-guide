@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title data-cs="Území Tiste Edur a Lederas">Tiste Edur Lands and Letheras</title>
+  <style>
+    text{font:600 16px Georgia,serif;fill:#373328;paint-order:stroke;stroke:#efe1ba;stroke-width:4;stroke-linejoin:round}
+    .heading{font-size:23px}.water{font-style:italic;fill:#20494e;stroke:#aec4b6}.small{font-size:14px}
+    .shore{fill:#efe1ba;stroke:#627769;stroke-width:2.5}.river{fill:none;stroke:#658d87;stroke-width:2.5}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}.street{fill:none;stroke:#9e8b65;stroke-width:2}
+  </style>
+  <defs>
+    <pattern id="ridges" width="27" height="19" patternUnits="userSpaceOnUse">
+      <path d="m1 15 7-10 7 8 4-6 7 8" fill="none" stroke="#8d7b58" stroke-width="1.8"/>
+    </pattern>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <path class="shore" d="M315 0h263v624H83l-11-18 15-35-9-24 9-23-8-22 25-20-17-29 10-22 23-12-5-30-21 7-16-14-23 3-12-15 10-21 27-8 12-22 30-14 24 8 18-17-23-15 4-22 17-15 8-33 18-11 16-27 23-3 20 21 26-8 23-34-17-11-5-21 13-21-7-23 20-21-6-24 24-19z"/>
+  <path class="shore" d="m36 395 17-14 21 3 14 18-22 16-32 0zM23 434l13-6 15 11-3 20-20 12-16-11z"/>
+  <path fill="#dbe2d1" d="m340 8 238-8v248l-47 5-64-11-44-19 1-48-32-49-33-34z"/>
+  <path fill="url(#ridges)" d="m118 316 34-22 63 8 29-31 34-4 62-43 41 5 44-11 58 27 47 10 48-10v38l-96 17-76-23-67 13-82 32-53 44-73-16-29 5z"/>
+  <path fill="none" stroke="#8d684f" stroke-width="2.5" stroke-dasharray="5 4" d="M115 345q97 10 154-43t133-31q84 31 176 12"/>
+  <path class="river" d="M302 329q-46 31-72 57l-49 12-32 35m258-121q-43 46-32 105 21 30 13 61l13 91m-132-97q18 40 8 61l-40 91"/>
+  <g class="town"><circle cx="205" cy="257" r="5"/><circle cx="158" cy="361" r="4"/><circle cx="408" cy="320" r="4"/><circle cx="388" cy="463" r="4"/><circle cx="347" cy="482" r="4"/></g>
+  <text class="heading water" x="25" y="45" data-cs="Území Tiste Edur">Tiste Edur Lands</text>
+  <text class="water" x="107" y="216" text-anchor="middle" transform="rotate(-55 107 216)" data-cs="Kalašské moře">Calash Sea</text>
+  <text class="small" x="218" y="260" data-cs="Hirotové">Hiroth</text>
+  <text x="469" y="129" text-anchor="middle" data-cs="Ledová pole">Ice Fields</text>
+  <text class="small" x="154" y="387" text-anchor="middle" data-cs="Dálava">The Reach</text>
+  <text class="small" x="415" y="341" data-cs="Pevnost Třas">Fort Shake</text>
+  <text class="small" x="400" y="459" data-cs="Bělobodí">White Point</text>
+  <text class="small" x="337" y="486" text-anchor="end" data-cs="Pětibodí">Five Points</text>
+  <path d="m420 552 26 28-10-3m10 3-2-10" fill="none" stroke="#65573f" stroke-width="2"/>
+  <text class="small" x="454" y="556" data-cs="Do Lederas">To Letheras</text>
+  <path d="M48 559v-31l-6 10m6-10 6 10" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="48" y="518" text-anchor="middle" data-cs="S">N</text>
+  <!-- Centre of Letheras: the palace complex and Azath tower are north of the river. -->
+  <path class="shore" d="M578 0h462v624H578z"/>
+  <path fill="#b2c6b4" stroke="#658d87" stroke-width="2" d="M579 427q49-20 78-22c37-4 27-54 67-69 44-16 61 2 94 1 34-1 42 23 83 33 39 10 100 2 139-21v23c-51 22-95 30-145 19-41-9-58-34-87-34-32 3-54-12-79-4-39 12-31 59-69 67-28 5-55 11-81 27z"/>
+  <path class="street" d="m582 186 98-58 119-4 95-18m-309 122 86-43 125-27 113-22 82-2m-409 148 69-32 137-20 122-45 66 6m-396 129 79-10 110-28 86-38 75-37 107-19m-445 176 74-24 113-34 111-34 65-33 82-32m-462-42 50 45 79 3 56 31 25 32m-144-224 16 47 45 49 23 61 34 48m-23-202 20 64 31 39 27 59 13 18m-5-178 5 40 57 69 40 74 22 18m-90-228 23 58 75 60 45 79m-377 112 83 19 87 11 123-12 97-36m-348 111 56-65 15-77m105 160 4-60 33-93m54 143 2-70-32-55m53 3 42 53 64 25"/>
+  <path class="river" d="M583 292q83-14 110-62l59-88 158-27m-51 64-34 51-42 57m101-25 58-60m-349 30 86-52 114-22"/>
+  <g fill="#b79462" stroke="#726044" stroke-width="2">
+    <path d="m758 316 14-17 25-2 13 9-9 16-29 4zM729 329v-13h17v13zM808 309l6-12 12 3 6 11-9 8z"/>
+    <circle cx="872" cy="242" r="5"/><circle cx="886" cy="281" r="5"/>
+  </g>
+  <text class="heading" x="809" y="49" text-anchor="middle" data-cs="Střed Lederas">Central Letheras</text>
+  <text class="small" x="818" y="104" text-anchor="middle" data-cs="Dálavská čtvrť">Far Reaches District</text>
+  <text class="small" x="835" y="190" text-anchor="middle" data-cs="Plíživá čtvrť">Creeper District</text>
+  <text class="small" x="880" y="229" data-cs="Teholova rezidence">Tehol’s Residence</text>
+  <text class="small" x="669" y="337" text-anchor="middle" data-cs="Azatská věž">Azath Tower</text>
+  <text class="small" x="764" y="266" text-anchor="middle" data-cs="Starý palácový komplex">Old Palace Complex</text>
+  <text class="small" x="843" y="304" data-cs="Věčný příbytek">Eternal Domicile</text>
+  <text class="water" x="938" y="421" text-anchor="middle" data-cs="Řeka Leder">Lether River</text>
+  <text class="small" x="827" y="463" text-anchor="middle" data-cs="Jižní terasy">South Terraces</text>
+  <path d="M1002 560v-31l-6 10m6-10 6 10" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="1002" y="519" text-anchor="middle" data-cs="S">N</text>
+  <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1zM578 1v622"/>
+</svg>

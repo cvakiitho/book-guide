@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'vichr-smrti', vol: 7, key: 'malazan_v7',
-    mapFrame: { x0: 0.62, x1: 0.90, y0: 0.36, y1: 0.68 }, timelineMin: 2
+    mapFrame: { x0: 0.10, x1: 0.33, y0: 0.62, y1: 0.86 }, timelineMin: 2
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Reaper’s Gale', info_names: 'We use Erikson’s original names (Karsa, Samar Dev, Redmask, Tehol…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -34,22 +34,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'awl', name:L('The Awl Plains', 'Awlské pláně'), en:'The Awl Plains', x:68.5, y:50, ic:'forest', gi:1, mile:0,
+    { id:'awl', name:L('The Awl Plains', 'Awlské pláně'), en:'The Awl Plains', x:22.1, y:73.25, ic:'forest', gi:1, mile:0,
       dad:L('Grasslands the Letherii Empire is taking piece by piece. The Awl have nowhere left to retreat, which makes them dangerous.', 'Trávníky, které Letherská říše bere kus po kuse. Awlové už nemají kam ustoupit, a právě proto jsou nebezpeční.'),
       kid:L('Wide grassy plains where the Awl people live. The empire is pushing them off their land, and they are running out of places to go.', 'Široké travnaté pláně, kde žijí Awlové. Říše je vytlačuje z jejich půdy a jim docházejí místa, kam jít.') },
-    { id:'letheras', name:L('Letheras', 'Letheras'), en:'Letheras', x:75.5, y:43.3, ic:'town', gi:2, mile:200,
+    { id:'letheras', name:L('Letheras', 'Letheras'), en:'Letheras', x:15, y:71, ic:'town', gi:2, mile:200,
       dad:L('The occupied capital, now ruled by Emperor Rhulad and watched by the Crippled God’s servants. Its canals run through a city that no longer belongs to its own people.', 'Okupované hlavní město, nyní ovládané císařem Rhuladem a sledované služebníky Chromého boha. Jeho kanály protékají městem, které už nepatří jeho vlastním lidem.'),
       kid:L('The big city with canals, now ruled by a scary emperor. The old king is gone and everybody is afraid of what comes next.', 'Velké město s kanály, teď ovládané děsivým císařem. Starý král je pryč a všichni se bojí, co bude dál.') },
-    { id:'refugium', name:L('The Refugium', 'Refugium'), en:'The Refugium', x:80, y:50, ic:'forest', gi:3, mile:300,
+    { id:'refugium', name:L('The Refugium', 'Refugium'), en:'The Refugium', x:23.75, y:74.92, ic:'forest', gi:3, mile:300,
       dad:L('A hidden forest realm of old magic, a refuge for the hunted and a place where ancient Tiste debts are settled.', 'Skrytá lesní říše staré magie, útočiště pronásledovaných a místo, kde se vyrovnávají dávné dluhy Tiste.'),
       kid:L('A secret forest world, warm and safe. It seems like a good hiding place — but even here, old enemies can find you.', 'Tajný lesní svět, teplý a bezpečný. Vypadá jako dobré útočiště — ale i sem tě mohou najít staří nepřátelé.') },
-    { id:'azath', name:L('The Azath House', 'Dům Azath'), en:'The Azath House', x:77, y:45, ic:'tower', gi:4, mile:320,
+    { id:'azath', name:L('The Azath House', 'Dům Azath'), en:'The Azath House', x:15, y:71, ic:'tower', gi:4, mile:320,
       dad:L('The old living house at the heart of Letheras. It has already swallowed one empire’s secrets and is not finished yet.', 'Starý živý dům v srdci Letherasu. Už pohltil tajemství jedné říše a ještě nekončí.'),
       kid:L('The strange living house in the city. It is quiet now, but it is still watching everything.', 'Podivný živý dům ve městě. Je teď tichý, ale pořád všechno sleduje.') },
-    { id:'maiden', name:L('Maiden Island', 'Ostrov Maiden'), en:'Maiden Island', x:74, y:60, ic:'water', gi:5, mile:420,
+    { id:'maiden', name:L('Maiden Island', 'Ostrov Maiden'), en:'Maiden Island', x:14.1, y:80.33, ic:'water', gi:5, mile:420,
       dad:L('A pirate island claimed by the Shake princess Twilight, a small piece in a very large war. The sea around it is never truly empty.', 'Pirátský ostrov nárokovaný shakejskou princeznou Twilight, malá figurka ve velmi velké válce. Moře kolem něj nikdy není doopravdy prázdné.'),
       kid:L('A rocky island where pirates used to hide. A princess comes here to become a queen, but the sea is full of dangers.', 'Skalnatý ostrov, kde se dřív skrývali piráti. Přijíždí sem princezna, aby se stala královnou, ale moře je plné nebezpečí.') },
-    { id:'wastes', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:80, y:54.2, ic:'mountain', gi:6, mile:500,
+    { id:'wastes', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:28.85, y:73.17, ic:'mountain', gi:6, mile:500,
       dad:L('The dry interior where the next war is already gathering: Malazans, K’Chain Che’Malle, Barghast and the Crippled God’s designs.', 'Suché vnitrozemí, kde se už shromažďuje další válka: Malazané, K’Chain Che’Malle, Barghasti a plány Chromého boha.'),
       kid:L('A huge dry land beyond the cities. Armies are gathering there, and nothing good is waiting.', 'Obrovská suchá země za městy. Shromažďují se tam armády a nečeká nic dobrého.') }
   ],

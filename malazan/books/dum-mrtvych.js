@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dum-mrtvych', vol: 2, key: 'malazan_v2',
-    mapFrame: { x0: 0.10, x1: 0.38, y0: 0.44, y1: 0.76 }, timelineMin: 2
+    mapFrame: { x0: 0.28, x1: 0.47, y0: 0.11, y1: 0.42 }, timelineMin: 2
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Deadhouse Gates', info_names: 'We use Erikson’s original names (Felisin, Coltaine, Icarium, Karsa Orlong…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -38,22 +38,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'otataral', name:L('Otataral Island', 'Ostrov Otataral'), en:'Otataral Island', x:32, y:70.4, ic:'water', gi:1, mile:0,
+    { id:'otataral', name:L('Otataral Island', 'Ostrov Otataral'), en:'Otataral Island', x:44.15, y:16.92, ic:'water', gi:1, mile:0,
       dad:L('A prison island off the coast of Seven Cities, its mines dug for otataral — the rust-coloured ore that smothers magic. The Empire sends its most inconvenient prisoners here and forgets them.', 'Vězeňský ostrov u pobřeží Sedmi měst, jehož doly těží otataral — rezavou rudu, která dusí magii. Říše sem posílá své nejnepohodlnější vězně a zapomíná na ně.'),
       kid:L('An island with dark mines and a prison. People are sent here when the empire wants them to disappear.', 'Ostrov s temnými doly a vězením. Lidé sem jsou posíláni, když je chce říše nechat zmizet.') },
-    { id:'ehrlitan', name:L('Ehrlitan', 'Ehrlitan'), en:'Ehrlitan', x:21.5, y:53.3, ic:'town', gi:2, mile:120,
+    { id:'ehrlitan', name:L('Ehrlitan', 'Ehrlitan'), en:'Ehrlitan', x:38.4, y:18, ic:'town', gi:2, mile:120,
       dad:L('A great caravan city of Seven Cities, with high walls, crowded markets and far too many spies. Fiddler’s company comes here looking for a way into the Holy Desert.', 'Velké karavanní město Sedmi měst s vysokými hradbami, přeplněnými trhy a až příliš mnoha špehy. Fiddlerova družina sem přijíždí hledat cestu do Svaté pouště.'),
       kid:L('A busy desert city with high walls and a big market. Travellers can buy supplies here — or lose their secrets.', 'Rušné pouštní město s vysokými hradbami a velkým trhem. Cestovatelé tu nakoupí zásoby — nebo přijdou o tajemství.') },
-    { id:'raraku', name:L('Raraku', 'Raraku'), en:'Raraku', x:27.2, y:58.3, ic:'sun', gi:3, mile:240,
+    { id:'raraku', name:L('Raraku', 'Raraku'), en:'Raraku', x:32.3, y:27, ic:'sun', gi:3, mile:240,
       dad:L('The Holy Desert, a waste of salt and dust that was once an inland sea. Sha’ik’s rebellion gathers here, and the Path of Hands calls shapeshifters to the Azath house at its heart.', 'Svatá poušť, pustina soli a prachu, která bývala vnitrozemským mořem. Schází se tu Ša’ikina rebelie a Cesta rukou volá měňavce k Domu Azath v jejím srdci.'),
       kid:L('A huge, hot desert that used to be a sea. Strange people and stranger creatures are gathering here.', 'Obrovská horká poušť, která bývala mořem. Shromažďují se tu podivní lidé a ještě podivnější tvorové.') },
-    { id:'hissar', name:L('Hissar', 'Hissar'), en:'Hissar', x:19.5, y:60, ic:'town', gi:4, mile:360,
+    { id:'hissar', name:L('Hissar', 'Hissar'), en:'Hissar', x:37.8, y:22, ic:'town', gi:4, mile:360,
       dad:L('A city of Seven Cities where Coltaine turns to face Kamist Reloe’s rebels. The battle becomes the first great legend of the Chain of Dogs.', 'Město Sedmi měst, u něhož se Coltaine obrátí proti rebelům Kamista Reloea. Bitva se stane první velkou legendou Řetězu psů.'),
       kid:L('A city in the desert where a big battle happens. Coltaine’s people are tired and hungry, but they refuse to give up.', 'Město v poušti, u kterého se odehraje velká bitva. Coltainovi lidé jsou unavení a hladoví, ale odmítají se vzdát.') },
-    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:16.5, y:65.8, ic:'town', gi:5, mile:600,
+    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:35.4, y:36, ic:'town', gi:5, mile:600,
       dad:L('The Malazan stronghold on the coast of Seven Cities, commanded by High Fist Pormqual. Its walls and fleet could save Coltaine’s column — if Pormqual were willing to use them.', 'Malazská pevnost na pobřeží Sedmi měst, které velí Vysoký pěst Pormqual. Její hradby a loďstvo by mohly zachránit Coltainovu kolonu — kdyby je Pormqual byl ochoten použít.'),
       kid:L('A big coastal city with walls and ships. It is supposed to be a safe place, but the people in charge are afraid to help.', 'Velké pobřežní město s hradbami a loděmi. Má to být bezpečné místo, ale lidé ve vedení se bojí pomoci.') },
-    { id:'tremorlor', name:L('Tremorlor', 'Tremorlor'), en:'Tremorlor', x:27.5, y:56.7, ic:'tower', gi:6, mile:640,
+    { id:'tremorlor', name:L('Tremorlor', 'Tremorlor'), en:'Tremorlor', x:33.7, y:25.75, ic:'tower', gi:6, mile:640,
       dad:L('The Azath house of the Holy Desert, older than the Whirlwind and far more patient. The Path of Hands leads to its gates, and the Deadhouse opens for those who are meant to pass.', 'Dům Azath ve Svaté poušti, starší než Vichr a mnohem trpělivější. Cesta rukou vede k jeho branám a Dům mrtvých se otevírá těm, kdo mají projít.'),
       kid:L('A strange living house in the desert with doors that lead to other places. Many dangerous creatures want to get inside.', 'Podivný živý dům v poušti s dveřmi, které vedou jinam. Mnoho nebezpečných tvorů se chce dostat dovnitř.') }
   ],

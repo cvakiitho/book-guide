@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'mesicni-zahrady', vol: 1, key: 'malazan_v1',
-    mapFrame: { x0: 0.08, x1: 0.45, y0: 0.08, y1: 0.45 }, timelineMin: 1
+    mapFrame: { x0: 0.66, x1: 0.84, y0: 0.15, y1: 0.40 }, timelineMin: 1
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Gardens of the Moon', info_names: 'We use Erikson’s original names (Whiskeyjack, Tattersail, Anomander Rake…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -38,22 +38,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'pale', name:L('Pale', 'Pale'), en:'Pale', x:20, y:16.7, ic:'town', gi:1, mile:0,
+    { id:'pale', name:L('Pale', 'Pale'), en:'Pale', x:72.8, y:25, ic:'town', gi:1, mile:0,
       dad:L('A Free City on Genabackis, besieged for years by the Malazan 2nd Army. Its fall costs the Empire more than anyone admits.', 'Svobodné město na Genabackis, které léta obléhá malazská 2. armáda. Jeho pád stojí říši víc, než kdo přizná.'),
       kid:L('A city under a long siege, with a floating fortress in the sky above it. This is where the story begins.', 'Město pod dlouhým obléháním a s létající pevností na obloze. Tady příběh začíná.') },
-    { id:'gadrobi', name:L('The Gadrobi Hills', 'Gadrobijské vrchy'), en:'The Gadrobi Hills', x:28, y:27.5, ic:'mountain', gi:2, mile:60,
+    { id:'gadrobi', name:L('The Gadrobi Hills', 'Gadrobijské vrchy'), en:'The Gadrobi Hills', x:76.2, y:29.92, ic:'mountain', gi:2, mile:60,
       dad:L('Old hills east of Darujhistan, full of barrows and things that should have stayed buried. Adjunct Lorn comes here looking for a weapon.', 'Staré vrchy východně od Darujhistánu, plné mohyl a věcí, které měly zůstat pohřbené. Pobočník Lorn sem přijíždí hledat zbraň.'),
       kid:L('Mysterious hills with old graves. Something very old and very dangerous is sleeping under them.', 'Tajemné kopce se starými hroby. Spí pod nimi něco velmi starého a velmi nebezpečného.') },
-    { id:'darujhistan', name:L('Darujhistan', 'Darujhistan'), en:'Darujhistan', x:26, y:29.2, ic:'town', gi:3, mile:80,
+    { id:'darujhistan', name:L('Darujhistan', 'Darujhistan'), en:'Darujhistan', x:73.8, y:32, ic:'town', gi:3, mile:80,
       dad:L('The last Free City on Genabackis, lit by blue gas and ruled by a council that cannot agree on anything. Everyone wants it; nobody can hold it.', 'Poslední svobodné město na Genabackis, osvětlené modrým plynem a vedené radou, která se na ničem neshodne. Všichni ho chtějí, nikdo ho neudrží.'),
       kid:L('A big, busy city with blue lights, thieves and secret passages. A lot of people here want the same thing — and not all of them are nice.', 'Velké rušné město s modrými světly, zloději a tajnými průchody. Mnoho lidí tu chce totéž — a ne všichni jsou hodní.') },
-    { id:'azath', name:L('The Azath House', 'Dům Azath'), en:'The Azath House', x:27.2, y:30.4, ic:'tower', gi:4, mile:95,
+    { id:'azath', name:L('The Azath House', 'Dům Azath'), en:'The Azath House', x:73.8, y:32, ic:'tower', gi:4, mile:95,
       dad:L('A living house that rises where a power must be contained. Its garden keeps everyone who enters, and its roots go deeper than the world.', 'Živý dům, který povstane tam, kde je třeba uzavřít moc. Jeho zahrada si podrží každého, kdo vejde, a jeho kořeny jdou hlouběji než svět.'),
       kid:L('A strange house that grows out of the ground when something too dangerous must be kept. It has a will of its own.', 'Podivný dům, který vyroste ze země, když je třeba něco příliš nebezpečného udržet. Má vlastní vůli.') },
-    { id:'fete', name:L('Simtal’s Estate', 'Sídlo Simtal'), en:'Simtal’s Estate', x:26, y:29.2, ic:'crown', gi:5, mile:100,
+    { id:'fete', name:L('Simtal’s Estate', 'Sídlo Simtal'), en:'Simtal’s Estate', x:73.8, y:32, ic:'crown', gi:5, mile:100,
       dad:L('The mansion where Darujhistan’s great and powerful gather for a fête — and where several plans arrive at once.', 'Sídlo, kde se darujhistanská smetánka schází na slavnosti — a kde se najednou sejde několik plánů.'),
       kid:L('A grand house with a big party inside. But outside, in the dark, some very dangerous guests are arriving too.', 'Velký dům s bujarou oslavou uvnitř. Ale venku ve tmě dorazí také velmi nebezpeční hosté.') },
-    { id:'moonspawn', name:L('Moon’s Spawn', 'Měsíční přízrak'), en:'Moon’s Spawn', x:30.5, y:22.5, ic:'moon', gi:6, mile:120,
+    { id:'moonspawn', name:L('Moon’s Spawn', 'Měsíční přízrak'), en:'Moon’s Spawn', x:75.75, y:22.58, ic:'moon', gi:6, mile:120,
       dad:L('Anomander Rake’s floating fortress, older than the Empire and far less impressed by it. At the end it carries the dead away.', 'Létající pevnost Anomandera Raka, starší než říše a mnohem méně jí ohromená. Na konci odveze mrtvé.'),
       kid:L('A huge fortress that floats in the sky. Its lord is ancient, powerful and not at all afraid of the empire.', 'Obrovská pevnost, která se vznáší na obloze. Její pán je dávný, mocný a vůbec se nebojí říše.') }
   ],

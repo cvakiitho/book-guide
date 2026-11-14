@@ -21,7 +21,7 @@ Každý díl má šest částí rozdělených do dvou vnitřních knih (3 + 3), 
 
 ## Funkce aplikace
 
-- **Mapa ságy** — vlastní stylizovaná mapa světa s trasou a zastávkami pro aktuální díl.
+- **Mapa ságy** — stylizovaný čtenářský atlas s očíslovanými zastávkami, zvýrazněnou trasou svazku a přepínáním mezi celým světem a oblastí děje.
 - **Průvodce / Čtenář** — průvodcovský režim ukazuje úplné poznámky; čtenářský režim odkrývá děj, postavy a místa postupně podle označených částí.
 - **Postavy a vztahy** — společný soubor postav napříč deseti knihami, jejich příběhové oblouky a vztahové přehledy.
 - **Svět** — přehled národů, časová osa a stručná encyklopedie.
@@ -54,7 +54,7 @@ Kontrolu hranic čtenářského postupu a trasy lze spustit z kořene příkazem
 
 - `engine.template.html` — společné rozhraní, styly, vykreslování, překlady a základní encyklopedická data.
 - `books/cast.js` — společné postavy a struktura vnitřních knih.
-- `books/routes.js` — trasy jednotlivých svazků na sdílené mapě.
+- `books/routes.js` — barvy tras. Trasy při sestavení vznikají ze souřadnic zastávek v datech svazků.
 - `books/<slug>.js` — šest částí, zastávky, vztahy, shrnutí, kvízy a dvojjazyčné texty konkrétního svazku.
 - `build.mjs` — vloží data a obrázky do samostatných HTML výstupů.
 - `assets/map.svg` — stylizovaná mapa Malazského světa.
@@ -66,7 +66,7 @@ Chybějící ilustrace sestavení nezastaví; aplikace místo nich zobrazí ikon
 
 1. Uprav příslušná data v `books/<slug>.js` (formát překladu je `L('English', 'Česky')`).
 2. Spusť `node malazan/build.mjs` z kořene repozitáře a zkontroluj výsledný HTML soubor.
-3. Nový díl přidej také do `VOLUMES` v `build.mjs`, do `VOLBOOKS` v `books/cast.js` a do `books/routes.js`.
+3. Nový díl přidej také do `VOLUMES` v `build.mjs` a do `VOLBOOKS` v `books/cast.js`. Barvu jeho trasy přidej do `books/routes.js`.
 4. U každého vztahového bloku a souboru postav nastav `min` na první část (1–6), po jejímž přečtení celý přehled neprozrazuje další děj.
 
 Jde o fanouškovský projekt, který není spojen se Stevenem Eriksonem ani jeho vydavateli.

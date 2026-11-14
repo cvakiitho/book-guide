@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'vzpominky-ledu', vol: 3, key: 'malazan_v3',
-    mapFrame: { x0: 0.10, x1: 0.47, y0: 0.08, y1: 0.44 }, timelineMin: 3
+    mapFrame: { x0: 0.70, x1: 0.91, y0: 0.24, y1: 0.53 }, timelineMin: 3
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Memories of Ice', info_names: 'We use Erikson’s original names (Whiskeyjack, Itkovian, Silverfox, Kallor…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -38,22 +38,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'morn', name:L('Morn', 'Morn'), en:'Morn', x:26, y:39.2, ic:'forest', gi:1, mile:0,
+    { id:'morn', name:L('Morn', 'Morn'), en:'Morn', x:79.8, y:48, ic:'forest', gi:1, mile:0,
       dad:L('A Barghast gathering place on the plains of Genabackis, where the White Face clans decide whether to join a war that is not theirs.', 'Místo shromáždění Barghastů na pláních Genabackis, kde se klany Bílé tváře rozhodují, zda se přidají k válce, která není jejich.'),
       kid:L('A wide plain where a proud warrior people meet to decide about a war. They do not trust outsiders easily.', 'Širá pláň, kde se schází hrdý válečný lid, aby rozhodl o válce. Cizincům nedůvěřuje snadno.') },
-    { id:'capustan', name:L('Capustan', 'Capustan'), en:'Capustan', x:31, y:36.7, ic:'town', gi:2, mile:150,
+    { id:'capustan', name:L('Capustan', 'Capustan'), en:'Capustan', x:82.4, y:32, ic:'town', gi:2, mile:150,
       dad:L('A wealthy city protected by the Grey Swords, a mercenary company of warrior-priests. The Pannion Domin breaks against its walls — and then pours through them.', 'Bohaté město chráněné Šedými meči, žoldáckou společností válečných kněží. Pannionský Dóm se o jeho hradby rozbije — a potom jimi proteče.'),
       kid:L('A rich city with strong walls, defended by priest-soldiers. A huge hungry army comes to destroy it.', 'Bohaté město se silnými hradbami, které brání kněží-vojáci. Přichází ho zničit obrovská hladová armáda.') },
-    { id:'pannion', name:L('The Pannion Domin', 'Pannionský Dóm'), en:'The Pannion Domin', x:35, y:25, ic:'crown', gi:3, mile:300,
+    { id:'pannion', name:L('The Pannion Domin', 'Pannionský Dóm'), en:'The Pannion Domin', x:83.3, y:38.25, ic:'crown', gi:3, mile:300,
       dad:L('The Seer’s realm, a spreading wound in the south-east of Genabackis. Its fields are empty, its cities are mausoleums, and its armies march on the strength of a promise that the dead will be fed.', 'Věštcova říše, šířící se rána na jihovýchodě Genabackis. Její pole jsou prázdná, města jsou mauzolea a armády táhnou na sílu slibu, že mrtví budou nakrmeni.'),
       kid:L('A strange and frightening empire. Its people are hungry and its ruler tells them terrible things are holy.', 'Podivná a děsivá říše. Její lidé mají hlad a jejich vládce jim říká, že strašlivé věci jsou svaté.') },
-    { id:'coral', name:L('Coral', 'Coral'), en:'Coral', x:38, y:21.7, ic:'town', gi:4, mile:420,
+    { id:'coral', name:L('Coral', 'Coral'), en:'Coral', x:86.2, y:41, ic:'town', gi:4, mile:420,
       dad:L('The Seer’s stronghold on the northern coast, a city of black stone and old sorcery. The allied army comes to break the Pannion Domin here, at the edge of the sea.', 'Věštcova pevnost na severním pobřeží, město černého kamene a staré magie. Spojenecká armáda sem přichází zlomit Pannionský Dóm, na okraji moře.'),
       kid:L('A dark city by the sea where the enemy leader hides. The biggest battle of the book happens here.', 'Temné město u moře, kde se skrývá vůdce nepřátel. Odehrává se tu největší bitva knihy.') },
-    { id:'blackcoral', name:L('Black Coral', 'Černý Coral'), en:'Black Coral', x:35.6, y:25.8, ic:'tower', gi:5, mile:430,
+    { id:'blackcoral', name:L('Black Coral', 'Černý Coral'), en:'Black Coral', x:86.2, y:41, ic:'tower', gi:5, mile:430,
       dad:L('The name Coral takes after the war, when the Tiste Andii settle its ruins and a new court grows around the memory of the dead.', 'Jméno, které Coral dostane po válce, když se v jeho troskách usadí Tiste Andii a kolem památky mrtvých vyroste nový dvůr.'),
       kid:L('The same city after the battle, rebuilt by dark elves who decide to stay. It becomes a place of memory.', 'Stejné město po bitvě, které přestavějí temní elfové, kteří se rozhodnou zůstat. Stane se místem paměti.') },
-    { id:'moonspawn3', name:L('Moon’s Spawn', 'Měsíční přízrak'), en:'Moon’s Spawn', x:34, y:20.5, ic:'moon', gi:6, mile:440,
+    { id:'moonspawn3', name:L('Moon’s Spawn', 'Měsíční přízrak'), en:'Moon’s Spawn', x:85.15, y:38.92, ic:'moon', gi:6, mile:440,
       dad:L('Rake’s floating fortress, hidden beneath the sea and then risen to break the siege. At the end it becomes a tomb for the Bridgeburners who fell at Coral.', 'Rakova létající pevnost, skrytá pod mořem a potom vynořená, aby zlomila obléhání. Na konci se stane hrobkou pro Paliče mostů padlé u Coral.'),
       kid:L('A huge fortress that can float and hide under the sea. At the end it becomes a quiet place for the dead.', 'Obrovská pevnost, která umí létat a skrývat se pod mořem. Na konci se stane tichým místem pro mrtvé.') }
   ],

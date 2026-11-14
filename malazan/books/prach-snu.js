@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'prach-snu', vol: 9, key: 'malazan_v9',
-    mapFrame: { x0: 0.68, x1: 0.97, y0: 0.36, y1: 0.78 }, timelineMin: 6
+    mapFrame: { x0: 0.12, x1: 0.41, y0: 0.62, y1: 0.87 }, timelineMin: 6
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Dust of Dreams', info_names: 'We use Erikson’s original names (Tavore, Kalyth, Hetan, Tool, Gesler, Stormy…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -35,22 +35,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'letheras9', name:L('Letheras', 'Letheras'), en:'Letheras', x:75.5, y:43.3, ic:'town', gi:1, mile:0,
+    { id:'letheras9', name:L('Letheras', 'Letheras'), en:'Letheras', x:15, y:71, ic:'town', gi:1, mile:0,
       dad:L('The rebuilt Letherii capital, now ruled by Emperor Tehol and still full of old money, new schemes and gods who refuse to leave.', 'Přestavěné hlavní město Letheru, nyní ovládané císařem Teholem, pořád plné starých peněz, nových intrik a bohů, kteří odmítají odejít.'),
       kid:L('A rich city of canals, now with a very unusual emperor. It is still full of secrets.', 'Bohaté město kanálů, teď s velmi neobvyklým císařem. Pořád je plné tajemství.') },
-    { id:'wastelands9', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:80, y:54.2, ic:'mountain', gi:2, mile:400,
+    { id:'wastelands9', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:28.85, y:73.17, ic:'mountain', gi:2, mile:400,
       dad:L('A dry, broken land beyond the edges of Letherii maps. The 14th Army marches into it carrying too little water and too many unanswered questions.', 'Suchá, rozbitá země za okrajem letherských map. 14. armáda do ní táhne s příliš málo vodou a příliš mnoha nezodpovězenými otázkami.'),
       kid:L('A huge dry land with very little water. An army marches into it, and nobody will say why.', 'Obrovská suchá země s velmi málo vodou. Táhne do ní armáda a nikdo nechce říct proč.') },
-    { id:'glass', name:L('The Glass Desert', 'Křišťálová poušť'), en:'The Glass Desert', x:80, y:56.7, ic:'sun', gi:3, mile:600,
+    { id:'glass', name:L('The Glass Desert', 'Křišťálová poušť'), en:'The Glass Desert', x:32.95, y:75.92, ic:'sun', gi:3, mile:600,
       dad:L('A plain of cracked, glassy ground where the heat bends the air. The Bonehunters cross it pursued by something older and hungrier than the Letherii.', 'Planina popraskané, sklovité země, kde horko ohýbá vzduch. Lovci kostí ji přecházejí a pronásleduje je něco staršího a hladovějšího než Letherijci.'),
       kid:L('A strange desert that looks like broken glass. It is burning hot and very dangerous.', 'Podivná poušť, která vypadá jako rozbité sklo. Je strašně horká a velmi nebezpečná.') },
-    { id:'barghast9', name:L('The Barghast Gathering', 'Shromáždění Barghastů'), en:'The Barghast Gathering', x:85, y:58.3, ic:'forest', gi:4, mile:800,
+    { id:'barghast9', name:L('The Barghast Gathering', 'Shromáždění Barghastů'), en:'The Barghast Gathering', x:25.5, y:72.5, ic:'forest', gi:4, mile:800,
       dad:L('A gathering of the White Face clans on the edge of the wasteland, called to choose a new warleader. Old feuds and older gods make the choice impossible.', 'Shromáždění klanů Bílé tváře na okraji pustiny, svolané kvůli volbě nového válečného vůdce. Staré spory a ještě starší bohové dělají volbu nemožnou.'),
       kid:L('A big meeting of a warrior people. They are supposed to choose a new leader, but everyone is angry and nobody agrees.', 'Velké setkání válečného lidu. Má si vybrat nového vůdce, ale všichni jsou rozzlobení a nikdo se neshodne.') },
-    { id:'skykeep', name:L('The K’Chain Sky Keep', 'K’chainská nebeská pevnost'), en:'The K’Chain Sky Keep', x:86, y:66.7, ic:'tower', gi:5, mile:1100,
+    { id:'skykeep', name:L('The K’Chain Sky Keep', 'K’chainská nebeská pevnost'), en:'The K’Chain Sky Keep', x:37.9, y:78.17, ic:'tower', gi:5, mile:1100,
       dad:L('A floating fortress of the K’Chain Che’Malle, older than human civilization and still carrying the remnants of a species that once ruled the sky.', 'Létající pevnost K’Chain Che’Malle, starší než lidská civilizace a stále nesoucí pozůstatky druhu, který kdysi vládl obloze.'),
       kid:L('A huge fortress that floats in the sky. It belongs to an ancient reptile people who are almost gone.', 'Obrovská pevnost, která se vznáší na obloze. Patří dávnému plazímu lidu, který téměř vyhynul.') },
-    { id:'nahruk', name:L('The Nah’ruk Battlefield', 'Bitevní pole Nah’ruk'), en:'The Nah’ruk Battlefield', x:86, y:66.7, ic:'flame', gi:6, mile:1200,
+    { id:'nahruk', name:L('The Nah’ruk Battlefield', 'Bitevní pole Nah’ruk'), en:'The Nah’ruk Battlefield', x:37.7, y:80.67, ic:'flame', gi:6, mile:1200,
       dad:L('The place where the Bonehunters and the last K’Chain forces meet the Nah’ruk, an ancient enemy that has been waiting for this war longer than anyone can remember.', 'Místo, kde se Lovci kostí a poslední k’chainské síly střetnou s Nah’ruk, dávným nepřítelem, který na tuto válku čeká déle, než si kdo pamatuje.'),
       kid:L('The place of a huge battle against a terrifying ancient enemy. The book ends before we know who wins.', 'Místo obrovské bitvy proti děsivému dávnému nepříteli. Kniha končí dřív, než zjistíme, kdo vyhraje.') }
   ],

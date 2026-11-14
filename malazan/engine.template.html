@@ -52,6 +52,7 @@
       radial-gradient(60% 50% at 100% 100%, rgba(157,43,37,.06), transparent 60%);
     min-height:100vh; line-height:1.55; -webkit-text-size-adjust:100%;
   }
+  .saga-link{padding:7px 12px; border:1px solid var(--line-2); border-radius:999px;
   .wrap{max-width:1080px; margin:0 auto; padding:18px clamp(12px,3vw,26px) 60px}
 
   /* ===== Header ===== */
@@ -67,9 +68,6 @@
   .brand h1{font-family:var(--display); font-weight:700; letter-spacing:.06em;
     font-size:clamp(1.05rem,2.4vw,1.5rem); margin:0; text-transform:uppercase; text-wrap:balance}
   .brand p{margin:0; font-size:.78rem; color:var(--ink-2); font-family:var(--ui); letter-spacing:.02em}
-  .saga-link{padding:7px 12px; border:1px solid var(--line-2); border-radius:999px;
-    background:var(--panel-2); color:var(--ink-2); font-family:var(--ui); font-size:.8rem; font-weight:600; text-decoration:none}
-  .saga-link:hover,.saga-link:focus-visible{border-color:var(--gold); color:var(--ink)}
 
   /* mode toggle = seal-style switch */
   .modeswitch{display:inline-flex; background:var(--panel-2); border:1px solid var(--line-2);
@@ -129,53 +127,47 @@
   @keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
 
   /* ===== Map ===== */
-  .map-viewport{position:relative; height:min(64vh,560px); border:1px solid var(--line-2);
-    border-radius:var(--radius); overflow:hidden; background:var(--paper-2); box-shadow:0 8px 30px -14px var(--shadow);
+  .map-heading{display:flex; align-items:end; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; margin:0 0 12px}
+  .map-heading h2{font-size:clamp(1.35rem,3vw,1.9rem); margin:0; line-height:1.15}
+  .map-legend{display:flex; flex-wrap:wrap; gap:4px 14px; font:.73rem var(--ui); color:var(--ink-2)}
+  .map-legend span{display:inline-flex; align-items:center; gap:6px}
+  .map-legend span[hidden]{display:none}
+  .map-legend i{width:18px; border-top:2px dashed var(--route-color,var(--ember))}
+  .map-legend .past i{border-top:2px dotted var(--ink-3)}
+  .map-viewport{position:relative; height:clamp(320px,61vh,540px); border:1px solid #62716a;
+    border-radius:var(--radius); overflow:hidden; background:#152a31; box-shadow:0 12px 34px -17px var(--shadow);
     touch-action:none; cursor:grab; user-select:none}
+  .map-viewport.overview{height:auto; aspect-ratio:5/3; max-height:620px}
   .map-viewport.grabbing{cursor:grabbing}
-  .map-stage{position:absolute; top:0; left:0; transform-origin:0 0; will-change:transform}
-  .map-img{display:block; width:100%; height:auto; pointer-events:none;
-    filter:saturate(1.02) contrast(1.02)}
-  :root[data-theme="dark"] .map-img{filter:saturate(.9) brightness(.82) contrast(1.02)}
-  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .map-img{filter:saturate(.9) brightness(.82) contrast(1.02)}}
-  .route{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible}
-
-  /* ===== Map: route + axis ===== */
-  .map-stage.smooth{transition:transform .45s ease}
-  .hereM{position:absolute; z-index:3}
-  .hm-in{position:absolute; left:0; top:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%;
-    background:radial-gradient(circle at 34% 30%, var(--ember-2), var(--ember)); border:2px solid var(--gold-2);
-    box-shadow:0 1px 4px var(--shadow); transform-origin:center center; cursor:pointer}
-  .hm-in::after{content:""; position:absolute; inset:-3px; border-radius:50%;
-    box-shadow:0 0 0 0 rgba(157,43,37,.5); animation:pulseH 1.9s ease-in-out infinite}
-  @keyframes pulseH{0%,100%{box-shadow:0 0 0 0 rgba(157,43,37,.5)}50%{box-shadow:0 0 0 7px rgba(157,43,37,0)}}
-  .mapstrip{display:flex; gap:6px; overflow-x:auto; padding:12px 2px 4px; margin-top:10px; scrollbar-width:thin}
-  .mapstrip::-webkit-scrollbar{height:7px}
-  .mapstrip::-webkit-scrollbar-thumb{background:var(--line-2); border-radius:99px}
-  .strip-empty{font-family:var(--ui); font-size:.85rem; color:var(--ink-3); padding:10px 4px}
-  .mchip{flex:none; width:82px; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 4px;
-    border:1px solid var(--line-2); border-radius:11px; background:var(--panel-2); color:var(--ink); cursor:pointer;
-    font-family:var(--ui); text-align:center; transition:.12s; position:relative}
+  .map-stage{position:absolute; top:0; left:0; width:100%; transform-origin:0 0}
+  .map-stage.smooth{transition:transform .32s ease-out}
+  .map-img{display:block; width:100%; aspect-ratio:5/3; pointer-events:none}
+  .route{position:absolute; inset:0; width:100%; height:100%; pointer-events:none}
+  .map-pin{position:absolute; transform:translate(-50%,-50%); z-index:1; display:grid; place-items:center;
+    min-width:22px; height:22px; padding:0 4px; border:1px solid #ffedc8; border-radius:20px;
+    background:#263d3c; color:#fff3d8; box-shadow:0 1px 5px #131d1b99; font:700 10px var(--ui);
+    font-variant-numeric:tabular-nums; cursor:pointer}
+  .map-pin.here,.map-pin:hover,.map-pin:focus-visible{z-index:2; background:var(--route-color,#a94336)}
+  .map-pin.selected,.map-pin:focus-visible{outline:2px solid #ffedc8; outline-offset:2px}
+  .mapstrip{display:flex; gap:6px; overflow-x:auto; padding:4px 3px; margin-top:9px; scrollbar-width:thin}
+  .strip-empty{font:.85rem var(--ui); color:var(--ink-3); padding:10px 4px}
+  .mchip{flex:1 0 100px; min-width:100px; display:grid; grid-template-columns:auto 1fr; align-items:center;
+    text-align:left; gap:3px 7px; padding:8px; border:1px solid var(--line-2); border-radius:11px;
+    background:var(--panel-2); color:var(--ink); cursor:pointer; font-family:var(--ui); transition:.12s}
   .mchip:hover{border-color:var(--gold)}
-  .mchip .mchip-n{width:22px; height:22px; border-radius:50%; background:var(--ember); color:#fff; font-weight:800; font-size:.72rem; display:flex; align-items:center; justify-content:center}
-  .mchip .mchip-ic{width:16px; height:16px; color:var(--gold)}
-  .mchip small{font-size:.68rem; line-height:1.12; color:var(--ink)}
-  .mchip.future{opacity:.6}
-  .mchip.future .mchip-n{background:var(--ink-3)}
-  .mchip.on{border-color:var(--gold); background:color-mix(in srgb,var(--gold) 16%,var(--panel)); box-shadow:0 2px 8px -4px var(--gold)}
-  .mchip.on .mchip-n{background:var(--gold)}
+  .mchip-n{width:22px; height:22px; border-radius:50%; background:var(--ember); color:#fff;
+    font-weight:800; font-size:.72rem; display:grid; place-items:center}
+  .mchip small{font-size:.73rem; line-height:1.18; color:var(--ink)}
+  .mchip.on{border-color:var(--gold); background:color-mix(in srgb,var(--gold) 16%,var(--panel))}
   .mchip.sel{outline:2px solid var(--gold-2); outline-offset:1px}
-  .mchip-here{font-size:.58rem; color:var(--elven); font-weight:700}
-
-  .map-ctrls{position:absolute; right:10px; bottom:10px; display:flex; flex-direction:column; gap:6px; z-index:5}
-  .map-ctrls button{width:34px; height:34px; border-radius:9px; border:1px solid var(--line-2);
-    background:color-mix(in srgb,var(--panel) 92%,transparent); color:var(--ink); font-size:1.1rem; cursor:pointer;
-    font-family:var(--ui); display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px var(--shadow)}
-  .map-ctrls button:hover{border-color:var(--gold)}
-  .map-hint{font-family:var(--ui); font-size:.82rem; color:var(--ink-2); margin:0 2px 10px;
-    display:flex; align-items:center; gap:8px}
-  .map-hint svg{width:16px;height:16px;color:var(--gold);flex:none}
-  .map-hint b{color:var(--ink)}
+  .mchip-here{grid-column:2; font-size:.62rem; color:var(--elven); font-weight:700}
+  .map-ctrls{position:absolute; right:10px; bottom:10px; display:flex; flex-direction:column; gap:4px; z-index:5;
+    padding:4px; background:#14282eea; border:1px solid #788c85; border-radius:11px; box-shadow:0 3px 12px #14252c77}
+  .map-ctrls button{width:38px; height:38px; padding:0; border-radius:6px; border:0; background:transparent;
+    color:#f0e5c7; font-size:1.18rem; cursor:pointer; font-family:var(--ui); display:grid; place-items:center}
+  .map-ctrls button:hover,.map-ctrls button:focus-visible{background:#3c5555}
+  .map-ctrls svg{width:18px; height:18px}
+  .map-hint{font:.78rem var(--ui); color:var(--ink-2); margin:4px 0 0}
 
   .place-panel{margin-top:14px; border:1px solid var(--line-2); border-radius:var(--radius);
     background:var(--panel); padding:16px 18px; box-shadow:0 6px 20px -14px var(--shadow)}
@@ -448,20 +440,28 @@
 
     <!-- MAPA -->
     <section class="view on" id="view-mapa">
-      <p class="map-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21c5-4.5 7-8 7-11a7 7 0 10-14 0c0 3 2 6.5 7 11z"/></svg><span data-i18n-html="map_hint">Na mapě je vyznačená <b>cesta</b> a značka „Tady jsme". Zastávky najdeš na <b>liště pod mapou</b> — klikni a mapa tě k místu zaveze. Mapu můžeš i tahat a přiblížit.</span></p>
+      <div class="map-heading">
+        <h2 data-i18n="map_title">The Malazan world</h2>
+        <div class="map-legend">
+          <span id="mapActiveKey" hidden><i aria-hidden="true"></i><b data-i18n="map_current">This volume</b></span>
+          <span class="past" id="mapPastKey" hidden><i aria-hidden="true"></i><b data-i18n="map_earlier">Earlier volumes</b></span>
+        </div>
+      </div>
       <div class="map-viewport" id="mapVp">
         <div class="map-stage" id="mapStage">
           <img class="map-img" id="mapImg" src="__MAP_DATA_URI__" alt="Map of the Malazan world" draggable="false">
           <svg class="route" id="routeSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
-          <div id="hereLayer"></div>
+          <div id="pinLayer"></div>
         </div>
         <div class="map-ctrls">
-          <button id="zin" data-i18n-title="zoom_in" title="Přiblížit" aria-label="Přiblížit">+</button>
-          <button id="zout" data-i18n-title="zoom_out" title="Oddálit" aria-label="Oddálit">−</button>
-          <button id="zreset" data-i18n-title="zoom_reset" title="Zaměřit cestu" aria-label="Zaměřit cestu">⤢</button>
+          <button id="zin" data-i18n-title="zoom_in" title="Zoom in" aria-label="Zoom in">+</button>
+          <button id="zout" data-i18n-title="zoom_out" title="Zoom out" aria-label="Zoom out">−</button>
+          <button id="zreset" data-i18n-title="zoom_reset" title="Frame the route" aria-label="Frame the route"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 4H4v5m11-5h5v5m0 6v5h-5m-6 0H4v-5"/><circle cx="12" cy="12" r="3"/></svg></button>
+          <button id="zworld" data-i18n-title="zoom_world" title="Show whole atlas" aria-label="Show whole atlas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8"/><ellipse cx="12" cy="12" rx="3.5" ry="8"/><path d="M4 12h16"/></svg></button>
         </div>
       </div>
       <div class="mapstrip" id="mapstrip"></div>
+      <p class="map-hint" data-i18n="map_hint">Drag to pan. Select a numbered stop to explore it.</p>
       <div class="place-panel empty" id="placePanel">Klikni na zastávku pod mapou a mapa tě k ní zaveze.</div>
     </section>
 
@@ -664,14 +664,15 @@
     en: {
       brand_title:"The Book of the Fallen",
       brand_sub:"A reader’s guide to Steven Erikson’s Malazan Book of the Fallen",
-      other_saga:"The Lord of the Rings",
       mode_parent:"Guide", mode_kids:"Reader",
       theme_to_light:"Switch to light theme", theme_to_dark:"Switch to dark theme",
       lang_switch:"Switch to Czech",
       journey:"Saga", chapters_of:"movements", miles_unit:"leagues",
+      other_saga:"The Lord of the Rings",
       tab_map:"Map", tab_chapters:"Movements", tab_characters:"Characters", tab_world:"World",
-      map_hint:"The map shows the marked <b>route</b> and a “You are here” pin. The stops are on the <b>strip below the map</b> — tap one and the map carries you there. You can also drag and zoom the map.",
-      zoom_in:"Zoom in", zoom_out:"Zoom out", zoom_reset:"Frame the route",
+      map_title:"The Malazan world", map_current:"This volume", map_earlier:"Earlier volumes",
+      map_hint:"Drag to pan. Select a numbered stop to explore it.",
+      zoom_in:"Zoom in", zoom_out:"Zoom out", zoom_reset:"Frame the route", zoom_world:"Show whole atlas",
       subseg_gallery:"Gallery", subseg_relations:"Relations",
       world_intro:"A small encyclopedia of the Malazan world. In Reader mode it opens gradually: anything that would spoil the story stays hidden until you have read that far.",
       info_summary:"How it works · about the names",
@@ -699,14 +700,15 @@
     cs: {
       brand_title:"Kniha padlých",
       brand_sub:"Čtenářský průvodce Malazskou knihou padlých Stevena Eriksona",
-      other_saga:"Pán prstenů",
       mode_parent:"Průvodce", mode_kids:"Čtenář",
       theme_to_light:"Přepnout na světlý motiv", theme_to_dark:"Přepnout na tmavý motiv",
       lang_switch:"Přepnout do angličtiny",
       journey:"Sága", chapters_of:"částí", miles_unit:"lig",
+      other_saga:"Pán prstenů",
       tab_map:"Mapa", tab_chapters:"Části", tab_characters:"Postavy", tab_world:"Svět",
-      map_hint:"Na mapě je vyznačená <b>cesta</b> a značka „Tady jsme“. Zastávky najdeš na <b>liště pod mapou</b> — klikni a mapa tě k místu zaveze. Mapu můžeš i tahat a přiblížit.",
-      zoom_in:"Přiblížit", zoom_out:"Oddálit", zoom_reset:"Zaměřit cestu",
+      map_title:"Malazský svět", map_current:"Tento svazek", map_earlier:"Předchozí svazky",
+      map_hint:"Tažením posuneš mapu. Výběrem čísla zobrazíš zastávku.",
+      zoom_in:"Přiblížit", zoom_out:"Oddálit", zoom_reset:"Zaměřit cestu", zoom_world:"Zobrazit celý atlas",
       subseg_gallery:"Galerie", subseg_relations:"Vztahy",
       world_intro:"Malá encyklopedie Malazského světa. V režimu Čtenář se odkrývá postupně: co by prozradilo děj, zůstává skryté, dokud k tomu nedočteš.",
       info_summary:"Jak to funguje · o jménech",
@@ -748,46 +750,95 @@
   }
 
   function buildRoute(){
-    // One continuous, cumulative journey map (shared ROUTES): earlier volumes in full, this volume up to
-    // where you've read (Kids) / all of it (Parent); later volumes stay hidden. Legs coloured by group.
-    var svg=$('#routeSvg'), rg=reachedGi(), isDad=state.mode==='tata', h='';
-    (typeof ROUTES!=='undefined'?ROUTES:[]).forEach(function(leg){
+    var rg=reachedGi(), guide=state.mode==='tata', h='', active=false, earlier=false;
+    ROUTES.forEach(function(leg){
       if(leg.vol>VOL) return;
-      var full = leg.vol<VOL;
-      var pts = leg.pts.filter(function(p){ return full || isDad || p[2]<=rg; });
-      if(pts.length<2) return;
+      var current=leg.vol===VOL;
+      var pts=leg.pts.filter(function(p){return !current || guide || p[2]<=rg;});
+      if(pts.length<2 || pts.every(function(p){return p[0]===pts[0][0] && p[1]===pts[0][1];})) return;
       var d=pts.map(function(p,i){return (i?'L':'M')+p[0]+','+p[1];}).join(' ');
-      h+='<path d="'+d+'" fill="none" style="stroke:'+leg.color+'" stroke-width="2.4" '+
-        'stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.1 3.2" '+
-        'vector-effect="non-scaling-stroke" opacity="0.92"/>';
+      var line='<path d="'+d+'" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" ';
+      if(current){
+        active=true;
+        h+=line+'stroke="#fff0c8" stroke-width="5" opacity=".85"/>';
+        h+=line+'stroke="'+leg.color+'" stroke-width="3" stroke-dasharray="5 4"/>';
+      }else{
+        earlier=true;
+        h+=line+'stroke="#f5e5b8" stroke-width="3.5" opacity=".45"/>';
+        h+=line+'stroke="#4b5141" stroke-width="1.7" stroke-dasharray="1 5" opacity=".8"/>';
+      }
     });
-    svg.innerHTML=h;
+    $('#routeSvg').innerHTML=h;
+    $('#mapActiveKey').hidden=!active;
+    $('#mapPastKey').hidden=!earlier;
+    var route=ROUTES.find(function(leg){return leg.vol===VOL;});
+    if(route) $('#view-mapa').style.setProperty('--route-color',route.color);
   }
 
-  function currentPlace(){ var rg=reachedGi(),cur=null; PLACES.forEach(function(p){ if(p.gi<=rg&&(!cur||p.gi>cur.gi))cur=p; }); return cur; } // the furthest stop reached
-  function renderHere(){
-    // One small "You are here" marker at the furthest stop reached; the rest are on the strip below.
-    var box=$('#hereLayer'); box.innerHTML='';
-    var cur=currentPlace(); if(!cur) return;
-    var m=el('div','hereM'); m.style.left=cur.x+'%'; m.style.top=cur.y+'%';
-    m.innerHTML='<span class="hm-in" title="'+esc(T('here_label')+': '+t(cur.name))+'"></span>';
-    (function(cur){ $('.hm-in',m).addEventListener('click',function(ev){ev.stopPropagation(); showPlace(cur,true);}); })(cur);
-    box.appendChild(m);
+  var selectedStop=null;
+  function selectStop(p){
+    selectedStop=p.id;
+    goToPlace(p);
+    showPlace(p,p.gi<=reachedGi());
+    markSelectedStop();
   }
-  function renderStrip(){
-    var rg=reachedGi();
-    var strip=$('#mapstrip'); if(!strip) return; strip.innerHTML='';
-    var list = state.mode==='tata' ? PLACES : PLACES.filter(function(p){return p.gi<=rg;});
-    if(!list.length){ strip.innerHTML='<div class="strip-empty">'+esc(T('strip_empty'))+'</div>'; return; }
-    var cur=currentPlace(), curId=cur?cur.id:null;
-    list.forEach(function(p){
-      var reached=p.gi<=rg, isCur=curId===p.id;
-      var c=el('button','mchip'+(reached?'':' future')+(isCur?' on':''));
-      c.innerHTML='<span class="mchip-n">'+p.seq+'</span>'+icon(p.ic,'mchip-ic')+'<small>'+esc(t(p.name))+'</small>'+(isCur?'<span class="mchip-here">'+esc(T('here_label'))+'</span>':'');
-      c.addEventListener('click',function(){ goToPlace(p); showPlace(p,reached); Array.prototype.forEach.call(strip.children,function(x){x.classList.toggle('sel',x===c);}); });
-      strip.appendChild(c);
+  function markSelectedStop(){
+    document.querySelectorAll('.map-pin, .mchip').forEach(function(b){
+      var selected=b.dataset.stops.split(' ').includes(selectedStop);
+      b.classList.toggle(b.classList.contains('map-pin')?'selected':'sel',selected);
+      b.setAttribute('aria-pressed',String(selected));
     });
-    var on=strip.querySelector('.mchip.on'); if(on&&on.scrollIntoView) on.scrollIntoView({inline:'center',block:'nearest'});
+  }
+  function renderStops(){
+    var rg=reachedGi(), strip=$('#mapstrip'), pins=$('#pinLayer');
+    var list=state.mode==='tata' ? PLACES : PLACES.filter(function(p){return p.gi<=rg;});
+    var current=list.filter(function(p){return p.gi<=rg;}).slice(-1)[0];
+    var selected=list.find(function(p){return p.id===selectedStop;});
+    var groups=new Map();
+    strip.innerHTML='';
+    pins.innerHTML='';
+    if(selected){
+      showPlace(selected,selected.gi<=rg);
+    }else{
+      selectedStop=null;
+      $('#placePanel').className='place-panel empty';
+      $('#placePanel').textContent=T('place_empty');
+    }
+    if(!list.length){
+      strip.appendChild(el('div','strip-empty',esc(T('strip_empty'))));
+      return;
+    }
+    list.forEach(function(p){
+      var c=el('button','mchip'+(p===current?' on':''));
+      c.type='button';
+      c.dataset.stops=p.id;
+      c.innerHTML='<span class="mchip-n">'+p.seq+'</span><small>'+esc(t(p.name))+'</small>'+
+        (p===current?'<span class="mchip-here">'+esc(T('here_label'))+'</span>':'');
+      c.addEventListener('click',function(){selectStop(p);});
+      strip.appendChild(c);
+
+      var key=p.x+','+p.y;
+      if(!groups.has(key)) groups.set(key,[]);
+      groups.get(key).push(p);
+    });
+    groups.forEach(function(stops){
+      var here=stops.includes(current);
+      var names=stops.map(function(p){return p.seq+' · '+t(p.name);}).join(' / ');
+      var b=el('button','map-pin'+(here?' here':''));
+      b.type='button';
+      b.style.left=stops[0].x+'%';
+      b.style.top=stops[0].y+'%';
+      b.dataset.stops=stops.map(function(p){return p.id;}).join(' ');
+      b.textContent=stops.map(function(p){return p.seq;}).join('·');
+      b.title=(here?T('here_label')+' · ':'')+names;
+      b.setAttribute('aria-label',b.title);
+      b.addEventListener('click',function(){
+        var index=stops.findIndex(function(p){return p.id===selectedStop;});
+        selectStop(index<0 && here?current:stops[(index+1)%stops.length]);
+      });
+      pins.appendChild(b);
+    });
+    markSelectedStop();
   }
 
   function showPlace(p, reached){
@@ -959,62 +1010,99 @@
   // ===== map: pan & zoom =====
   // Zoom by re-laying-out the map at a wider CSS width, so the browser re-samples the hi-res source
   // sharply — NOT transform:scale(), which only stretches a base-size GPU texture (blurry). Pan = translate.
-  var scale=1,minS=1,maxS=4,tx=0,ty=0;
+  var scale=1,minS=1,maxS=5,tx=0,ty=0;
   var stage=$('#mapStage'), vp=$('#mapVp');
-  function applyLayout(){ stage.style.width=(vp.clientWidth*scale)+'px'; }
-  function clamp(){
-    var vw=vp.clientWidth, vh=vp.clientHeight, sw=stage.offsetWidth, sh=stage.offsetHeight;
-    var minX=Math.min(0, vw - sw), minY=Math.min(0, vh - sh);
-    if(tx>0) tx=0; else if(tx<minX) tx=minX;
-    if(ty>0) ty=0; else if(ty<minY) ty=minY;
+  function applyLayout(){stage.style.width=(vp.clientWidth*scale)+'px';}
+  function boundAxis(offset, viewport, content){
+    return content<=viewport ? (viewport-content)/2 : Math.max(viewport-content,Math.min(0,offset));
   }
-  function applyT(){clamp(); stage.style.transform='translate('+tx+'px,'+ty+'px)';}
-  function setStageWidth(){
-    var prev=scale; scale=1; applyLayout();
-    var h=stage.offsetHeight;
-    if(h){ vp.style.height=Math.min(h, Math.round(window.innerHeight*0.72), 580)+'px'; }
-    scale=prev; applyLayout();
+  function applyT(){
+    tx=boundAxis(tx,vp.clientWidth,stage.offsetWidth);
+    ty=boundAxis(ty,vp.clientHeight,stage.offsetHeight);
+    stage.style.transform='translate('+tx+'px,'+ty+'px)';
   }
   function zoomAt(cx,cy,ns){
-    ns=Math.max(minS,Math.min(maxS,ns));
     var sw=stage.offsetWidth, sh=stage.offsetHeight;
-    var fx=sw?(cx-tx)/sw:0, fy=sh?(cy-ty)/sh:0;
-    scale=ns; applyLayout();
-    var sw2=stage.offsetWidth, sh2=stage.offsetHeight;
-    tx=cx-fx*sw2; ty=cy-fy*sh2; applyT();
-  }
-  function frameJourney(){
-    var vpW=vp.clientWidth, vpH=vp.clientHeight;
-    scale=1; applyLayout();
-    var baseW=stage.offsetWidth, baseH=stage.offsetHeight; if(!baseH){return;}
-    var mf=BOOK.meta.mapFrame||{x0:0,x1:1,y0:0,y1:1}, fx0=mf.x0,fx1=mf.x1,fy0=mf.y0,fy1=mf.y1;  // region of the shared map to frame
-    var regW=(fx1-fx0)*baseW, regH=(fy1-fy0)*baseH;
-    var s=Math.min(vpW/regW, vpH/regH)*0.96;
-    s=Math.max(minS,Math.min(maxS,s));
-    scale=s; applyLayout();
-    var sw=stage.offsetWidth, sh=stage.offsetHeight;
-    tx=vpW/2 - ((fx0+fx1)/2)*sw;
-    ty=vpH/2 - ((fy0+fy1)/2)*sh;
+    if(!sw || !sh) return;
+    stage.classList.remove('smooth');
+    var fx=(cx-tx)/sw, fy=(cy-ty)/sh;
+    scale=Math.max(minS,Math.min(maxS,ns));
+    applyLayout();
+    tx=cx-fx*stage.offsetWidth;
+    ty=cy-fy*stage.offsetHeight;
     applyT();
   }
+  function frameMap(frame){
+    var w=vp.clientWidth, h=vp.clientHeight;
+    if(!w || !h) return;
+    stage.classList.remove('smooth');
+    var baseHeight=w*3/5;
+    minS=Math.min(1,h/baseHeight);
+    var fit=Math.min(w/((frame.x1-frame.x0)*w),h/((frame.y1-frame.y0)*baseHeight));
+    scale=Math.max(minS,Math.min(maxS,fit*(frame===worldFrame?1:.92)));
+    applyLayout();
+    tx=w/2-(frame.x0+frame.x1)/2*stage.offsetWidth;
+    ty=h/2-(frame.y0+frame.y1)/2*stage.offsetHeight;
+    applyT();
+  }
+  var worldFrame={x0:0,x1:1,y0:0,y1:1};
+  var mapWidth=0,mapHeight=0;
+  function frameJourney(){
+    vp.classList.remove('overview');
+    frameMap(BOOK.meta.mapFrame||worldFrame);
+    mapWidth=vp.clientWidth; mapHeight=vp.clientHeight;
+  }
+  function frameWorld(){
+    vp.classList.add('overview');
+    frameMap(worldFrame);
+    mapWidth=vp.clientWidth; mapHeight=vp.clientHeight;
+  }
+  function resizeMap(){
+    if(!vp.clientWidth) return;
+    if(vp.classList.contains('overview')) frameWorld();
+    else frameJourney();
+  }
   function goToPlace(p){
-    scale=Math.min(maxS,3.4); applyLayout();
-    var sw=stage.offsetWidth, sh=stage.offsetHeight; if(!sh)return;
-    tx=vp.clientWidth/2 - (p.x/100)*sw;
-    ty=vp.clientHeight/2 - (p.y/100)*sh;
-    stage.classList.add('smooth'); applyT();
+    var oldScale=scale;
+    vp.classList.remove('overview');
+    mapHeight=vp.clientHeight;
+    scale=Math.max(scale,3.4);
+    stage.classList.toggle('smooth',scale===oldScale);
+    applyLayout();
+    tx=vp.clientWidth/2-p.x/100*stage.offsetWidth;
+    ty=vp.clientHeight/2-p.y/100*stage.offsetHeight;
+    applyT();
   }
   $('#zin').addEventListener('click',function(){zoomAt(vp.clientWidth/2,vp.clientHeight/2,scale*1.4);});
   $('#zout').addEventListener('click',function(){zoomAt(vp.clientWidth/2,vp.clientHeight/2,scale/1.4);});
-  $('#zreset').addEventListener('click',function(){frameJourney();});
-  vp.addEventListener('wheel',function(e){e.preventDefault(); stage.classList.remove('smooth'); var r=vp.getBoundingClientRect(); zoomAt(e.clientX-r.left,e.clientY-r.top, scale*(e.deltaY<0?1.15:0.87));},{passive:false});
-  // drag
-  var drag=false,lx=0,ly=0,moved=0,pid=null;
-  vp.addEventListener('pointerdown',function(e){drag=true;moved=0;lx=e.clientX;ly=e.clientY;pid=e.pointerId;vp.setPointerCapture(pid);vp.classList.add('grabbing'); stage.classList.remove('smooth');});
-  vp.addEventListener('pointermove',function(e){if(!drag)return; var dx=e.clientX-lx,dy=e.clientY-ly; lx=e.clientX;ly=e.clientY; moved+=Math.abs(dx)+Math.abs(dy); tx+=dx;ty+=dy; applyT();});
-  function endDrag(){drag=false;vp.classList.remove('grabbing'); if(pid!=null){try{vp.releasePointerCapture(pid);}catch(e){}pid=null;}}
-  vp.addEventListener('pointerup',endDrag); vp.addEventListener('pointercancel',endDrag);
-  window.addEventListener('resize',function(){setStageWidth(); frameJourney();});
+  $('#zreset').addEventListener('click',frameJourney);
+  $('#zworld').addEventListener('click',frameWorld);
+  vp.addEventListener('wheel',function(e){
+    e.preventDefault();
+    var r=vp.getBoundingClientRect();
+    zoomAt(e.clientX-r.left,e.clientY-r.top,scale*(e.deltaY<0?1.15:0.87));
+  },{passive:false});
+
+  var lx=0,ly=0,pid=null;
+  vp.addEventListener('pointerdown',function(e){
+    if(pid!==null || e.button!==0 || e.target.closest('button')) return;
+    lx=e.clientX; ly=e.clientY; pid=e.pointerId;
+    vp.setPointerCapture(pid);
+    vp.classList.add('grabbing');
+    stage.classList.remove('smooth');
+  });
+  vp.addEventListener('pointermove',function(e){
+    if(e.pointerId!==pid) return;
+    tx+=e.clientX-lx; ty+=e.clientY-ly;
+    lx=e.clientX; ly=e.clientY;
+    applyT();
+  });
+  vp.addEventListener('lostpointercapture',function(e){
+    if(e.pointerId!==pid) return;
+    pid=null;
+    vp.classList.remove('grabbing');
+  });
+  window.addEventListener('resize',resizeMap);
 
   // ===== toggles =====
   $('#modeswitch').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return;
@@ -1073,6 +1161,7 @@
     var v=b.getAttribute('data-view');
     Array.prototype.forEach.call($('#tabs').children,function(x){x.classList.toggle('on',x===b); x.setAttribute('aria-selected', x===b?'true':'false');});
     ['mapa','kapitoly','postavy','svet'].forEach(function(id){$('#view-'+id).classList.toggle('on',id===v);});
+    if(v==='mapa' && (mapWidth!==vp.clientWidth || mapHeight!==vp.clientHeight)) resizeMap();
   });
   $('#subseg').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return;
     var s=b.getAttribute('data-sub');
@@ -1131,17 +1220,12 @@
     $('#relations').innerHTML=h;
   }
 
-  function rerender(){ updateProgress(); buildRoute(); renderHere(); renderStrip(); renderChapters(); renderChars(); renderRelations(); renderWorld(); }
+  function rerender(){ updateProgress(); buildRoute(); renderStops(); renderChapters(); renderChars(); renderRelations(); renderWorld(); }
 
   // ===== init =====
   function init(){
     save(); buildLangSel(); applyLang(); syncMode(); // language + theme + mode; content goes through rerender()
-    var img=$('#mapImg');
-    var done=false;
-    function ready(){ setStageWidth(); frameJourney(); rerender(); done=true; }
-    if(img.complete && img.naturalWidth) ready(); else img.addEventListener('load',ready);
-    // fallback (kdyby load nedorazil)
-    setTimeout(function(){ if(!done) ready(); },400);
+    resizeMap(); rerender();
   }
   init();
 })();

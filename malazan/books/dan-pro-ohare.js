@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dan-pro-ohare', vol: 8, key: 'malazan_v8',
-    mapFrame: { x0: 0.18, x1: 0.54, y0: 0.15, y1: 0.82 }, timelineMin: 5
+    mapFrame: { x0: 0.69, x1: 0.91, y0: 0.27, y1: 0.53 }, timelineMin: 5
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Toll the Hounds', info_names: 'We use Erikson’s original names (Rake, Cutter, Kruppe, Endest, Seerdomin…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -35,22 +35,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'darujhistan8', name:L('Darujhistan', 'Darujhistan'), en:'Darujhistan', x:26, y:29.2, ic:'town', gi:1, mile:0,
+    { id:'darujhistan8', name:L('Darujhistan', 'Darujhistan'), en:'Darujhistan', x:73.8, y:32, ic:'town', gi:1, mile:0,
       dad:L('The city of blue gaslight and old secrets, now home to retired Bridgeburners, a council of merchants and a great many people who owe Kruppe favours.', 'Město modrého plynného světla a starých tajemství, nyní domov vysloužilých Paličů mostů, obchodní rady a mnoha lidí, kteří Kruppemu dluží laskavost.'),
       kid:L('A big city with blue lights and secret alleys. Some old heroes live here now, but they are not safe.', 'Velké město s modrými světly a tajnými uličkami. Žije tu pár starých hrdinů, ale nejsou v bezpečí.') },
-    { id:'phoenix', name:L('The Phoenix Inn', 'Hospoda U Fénixe'), en:'The Phoenix Inn', x:26, y:29.2, ic:'crown', gi:2, mile:1,
+    { id:'phoenix', name:L('The Phoenix Inn', 'Hospoda U Fénixe'), en:'The Phoenix Inn', x:73.8, y:32, ic:'crown', gi:2, mile:1,
       dad:L('A tavern in Darujhistan where Kruppe holds court, the Bridgeburners drink, and the city’s worst plans are hatched over the best pastries.', 'Hospoda v Darujhistánu, kde Kruppe drží dvůr, Paliči mostů pijí a nejhorší plány města vznikají nad nejlepšími zákusky.'),
       kid:L('A friendly tavern full of stories. A funny man named Kruppe is always there, eating and listening.', 'Přátelská hospoda plná příběhů. Vždycky tam je veselý muž Kruppe, jí a poslouchá.') },
-    { id:'blackcoral8', name:L('Black Coral', 'Černý Coral'), en:'Black Coral', x:35.6, y:25.8, ic:'tower', gi:3, mile:300,
+    { id:'blackcoral8', name:L('Black Coral', 'Černý Coral'), en:'Black Coral', x:86.2, y:41, ic:'tower', gi:3, mile:300,
       dad:L('The Tiste Andii city built over the ruins of Coral, where Itkovian’s cult tends a shrine and Endest Silann waits for a summons he dreads.', 'Město Tiste Andii postavené nad troskami Coral, kde se kult Itkoviana stará o svatyni a Endest Silann čeká na předvolání, kterého se bojí.'),
       kid:L('A dark city of towers where a gentle god is worshipped. A tired old mage lives there and expects bad news.', 'Temné město věží, kde uctívají laskavého boha. Žije tam unavený starý mág a čeká špatné zprávy.') },
-    { id:'lamatath', name:L('The Plain of Lamatath', 'Pláň Lamatath'), en:'The Plain of Lamatath', x:45, y:75, ic:'forest', gi:4, mile:1200,
+    { id:'lamatath', name:L('The Plain of Lamatath', 'Pláň Lamatath'), en:'The Plain of Lamatath', x:77, y:45.67, ic:'forest', gi:4, mile:1200,
       dad:L('A vast, empty plain on the road between Lether and Darujhistan. Karsa Orlong and Samar Dev cross it, and meet a traveller whose sword has its own history.', 'Obrovská prázdná pláň na cestě mezi Letherem a Darujhistánem. Přecházejí ji Karsa Orlong a Samar Dev a potkají poutníka, jehož meč má vlastní historii.'),
       kid:L('A huge empty plain. Two travellers cross it and meet a mysterious swordsman.', 'Obrovská prázdná pláň. Přecházejí ji dva cestovatelé a potkají záhadného šermíře.') },
-    { id:'dragnipur', name:L('The Realm of Dragnipur', 'Říše Dragnipur'), en:'The Realm of Dragnipur', x:30, y:32, ic:'chain', gi:5, mile:1300,
+    { id:'dragnipur', name:L('The Realm of Dragnipur', 'Říše Dragnipur'), en:'The Realm of Dragnipur', x:73.8, y:32, ic:'chain', gi:5, mile:1300,
       dad:L('The world inside Rake’s sword: a dark road, an endless wagon and a gate that must not fall to Chaos. Every soul taken by the blade ends up here, pulling.', 'Svět uvnitř Rakova meče: temná cesta, nekonečný vůz a brána, která nesmí padnout Chaosu. Každá duše vzatá čepelí skončí tady a táhne.'),
       kid:L('A dark world inside a magic sword. People who die by the sword have to pull a heavy wagon there forever.', 'Temný svět uvnitř magického meče. Lidé, kteří zemřou touto čepelí, tam navěky tahají těžký vůz.') },
-    { id:'gate', name:L('The Gate of Kurald Galain', 'Brána Kurald Galain'), en:'The Gate of Kurald Galain', x:26, y:29.2, ic:'moon', gi:6, mile:1400,
+    { id:'gate', name:L('The Gate of Kurald Galain', 'Brána Kurald Galain'), en:'The Gate of Kurald Galain', x:73.8, y:32, ic:'moon', gi:6, mile:1400,
       dad:L('The ancient gate of the Tiste Andii, carried on the wagon inside Dragnipur. If Chaos reaches it, the realm of darkness — and much else — will end.', 'Dávná brána Tiste Andii, nesená na voze uvnitř Dragnipur. Pokud k ní Chaos dorazí, říše tmy — a mnoho dalšího — skončí.'),
       kid:L('A shining gate that is carried inside the sword. A monster called Chaos is trying to reach it.', 'Zářící brána, kterou nesou uvnitř meče. Netvor zvaný Chaos se k ní snaží dostat.') }
   ],

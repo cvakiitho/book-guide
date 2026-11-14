@@ -24,11 +24,20 @@ test('reader content thresholds are reachable within each volume', () => {
   }
 });
 
-test('the fourth volume route visits its second movement stop', () => {
-  const book = books.find(item => item.meta.vol === 4);
-  const stop = book.PLACES.find(place => place.gi === 2);
-  const routes = data('../books/routes.js', 'ROUTES');
-  assert.ok(routes.find(route => route.vol === 4).pts.some(
-    ([x, y, gi]) => gi === 2 && x === stop.x && y === stop.y,
-  ));
+test('each offline volume includes routes that pass through every stop in its regional frame', () => {
+  const expected = books.slice().sort((a, b) => a.meta.vol - b.meta.vol).map(book => ({
+    vol: book.meta.vol,
+    pts: Array.from(book.PLACES, ({ x, y, gi }) => [x, y, gi]),
+  }));
+
+  for (const book of books) {
+    const { slug, mapFrame } = book.meta;
+    const html = readFileSync(new URL(`../${slug}.html`, import.meta.url), 'utf8');
+    const routes = JSON.parse(html.match(/^  var ROUTES = (.+);$/m)[1]);
+    assert.deepEqual(routes.map(({ vol, pts }) => ({ vol, pts })), expected);
+    for (const { x, y, id } of book.PLACES) {
+      assert.ok(x / 100 >= mapFrame.x0 && x / 100 <= mapFrame.x1 &&
+        y / 100 >= mapFrame.y0 && y / 100 <= mapFrame.y1, `${slug}: ${id} is outside the regional frame`);
+    }
+  }
 });

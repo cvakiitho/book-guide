@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'lovci-kosti', vol: 6, key: 'malazan_v6',
-    mapFrame: { x0: 0.08, x1: 0.42, y0: 0.44, y1: 0.84 }, timelineMin: 2
+    mapFrame: { x0: 0.27, x1: 0.48, y0: 0.11, y1: 0.68 }, timelineMin: 2
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to The Bonehunters', info_names: 'We use Erikson’s original names (Tavore, Fiddler, Kalam, Quick Ben…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -34,22 +34,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'yghatan', name:L('Y’Ghatan', 'Y’Ghatan'), en:'Y’Ghatan', x:24, y:63.3, ic:'town', gi:1, mile:0,
+    { id:'yghatan', name:L('Y’Ghatan', 'Y’Ghatan'), en:'Y’Ghatan', x:31.2, y:30, ic:'town', gi:1, mile:0,
       dad:L('An old fortress city in Seven Cities and the site of a Malazan defeat that the Empire never forgot. Leoman makes it a trap.', 'Staré pevnostní město v Sedmi městech a místo malazské porážky, na kterou říše nikdy nezapomněla. Leoman z něj udělá past.'),
       kid:L('An old fortress city with high walls. It looks like a safe place to hide — but it is actually a giant trap.', 'Staré pevnostní město s vysokými hradbami. Vypadá jako bezpečné místo na ukrytí — ale je to obrovská past.') },
-    { id:'northcoast', name:L('Seven Cities Coast', 'Pobřeží Sedmi měst'), en:'Seven Cities Coast', x:21.5, y:48.3, ic:'water', gi:2, mile:200,
+    { id:'northcoast', name:L('Seven Cities Coast', 'Pobřeží Sedmi měst'), en:'Seven Cities Coast', x:37.25, y:16.08, ic:'water', gi:2, mile:200,
       dad:L('The northern coast where Onearm’s Host lands to finish the rebellion — and where the plague is already waiting.', 'Severní pobřeží, kde přistane Onearmovo vojsko, aby dokončilo potlačení rebelie — a kde už čeká mor.'),
       kid:L('A long coast with ships and soldiers. The army arrives here, but something invisible and dangerous is already spreading.', 'Dlouhé pobřeží s loděmi a vojáky. Přijíždí sem armáda, ale už se tu šíří něco neviditelného a nebezpečného.') },
-    { id:'firstthrone', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:33, y:60.8, ic:'tower', gi:3, mile:300,
+    { id:'firstthrone', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:40.25, y:28.17, ic:'tower', gi:3, mile:300,
       dad:L('An ancient seat of power older than the Malazan Empire, hidden in a warren and contested by Tiste Edur and Letherii alike.', 'Dávné sídlo moci starší než Malazská říše, ukryté ve warrenu a nárokované Tiste Edury i Letherii.'),
       kid:L('A very old throne in a strange hidden place. Many powerful people want it, and none of them are gentle.', 'Velmi starý trůn v podivném skrytém místě. Mnoho mocných ho chce a nikdo z nich není jemný.') },
-    { id:'malazcity', name:L('Malaz City', 'Malaz City'), en:'Malaz City', x:13, y:77.5, ic:'town', gi:4, mile:500,
+    { id:'malazcity', name:L('Malaz City', 'Malaz City'), en:'Malaz City', x:43, y:61, ic:'town', gi:4, mile:500,
       dad:L('The island city where the empire began. Its streets are full of Claw, old loyalties and traps dressed as welcomes.', 'Ostrovní město, kde říše začala. Jeho ulice jsou plné Claw, starých věrností a pastí převlečených za přivítání.'),
       kid:L('The first city of the empire, on a rocky island. It looks proud, but there are secret killers everywhere.', 'První město říše na skalnatém ostrově. Vypadá hrdě, ale všude jsou tajní vrazi.') },
-    { id:'seaglass', name:L('The Sea of Glass', 'Skleněné moře'), en:'The Sea of Glass', x:18, y:72, ic:'water', gi:5, mile:600,
+    { id:'seaglass', name:L('The Sea of Glass', 'Skleněné moře'), en:'The Sea of Glass', x:39.55, y:63.5, ic:'water', gi:5, mile:600,
       dad:L('A calm, strange stretch of sea where two fleets meet and a mage’s storm decides who survives.', 'Klidný, podivný pruh moře, kde se střetnou dvě flotily a o přežití rozhodne mágova bouře.'),
       kid:L('A wide, calm sea that looks like glass. Two fleets meet here, and the sky itself seems to fight.', 'Široké klidné moře, které vypadá jako sklo. Setkají se tu dvě flotily a zdá se, že bojuje samo nebe.') },
-    { id:'fleet', name:L('The Open Sea', 'Otevřené moře'), en:'The Open Sea', x:22, y:82, ic:'water', gi:6, mile:700,
+    { id:'fleet', name:L('The Open Sea', 'Otevřené moře'), en:'The Open Sea', x:33.45, y:62.42, ic:'water', gi:6, mile:700,
       dad:L('The Bonehunters leave the empire behind and sail toward an unknown continent, carrying a name that has just become a legend.', 'Lovci kostí nechávají říši za sebou a plují k neznámému kontinentu s jménem, které se právě stalo legendou.'),
       kid:L('The army sails away across the ocean. They do not know what waits for them, but they are together — and that is enough for now.', 'Armáda odplouvá přes oceán. Nevědí, co je čeká, ale jsou spolu — a to jim zatím stačí.') }
   ],

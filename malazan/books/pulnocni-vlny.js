@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'pulnocni-vlny', vol: 5, key: 'malazan_v5',
-    mapFrame: { x0: 0.62, x1: 0.92, y0: 0.14, y1: 0.64 }, timelineMin: 2
+    mapFrame: { x0: 0.08, x1: 0.33, y0: 0.56, y1: 0.86 }, timelineMin: 2
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Midnight Tides', info_names: 'We use Erikson’s original names (Tehol, Bugg, Rhulad, Trull Sengar…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -34,22 +34,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'edur', name:L('Edur Lands', 'Edurské země'), en:'Edur Lands', x:83, y:27.5, ic:'tower', gi:1, mile:0,
+    { id:'edur', name:L('Edur Lands', 'Edurské země'), en:'Edur Lands', x:12.25, y:61.25, ic:'tower', gi:1, mile:0,
       dad:L('The cold northern homeland of the Tiste Edur, ruled by the Warlock King and haunted by the shadow of a much older betrayal.', 'Studená severní vlast Tiste Edurů, ovládaná Čarodějnickým králem a pronásledovaná stínem mnohem starší zrady.'),
       kid:L('A cold land of forests and shadow, where the Tiste Edur live. Their king wants an old sword — and that will change everything.', 'Studená země lesů a stínu, kde žijí Tiste Edurové. Jejich král chce starý meč — a to změní všechno.') },
-    { id:'letheras', name:L('Letheras', 'Letheras'), en:'Letheras', x:75.5, y:43.3, ic:'town', gi:2, mile:200,
+    { id:'letheras', name:L('Letheras', 'Letheras'), en:'Letheras', x:15, y:71, ic:'town', gi:2, mile:200,
       dad:L('The capital of the Letherii Empire, a city of canals, merchants and carefully hidden cruelty. It believes it is eternal.', 'Hlavní město Letherské říše, město kanálů, obchodníků a pečlivě skrývané krutosti. Věří, že je věčné.'),
       kid:L('A rich city full of canals and markets. It looks beautiful, but poor people here are not treated well at all.', 'Bohaté město plné kanálů a trhů. Vypadá krásně, ale s chudými lidmi se tu vůbec nezachází dobře.') },
-    { id:'azathlether', name:L('The Azath House', 'Dům Azath'), en:'The Azath House', x:77, y:45, ic:'tower', gi:3, mile:220,
+    { id:'azathlether', name:L('The Azath House', 'Dům Azath'), en:'The Azath House', x:15, y:71, ic:'tower', gi:3, mile:220,
       dad:L('A living house in the old quarter, older than the empire around it. Something inside it is dying — and something inside it wants out.', 'Živý dům ve staré čtvrti, starší než říše kolem něj. Něco uvnitř umírá — a něco uvnitř chce ven.'),
       kid:L('A strange old house that is alive. It is sick, and a brave girl is trying to keep it alive with her own blood.', 'Podivný starý dům, který je živý. Je nemocný a statečná dívka ho zkouší udržet naživu vlastní krví.') },
-    { id:'bluerose', name:L('Bluerose', 'Bluerose'), en:'Bluerose', x:68.5, y:50, ic:'forest', gi:4, mile:300,
+    { id:'bluerose', name:L('Bluerose', 'Bluerose'), en:'Bluerose', x:18, y:67, ic:'forest', gi:4, mile:300,
       dad:L('A Letherii province with old secrets beneath its surface, and one of the places where the empire’s story does not quite fit.', 'Letherská provincie se starými tajemstvími pod povrchem a jedním z míst, kde letherský příběh úplně nesedí.'),
       kid:L('A far part of the empire with dark forests and secrets. Not everyone there is what the capital thinks.', 'Odlehlá část říše s temnými lesy a tajemstvími. Ne všichni tam jsou tím, co si hlavní město myslí.') },
-    { id:'maiden', name:L('Maiden Island', 'Ostrov Maiden'), en:'Maiden Island', x:74, y:60, ic:'water', gi:5, mile:420,
+    { id:'maiden', name:L('Maiden Island', 'Ostrov Maiden'), en:'Maiden Island', x:14.1, y:80.33, ic:'water', gi:5, mile:420,
       dad:L('An island off the Letherii coast, claimed by pirates and later by a princess of the Shake. The sea keeps its own politics.', 'Ostrov u letherského pobřeží, nárokovaný piráty a později princeznou Shake. Moře má vlastní politiku.'),
       kid:L('A small island by the coast, where sailors and pirates tell stories. The sea around it is dangerous.', 'Malý ostrov u pobřeží, kde si námořníci a piráti vyprávějí příběhy. Moře kolem je nebezpečné.') },
-    { id:'wastes', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:80, y:54.2, ic:'mountain', gi:6, mile:500,
+    { id:'wastes', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:28.85, y:73.17, ic:'mountain', gi:6, mile:500,
       dad:L('The dry interior beyond the coast, where the empire’s maps become guesses and older powers still walk.', 'Suché vnitrozemí za pobřežím, kde se mapy říše mění v dohady a staré mocnosti pořád chodí.'),
       kid:L('A huge dry land beyond the cities. Few people go there, and those who do come back changed — if they come back.', 'Obrovská suchá země za městy. Málokdo tam chodí, a kdo ano, vrátí se změněný — pokud se vrátí.') }
   ],

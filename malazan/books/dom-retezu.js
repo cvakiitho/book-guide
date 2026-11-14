@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dom-retezu', vol: 4, key: 'malazan_v4',
-    mapFrame: { x0: 0.08, x1: 0.52, y0: 0.16, y1: 0.68 }, timelineMin: 2
+    mapFrame: { x0: 0.28, x1: 0.80, y0: 0.08, y1: 0.59 }, timelineMin: 2
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to House of Chains', info_names: 'We use Erikson’s original names (Karsa Orlong, Tavore Paran, Cotillion…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -38,22 +38,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'teblor', name:L('The Teblor Mountains', 'Teblorské hory'), en:'The Teblor Mountains', x:12.5, y:20.8, ic:'mountain', gi:1, mile:0,
+    { id:'teblor', name:L('The Teblor Mountains', 'Teblorské hory'), en:'The Teblor Mountains', x:72.1, y:13.92, ic:'mountain', gi:1, mile:0,
       dad:L('The high, hard country of the Teblor, far from the roads of the Empire. Karsa Orlong leaves these peaks with two companions, certain that the lowlands are his to take.', 'Vysoká a drsná země Teblorů, daleko od cest říše. Karsa Orlong opouští tyto vrcholy se dvěma druhy, přesvědčený, že nížiny jsou jeho kořist.'),
       kid:L('A cold mountain land where giant warriors live. This is where Karsa starts his long journey.', 'Studená horská země, kde žijí obří bojovníci. Tady začíná Karsova dlouhá cesta.') },
-    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:16.5, y:65.8, ic:'town', gi:2, mile:120,
+    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:35.4, y:36, ic:'town', gi:2, mile:120,
       dad:L('The great harbour city of Seven Cities and the end of the Chain of Dogs. Here the 14th Army gathers, the dead are counted and Tavore takes command of a war nobody wants to name.', 'Velké přístavní město Sedmi měst a konec Řetězu psů. Tady se shromažďuje 14. armáda, počítají se mrtví a Tavore přebírá velení války, kterou nikdo nechce pojmenovat.'),
       kid:L('A big harbour city where a new army is getting ready. It is also a sad place, because many soldiers died on the road here.', 'Velké přístavní město, kde se chystá nová armáda. Je to i smutné místo, protože na cestě sem zemřelo mnoho vojáků.') },
-    { id:'drift-avalii', name:L('Drift Avalii', 'Drift Avalii'), en:'Drift Avalii', x:47, y:60.8, ic:'tower', gi:3, mile:300,
+    { id:'drift-avalii', name:L('Drift Avalii', 'Drift Avalii'), en:'Drift Avalii', x:74.5, y:53.5, ic:'tower', gi:3, mile:300,
       dad:L('A remote island in the ocean, home to the Throne of Shadow and its guardian Andarist. The Tiste Edur come here to claim the throne, and Cutter and Apsalar come to stop them.', 'Odlehlý ostrov v oceánu, domov Trůnu stínu a jeho strážce Andarista. Tiste Edur sem přicházejí nárokovat trůn a Cutter s Apsalar jim v tom chtějí zabránit.'),
       kid:L('A lonely island with an old magical throne. Several dangerous people want it, and two friends arrive to guard it.', 'Osamělý ostrov se starým magickým trůnem. Několik nebezpečných lidí ho chce a dva přátelé přijedou, aby ho střežili.') },
-    { id:'raraku', name:L('Raraku', 'Raraku'), en:'Raraku', x:27.2, y:58.3, ic:'sun', gi:4, mile:500,
+    { id:'raraku', name:L('Raraku', 'Raraku'), en:'Raraku', x:32.3, y:27, ic:'sun', gi:4, mile:500,
       dad:L('The Holy Desert of Seven Cities, dry on the surface and full of old power beneath. Sha’ik’s camp waits here, and the Crippled God comes looking for a champion.', 'Svatá poušť Sedmi měst, na povrchu suchá a pod ním plná staré moci. Čeká tu Ša’ičin tábor a Chromý bůh sem přichází hledat šampiona.'),
       kid:L('A huge hot desert with secret magic under the sand. A rebel camp is here, and a strange god comes to visit Karsa.', 'Obrovská horká poušť s tajnou magií pod pískem. Je tu tábor rebelů a Karsu přijde navštívit podivný bůh.') },
-    { id:'whirlwind-camp', name:L('The Whirlwind Camp', 'Tábor Vichru'), en:'The Whirlwind Camp', x:28, y:59, ic:'crown', gi:5, mile:520,
+    { id:'whirlwind-camp', name:L('The Whirlwind Camp', 'Tábor Vichru'), en:'The Whirlwind Camp', x:33.1, y:28.5, ic:'crown', gi:5, mile:520,
       dad:L('The rebel camp at the heart of Raraku, gathered around the prophetess Sha’ik and her commanders. It is a city of tents, faith and fear, waiting for the Adjunct’s army to arrive.', 'Rebelský tábor v srdci Raraku, shromážděný kolem prorokyně Ša’ik a jejích velitelů. Je to město stanů, víry a strachu, které čeká na příchod armády pobočníka.'),
       kid:L('A giant camp of tents in the desert, full of people who believe in the Whirlwind. They are waiting for a big battle.', 'Obrovský tábor stanů v poušti, plný lidí, kteří věří ve Vichr. Čekají na velkou bitvu.') },
-    { id:'first-throne', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:33, y:60.8, ic:'tower', gi:6, mile:700,
+    { id:'first-throne', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:40.25, y:28.17, ic:'tower', gi:6, mile:700,
       dad:L('An ancient seat hidden far from the battlefields, older than the Empire and the Whirlwind alike. Trull Sengar and Onrack reach it at the end of their journey, and the Tiste Edur’s long war comes into view.', 'Dávné sedadlo ukryté daleko od bojišť, starší než říše i Vichr. Trull Sengar a Onrack k němu dorazí na konci své cesty a před očima se objeví dlouhá válka Tiste Edur.'),
       kid:L('A very old throne in a secret place. Two travellers reach it at the end of the book, and it opens the door to the next story.', 'Velmi starý trůn na tajném místě. Dva poutníci k němu dorazí na konci knihy a on otevře dveře do dalšího příběhu.') }
   ],

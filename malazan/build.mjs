@@ -3,7 +3,7 @@
 //
 // For each volume it takes engine.template.html and injects:
 //   /*__CAST_DATA__*/  <- books/cast.js       (the shared, saga-wide character cast + book structure)
-//   /*__ROUTES_DATA__*/<- books/routes.js     (the shared world-map routes)
+//   /*__ROUTES_DATA__*/<- book stops and the colors in books/routes.js
 //   /*__BOOK_DATA__*/  <- books/<slug>.js     (this volume's chapters, map, scenes, relations…)
 // then inlines the images as data URIs:
 //   __MAP_DATA_URI__   -> assets/map.svg (or map.jpg)      (shared Malazan world map)
@@ -53,25 +53,34 @@ const CAST = new Function(castJs + '\nreturn CAST;')();
 const introVol = {};
 CAST.forEach((c) => { introVol[c.id] = c.intro.vol; });
 
-// shared saga journey map (routes) — injected into every volume too
-const ROUTESFILE = path.join(BOOKS, 'routes.js');
-const routesJs = fs.existsSync(ROUTESFILE) ? noBom(fs.readFileSync(ROUTESFILE, 'utf8')) : '';
-
 // Only volumes that have a data file get built — and only those appear in the switcher.
 const present = VOLUMES.filter((v) => fs.existsSync(bookData(v)));
 if (!present.length) { console.error('✗ Žádná kniha v books/ — nemám co stavět.'); process.exit(1); }
 
+const routeColorsSrc = noBom(fs.readFileSync(path.join(BOOKS, 'routes.js'), 'utf8'));
+const routeColors = new Function(routeColorsSrc + '\nreturn ROUTE_COLORS;')();
+const volumesWithRoutes = present.map((volume) => {
+  const source = noBom(fs.readFileSync(bookData(volume), 'utf8'));
+  const { PLACES } = new Function('L', source + '\nreturn BOOK;')((en, cs) => ({ en, cs }));
+  const route = {
+    vol: volume.order,
+    color: routeColors[volume.order - 1],
+    pts: PLACES.map(({ x, y, gi }) => [x, y, gi]),
+  };
+  return { volume, source, route };
+});
+const routes = volumesWithRoutes.map(({ route }) => route);
 const engineSrc = noBom(fs.readFileSync(ENGINE, 'utf8'));
 const switcher = present.map((v) => ({ file: v.file, order: v.order, short: v.short }));
 
 let hadError = false;
-for (const vol of present) {
+for (const { volume: vol, source } of volumesWithRoutes) {
   let html = engineSrc;
 
   // 1) shared cast + shared routes, then this volume's data
   html = html.replace('/*__CAST_DATA__*/', () => castJs);
-  html = html.replace('/*__ROUTES_DATA__*/', () => routesJs);
-  html = html.replace('/*__BOOK_DATA__*/', () => noBom(fs.readFileSync(bookData(vol), 'utf8')));
+  html = html.replace('/*__ROUTES_DATA__*/', () => 'var ROUTES = ' + JSON.stringify(routes) + ';');
+  html = html.replace('/*__BOOK_DATA__*/', () => source);
 
   // 2) book switcher — this volume flagged as current
   const volumes = switcher.map((v) => ({ ...v, current: v.file === vol.file }));

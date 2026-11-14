@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'chromy-buh', vol: 10, key: 'malazan_v10',
-    mapFrame: { x0: 0.70, x1: 0.98, y0: 0.46, y1: 0.88 }, timelineMin: 6
+    mapFrame: { x0: 0.12, x1: 0.46, y0: 0.62, y1: 0.86 }, timelineMin: 6
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to The Crippled God', info_names: 'We use Erikson’s original names (Tavore, Cotillion, Shadowthrone, Kalyth, Gesler, Stormy…). Czech notes follow the Czech editions; the map labels are in English.' },
@@ -35,22 +35,22 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'letheras10', name:L('Letheras', 'Letheras'), en:'Letheras', x:75.5, y:43.3, ic:'town', gi:1, mile:0,
+    { id:'letheras10', name:L('Letheras', 'Letheras'), en:'Letheras', x:15, y:71, ic:'town', gi:1, mile:0,
       dad:L('The city the Bonehunters left behind, now the seat of Emperor Tehol and a fragile new order. Its canals are calm; the rest of the world is not.', 'Město, které Lovci kostí opustili, nyní sídlo císaře Teholy a křehkého nového řádu. Jeho kanály jsou klidné; zbytek světa ne.'),
       kid:L('The rich canal city from the previous book. It is safer than the wasteland, but still full of politics.', 'Bohaté město kanálů z předchozí knihy. Je bezpečnější než pustina, ale pořád plné politiky.') },
-    { id:'wastes10', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:80, y:54.2, ic:'mountain', gi:2, mile:400,
+    { id:'wastes10', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:28.85, y:73.17, ic:'mountain', gi:2, mile:400,
       dad:L('The dry road the Bonehunters have already crossed, now behind them and still full of the dead. The army cannot go back, only forward into Kolanse.', 'Suchá cesta, kterou Lovci kostí už přešli, nyní za nimi a stále plná mrtvých. Armáda se nemůže vrátit, jen jít dál do Kolanse.'),
       kid:L('The huge dry land the army crossed. There is no way back now — only forward.', 'Obrovská suchá země, kterou armáda přešla. Už není cesta zpět — jen vpřed.') },
-    { id:'shore', name:L('The Shore', 'Pobřeží'), en:'The Shore', x:85, y:62.5, ic:'water', gi:3, mile:700,
+    { id:'shore', name:L('The Shore', 'Pobřeží'), en:'The Shore', x:42.05, y:72.75, ic:'water', gi:3, mile:700,
       dad:L('The ancestral shore of the Shake, where the Tiste Andii once held the gate between worlds. Twilight’s people come here to hold it again, against the Tiste Edur and the rising sea.', 'Prastaré pobřeží Shake, kde Tiste Andii kdysi drželi bránu mezi světy. Twilightin lid sem přichází, aby ji držel znovu, proti Tiste Edurům a stoupajícímu moři.'),
       kid:L('A shore where an ancient gate stands. A sea people comes back to protect it from dark warriors.', 'Pobřeží, kde stojí dávná brána. Mořský lid se vrací, aby ji ochránil před temnými válečníky.') },
-    { id:'kolanse', name:L('Kolanse', 'Kolanse'), en:'Kolanse', x:86, y:66.7, ic:'crown', gi:4, mile:900,
+    { id:'kolanse', name:L('Kolanse', 'Kolanse'), en:'Kolanse', x:42.6, y:78, ic:'crown', gi:4, mile:900,
       dad:L('A conquered land ruled by the Forkrul Assail, its people broken into silence. The Spire stands at its heart, and the Crippled God’s pain runs through its soil like poison.', 'Dobytá země ovládaná Forkrul Assail, jejíž lid je zlomený do ticha. V jejím srdci stojí Věž a bolest Chromého boha prostupuje její půdu jako jed.'),
       kid:L('A sad, conquered land ruled by frightening judges. A huge tower stands in the middle of it.', 'Smutná dobytá země, které vládnou děsiví soudci. Uprostřed ní stojí obrovská věž.') },
-    { id:'spire', name:L('The Spire', 'Věž'), en:'The Spire', x:90, y:73.3, ic:'tower', gi:5, mile:1000,
+    { id:'spire', name:L('The Spire', 'Věž'), en:'The Spire', x:40.9, y:76.5, ic:'tower', gi:5, mile:1000,
       dad:L('The impossible tower at the heart of Kolanse, built around the Crippled God’s heart. Armies and gods converge on it because whoever holds the Spire holds the final argument.', 'Nemožná věž v srdci Kolanse, postavená kolem srdce Chromého boha. Armády a bohové se k ní sbíhají, protože kdo drží Věž, drží poslední argument.'),
       kid:L('A giant tower with a god’s heart inside. Everyone is fighting to reach it.', 'Obrovská věž s božím srdcem uvnitř. Všichni bojují, aby se k ní dostali.') },
-    { id:'heart', name:L('The Crippled God’s Heart', 'Srdce Chromého boha'), en:'The Crippled God’s Heart', x:86, y:66.7, ic:'chain', gi:6, mile:1100,
+    { id:'heart', name:L('The Crippled God’s Heart', 'Srdce Chromého boha'), en:'The Crippled God’s Heart', x:42.6, y:78, ic:'chain', gi:6, mile:1100,
       dad:L('The jade heart at the centre of the Spire, the source of the Crippled God’s pain and the prize of every faction. It is not a weapon. It is a wound that has been kept open for centuries.', 'Nefritové srdce ve středu Věže, zdroj bolesti Chromého boha a cíl všech frakcí. Není to zbraň. Je to rána, kterou drželi otevřenou celá staletí.'),
       kid:L('A glowing heart inside the tower. It hurts, and many people want to use it. But maybe it just wants to stop hurting.', 'Zářící srdce uvnitř věže. Bolí a mnoho lidí ho chce použít. Ale možná jen chce přestat bolet.') }
   ],

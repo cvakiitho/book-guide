@@ -452,7 +452,7 @@
       <div class="road-in">
         <span data-i18n="journey">Saga</span>
         <div class="road-track"><div class="road-fill" id="roadFill"></div></div>
-        <span><b id="chDone">0</b>/<b id="chTotal">6</b> <span data-i18n="chapters_of">movements</span> · <b id="miles">0</b> <span data-i18n="miles_unit">leagues</span></span>
+        <span><b id="chDone">0</b>/<b id="chTotal">6</b> <span data-i18n="chapters_of">movements</span><span id="distance" hidden> · <b id="miles">0</b> <span data-i18n="miles_unit">leagues</span></span></span>
       </div>
     </div>
   </header>
@@ -704,7 +704,7 @@
       world_intro:"A small encyclopedia of the Malazan world. In Reader mode it opens gradually: anything that would spoil the story stays hidden until you have read that far.",
       info_summary:"How it works · about the names",
       info_modes:"<b>Two modes.</b> <i>Guide</i> = full spoiler notes (summary, what to watch for, questions, an intensity meter). <i>Reader</i> = no spoilers: only what you have already read, plus recaps and quizzes. The series is adult fiction; the intensity meter warns about the darkest scenes.",
-      info_unlock:"<b>Unlocking.</b> On each movement, tap <i>Read</i> — that moves the “You are here” pin, adds leagues, and unlocks new characters and places. Progress is saved in your browser.",
+      info_unlock:"<b>Unlocking.</b> Mark a movement as read to update the map and unlock characters and places. Progress is saved in your browser.",
       info_names:"<b>Names.</b> We use Erikson’s original character names (Whiskeyjack, Apsalar, Anomander Rake…). The map follows the selected language.",
       footer:"A fan-made reader’s guide · not affiliated with Steven Erikson or the publishers",
       here_label:"You are here", strip_empty:"The tale has not set out yet — stops appear here once you have read a movement.", stop_word:"Stop", place_locked:"The story has not reached this place yet — read on to unlock it.", place_empty:"Tap a stop below the map and it will carry you there.", fear_label:"Intensity",
@@ -740,7 +740,7 @@
       world_intro:"Malá encyklopedie Malazského světa. V režimu Čtenář se odkrývá postupně: co by prozradilo děj, zůstává skryté, dokud k tomu nedočteš.",
       info_summary:"Jak to funguje · o jménech",
       info_modes:"<b>Dva režimy.</b> <i>Průvodce</i> = plné poznámky se spoilery (shrnutí, na co se zaměřit, otázky, metr intenzity). <i>Čtenář</i> = bez spoilerů, jen to, co už jsi přečetl, plus rekapitulace a kvízy. Série je určená dospělým; metr intenzity upozorňuje na nejtemnější scény.",
-      info_unlock:"<b>Odemykání.</b> U každé části klikni na <i>Přečteno</i> — tím se na mapě posune „Tady jsme“, přibudou ligy a odemknou se nové postavy a místa. Postup se ukládá v prohlížeči.",
+      info_unlock:"<b>Odemykání.</b> Označením části za přečtenou aktualizuješ mapu a odemkneš postavy a místa. Postup se ukládá v prohlížeči.",
       info_names:"<b>Jména.</b> Držíme se původních jmen postav Stevena Eriksona (Whiskeyjack, Apsalar, Anomander Rake…). Mapa používá zvolený jazyk.",
       footer:"Fanouškovský čtenářský průvodce · neoficiální, bez spojení se Stevenem Eriksonem či vydavateli",
       here_label:"Tady jsme", strip_empty:"Příběh ještě nevyrazil — po přečtení části se tu objeví zastávky.", stop_word:"zastávka", place_locked:"Sem příběh ještě nedošel — čti dál a místo se odemkne.", place_empty:"Klikni na zastávku pod mapou a mapa tě k ní zaveze.", fear_label:"Intenzita",
@@ -773,6 +773,7 @@
     var tot=$('#chTotal'); if(tot) tot.textContent=CH.length;
     var rg=reachedGi(), mile=0;
     PLACES.forEach(function(p){ if(p.gi<=rg && p.mile>mile) mile=p.mile; });
+    $('#distance').hidden=!PLACES.some(function(p){ return p.mile>0; });
     $('#miles').textContent=mile;
   }
 

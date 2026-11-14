@@ -37,30 +37,32 @@ var CAST = [
   },
   {
     id: 'quickben', intro: { vol: 1, gi: 1 },
-    name: L('Quick Ben', 'Quick Ben'), en: 'Quick Ben',
+    name: L('Quick Ben', 'Rychlej Ben'), en: 'Quick Ben',
     race: 'malazan', rlab: L('Bridgeburner mage', 'Mág Paličů mostů'), ic: 'warren',
     kid: L('A wizard with more secrets than sleeves. He always has a plan, usually several, and he never tells anyone the whole truth.', 'Čaroděj, který má víc tajemství než rukávů. Vždycky má plán, obvykle několik, a nikdy nikomu neřekne celou pravdu.'),
-    dad: L('A Bridgeburner cadre mage of impossible versatility. He carries the souls of twelve other mages and treats gods as problems to be out-thought.', 'Cadre mág Paličů mostů s nemožnou všestranností. Nese duše dvanácti dalších mágů a bohy považuje za problém, který se dá přechytračit.'),
+    dad: L('A Bridgeburner mage who draws on several branches of sorcery and keeps the extent of his abilities to himself.', 'Mág Paličů mostů, který ovládá několik druhů magie a rozsah svých schopností si nechává pro sebe.'),
     arc: { ahead: L('How much of victory is preparation, and how much is nerve?', 'Kolik z vítězství je příprava a kolik kuráž?'),
       beats: [
         { vol: 1, gi: 1, text: L('Helps hold the Bridgeburners together at Pale.', 'Pomůže udržet Paliče mostů pohromadě u Pale.') },
         { vol: 1, gi: 5, text: L('Fights the Claw and the Hounds through the streets of Darujhistan.', 'Bojuje s Claw a Honiči v ulicích Darujhistanu.') },
         { vol: 3, gi: 5, text: L('Uses Hood’s own warren to trap the Pannion Seer.', 'Použije samotný warren Hooda, aby polapil Pannionského věštce.') },
-        { vol: 6, gi: 3, text: L('Defends the First Throne against the Letherii.', 'Brání První trůn proti Letheriům.') },
+        { vol: 6, gi: 3, text: L('Counters Edur sorcery at sea with help from Bottle and the Eres’al.', 'S pomocí Flašky a Eres’al čelí na moři magii Edur.') },
+        { vol: 6, gi: 6, text: L('Helps Trull hold off Icarium at the First Throne.', 'Pomáhá Trullovi zadržet Icaria u Prvního trůnu.') },
         { vol: 9, gi: 5, text: L('Faces the Nah’ruk beside the Bonehunters.', 'Postaví se Nah’rukům po boku Lovců kostí.') }
       ] }
   },
   {
     id: 'kalam', intro: { vol: 1, gi: 1 },
-    name: L('Kalam Mekhar', 'Kalam Mekhar'), en: 'Kalam Mekhar',
+    name: L('Kalam Mekhar', 'Kalam Méchar'), en: 'Kalam Mekhar',
     race: 'malazan', rlab: L('Bridgeburner assassin', 'Vrah Paličů mostů'), ic: 'sword',
     kid: L('A huge, quiet assassin from Seven Cities. He is dangerous when he is angry, and he is angry most of the time.', 'Obrovský tichý vrah ze Sedmi měst. Když se rozzlobí, je nebezpečný — a rozzlobený je většinou.'),
-    dad: L('A Claw-trained killer who chose the Bridgeburners over the Empress. His loyalty is personal, never institutional.', 'Vrah vycvičený v Claw, který dal přednost Paličům mostů před císařovnou. Jeho věrnost je osobní, nikdy institucionální.'),
+    dad: L('An assassin trained by the imperial Claw who now serves with the Bridgeburners.', 'Asasín vycvičený říšským Spárem, který slouží u Paličů mostů.'),
     arc: { ahead: L('When does vengeance become just another chain?', 'Kdy se pomsta stane jen dalším řetězem?'),
       beats: [
         { vol: 1, gi: 1, text: L('Survives Pale and takes the fight into Darujhistan.', 'Přežije Pale a přenese boj do Darujhistanu.') },
         { vol: 2, gi: 3, text: L('Carries the Book of the Apocalypse to Sha’ik in Raraku.', 'Nese Knihu apokalypsy Ša’ik do Raraku.') },
-        { vol: 6, gi: 4, text: L('Escapes the trap in Malaz City, badly wounded but alive.', 'Unikne pasti v Malaz City, těžce raněný, ale živý.') }
+        { vol: 6, gi: 5, text: L('Chooses to protect Tavore as the Claw close in.', 'Rozhodne se chránit Tavore před Spárem.') },
+        { vol: 6, gi: 6, text: L('Is poisoned and taken into the Deadhouse.', 'Je otráven a odnesen do Domu mrtvých.') }
       ] }
   },
   {
@@ -231,7 +233,7 @@ var CAST = [
       beats: [
         { vol: 1, gi: 1, text: L('Sends the old guard to die in Genabackis.', 'Pošle starou gardu zemřít na Genabackis.') },
         { vol: 1, gi: 6, text: L('Declares Dujek and the Bridgeburners outlaws.', 'Prohlásí Dujeka a Paliče mostů za vyvrhele.') },
-        { vol: 6, gi: 4, text: L('Faces Tavore and the Bonehunters in Malaz City.', 'V Malaz City čelí Tavore a Lovcům kostí.') }
+        { vol: 6, gi: 5, text: L('Meets Tavore at Mock’s Hold and orders the arrest of Nil and Nether.', 'Setká se s Tavore na Posměvákově tvrzi a nařídí zatknout Nila a Nether.') }
       ] }
   },
   {
@@ -297,7 +299,8 @@ var CAST = [
     arc: { ahead: L('Is forgetting a mercy, or the cruelest kind of prison?', 'Je zapomnění milost, nebo nejkrutější druh vězení?'),
       beats: [
         { vol: 2, gi: 2, text: L('Crosses Raraku with Mappo, seeking the Path of Hands.', 'Přejde Raraku s Mappem a hledá Cestu rukou.') },
-        { vol: 6, gi: 3, text: L('Unleashes his full power at the First Throne.', 'Uvolní svou plnou moc u Prvního trůnu.') },
+        { vol: 6, gi: 4, text: L('Travels with Taralack Veed after being separated from Mappo.', 'Po odloučení od Mappa cestuje s Taralackem Výdem.') },
+        { vol: 6, gi: 6, text: L('Overwhelms the defenders at the First Throne until the Eres’al stops him.', 'U Prvního trůnu přemáhá obránce, dokud ho nezastaví Eres’al.') },
         { vol: 7, gi: 1, text: L('Arrives in Letheras as a challenger to Rhulad.', 'Přijde do Letherasu jako vyzývatel Rhulada.') },
         { vol: 7, gi: 6, text: L('Tries to remake K’rul’s warrens and breaks something vast.', 'Pokusí se předělat K’rulovy warreny a rozbije něco obrovského.') }
       ] }
@@ -521,7 +524,8 @@ var CAST = [
         { vol: 2, gi: 1, text: L('Is named Adjunct after her sister is sent to the mines.', 'Je jmenována pobočníkem poté, co je její sestra poslána do dolů.') },
         { vol: 4, gi: 2, text: L('Takes command of the Fourteenth Army at Aren.', 'V Arenu převezme velení 14. armády.') },
         { vol: 4, gi: 5, text: L('Kills Sha’ik without knowing it is Felisin.', 'Zabije ša’ik, aniž pozná Felisín.') },
-        { vol: 6, gi: 1, text: L('Leads the Bonehunters out of the fire of Y’Ghatan.', 'Vyvede Lovce kostí z ohně Y’Ghatanu.') },
+        { vol: 6, gi: 1, text: L('Commands the Fourteenth in the campaign against Leoman.', 'Velí Čtrnácté armádě v tažení proti Leomanovi.') },
+        { vol: 6, gi: 5, text: L('Refuses to surrender the Wickans to Rel and Dom.', 'Odmítne vydat Záchlumčany Relovi a Domovi.') },
         { vol: 9, gi: 1, text: L('Marches into the Letherii wastelands on a mission no one understands.', 'Vyráží do letherských pustin na misi, které nikdo nerozumí.') }
       ] }
   },
@@ -536,6 +540,7 @@ var CAST = [
         { vol: 4, gi: 4, text: L('Onrack finds him and breaks his chains.', 'Onrack ho najde a rozbije jeho okovy.') },
         { vol: 4, gi: 6, text: L('Reaches the First Throne with Onrack and begins his story.', 'Dostane se s Onrackem k Prvnímu trůnu a začne vyprávět svůj příběh.') },
         { vol: 5, gi: 1, text: L('His account goes back to his life among the Sengar brothers.', 'Jeho vyprávění se vrací k životu mezi bratry Sengarovými.') },
+        { vol: 6, gi: 6, text: L('Defends the First Throne against an Edur war party and Icarium.', 'Brání První trůn proti válečné družině Edur a Icariovi.') },
         { vol: 7, gi: 5, text: L('Is stabbed in the ruins of Letheras.', 'Je bodnut v troskách Letherasu.') }
       ] }
   },
@@ -782,41 +787,105 @@ var CAST = [
   {
     id: 'hellian', intro: { vol: 6, gi: 1 },
     name: L('Hellian', 'Hellian'), en: 'Hellian',
-    race: 'malazan', rlab: L('Bonehunter sergeant', 'Seržantka Lovců kostí'), ic: 'flame',
+    race: 'malazan', rlab: L('Sergeant from Kartool', 'Seržantka z Kartoolu'), ic: 'flame',
     kid: L('A sergeant who is always looking for a drink and somehow always finds a way to win. Her soldiers would die for her, mostly because they have no choice.', 'Seržantka, která pořád hledá něco na pití a nějak vždycky najde cestu k vítězství. Její vojáci by pro ni zemřeli, hlavně protože nemají na výběr.'),
-    dad: L('A drunken, foul-mouthed sergeant of the 14th who turns out to be one of its best officers. Her chaos is carefully aimed.', 'Opilá, sprostá seržantka 14. armády, která se ukáže jako jedna z jejích nejlepších důstojnic. Její chaos je pečlivě mířený.'),
+    dad: L('A sergeant of the Kartool city guard who transfers to the Fourteenth Army.', 'Seržantka městské stráže v Kartoolu, která přejde k Čtrnácté armádě.'),
     arc: { ahead: L('How much can you hide behind a bottle?', 'Kolik se dá schovat za láhev?'),
       beats: [
-        { vol: 6, gi: 1, text: L('Fights her way out of Y’Ghatan with her squad.', 'Probojuje se se svou četou z Y’Ghatanu.') },
-        { vol: 6, gi: 5, text: L('Becomes one of the Bonehunters’ most reliable sergeants.', 'Stane se jednou z nejspolehlivějších seržantek Lovců kostí.') },
+        { vol: 6, gi: 1, text: L('Escapes Y’Ghatan through the tunnels with Fiddler’s group.', 'Unikne z Y’Ghatanu podzemím se Šumařovou skupinou.') },
         { vol: 9, gi: 3, text: L('Marches into the Letherii wastelands with Tavore.', 'Vyráží s Tavore do letherských pustin.') }
       ] }
   },
   {
     id: 'bottle', intro: { vol: 6, gi: 1 },
-    name: L('Bottle', 'Bottle'), en: 'Bottle',
-    race: 'malazan', rlab: L('Bonehunter mage', 'Mág Lovců kostí'), ic: 'warren',
+    name: L('Bottle', 'Flaška'), en: 'Bottle',
+    race: 'malazan', rlab: L('Squad mage', 'Oddílový mág'), ic: 'warren',
     kid: L('A young mage who can talk to rats and hates being noticed. He is braver than he thinks and cleverer than he lets on.', 'Mladý mág, který umí mluvit s krysami a nesnáší, když si ho někdo všimne. Je statečnější, než si myslí, a chytřejší, než dává najevo.'),
-    dad: L('A squad mage of the 14th with a gift for rats, ghosts and uncomfortable truths. He grows from a nervous recruit into one of the Bonehunters’ quiet pillars.', 'Eskadronní mág 14. armády s darem pro krysy, duchy a nepříjemné pravdy. Z nervózního rekruta vyroste v jednoho z tichých pilířů Lovců kostí.'),
+    dad: L('A mage in Fiddler’s squad who can use small animals as scouts.', 'Mág ze Šumařova oddílu, který umí využít malé živočichy k průzkumu.'),
     arc: { ahead: L('Can a person who fears everything still be brave?', 'Může být člověk, který se bojí všeho, pořád statečný?'),
       beats: [
-        { vol: 6, gi: 1, text: L('Survives the fire of Y’Ghatan with his squad.', 'Přežije požár Y’Ghatanu se svou četou.') },
-        { vol: 6, gi: 3, text: L('Uses his rats and his wits at the First Throne.', 'Použije své krysy a důvtip u Prvního trůnu.') },
+        { vol: 6, gi: 1, text: L('Uses a rat to find a way through the ruins under Y’Ghatan.', 'Pomocí krysy najde cestu ruinami pod Y’Ghatanem.') },
+        { vol: 6, gi: 3, text: L('Helps Quick Ben resist Edur magic at sea.', 'Pomáhá Rychlému Benovi čelit na moři magii Edur.') },
         { vol: 9, gi: 4, text: L('Faces the Nah’ruk in the Glass Desert.', 'Čelí Nah’rukům ve Skleněné poušti.') }
       ] }
   },
   {
-    id: 'mallick', intro: { vol: 6, gi: 2 },
+    id: 'mallick', intro: { vol: 2, gi: 5 },
     name: L('Mallick Rel', 'Mallick Rel'), en: 'Mallick Rel',
-    race: 'human', rlab: L('Imperial adviser', 'Císařský rádce'), ic: 'mask',
+    race: 'human', rlab: L('Jhistal priest', 'Jhistalský kněz'), ic: 'mask',
     kid: L('A smooth, smiling official who always seems to be on the winning side. He is very good at making other people take the blame.', 'Hladký usměvavý úředník, který jako by vždycky stál na vítězné straně. Velmi dobře umí ostatním podstrčit vinu.'),
     dad: L('A Jhistal priest and political survivor who serves whoever is useful and betrays whoever is not. His rise is one of the saga’s most unsettling arcs.', 'Jhistalský kněz a politický přeživší, který slouží, dokud je to užitečné, a zrazuje, když už ne. Jeho vzestup je jedním z nejznepokojivějších oblouků ságy.'),
     arc: { ahead: L('How far can a man rise without ever fighting?', 'Jak vysoko může člověk vystoupat, aniž kdy bojoval?'),
       beats: [
-        { vol: 6, gi: 2, text: L('Advises Laseen while the empire comes apart.', 'Radí Laseen, zatímco se říše rozpadá.') },
-        { vol: 6, gi: 4, text: L('Survives the Malaz City confrontation and keeps his influence.', 'Přežije střet v Malaz City a udrží si vliv.') },
+        { vol: 2, gi: 5, text: L('Advises High Fist Pormqual in Aren.', 'Radí vrchní pěsti Pormqualovi v Arenu.') },
+        { vol: 6, gi: 5, text: L('Accuses the Wickans of causing the disaster at Aren and demands Tavore hand over her allies.', 'Obviní Záchlumčany z pohromy u Arenu a požaduje, aby Tavore vydala své spojence.') },
         { vol: 10, gi: 6, text: L('Is left standing when the old order falls.', 'Zůstane stát, když starý řád padne.') }
       ] }
+  },
+  {
+    id: 'keneb', intro: { vol: 2, gi: 3 },
+    name: L('Keneb', 'Keneb'), en: 'Keneb',
+    race: 'malazan', rlab: L('Malazan officer', 'Malazský důstojník'), ic: 'sword',
+    kid: L('An officer who stands by Tavore and her soldiers.', 'Důstojník, který stojí při Tavore a jejích vojácích.'),
+    dad: L('A soldier Kalam meets in Seven Cities. He later serves as one of Tavore’s Fists.', 'Voják, kterého Kalam potká v Sedmiměstí. Později slouží pod Tavore jako jedna z jejích pěstí.'),
+    arc: { ahead: L('Whose orders will he obey?', 'Čí rozkazy poslechne?'), beats: [
+      { vol: 6, gi: 5, text: L('Keeps the ships at Malaz City until Tavore can return.', 'Zadrží lodě ve městě Malaz, dokud se Tavore nebude moci vrátit.') }
+    ] }
+  },
+  {
+    id: 'sinn', intro: { vol: 4, gi: 2 },
+    name: L('Sinn', 'Sinn'), en: 'Sinn',
+    race: 'malazan', rlab: L('Young mage', 'Mladá kouzelnice'), ic: 'flame',
+    kid: L('A young girl with a gift for magic.', 'Mladá dívka s nadáním pro magii.'),
+    dad: L('A young mage the Fourteenth meets in Seven Cities.', 'Mladá kouzelnice, se kterou se Čtrnáctá armáda setká v Sedmiměstí.'),
+    arc: { ahead: L('What will fire mean to her after Y’Ghatan?', 'Co pro ni bude znamenat oheň po Y’Ghatanu?'), beats: [
+      { vol: 6, gi: 1, text: L('Helps soldiers escape the fire and returns with Faradan Sort to find survivors.', 'Pomáhá vojákům uniknout požáru a s Faradan Sort se vrátí hledat přeživší.') }
+    ] }
+  },
+  {
+    id: 'sort', intro: { vol: 6, gi: 1 },
+    name: L('Faradan Sort', 'Faradan Sort'), en: 'Faradan Sort',
+    race: 'malazan', rlab: L('Malazan captain', 'Malazská kapitánka'), ic: 'sword',
+    kid: L('A captain who helps Sinn look for missing soldiers.', 'Kapitánka, která pomáhá Sinn hledat pohřešované vojáky.'),
+    dad: L('An officer of the Fourteenth and a veteran of the Stormwall.', 'Důstojnice Čtrnácté armády a veteránka z Bouřné hradby.'),
+    arc: { ahead: L('What will she risk to find her soldiers?', 'Co riskuje, aby našla své vojáky?'), beats: [
+      { vol: 6, gi: 1, text: L('Goes back to Y’Ghatan with Sinn and helps dig the survivors out.', 'Vrátí se se Sinn do Y’Ghatanu a pomůže vyprostit přeživší.') }
+    ] }
+  },
+  {
+    id: 'tamber', intro: { vol: 6, gi: 1 },
+    name: L('T’amber', 'T’jantar'), en: 'T’amber',
+    race: 'malazan', rlab: L('Tavore’s aide', 'Tavořina pobočnice'), ic: 'sword',
+    kid: L('Tavore’s aide and trusted companion.', 'Tavořina pobočnice a důvěrná společnice.'),
+    dad: L('Tavore’s aide, who accompanies her in Seven Cities and at Malaz City.', 'Tavořina pobočnice, která ji doprovází v Sedmiměstí i ve městě Malaz.'),
+    arc: { ahead: L('How far will she go to protect Tavore?', 'Kam až zajde, aby ochránila Tavore?'), beats: [
+      { vol: 6, gi: 5, text: L('Fights beside Kalam on the way to the harbour.', 'Na cestě k přístavu bojuje po Kalamově boku.') },
+      { vol: 6, gi: 6, text: L('Dies of her wounds during the escape.', 'Při útěku podlehne zraněním.') }
+    ] }
+  },
+  {
+    id: 'veed', intro: { vol: 6, gi: 4 },
+    name: L('Taralack Veed', 'Taralack Výd'), en: 'Taralack Veed',
+    race: 'human', rlab: L('Agent of the Nameless Ones', 'Agent Bezejmenných'), ic: 'mask',
+    kid: L('A travelling companion the Nameless Ones choose for Icarium.', 'Průvodce, kterého Bezejmenní vyberou Icariovi.'),
+    dad: L('A Gral and an agent of the Nameless Ones sent to replace Mappo as Icarium’s companion.', 'Gral a agent Bezejmenných, vyslaný, aby po Icariově boku nahradil Mappa.')
+  },
+  {
+    id: 'poliel', intro: { vol: 6, gi: 2 },
+    name: L('Poliel', 'Poliel'), en: 'Poliel',
+    race: 'god', rlab: L('Goddess of disease', 'Bohyně nemocí'), ic: 'mask',
+    kid: L('A goddess whose magic is connected with the plague.', 'Bohyně, jejíž magie souvisí s morem.'),
+    dad: L('The goddess of disease, whose temple stands at the centre of the plague in Seven Cities.', 'Bohyně nemocí, jejíž chrám je ohniskem moru v Sedmiměstí.')
+  },
+  {
+    id: 'corabb', intro: { vol: 4, gi: 5 },
+    name: L('Corabb Bhilan Thenu’alas', 'Corabb Bhilan Thenu’alas'), en: 'Corabb Bhilan Thenu’alas',
+    race: 'human', rlab: L('Seven Cities warrior', 'Bojovník ze Sedmiměstí'), ic: 'sword',
+    kid: L('One of Leoman’s fighters, who has remarkably good luck.', 'Jeden z Leomanových bojovníků, který má neobyčejné štěstí.'),
+    dad: L('A warrior who follows Leoman to Y’Ghatan.', 'Bojovník, který následuje Leomana do Y’Ghatanu.'),
+    arc: { ahead: L('Where will his luck take him?', 'Kam ho jeho štěstí zavede?'), beats: [
+      { vol: 6, gi: 1, text: L('Escapes the ruins of Y’Ghatan with Fiddler’s group.', 'Unikne z ruin Y’Ghatanu se Šumařovou skupinou.') }
+    ] }
   },
   {
     id: 'redmask', intro: { vol: 7, gi: 1 },
@@ -831,14 +900,15 @@ var CAST = [
       ] }
   },
   {
-    id: 'samar', intro: { vol: 7, gi: 1 },
+    id: 'samar', intro: { vol: 6, gi: 1 },
     name: L('Samar Dev', 'Samar Dev'), en: 'Samar Dev',
-    race: 'human', rlab: L('Bonecaster / inventor', 'Kostěná kouzelnice / vynálezkyně'), ic: 'scroll',
+    race: 'human', rlab: L('Witch of Ugarat', 'Čarodějka z Ugaratu'), ic: 'scroll',
     kid: L('A sharp-tongued traveller who knows old magic and how to fix things. She finds Karsa infuriating and cannot quite leave him.', 'Ostrá poutnice, která zná starou magii a umí opravit skoro všechno. Karsa ji nesmírně štve a přesto ho nedokáže úplně opustit.'),
-    dad: L('A self-taught Bonecaster and maker of clever devices, bound to Karsa by a knife and a debt. Her patience with him is a kind of heroism.', 'Samouká kostěná kouzelnice a tvůrkyně důmyslných přístrojů, připoutaná k Karsovi nožem a dluhem. Její trpělivost s ním je druh hrdinství.'),
+    dad: L('A witch and inventor from Ugarat. She travels across Seven Cities with Karsa Orlong.', 'Čarodějka a vynálezkyně z Ugaratu. Prochází Sedmiměstím s Karsou Orlongem.'),
     arc: { ahead: L('Can you change a man who refuses to change?', 'Můžeš změnit muže, který se odmítá změnit?'),
       beats: [
-        { vol: 7, gi: 1, text: L('Travels with Karsa to Letheras as his reluctant companion.', 'Cestuje s Karsou do Letherasu jako neochotná společnice.') },
+        { vol: 6, gi: 3, text: L('Travels with Karsa across Seven Cities to the western coast.', 'Cestuje s Karsou přes Sedmiměstí k západnímu pobřeží.') },
+        { vol: 7, gi: 1, text: L('Travels to Letheras with Karsa.', 'Cestuje s Karsou do Lederas.') },
         { vol: 7, gi: 5, text: L('Witnesses Karsa’s fight with Rhulad and the Crippled God’s offer.', 'Je svědkem Karsova boje s Rhuladem a nabídky Chromého boha.') },
         { vol: 8, gi: 2, text: L('Crosses the Plain of Lamatath with Karsa.', 'Přejde Planinu Lamatath s Karsou.') }
       ] }
@@ -906,27 +976,29 @@ var CAST = [
       ] }
   },
   {
-    id: 'stormy', intro: { vol: 6, gi: 1 },
-    name: L('Stormy', 'Stormy'), en: 'Stormy',
-    race: 'malazan', rlab: L('Bonehunter sergeant', 'Seržant Lovců kostí'), ic: 'flame',
+    id: 'stormy', intro: { vol: 2, gi: 3 },
+    name: L('Stormy', 'Bouřňák'), en: 'Stormy',
+    race: 'malazan', rlab: L('Malazan marine', 'Malazský mariňák'), ic: 'flame',
     kid: L('A tough soldier with a loud voice and a soft heart. He has survived so many battles that he has stopped expecting to survive the next one.', 'Drsný voják s hlasitým hlasem a měkkým srdcem. Přežil tolik bitev, že už ani nečeká, že přežije další.'),
-    dad: L('A veteran sergeant of the 14th, one of the few soldiers who has been everywhere and still complains about the food. His friendship with Gesler is legendary.', 'Zkušený seržant 14. armády, jeden z mála vojáků, kteří byli všude a pořád si stěžují na jídlo. Jeho přátelství s Geslerem je legendární.'),
+    dad: L('A veteran marine and Gesler’s long-time comrade.', 'Zkušený mariňák a Geslerův dlouholetý spolubojovník.'),
     arc: { ahead: L('What keeps a soldier going when he has already outlived his luck?', 'Co drží vojáka na nohou, když už dávno přežil své štěstí?'),
       beats: [
-        { vol: 6, gi: 1, text: L('Fights through the Y’Ghatan fire with Gesler.', 'Probojuje se ohněm Y’Ghatanu s Geslerem.') },
+        { vol: 2, gi: 3, text: L('Helps Kulp and the fugitives and boards the Silanda with Gesler.', 'Pomáhá Kulpovi a uprchlíkům a s Geslerem nastoupí na Silandu.') },
+        { vol: 6, gi: 5, text: L('Names fallen comrades with Gesler and Fiddler in Malaz City.', 'Ve městě Malaz s Geslerem a Šumařem vzpomíná na padlé spolubojovníky.') },
         { vol: 9, gi: 4, text: L('Faces the Nah’ruk in the Glass Desert.', 'Čelí Nah’rukům ve Skleněné poušti.') },
         { vol: 10, gi: 5, text: L('Stands with the Bonehunters at the Spire.', 'Stojí s Lovci kostí u Věže.') }
       ] }
   },
   {
-    id: 'gesler', intro: { vol: 6, gi: 1 },
+    id: 'gesler', intro: { vol: 2, gi: 3 },
     name: L('Gesler', 'Gesler'), en: 'Gesler',
-    race: 'malazan', rlab: L('Bonehunter sergeant', 'Seržant Lovců kostí'), ic: 'sword',
+    race: 'malazan', rlab: L('Malazan marine', 'Malazský mariňák'), ic: 'sword',
     kid: L('A calm, sarcastic soldier who has seen it all. He pretends not to care, but he cares more than almost anyone.', 'Klidný, sarkastický voják, který už viděl všechno. Předstírá, že ho to nezajímá, ale zajímá ho to víc než skoro kohokoli.'),
-    dad: L('A veteran of the 14th and Stormy’s oldest friend. He carries the weight of command lightly, which is how his soldiers know he feels it.', 'Veterán 14. armády a nejstarší přítel Stormyho. Nese tíhu velení lehce, a právě proto jeho vojáci vědí, že ji cítí.'),
+    dad: L('A veteran marine who serves alongside Stormy.', 'Zkušený mariňák, který slouží po boku Bouřňáka.'),
     arc: { ahead: L('Is there such a thing as a good soldier in a bad war?', 'Existuje něco jako dobrý voják ve špatné válce?'),
       beats: [
-        { vol: 6, gi: 1, text: L('Leads his squad out of the Y’Ghatan fire.', 'Vyvede svou četu z ohně Y’Ghatanu.') },
+        { vol: 2, gi: 3, text: L('Helps Kulp and the fugitives and boards the Silanda with Stormy.', 'Pomáhá Kulpovi a uprchlíkům a s Bouřňákem nastoupí na Silandu.') },
+        { vol: 6, gi: 1, text: L('Survives the underground escape from Y’Ghatan.', 'Přežije útěk z Y’Ghatanu podzemím.') },
         { vol: 9, gi: 4, text: L('Fights the Nah’ruk beside Stormy and the K’Chain.', 'Bojuje s Nah’ruky po boku Stormyho a K’Chain.') },
         { vol: 10, gi: 5, text: L('Makes his last stand at the Spire.', 'Padne v posledním boji u Věže.') }
       ] }
@@ -972,8 +1044,8 @@ var VOLBOOKS = {
     { count: 3, label: 'II', title: L('The Fall of Letheras', 'Pád Letherasu') }
   ],
   '6': [
-    { count: 3, label: 'I', title: L('The Fire of Y’Ghatan', 'Oheň Y’Ghatanu') },
-    { count: 3, label: 'II', title: L('The Bonehunters', 'Lovci kostí') }
+    { count: 3, label: 'I', title: L('Seven Cities', 'Sedmiměstí') },
+    { count: 3, label: 'II', title: L('Malaz and the First Throne', 'Malaz a První trůn') }
   ],
   '7': [
     { count: 3, label: 'I', title: L('The Challengers', 'Vyzývatelé') },

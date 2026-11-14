@@ -988,6 +988,7 @@
   // A character shows once introduced (intro.vol <= this volume). Heroes from earlier volumes are
   // unlocked from the start (with their earlier diary); newcomers unlock as you read this volume.
   function charUnlocked(c){ return state.mode==='tata' || c.intro.vol<VOL || (c.intro.vol===VOL && c.intro.gi<=reachedGi()); }
+  function charName(ch, short){ return t((BOOK.castNames && BOOK.castNames[ch.id]) || (short && ch.short) || ch.name); }
   function renderChars(){
     $('#charHint').textContent = T(state.mode==='kluci' ? 'charhint_kids' : 'charhint_parent');
     var grid=$('#charGrid'); grid.innerHTML='';
@@ -996,11 +997,11 @@
       var card=el('div','char r-'+ch.race+(unlocked?'':' locked'));
       var frame;
       if(!unlocked){ frame='<div class="pframe fallback">'+icon('lock')+'</div>'; }
-      else { var im=imgPortrait(ch.id,t(ch.name));
+      else { var im=imgPortrait(ch.id,charName(ch));
         frame = im ? '<div class="pframe">'+im+'</div>'
                    : '<div class="pframe fallback">'+icon(ch.ic)+'</div>'; }
       card.innerHTML=frame+
-        '<h4>'+(unlocked?esc(t(ch.name)):'? ? ?')+'</h4><div class="race">'+esc(t(ch.rlab))+'</div>';
+        '<h4>'+(unlocked?esc(charName(ch)):'? ? ?')+'</h4><div class="race">'+esc(t(ch.rlab))+'</div>';
       if(unlocked){ card.setAttribute('tabindex','0'); card.setAttribute('role','button');
         card.addEventListener('click',function(){ toggleChar(ch, card); });
         card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleChar(ch, card); } }); }
@@ -1030,12 +1031,12 @@
     openCharId=ch.id;
     var d=el('div','char-detail'); d.id='charDetail';
     var txt = t(state.mode==='kluci'? ch.kid : ch.dad);
-    var im=imgPortrait(ch.id,t(ch.name));
+    var im=imgPortrait(ch.id,charName(ch));
     var visual = im ? '<div class="cd-pimg">'+im+'</div>'
                     : '<div class="medallion">'+icon(ch.ic)+'</div>';
     var say=t(ch.say);
     d.innerHTML='<div class="cd r-'+ch.race+'">'+visual+
-      '<div class="cdbody"><h3>'+esc(t(ch.name))+'</h3><div class="en">'+(state.lang==='en'?'':esc(ch.en)+' · ')+esc(t(ch.rlab))+'</div>'+
+      '<div class="cdbody"><h3>'+esc(charName(ch))+'</h3><div class="en">'+(state.lang==='en'?'':esc(ch.en)+' · ')+esc(t(ch.rlab))+'</div>'+
       (say&&say!=='—'?'<div class="say">'+esc(T('say_label'))+' <b>'+esc(say)+'</b></div>':'')+
       '<p>'+esc(txt)+'</p>'+arcHtml(ch)+'</div>'+
       '<button class="close" aria-label="'+esc(T('close'))+'">✕</button></div>';
@@ -1272,7 +1273,7 @@
     var unlocked = isArtifact || (ch && charUnlocked(ch));
     var raceCls = isArtifact?'r-god':(ch?'r-'+ch.race:'');
     if(!unlocked) return '<div class="node locked"><div class="medallion">'+icon('lock')+'</div><small>?</small></div>';
-    var nm = isArtifact ? T('artifact_name') : t(ch.short||ch.name);
+    var nm = isArtifact ? T('artifact_name') : charName(ch,true);
     var im = isArtifact?null:imgPortrait(id,nm);
     var inner = im||icon(isArtifact?'deck':ch.ic);
     return '<div class="node '+raceCls+'"><div class="medallion'+(im?' pm':'')+'">'+inner+'</div><small>'+esc(nm)+(role?'<br>'+esc(role):'')+'</small></div>';

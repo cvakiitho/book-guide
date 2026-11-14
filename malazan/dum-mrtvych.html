@@ -758,7 +758,7 @@ var CAST = [
         { vol: 1, gi: 2, text: L('Serves Adjunct Lorn as her executioner and guide.', 'Slouží pobočníkovi Lorn jako kat a průvodce.') },
         { vol: 1, gi: 4, text: L('Fights the Tyrant he helped release.', 'Bojuje s Tyranem, kterého pomohl vypustit.') },
         { vol: 3, gi: 6, text: L('Is restored to mortal flesh at the end of the Pannion war.', 'Na konci pannionské války je navrácen do smrtelného těla.') },
-        { vol: 7, gi: 2, text: L('Witnesses Toc’s sacrifice among the Awl.', 'Je svědkem Tocovy oběti mezi Awly.') },
+        { vol: 7, gi: 2, text: L('Reaches the battlefield with the White Face Barghast and finds Toc dead.', 'Dorazí s Barghasty Bílé tváře na bojiště a najde Toce mrtvého.') },
         { vol: 9, gi: 3, text: L('Faces the destruction of his family and his people.', 'Čelí zničení své rodiny a svého lidu.') }
       ] }
   },
@@ -981,7 +981,7 @@ var CAST = [
         { vol: 3, gi: 1, text: L('Emerges from the warren of chaos with Togg inside him.', 'Vynoří se z warrenu chaosu s Toggem uvnitř.') },
         { vol: 3, gi: 4, text: L('Is captured and tortured by the Pannion Seer.', 'Je zajat a mučen Pannionským věštcem.') },
         { vol: 3, gi: 6, text: L('Receives a new body and a second chance.', 'Dostane nové tělo a druhou šanci.') },
-        { vol: 7, gi: 2, text: L('Dies saving Awl children from the Letherii.', 'Zemře, když zachraňuje awlské děti před Letherii.') }
+        { vol: 7, gi: 2, text: L('Dies giving the Awl children time to escape.', 'Zemře, když dětem Oulanů získává čas k útěku.') }
       ] }
   },
   {
@@ -1123,7 +1123,8 @@ var CAST = [
         { vol: 4, gi: 6, text: L('Reaches the First Throne with Onrack and begins his story.', 'Dostane se s Onrackem k Prvnímu trůnu a začne vyprávět svůj příběh.') },
         { vol: 5, gi: 1, text: L('His account goes back to his life among the Sengar brothers.', 'Jeho vyprávění se vrací k životu mezi bratry Sengarovými.') },
         { vol: 6, gi: 6, text: L('Defends the First Throne against an Edur war party and Icarium.', 'Brání První trůn proti válečné družině Edur a Icariovi.') },
-        { vol: 7, gi: 5, text: L('Is stabbed in the ruins of Letheras.', 'Je bodnut v troskách Letherasu.') }
+        { vol: 7, gi: 4, text: L('Defends the Refugium and is reunited with Seren.', 'Brání Refugium a znovu se setká se Seren.') },
+        { vol: 7, gi: 6, text: L('Is fatally stabbed while grieving over Rhulad.', 'Je smrtelně bodnut, když truchlí nad Rhuladem.') }
       ] }
   },
   {
@@ -1136,7 +1137,7 @@ var CAST = [
       beats: [
         { vol: 4, gi: 4, text: L('Frees Trull Sengar from his long imprisonment.', 'Osvobodí Trulla Sengara z dlouhého zajetí.') },
         { vol: 4, gi: 6, text: L('Escorts Trull to the First Throne.', 'Doprovodí Trulla k Prvnímu trůnu.') },
-        { vol: 7, gi: 3, text: L('Defends the Refugium against Silchas Ruin’s betrayal.', 'Brání Refugium proti zradě Silchase Ruina.') }
+        { vol: 7, gi: 4, text: L('Regains his mortal body in the Refugium and finds his family.', 'V Refugiu znovu získá smrtelné tělo a najde svou rodinu.') }
       ] }
   },
   {
@@ -1225,15 +1226,15 @@ var CAST = [
   {
     id: 'tehol', intro: { vol: 5, gi: 1 },
     name: L('Tehol Beddict', 'Tehol Beddikt'), en: 'Tehol Beddict',
-    race: 'human', rlab: L('Letherii financier', 'Letherský finančník'), ic: 'book',
+    race: 'human', rlab: L('Letherii financier', 'Lederský finančník'), ic: 'book',
     kid: L('A brilliant, ragged man who lives on a roof and seems to own nothing. He is secretly smarter than everyone in the city.', 'Geniální otrhaný muž, který žije na střeše a zdá se, že nic nevlastní. Tajně je chytřejší než celé město.'),
-    dad: L('A former financial genius who destroyed his own fortune and now works to destroy Lether’s economy from within. His jokes are a weapon and a shield.', 'Bývalý finanční génius, který zničil vlastní jmění a teď pracuje na zničení letherské ekonomiky zevnitř. Jeho vtipy jsou zbraň i štít.'),
+    dad: L('A financier who gave up his fortune and now works to undermine Lether’s economy.', 'Finančník, který se vzdal vlastního jmění a teď podkopává lederské hospodářství.'),
     arc: { ahead: L('Can one man bankrupt an empire — and survive it?', 'Může jeden muž zbankrotovat říši — a přežít to?'),
       beats: [
         { vol: 5, gi: 1, text: L('Plots against Lether’s rulers from a rooftop with his servant Bugg.', 'Kuje plány proti letherským vládcům na střeše se svým sluhou Buggem.') },
         { vol: 5, gi: 6, text: L('Is nearly killed — and saved by a god.', 'Je téměř zabit — a zachrání ho bůh.') },
-        { vol: 7, gi: 4, text: L('Returns to public life as the Letherii Empire collapses.', 'Vrátí se do veřejného života, když se letherská říše hroutí.') },
-        { vol: 7, gi: 6, text: L('Is proclaimed Emperor by the will of the people.', 'Je prohlášen císařem z vůle lidu.') }
+        { vol: 7, gi: 1, text: L('Works with Bugg and the Rat Catchers’ Guild to undermine the economy.', 'S Buggem a cechem chytačů krys podkopává hospodářství.') },
+        { vol: 7, gi: 6, text: L('Becomes emperor after Rhulad’s fall.', 'Po Rhuladově pádu se stane císařem.') }
       ] }
   },
   {
@@ -1246,7 +1247,7 @@ var CAST = [
       beats: [
         { vol: 5, gi: 1, text: L('Serves Tehol and quietly keeps him alive.', 'Slouží Teholovi a potichu ho drží naživu.') },
         { vol: 5, gi: 6, text: L('Reveals himself as Mael and saves Tehol’s life.', 'Odhalí se jako Mael a zachrání Teholovi život.') },
-        { vol: 7, gi: 4, text: L('Returns to Letheras to face the Crippled God’s plans.', 'Vrátí se do Letherasu čelit plánům Chromého boha.') }
+        { vol: 7, gi: 6, text: L('Helps Seren bury Trull’s weapon at her doorstep.', 'Pomůže Seren pohřbít Trullovu zbraň pod prahem jejího domu.') }
       ] }
   },
   {
@@ -1259,8 +1260,7 @@ var CAST = [
       beats: [
         { vol: 5, gi: 1, text: L('Serves King Diskanar while trying to protect his brothers.', 'Slouží králi Diskanarovi a snaží se ochránit bratry.') },
         { vol: 5, gi: 5, text: L('Disables Rhulad in the duel, then drinks from a poisoned cup.', 'V souboji znehybní Rhulada a pak se napije z otráveného poháru.') },
-        { vol: 7, gi: 4, text: L('Returns from death, changed and claimed by a forgotten god.', 'Vrátí se ze smrti, změněný a nárokovaný zapomenutým bohem.') },
-        { vol: 7, gi: 6, text: L('Helps bring down the old Letherii order.', 'Pomůže svrhnout starý letherský řád.') }
+        { vol: 7, gi: 6, text: L('Returns from death and seeks out his brother Tehol.', 'Vrátí se ze smrti a vyhledá svého bratra Tehola.') }
       ] }
   },
   {
@@ -1287,7 +1287,8 @@ var CAST = [
       beats: [
         { vol: 5, gi: 3, text: L('Prepares Rhulad for burial and witnesses his return to life.', 'Připraví Rhulada k pohřbu a je svědkem jeho návratu k životu.') },
         { vol: 5, gi: 6, text: L('Escapes Letheras with the survivors of the Azath.', 'Uteče z Letherasu s přeživšími z Azathu.') },
-        { vol: 7, gi: 3, text: L('Flees through the Refugium with Silchas Ruin’s group.', 'Uteče přes Refugium se skupinou Silchase Ruina.') }
+        { vol: 7, gi: 4, text: L('Reaches the Refugium with Silchas Ruin’s company.', 'Dorazí do Refugia s družinou Silchase Zmara.') },
+        { vol: 7, gi: 6, text: L('Chooses to remain in the Refugium with Rud.', 'Rozhodne se zůstat s Rudem v Refugiu.') }
       ] }
   },
   {
@@ -1300,7 +1301,8 @@ var CAST = [
       beats: [
         { vol: 5, gi: 2, text: L('Negotiates with the Edur and watches the treaty collapse.', 'Vyjednává s Edury a sleduje zhroucení smlouvy.') },
         { vol: 5, gi: 5, text: L('Survives the fall of Letheras and the Edur conquest.', 'Přežije pád Letherasu a edurské dobytí.') },
-        { vol: 7, gi: 3, text: L('Guides Silchas Ruin and the others away from Letheras.', 'Vede Silchase Zmara a ostatní pryč z Lederas.') }
+        { vol: 7, gi: 4, text: L('Destroys Wither and is reunited with Trull in the Refugium.', 'Zničí Chřada a v Refugiu se znovu setká s Trullem.') },
+        { vol: 7, gi: 6, text: L('Mourns Trull at her home in Letheras.', 'Ve svém domě v Lederas truchlí za Trulla.') }
       ] }
   },
   {
@@ -1470,15 +1472,121 @@ var CAST = [
     ] }
   },
   {
-    id: 'redmask', intro: { vol: 7, gi: 1 },
-    name: L('Redmask', 'Redmask'), en: 'Redmask',
-    race: 'human', rlab: L('Awl warleader', 'Awlský válečník'), ic: 'mask',
-    kid: L('A masked warleader who wants to unite his people against the Letherii. Nobody knows who he really is, including him.', 'Maskovaný válečník, který chce sjednotit svůj lid proti Letheriům. Nikdo neví, kdo doopravdy je — možná ani on sám.'),
-    dad: L('The mysterious leader of the Awl, raised among enemies and armed with K’Chain Che’Malle guardians. His war is just and his methods are not.', 'Záhadný vůdce Awlů, vychovaný mezi nepřáteli a vyzbrojený strážci K’Chain Che’Malle. Jeho válka je spravedlivá a jeho metody ne.'),
+    id: 'karos', intro: { vol: 7, gi: 1 },
+    name: L('Karos Invictad', 'Karos Inviktad'), en: 'Karos Invictad',
+    race: 'human', rlab: L('Patriotist leader', 'Dozorce patriotistů'), ic: 'mask',
+    kid: L('The official who looks for people plotting against the empire.', 'Úředník, který hledá lidi kující plány proti říši.'),
+    dad: L('The head of the Patriotists, who investigates threats to imperial power and is drawn into Tehol’s schemes.', 'Dozorce patriotistů, který vyšetřuje ohrožení moci říše a zaplete se do Teholových plánů.')
+  },
+  {
+    id: 'janath', intro: { vol: 7, gi: 1 },
+    name: L('Janath Anar', 'Žanat Anar'), en: 'Janath Anar',
+    race: 'human', rlab: L('Political prisoner', 'Politická vězeňkyně'), ic: 'scroll',
+    kid: L('A scholar imprisoned by the Patriotists.', 'Učenkyně, kterou vězní patriotisté.'),
+    dad: L('A Letherii scholar targeted by the Patriotists.', 'Lederská učenkyně, na kterou se zaměří patriotisté.'),
+    arc: { ahead: L('What will she do when she is free?', 'Co udělá, až bude volná?'), beats: [
+      { vol: 7, gi: 6, text: L('Survives captivity and joins Tehol and Brys after Rhulad’s fall.', 'Přežije věznění a po Rhuladově pádu se připojí k Teholovi a Brysovi.') }
+    ] }
+  },
+  {
+    id: 'brohl', intro: { vol: 7, gi: 2 },
+    name: L('Brohl Handar', 'Brohl Handar'), en: 'Brohl Handar',
+    race: 'tiste', rlab: L('Overseer at Drene', 'Dohližitel v Drene'), ic: 'sword',
+    kid: L('The Edur official sent to oversee the eastern frontier city of Drene.', 'Úředník z Tiste Edur vyslaný dohlížet na pohraniční město Drene.'),
+    dad: L('The Edur overseer in Drene, where he has to work with Bivatt and Letur Anict over the war against the Awl.', 'Edurský dohližitel v Drene, kde při válce s Oulany musí spolupracovat s Bivatt a Leturem Aniktem.')
+  },
+  {
+    id: 'bivatt', intro: { vol: 7, gi: 2 },
+    name: L('Atri-Preda Bivatt', 'Atripreda Bivatt'), en: 'Atri-Preda Bivatt',
+    race: 'human', rlab: L('Eastern Army commander', 'Velitelka Východní armády'), ic: 'sword',
+    kid: L('The commander sent against Redmask and the Awl clans.', 'Velitelka, která vytáhne proti Rudomaskovi a oulským klanům.'),
+    dad: L('The Letherii general who commands the Eastern Army from Drene.', 'Lederská vojevůdkyně, která z Drene velí Východní armádě.')
+  },
+  {
+    id: 'torrent', intro: { vol: 7, gi: 2 },
+    name: L('Torrent', 'Příval'), en: 'Torrent',
+    race: 'human', rlab: L('Awl warrior', 'Oulský bojovník'), ic: 'sword',
+    kid: L('A warrior who listens to Toc and helps the children escape.', 'Bojovník, který naslouchá Tocovi a pomáhá dětem uprchnout.'),
+    dad: L('An Awl warrior who comes to know Toc while he is held among the clans.', 'Oulský bojovník, který pozná Toce, když ho klany drží v zajetí.')
+  },
+  {
+    id: 'shurq', intro: { vol: 5, gi: 2 },
+    name: L('Shurq Elalle', 'Šurk Elalle'), en: 'Shurq Elalle',
+    race: 'human', rlab: L('Letherii thief and sailor', 'Lederská zlodějka a námořnice'), ic: 'water',
+    kid: L('A thief from Letheras who can keep her head in a crisis.', 'Zlodějka z Lederas, která v nebezpečí neztrácí hlavu.'),
+    dad: L('A thief in Letheras who later becomes a pirate captain.', 'Zlodějka z Lederas, která se později stane pirátskou kapitánkou.'),
+    arc: { ahead: L('Where will she take her ship?', 'Kam zamíří se svou lodí?'), beats: [
+      { vol: 7, gi: 3, text: L('Brings her ship to the Second Maiden Fort.', 'Připlouvá se svou lodí k Druhému Děvínu.') }
+    ] }
+  },
+  {
+    id: 'twilight', intro: { vol: 6, gi: 3 },
+    name: L('Yan Tovis (Twilight)', 'Yan Tovis (Šero)'), en: 'Yan Tovis (Twilight)',
+    race: 'human', rlab: L('Letherii commander', 'Lederská velitelka'), ic: 'crown',
+    kid: L('A commander who has ties to the people of the western islands.', 'Velitelka, která má vazby na obyvatele západních ostrovů.'),
+    dad: L('A Letherii atri-preda who travels with the Edur fleet.', 'Lederská atripreda, která cestuje s flotilou Tiste Edur.'),
+    arc: { ahead: L('What will the people of the islands ask of her?', 'Co od ní budou žádat obyvatelé ostrovů?'), beats: [
+      { vol: 7, gi: 3, text: L('As Queen of the Shake, gathers her people at Second Maiden Fort.', 'Jako královna Třasů shromažďuje svůj lid na Druhém Děvíně.') }
+    ] }
+  },
+  {
+    id: 'yedan', intro: { vol: 7, gi: 3 },
+    name: L('Yedan Derryg (the Watch)', 'Yedan Derryg (Stráž)'), en: 'Yedan Derryg (the Watch)',
+    race: 'human', rlab: L('Shake warrior', 'Třasský bojovník'), ic: 'sword',
+    kid: L('Yan Tovis’s half-brother, a warrior of the western islands.', 'Nevlastní bratr Yan Tovis a bojovník ze západních ostrovů.'),
+    dad: L('The Watch, Yan Tovis’s half-brother, who helps bring the Shake together at the Second Maiden Fort.', 'Stráž, nevlastní bratr Yan Tovis, který pomáhá shromáždit Třasy na Druhém Děvíně.')
+  },
+  {
+    id: 'clip', intro: { vol: 7, gi: 4 },
+    name: L('Clip', 'Stříž'), en: 'Clip',
+    race: 'tiste', rlab: L('Tiste Andii guide', 'Tisteandijský průvodce'), ic: 'chain',
+    kid: L('A Tiste Andii who guides the travellers through gates.', 'Tiste Andii, který provádí poutníky branami.'),
+    dad: L('A Tiste Andii from Bluerose who joins Silchas Ruin’s band and guides them into Starvald Demelain.', 'Tiste Andii z Modré růže, který se přidá k družině Silchase Zmara a provede ji do Starvald Demelainu.')
+  },
+  {
+    id: 'wither', intro: { vol: 5, gi: 2 },
+    name: L('Wither', 'Chřad'), en: 'Wither',
+    race: 'spirit', rlab: L('Shadow wraith', 'Stínový přízrak'), ic: 'mask',
+    kid: L('A shadow spirit that follows Udinaas.', 'Stínový duch, který následuje Udinaase.'),
+    dad: L('A shadow wraith bound to Udinaas who follows him when he leaves Letheras.', 'Stínový přízrak připoutaný k Udinaasovi, kterého doprovází, když opustí Lederas.')
+  },
+  {
+    id: 'ulshun', intro: { vol: 7, gi: 4 },
+    name: L('Ulshun Pral', 'Ulsun Pral'), en: 'Ulshun Pral',
+    race: 'imass', rlab: L('Imass of the Refugium', 'Imass z Refugia'), ic: 'imass',
+    kid: L('An Imass who lives in the hidden valley.', 'Imass, který žije ve skrytém údolí.'),
+    dad: L('One of the living Imass of the Refugium. His people ask Trull and Onrack for help.', 'Jeden z živých Imassů v Refugiu. Jeho lid požádá Trulla a Onraka o pomoc.')
+  },
+  {
+    id: 'rud', intro: { vol: 5, gi: 6 },
+    name: L('Rud Elalle', 'Rud Elalle'), en: 'Rud Elalle',
+    race: 'human', rlab: L('Foundling', 'Nalezenec'), ic: 'forest',
+    kid: L('A foundling brought up away from Letheras.', 'Nalezenec, který vyrůstá daleko od Lederas.'),
+    dad: L('A foundling whose story is tied to Udinaas’s journeys.', 'Nalezenec, jehož příběh je spojen s Udinaasovými cestami.'),
+    arc: { ahead: L('Where will he make his home?', 'Kde najde svůj domov?'), beats: [
+      { vol: 7, gi: 4, text: L('Lives among the Imass of the Refugium.', 'Žije mezi Imassy v Refugiu.') },
+      { vol: 7, gi: 6, text: L('Decides to stay in the Refugium with Udinaas.', 'Rozhodne se zůstat v Refugiu s Udinaasem.') }
+    ] }
+  },
+  {
+    id: 'withal', intro: { vol: 5, gi: 3 },
+    name: L('Withal', 'Withal'), en: 'Withal',
+    race: 'human', rlab: L('Mekros smith', 'Mekroský mečíř'), ic: 'sword',
+    kid: L('A blacksmith taken from a floating city.', 'Kovář odvlečený z plovoucího města.'),
+    dad: L('A Mekros smith made to forge a sword for the Crippled God.', 'Mekroský mečíř donucený ukovat meč pro Chromého boha.'),
+    arc: { ahead: L('What will he do if he sees the sword again?', 'Co udělá, pokud meč znovu uvidí?'), beats: [
+      { vol: 7, gi: 5, text: L('Destroys the sword he once forged for the Crippled God.', 'Zničí meč, který kdysi ukoval pro Chromého boha.') }
+    ] }
+  },
+  {
+    id: 'redmask', intro: { vol: 7, gi: 2 },
+    name: L('Redmask', 'Rudomask'), en: 'Redmask',
+    race: 'human', rlab: L('Awl warleader', 'Oulský vojevůdce'), ic: 'mask',
+    kid: L('A masked warrior who wants the clans to defend their land together.', 'Maskovaný válečník, který chce, aby klany společně bránily svou zemi.'),
+    dad: L('An exile who returns to Awl’dan with two K’Chain Che’Malle companions and rallies the clans against the Eastern Army.', 'Vyhnanec, který se vrátí do Oul’danu se dvěma druhy z K’Chain Che’Malle a postaví klany proti Východní armádě.'),
     arc: { ahead: L('Is a leader’s cause more important than the truth?', 'Je vůdcova věc důležitější než pravda?'),
       beats: [
-        { vol: 7, gi: 1, text: L('Unites the Awl and defeats the first Letherii army.', 'Sjednotí Awly a porazí první letherskou armádu.') },
-        { vol: 7, gi: 2, text: L('Is executed by his own K’Chain guardians when he fails them.', 'Je popraven vlastními strážci K’Chain, když je zklame.') }
+        { vol: 7, gi: 2, text: L('Is killed by his own companions in the final battle.', 'V závěrečné bitvě ho zabijí jeho vlastní společníci.') }
       ] }
   },
   {
@@ -1496,15 +1604,14 @@ var CAST = [
       ] }
   },
   {
-    id: 'beak', intro: { vol: 7, gi: 4 },
-    name: L('Beak', 'Beak'), en: 'Beak',
+    id: 'beak', intro: { vol: 7, gi: 3 },
+    name: L('Beak', 'Zobák'), en: 'Beak',
     race: 'malazan', rlab: L('Bonehunter mage', 'Mág Lovců kostí'), ic: 'flame',
-    kid: L('A gentle young soldier who is much smarter than people think. He carries a light inside him that can save everyone — once.', 'Jemný mladý voják, který je mnohem chytřejší, než si lidé myslí. Nese v sobě světlo, které může zachránit všechny — jednou.'),
-    dad: L('A mage of the 14th with a terrible gift and a childlike kindness. His brief life is one of the series’ most beloved and most devastating.', 'Mág 14. armády se strašlivým darem a dětskou laskavostí. Jeho krátký život je jedním z nejmilovanějších a nejničivějších v sérii.'),
-    arc: { ahead: L('What is a light worth if it can only be used once?', 'Co stojí světlo, které se dá použít jen jednou?'),
+    kid: L('A friendly young mage who thinks of each kind of magic as a candle.', 'Přátelský mladý mág, který si každý druh magie představuje jako svíčku.'),
+    dad: L('A mage assigned to Faradan Sort. He understands the different forms of sorcery as candles of different colours.', 'Mág přidělený ke kapitánce Faradan Sort. Různé druhy magie vnímá jako svíčky různých barev.'),
+    arc: { ahead: L('What will he do to protect his friends?', 'Co udělá, aby ochránil své přátele?'),
       beats: [
-        { vol: 7, gi: 4, text: L('Joins the marines outside Letheras and makes friends at last.', 'Připojí se k námořníkům před Letherasem a konečně najde přátele.') },
-        { vol: 7, gi: 4, text: L('Spends his life to save the army from a wave of magic.', 'Obětuje život, aby armádu zachránil před vlnou magie.') }
+        { vol: 7, gi: 3, text: L('Uses all of his magic to shield the Malazans and the Edur, and dies.', 'Použije všechnu svou magii, aby ochránil Malažany i Edur, a zemře.') }
       ] }
   },
   {
@@ -1630,8 +1737,8 @@ var VOLBOOKS = {
     { count: 3, label: 'II', title: L('Malaz and the First Throne', 'Malaz a První trůn') }
   ],
   '7': [
-    { count: 3, label: 'I', title: L('The Challengers', 'Vyzývatelé') },
-    { count: 3, label: 'II', title: L('The Reaper’s Gale', 'Vichr smrti') }
+    { count: 3, label: 'I', title: L('The Empire at War', 'Říše ve válce') },
+    { count: 3, label: 'II', title: L('Gates and the Capital', 'Brány a hlavní město') }
   ],
   '8': [
     { count: 3, label: 'I', title: L('The City of Sorrows', 'Město žalu') },
@@ -1647,7 +1754,7 @@ var VOLBOOKS = {
   ]
 };
 
-  var ROUTES = [{"vol":1,"color":"#a94336","pts":[[72.8,25,1],[73.8,32,3]]},{"vol":2,"color":"#9b611f","pts":[[37.8,22,4],[35.4,36,5]]},{"vol":3,"color":"#30587a","pts":[[82.4,32,2],[86.2,41,5]]},{"vol":4,"color":"#3e6955","pts":[[35.4,36,2],[36.55,24.5,4]]},{"vol":5,"color":"#72517d","pts":[]},{"vol":6,"color":"#a94336","pts":[]},{"vol":7,"color":"#9b611f","pts":[[22.1,73.25,1],[15,71,2],[23.75,74.92,3],[15,71,4],[14.1,80.33,5],[28.85,73.17,6]]},{"vol":8,"color":"#30587a","pts":[[73.8,32,1],[73.8,32,2],[86.2,41,3],[77,45.67,4],[73.8,32,5],[73.8,32,6]]},{"vol":9,"color":"#3e6955","pts":[[15,71,1],[28.85,73.17,2],[32.95,75.92,3],[25.5,72.5,4],[37.9,78.17,5],[37.7,80.67,6]]},{"vol":10,"color":"#72517d","pts":[[15,71,1],[28.85,73.17,2],[42.05,72.75,3],[42.6,78,4],[40.9,76.5,5],[42.6,78,6]]}];
+  var ROUTES = [{"vol":1,"color":"#a94336","pts":[[72.8,25,1],[73.8,32,3]]},{"vol":2,"color":"#9b611f","pts":[[37.8,22,4],[35.4,36,5]]},{"vol":3,"color":"#30587a","pts":[[82.4,32,2],[86.2,41,5]]},{"vol":4,"color":"#3e6955","pts":[[35.4,36,2],[36.55,24.5,4]]},{"vol":5,"color":"#72517d","pts":[]},{"vol":6,"color":"#a94336","pts":[]},{"vol":7,"color":"#9b611f","pts":[]},{"vol":8,"color":"#30587a","pts":[[73.8,32,1],[73.8,32,2],[86.2,41,3],[77,45.67,4],[73.8,32,5],[73.8,32,6]]},{"vol":9,"color":"#3e6955","pts":[[15,71,1],[28.85,73.17,2],[32.95,75.92,3],[25.5,72.5,4],[37.9,78.17,5],[37.7,80.67,6]]},{"vol":10,"color":"#72517d","pts":[[15,71,1],[28.85,73.17,2],[42.05,72.75,3],[42.6,78,4],[40.9,76.5,5],[42.6,78,6]]}];
   // ===== per-book data (injected at build time) =====
   // Deadhouse Gates — volume 2.
 var BOOK = {
@@ -2206,6 +2313,7 @@ var BOOK = {
   // A character shows once introduced (intro.vol <= this volume). Heroes from earlier volumes are
   // unlocked from the start (with their earlier diary); newcomers unlock as you read this volume.
   function charUnlocked(c){ return state.mode==='tata' || c.intro.vol<VOL || (c.intro.vol===VOL && c.intro.gi<=reachedGi()); }
+  function charName(ch, short){ return t((BOOK.castNames && BOOK.castNames[ch.id]) || (short && ch.short) || ch.name); }
   function renderChars(){
     $('#charHint').textContent = T(state.mode==='kluci' ? 'charhint_kids' : 'charhint_parent');
     var grid=$('#charGrid'); grid.innerHTML='';
@@ -2214,11 +2322,11 @@ var BOOK = {
       var card=el('div','char r-'+ch.race+(unlocked?'':' locked'));
       var frame;
       if(!unlocked){ frame='<div class="pframe fallback">'+icon('lock')+'</div>'; }
-      else { var im=imgPortrait(ch.id,t(ch.name));
+      else { var im=imgPortrait(ch.id,charName(ch));
         frame = im ? '<div class="pframe">'+im+'</div>'
                    : '<div class="pframe fallback">'+icon(ch.ic)+'</div>'; }
       card.innerHTML=frame+
-        '<h4>'+(unlocked?esc(t(ch.name)):'? ? ?')+'</h4><div class="race">'+esc(t(ch.rlab))+'</div>';
+        '<h4>'+(unlocked?esc(charName(ch)):'? ? ?')+'</h4><div class="race">'+esc(t(ch.rlab))+'</div>';
       if(unlocked){ card.setAttribute('tabindex','0'); card.setAttribute('role','button');
         card.addEventListener('click',function(){ toggleChar(ch, card); });
         card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleChar(ch, card); } }); }
@@ -2248,12 +2356,12 @@ var BOOK = {
     openCharId=ch.id;
     var d=el('div','char-detail'); d.id='charDetail';
     var txt = t(state.mode==='kluci'? ch.kid : ch.dad);
-    var im=imgPortrait(ch.id,t(ch.name));
+    var im=imgPortrait(ch.id,charName(ch));
     var visual = im ? '<div class="cd-pimg">'+im+'</div>'
                     : '<div class="medallion">'+icon(ch.ic)+'</div>';
     var say=t(ch.say);
     d.innerHTML='<div class="cd r-'+ch.race+'">'+visual+
-      '<div class="cdbody"><h3>'+esc(t(ch.name))+'</h3><div class="en">'+(state.lang==='en'?'':esc(ch.en)+' · ')+esc(t(ch.rlab))+'</div>'+
+      '<div class="cdbody"><h3>'+esc(charName(ch))+'</h3><div class="en">'+(state.lang==='en'?'':esc(ch.en)+' · ')+esc(t(ch.rlab))+'</div>'+
       (say&&say!=='—'?'<div class="say">'+esc(T('say_label'))+' <b>'+esc(say)+'</b></div>':'')+
       '<p>'+esc(txt)+'</p>'+arcHtml(ch)+'</div>'+
       '<button class="close" aria-label="'+esc(T('close'))+'">✕</button></div>';
@@ -2490,7 +2598,7 @@ var BOOK = {
     var unlocked = isArtifact || (ch && charUnlocked(ch));
     var raceCls = isArtifact?'r-god':(ch?'r-'+ch.race:'');
     if(!unlocked) return '<div class="node locked"><div class="medallion">'+icon('lock')+'</div><small>?</small></div>';
-    var nm = isArtifact ? T('artifact_name') : t(ch.short||ch.name);
+    var nm = isArtifact ? T('artifact_name') : charName(ch,true);
     var im = isArtifact?null:imgPortrait(id,nm);
     var inner = im||icon(isArtifact?'deck':ch.ic);
     return '<div class="node '+raceCls+'"><div class="medallion'+(im?' pm':'')+'">'+inner+'</div><small>'+esc(nm)+(role?'<br>'+esc(role):'')+'</small></div>';

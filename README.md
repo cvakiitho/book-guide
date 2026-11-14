@@ -1,8 +1,11 @@
 # The Ring's Journey 💍
 
-An interactive, read-aloud guide to **The Fellowship of the Ring**, built for reading Tolkien to kids. Bilingual (English + Czech), with a language switcher and more languages easy to add.
+Two interactive reading guides in English and Czech.
 
-➡️ Open **`stredozem.html`** in a browser (works offline — it's a single file).
+- [The Fellowship of the Ring](https://cvakiitho.github.io/readLOTR/) is a read-aloud guide for families reading Tolkien.
+- [Malazan Book of the Fallen](https://cvakiitho.github.io/readLOTR/malazan/) is a reader’s guide to all ten volumes of Steven Erikson’s series. See the [Malazan README](malazan/README.md) for the volume list and content structure.
+
+For offline reading, open `index.html` for Tolkien or `malazan/index.html` for Malazan. Each volume has its own self-contained HTML file.
 
 ## What the app does
 
@@ -26,13 +29,14 @@ Czech character and place names follow the translation by **Stanislava Pošustov
 
 ## Project structure
 
-- `stredozem.html` — the **built app** (one file, images inlined). This is what you open and share.
+- `index.html` and `stredozem.html` — the built Tolkien guide with images inlined. Both URLs serve the same guide.
 - `stredozem.template.html` — the **source template** (HTML/CSS/JS). Edit here.
 - `assets/` — images inlined at build time:
   - `map.jpg` — the map of Middle-earth (optimised, the build input),
   - `portraits/<id>.jpg` — character portraits (`id` = e.g. `frodo`, `gandalf`, `stara-vrba`),
   - `scenes/<n>.jpg` — chapter illustrations `1`–`22`.
-- `build.mjs` — the build script (Node).
+- `malazan/` — the Malazan engine, book data, map, tests and generated volume pages.
+- `build.mjs` — builds both guides with Node.js 18 or later.
 - `mapa-stredozem-original.jpg` — the original high-res map (10000×5455). **Not in the repo** — kept locally only. The build doesn't need it; it uses the optimised `assets/map.jpg`.
 
 ## Build
@@ -43,7 +47,9 @@ After editing the template or the images, run:
 node build.mjs
 ```
 
-The script takes `stredozem.template.html`, replaces the image tokens with the images from `assets/` (as base64 data URIs) and writes `stredozem.html`:
+The Tolkien build reads `stredozem.template.html`, inlines its images and writes `index.html` and `stredozem.html`. The Malazan build writes `malazan/index.html` and ten individual volume pages. Commit the generated HTML so GitHub Pages can serve both guides from the root of `main`.
+
+Tolkien image tokens and their sources are listed below.
 
 | token | source |
 | --- | --- |

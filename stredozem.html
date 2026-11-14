@@ -67,6 +67,9 @@
   .brand h1{font-family:var(--display); font-weight:700; letter-spacing:.06em;
     font-size:clamp(1.05rem,2.4vw,1.5rem); margin:0; text-transform:uppercase; text-wrap:balance}
   .brand p{margin:0; font-size:.78rem; color:var(--ink-2); font-family:var(--ui); letter-spacing:.02em}
+  .saga-link{padding:7px 12px; border:1px solid var(--line-2); border-radius:999px;
+    background:var(--panel-2); color:var(--ink-2); font-family:var(--ui); font-size:.8rem; font-weight:600; text-decoration:none}
+  .saga-link:hover,.saga-link:focus-visible{border-color:var(--gold); color:var(--ink)}
 
   /* mode toggle = seal-style switch */
   .modeswitch{display:inline-flex; background:var(--panel-2); border:1px solid var(--line-2);
@@ -393,6 +396,7 @@
           <p data-i18n="brand_sub">Průvodce Společenstvem Prstenu — pro předčítání</p>
         </div>
       </div>
+      <a class="saga-link" href="malazan/index.html" data-i18n="other_saga">Malazská Kniha padlých</a>
       <div class="modeswitch" id="modeswitch">
         <button data-mode="tata" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M5 8l7-4 7 4M6 20h12" stroke-linecap="round"/></svg><span data-i18n="mode_parent">Táta</span></button>
         <button data-mode="kluci" class="kids"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.4"/><path d="M3.5 20c.4-3 2.8-5 5.5-5s5.1 2 5.5 5M14 20c.3-2.2 1.8-3.7 3.6-3.9" stroke-linecap="round"/></svg><span data-i18n="mode_kids">Kluci</span></button>
@@ -1057,6 +1061,7 @@
     en: {
       brand_title:"The Ring's Journey",
       brand_sub:"A read-aloud guide to The Fellowship of the Ring",
+        other_saga:"Malazan Book of the Fallen",
       mode_parent:"Parent", mode_kids:"Kids",
       theme_to_light:"Switch to light theme", theme_to_dark:"Switch to dark theme",
       lang_switch:"Switch to Czech",
@@ -1096,6 +1101,7 @@
     cs: {
       brand_title:"Cesta Prstenu",
       brand_sub:"Průvodce Společenstvem Prstenu — pro předčítání",
+        other_saga:"Malazská Kniha padlých",
       mode_parent:"Rodiče", mode_kids:"Děti",
       theme_to_light:"Přepnout na světlý motiv", theme_to_dark:"Přepnout na tmavý motiv",
       lang_switch:"Přepnout do angličtiny",

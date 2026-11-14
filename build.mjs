@@ -1,4 +1,4 @@
-// Sestaví stredozem.html ze šablony: vloží obrázky z assets/ jako base64 data URI.
+// Sestaví průvodce Středozemí a Malazem. Obrázky vloží jako base64 data URI.
 // Spuštění:  node build.mjs
 //
 // Tokeny v šabloně stredozem.template.html:
@@ -51,5 +51,8 @@ const leftover = html.match(/__[A-Za-z0-9-]+__/);
 if (leftover) { console.error(`✗ Nenahrazený token: ${leftover[0]}`); process.exit(1); }
 
 fs.writeFileSync(OUT, html, 'utf8'); // bez BOM
+fs.writeFileSync(path.join(ROOT, 'index.html'), html, 'utf8');
 const mb = (fs.statSync(OUT).size / 1024 / 1024).toFixed(2);
 console.log(`✓ ${path.basename(OUT)} sestaveno — ${count} obrázků vloženo, ${mb} MB`);
+
+await import('./malazan/build.mjs');

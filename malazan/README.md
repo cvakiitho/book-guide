@@ -60,6 +60,8 @@ Kontrolu hranic čtenářského postupu a trasy lze spustit z kořene příkazem
 - `assets/map.svg` — stylizovaná mapa Malazského světa s anglickými popisky a českými překlady v atributech `data-cs`.
 - `assets/scenes/<slug>/<n>.jpg` — nepovinné ilustrace částí, kde `n` je pořadové číslo 1–6.
 
+České názvy v atlasu vycházejí z map a textu vydání Talpress. Například Genabakis, Dřevnov a Korál jsou na mapě v *Měsíčních zahradách* (str. 6), Sedmiměstí a Drydžhanský oceán v *Domě mrtvých* (str. 9), Rožský a Šáhův oceán v *Lovcích kostí* (str. 6) a Skleněná poušť a Bílé věže mořské v *Chromém bohu* (str. 6). Rivanské moře je překlad pro tento atlas.
+
 Chybějící ilustrace sestavení nezastaví; aplikace místo nich zobrazí ikonový náhradní prvek a skript vypíše seznam chybějících scén. Zájemci mohou vytvořit ilustrace a přidat je do příslušných složek `assets/scenes/`.
 
 ## Přidání nebo úprava obsahu

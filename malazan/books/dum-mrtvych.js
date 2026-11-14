@@ -38,7 +38,7 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'otataral', name:L('Otataral Island', 'Ostrov Otataral'), en:'Otataral Island', x:44.15, y:16.92, ic:'water', gi:1, mile:0,
+    { id:'otataral', name:L('Otataral Island', 'Otataralový ostrov'), en:'Otataral Island', x:44.15, y:16.92, ic:'water', gi:1, mile:0,
       dad:L('A prison island off the coast of Seven Cities, its mines dug for otataral — the rust-coloured ore that smothers magic. The Empire sends its most inconvenient prisoners here and forgets them.', 'Vězeňský ostrov u pobřeží Sedmi měst, jehož doly těží otataral — rezavou rudu, která dusí magii. Říše sem posílá své nejnepohodlnější vězně a zapomíná na ně.'),
       kid:L('An island with dark mines and a prison. People are sent here when the empire wants them to disappear.', 'Ostrov s temnými doly a vězením. Lidé sem jsou posíláni, když je chce říše nechat zmizet.') },
     { id:'ehrlitan', name:L('Ehrlitan', 'Ehrlitan'), en:'Ehrlitan', x:38.4, y:18, ic:'town', gi:2, mile:120,

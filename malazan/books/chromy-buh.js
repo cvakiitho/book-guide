@@ -35,7 +35,7 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'letheras10', name:L('Letheras', 'Letheras'), en:'Letheras', x:15, y:71, ic:'town', gi:1, mile:0,
+    { id:'letheras10', name:L('Letheras', 'Lederas'), en:'Letheras', x:15, y:71, ic:'town', gi:1, mile:0,
       dad:L('The city the Bonehunters left behind, now the seat of Emperor Tehol and a fragile new order. Its canals are calm; the rest of the world is not.', 'Město, které Lovci kostí opustili, nyní sídlo císaře Teholy a křehkého nového řádu. Jeho kanály jsou klidné; zbytek světa ne.'),
       kid:L('The rich canal city from the previous book. It is safer than the wasteland, but still full of politics.', 'Bohaté město kanálů z předchozí knihy. Je bezpečnější než pustina, ale pořád plné politiky.') },
     { id:'wastes10', name:L('The Letherii Wastelands', 'Letherské pustiny'), en:'The Letherii Wastelands', x:28.85, y:73.17, ic:'mountain', gi:2, mile:400,

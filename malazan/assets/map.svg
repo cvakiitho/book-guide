@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1200" width="2000" height="1200" role="img" aria-labelledby="title desc">
   <title id="title" data-cs="Malazský svět">The Malazan world</title>
-  <desc id="desc" data-cs="Stylizovaný čtenářský atlas zobrazuje Sedm měst na severozápadě, Genabackis na východě, Quon Tali uprostřed a Lether na jihozápadě.">A stylized reader’s atlas showing Seven Cities in the northwest, Genabackis in the east, Quon Tali in the center, and Lether in the southwest.</desc>
+  <desc id="desc" data-cs="Stylizovaný čtenářský atlas zobrazuje Sedmiměstí na severozápadě, Genabakis na východě, Quon Tali uprostřed a Leder na jihozápadě.">A stylized reader’s atlas showing Seven Cities in the northwest, Genabackis in the east, Quon Tali in the center, and Lether in the southwest.</desc>
   <defs>
     <radialGradient id="sea" cx="44%" cy="40%" r="76%">
       <stop stop-color="#294a4e"/><stop offset=".65" stop-color="#1d373e"/><stop offset="1" stop-color="#13272e"/>
@@ -284,18 +284,18 @@
   </g>
 
   <g class="continent">
-    <text x="356" y="254" data-cs="SEDM MĚST">SEVEN CITIES</text><text x="1516" y="213">GENABACKIS</text>
+    <text x="356" y="254" data-cs="SEDMIMĚSTÍ">SEVEN CITIES</text><text x="1516" y="213" data-cs="GENABAKIS">GENABACKIS</text>
     <text x="881" y="608" class="subregion">QUON TALI</text>
-    <text x="461" y="823">LETHER</text><text x="522" y="624" class="island">JACURUKU</text>
+    <text x="461" y="823" data-cs="LEDER">LETHER</text><text x="522" y="624" class="island">JACURUKU</text>
     <text x="1146" y="842" class="subregion">KORELRI</text><text x="1325" y="1023" class="subregion">STRATEM</text>
     <text x="1624" y="867" class="subregion">ASSAIL</text>
   </g>
   <g class="area">
     <text x="636" y="310">RARAKU</text><text x="896" y="389" fill="#c9cdb5" stroke="#29474a">FALAR</text>
-    <text x="918" y="157" fill="#c9cdb5" stroke="#29474a" data-cs="OSTROV OTATARAL">OTATARAL ISLAND</text>
-    <text x="1566" y="317" data-cs="RHIVSKÉ PLÁNĚ">RHIVI PLAINS</text><text x="1542" y="530" data-cs="PLÁŇ LAMATATH">PLAIN OF LAMATATH</text>
-    <text x="259" y="751" data-cs="EDURSKÉ ZEMĚ">TISTE EDUR LANDS</text><text x="440" y="861">AWL’DAN</text>
-    <text x="655" y="858" data-cs="KŘIŠŤÁLOVÁ POUŠŤ">GLASS DESERT</text>
+    <text x="918" y="157" fill="#c9cdb5" stroke="#29474a" data-cs="OTATARALOVÝ OSTROV">OTATARAL ISLAND</text>
+    <text x="1566" y="317" data-cs="RHIVSKÁ PLÁŇ">RHIVI PLAINS</text><text x="1542" y="530" data-cs="LAMATATHSKÁ PLÁŇ">PLAIN OF LAMATATH</text>
+    <text x="259" y="751" data-cs="ÚZEMÍ TISTE EDUR">TISTE EDUR LANDS</text><text x="440" y="861" data-cs="OUL’DAN">AWL’DAN</text>
+    <text x="655" y="858" data-cs="SKLENĚNÁ POUŠŤ">GLASS DESERT</text>
   </g>
   <g class="settlement">
     <use href="#town" x="756" y="264"/><text x="766" y="254">Hissar</text>
@@ -304,19 +304,19 @@
     <use href="#city" x="708" y="432"/><text x="722" y="442">Aren</text>
     <use href="#town" x="876" y="564"/><text x="889" y="556">Li Heng</text>
     <use href="#city" x="860" y="732"/><text x="879" y="739" data-cs="Město Malaz">Malaz City</text>
-    <use href="#city" x="1456" y="300"/><text x="1439" y="295" text-anchor="end">Pale</text>
-    <use href="#city" x="1476" y="384"/><text x="1459" y="402" text-anchor="end">Darujhistan</text>
+    <use href="#city" x="1456" y="300"/><text x="1439" y="295" text-anchor="end" data-cs="Dřevnov">Pale</text>
+    <use href="#city" x="1476" y="384"/><text x="1459" y="402" text-anchor="end" data-cs="Darúdžhistán">Darujhistan</text>
     <use href="#town" x="1648" y="384"/><text x="1660" y="371">Capustan</text>
-    <use href="#town" x="1724" y="492"/><text x="1736" y="506">Coral</text>
+    <use href="#town" x="1724" y="492"/><text x="1736" y="506" data-cs="Korál">Coral</text>
     <use href="#town" x="1596" y="576"/><text x="1585" y="600" text-anchor="end">Morn</text>
-    <use href="#city" x="300" y="852"/><text x="286" y="876" text-anchor="end">Letheras</text>
-    <use href="#town" x="360" y="804"/><text x="373" y="798">Bluerose</text>
+    <use href="#city" x="300" y="852"/><text x="286" y="876" text-anchor="end" data-cs="Lederas">Letheras</text>
+    <use href="#town" x="360" y="804"/><text x="373" y="798" data-cs="Modrá růže">Bluerose</text>
     <use href="#city" x="852" y="936"/><text x="867" y="931">Kolanse</text>
   </g>
   <g class="ocean">
-    <text x="332" y="78" data-cs="DRYJNIN OCEÁN">DRYJNA OCEAN</text><text x="1150" y="333" data-cs="OCEÁN MENINGALLE">MENINGALLE OCEAN</text>
-    <text x="250" y="530" data-cs="ROHOVÝ OCEÁN">HORN OCEAN</text><text x="1159" y="537" data-cs="REACHERŮV OCEÁN">REACHER’S OCEAN</text>
-    <text x="1417" y="709" data-cs="RIVANSKÉ MOŘE">RIVAN SEA</text><text x="1010" y="1036" data-cs="OCEÁN BÍLÝCH VĚŽÍ">WHITE SPIRES OCEAN</text>
+    <text x="332" y="78" data-cs="DRYDŽHANSKÝ OCEÁN">DRYJNA OCEAN</text><text x="1150" y="333" data-cs="MENINGALLESKÝ OCEÁN">MENINGALLE OCEAN</text>
+    <text x="250" y="530" data-cs="ROŽSKÝ OCEÁN">HORN OCEAN</text><text x="1159" y="537" data-cs="ŠÁHŮV OCEÁN">REACHER’S OCEAN</text>
+    <text x="1417" y="709" data-cs="RIVANSKÉ MOŘE">RIVAN SEA</text><text x="1010" y="1036" data-cs="BÍLÉ VĚŽE MOŘSKÉ">WHITE SPIRES OCEAN</text>
     <text x="1876" y="520" transform="rotate(90 1876 520)" data-cs="REZAVÝ OCEÁN">RUST OCEAN</text>
   </g>
 

@@ -37,7 +37,7 @@ var BOOK = {
     { id:'yghatan', name:L('Y’Ghatan', 'Y’Ghatan'), en:'Y’Ghatan', x:31.2, y:30, ic:'town', gi:1, mile:0,
       dad:L('An old fortress city in Seven Cities and the site of a Malazan defeat that the Empire never forgot. Leoman makes it a trap.', 'Staré pevnostní město v Sedmi městech a místo malazské porážky, na kterou říše nikdy nezapomněla. Leoman z něj udělá past.'),
       kid:L('An old fortress city with high walls. It looks like a safe place to hide — but it is actually a giant trap.', 'Staré pevnostní město s vysokými hradbami. Vypadá jako bezpečné místo na ukrytí — ale je to obrovská past.') },
-    { id:'northcoast', name:L('Seven Cities Coast', 'Pobřeží Sedmi měst'), en:'Seven Cities Coast', x:37.25, y:16.08, ic:'water', gi:2, mile:200,
+    { id:'northcoast', name:L('Seven Cities Coast', 'Pobřeží Sedmiměstí'), en:'Seven Cities Coast', x:37.25, y:16.08, ic:'water', gi:2, mile:200,
       dad:L('The northern coast where Onearm’s Host lands to finish the rebellion — and where the plague is already waiting.', 'Severní pobřeží, kde přistane Onearmovo vojsko, aby dokončilo potlačení rebelie — a kde už čeká mor.'),
       kid:L('A long coast with ships and soldiers. The army arrives here, but something invisible and dangerous is already spreading.', 'Dlouhé pobřeží s loděmi a vojáky. Přijíždí sem armáda, ale už se tu šíří něco neviditelného a nebezpečného.') },
     { id:'firstthrone', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:40.25, y:28.17, ic:'tower', gi:3, mile:300,

@@ -34,10 +34,10 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   PLACES: [
-    { id:'awl', name:L('The Awl Plains', 'Awlské pláně'), en:'The Awl Plains', x:22.1, y:73.25, ic:'forest', gi:1, mile:0,
+    { id:'awl', name:L('The Awl Plains', 'Oulské pláně'), en:'The Awl Plains', x:22.1, y:73.25, ic:'forest', gi:1, mile:0,
       dad:L('Grasslands the Letherii Empire is taking piece by piece. The Awl have nowhere left to retreat, which makes them dangerous.', 'Trávníky, které Letherská říše bere kus po kuse. Awlové už nemají kam ustoupit, a právě proto jsou nebezpeční.'),
       kid:L('Wide grassy plains where the Awl people live. The empire is pushing them off their land, and they are running out of places to go.', 'Široké travnaté pláně, kde žijí Awlové. Říše je vytlačuje z jejich půdy a jim docházejí místa, kam jít.') },
-    { id:'letheras', name:L('Letheras', 'Letheras'), en:'Letheras', x:15, y:71, ic:'town', gi:2, mile:200,
+    { id:'letheras', name:L('Letheras', 'Lederas'), en:'Letheras', x:15, y:71, ic:'town', gi:2, mile:200,
       dad:L('The occupied capital, now ruled by Emperor Rhulad and watched by the Crippled God’s servants. Its canals run through a city that no longer belongs to its own people.', 'Okupované hlavní město, nyní ovládané císařem Rhuladem a sledované služebníky Chromého boha. Jeho kanály protékají městem, které už nepatří jeho vlastním lidem.'),
       kid:L('The big city with canals, now ruled by a scary emperor. The old king is gone and everybody is afraid of what comes next.', 'Velké město s kanály, teď ovládané děsivým císařem. Starý král je pryč a všichni se bojí, co bude dál.') },
     { id:'refugium', name:L('The Refugium', 'Refugium'), en:'The Refugium', x:23.75, y:74.92, ic:'forest', gi:3, mile:300,

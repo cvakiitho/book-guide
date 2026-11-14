@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title data-cs="Pannionská válka a Capustan">The Pannion War and Capustan</title>
+  <style>
+    text{font:600 17px Georgia,serif;fill:#313327;paint-order:stroke;stroke:#eee0b9;stroke-width:4;stroke-linejoin:round}
+    .heading{font-size:24px}.water{fill:#20494e;stroke:#aec4b6;font-style:italic}.small{font-size:14px}
+    .land{fill:#eee0b9;stroke:#627769;stroke-width:2.5}.river{fill:none;stroke:#658d87;stroke-width:2.5}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}
+  </style>
+  <defs>
+    <pattern id="mountains" width="31" height="21" patternUnits="userSpaceOnUse">
+      <path d="m2 16 7-11 7 9 4-6 8 10m-22-9 3 2 3-2" fill="none" stroke="#8e7c54" stroke-width="2"/>
+    </pattern>
+    <pattern id="domin" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0v8" stroke="#ae7256" stroke-width="3" opacity=".5"/>
+    </pattern>
+    <g id="gate"><path d="M-8 5V-7H8V5" fill="#d8c294" stroke="#65573f" stroke-width="2"/><path d="M0-7V5" stroke="#65573f" stroke-width="2"/></g>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <path class="land" d="M102 0h386l-13 24 15 14-9 26 13 21-13 20 21 29-13 19 13 21-9 20 21 25-8 18-16 4-9 15 13 20 4 20-8 19 13 21-11 19 19 24-10 22 15 26-12 19 10 16-13 23 12 24 26 18 41 7 13 22 29 9 16 20 37 5v21H167l-20-23 3-23-17-19 5-22-14-25 8-24-20-25 4-22-22-22 11-21-7-26 13-24-12-29-4-55-26-39 15-35-15-43 19-23 7-40-11-34 15-35z"/>
+  <path fill="url(#mountains)" d="M105 9h53l2 52-60 94 28 52-21 41-29-28L66 151l16-46zM133 253l40 19-11 60 42 168-30 73-39-31-35-133zM372 82l71-57 33 39-20 52-55 70-44-12zM288 326l68-47 44-17 51 4-35 42-20 38-81 30zM463 433l44 32-26 82-35-24z"/>
+  <path fill="url(#domin)" stroke="#ae7256" stroke-width="1.5" d="m479 237 11-4-9 23 13 20 4 20-8 19 13 21-11 19 19 24-10 22 15 26-12 19-94 3-29-16-31-5-45-24 8-29 54-29 35 4 24-12 30-26 8-23z"/>
+  <path class="river" d="m142 213 47-25 33 3m31 35-39 29-19 25m58-54 38-10 43-11 63-39 47 10 46 6"/>
+  <path fill="#aec4b6" stroke="#627769" stroke-width="2" d="m222 174 20-6 37 3 22-5 25 9 10 15-17 15-31 6-20 11-15 4-17-17-31-4-11-13z"/>
+  <g class="town">
+    <circle cx="218" cy="103" r="4"/><circle cx="253" cy="226" r="4"/><circle cx="490" cy="182" r="5"/>
+    <circle cx="487" cy="271" r="5"/><circle cx="484" cy="418" r="5"/><circle cx="228" cy="527" r="4"/>
+  </g>
+  <text class="heading" x="193" y="48" data-cs="Pannionská válka">The Pannion War</text>
+  <text class="small" x="232" y="111" data-cs="Dřevnov">Pale</text>
+  <text class="water small" x="268" y="194" text-anchor="middle" data-cs="Azurové jezero">Lake Azur</text>
+  <text class="small" x="249" y="252" text-anchor="middle" data-cs="Darúdžhistán">Darujhistan</text>
+  <text class="small" x="490" y="160" text-anchor="end">Capustan</text>
+  <text x="466" y="252" text-anchor="end" data-cs="Korál">Coral</text>
+  <text class="water small" x="514" y="300" data-cs="Korálový záliv">Coral Bay</text>
+  <text class="small" x="462" y="405" text-anchor="end" data-cs="Pannionské dominium">Pannion Domin</text>
+  <text class="small" x="496" y="423" data-cs="Vyhlídka">Outlook</text>
+  <text class="small" x="237" y="533" data-cs="Mokřiny">Callows</text>
+  <text class="small" x="216" y="472" data-cs="Lamatathská pláň">Plain of Lamatath</text>
+  <text class="small" x="191" y="594" data-cs="Do Morn ↓">To Morn ↓</text>
+  <text class="water" x="564" y="179" text-anchor="middle" transform="rotate(90 564 179)" data-cs="Rezavý oceán">Rust Ocean</text>
+  <path d="M54 543v-31l-6 11m6-11 6 11" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="54" y="501" text-anchor="middle" data-cs="S">N</text>
+  <!-- Capustan inset, with the north arrow upright as on the rotated book plan. -->
+  <path class="land" d="M633 0h407v624H633z"/>
+  <path fill="#d7c397" stroke="#65573f" stroke-width="4" d="m655 282 29-62 34-34 87-39 98 7 52 47 43 17 21 99-25 70-58 57-123 0-38-13-77-2-46-32z"/>
+  <path fill="none" stroke="#f9edcc" stroke-width="9" d="M634 315h54l72-36 66-17 111-7 63-17 40-11m-212-93v80l-29 67-8 76 25 79-59 111m59-111 71 78m-180-214 86 31 65 15 85-43"/>
+  <use href="#gate" x="828" y="149"/><use href="#gate" x="658" y="315" transform="rotate(-90 658 315)"/><use href="#gate" x="1005" y="243" transform="rotate(73 1005 243)"/><use href="#gate" x="817" y="443" transform="rotate(180 817 443)"/>
+  <g fill="#b2a076" stroke="#726449" stroke-width="2">
+    <circle cx="741" cy="245" r="15"/><circle cx="890" cy="207" r="16"/><circle cx="929" cy="313" r="13"/>
+    <circle cx="705" cy="365" r="18"/><circle cx="757" cy="367" r="12"/><circle cx="822" cy="378" r="12"/>
+    <path d="m935 398 13-15 26 3-4 23-23 12zM967 332l18-12 18 17-8 16-21 1z"/>
+  </g>
+  <circle class="town" cx="948" cy="398" r="5"/>
+  <text class="heading" x="835" y="62" text-anchor="middle">Capustan</text>
+  <text class="small" x="835" y="87" text-anchor="middle" data-cs="Východní Genabakis">Eastern Genabackis</text>
+  <text class="small" x="828" y="124" text-anchor="middle" data-cs="Severní brána">North Gate</text>
+  <text class="small" x="680" y="339" data-cs="Západní brána">West Gate</text>
+  <text class="small" x="1020" y="202" text-anchor="end" data-cs="Východní brána">East Gate</text>
+  <text class="small" x="817" y="475" text-anchor="middle" data-cs="Jižní brána">South Gate</text>
+  <text class="small" x="980" y="298" text-anchor="end" data-cs="Dželarkanův palác">Jelarkan’s Palace</text>
+  <text class="small" x="1011" y="483" text-anchor="end" data-cs="kasárna Šedých mečů">Grey Swords Barracks</text>
+  <path d="M988 565v-31l-6 11m6-11 6 11" fill="none" stroke="#313327" stroke-width="2"/>
+  <text class="small" x="988" y="524" text-anchor="middle" data-cs="S">N</text>
+  <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1z"/>
+</svg>

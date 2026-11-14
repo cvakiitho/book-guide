@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.27, x1: 0.48, y0: 0.11, y1: 0.68 }, timelineMin: 2
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to The Bonehunters', info_names: 'We use Erikson’s original names (Tavore, Fiddler, Kalam, Quick Ben…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Lovci kostí', info_names: 'Držíme se původních jmen Stevena Eriksona (Tavore, Fiddler, Kalam, Quick Ben…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to The Bonehunters', info_names: 'We use Erikson’s original names (Tavore, Fiddler, Kalam, Quick Ben…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Lovci kostí', info_names: 'Držíme se původních jmen Stevena Eriksona (Tavore, Fiddler, Kalam, Quick Ben…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [
@@ -43,7 +43,7 @@ var BOOK = {
     { id:'firstthrone', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:40.25, y:28.17, ic:'tower', gi:3, mile:300,
       dad:L('An ancient seat of power older than the Malazan Empire, hidden in a warren and contested by Tiste Edur and Letherii alike.', 'Dávné sídlo moci starší než Malazská říše, ukryté ve warrenu a nárokované Tiste Edury i Letherii.'),
       kid:L('A very old throne in a strange hidden place. Many powerful people want it, and none of them are gentle.', 'Velmi starý trůn v podivném skrytém místě. Mnoho mocných ho chce a nikdo z nich není jemný.') },
-    { id:'malazcity', name:L('Malaz City', 'Malaz City'), en:'Malaz City', x:43, y:61, ic:'town', gi:4, mile:500,
+    { id:'malazcity', name:L('Malaz City', 'Město Malaz'), en:'Malaz City', x:43, y:61, ic:'town', gi:4, mile:500,
       dad:L('The island city where the empire began. Its streets are full of Claw, old loyalties and traps dressed as welcomes.', 'Ostrovní město, kde říše začala. Jeho ulice jsou plné Claw, starých věrností a pastí převlečených za přivítání.'),
       kid:L('The first city of the empire, on a rocky island. It looks proud, but there are secret killers everywhere.', 'První město říše na skalnatém ostrově. Vypadá hrdě, ale všude jsou tajní vrazi.') },
     { id:'seaglass', name:L('The Sea of Glass', 'Skleněné moře'), en:'The Sea of Glass', x:39.55, y:63.5, ic:'water', gi:5, mile:600,

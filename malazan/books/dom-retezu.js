@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.28, x1: 0.80, y0: 0.08, y1: 0.59 }, timelineMin: 2
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to House of Chains', info_names: 'We use Erikson’s original names (Karsa Orlong, Tavore Paran, Cotillion…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Dómem řetězů', info_names: 'Držíme se původních jmen Stevena Eriksona (Karsa Orlong, Tavore Paran, Cotillion…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to House of Chains', info_names: 'We use Erikson’s original names (Karsa Orlong, Tavore Paran, Cotillion…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Dómem řetězů', info_names: 'Držíme se původních jmen Stevena Eriksona (Karsa Orlong, Tavore Paran, Cotillion…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

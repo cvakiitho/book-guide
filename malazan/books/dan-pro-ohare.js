@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.69, x1: 0.91, y0: 0.27, y1: 0.53 }, timelineMin: 5
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to Toll the Hounds', info_names: 'We use Erikson’s original names (Rake, Cutter, Kruppe, Endest, Seerdomin…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Daní pro ohaře', info_names: 'Držíme se původních jmen Stevena Eriksona (Rake, Cutter, Kruppe, Endest, Seerdomin…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to Toll the Hounds', info_names: 'We use Erikson’s original names (Rake, Cutter, Kruppe, Endest, Seerdomin…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Daní pro ohaře', info_names: 'Držíme se původních jmen Stevena Eriksona (Rake, Cutter, Kruppe, Endest, Seerdomin…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

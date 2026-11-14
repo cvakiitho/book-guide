@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.12, x1: 0.41, y0: 0.62, y1: 0.87 }, timelineMin: 6
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to Dust of Dreams', info_names: 'We use Erikson’s original names (Tavore, Kalyth, Hetan, Tool, Gesler, Stormy…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Prachem snů', info_names: 'Držíme se původních jmen Stevena Eriksona (Tavore, Kalyth, Hetan, Tool, Gesler, Stormy…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to Dust of Dreams', info_names: 'We use Erikson’s original names (Tavore, Kalyth, Hetan, Tool, Gesler, Stormy…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Prachem snů', info_names: 'Držíme se původních jmen Stevena Eriksona (Tavore, Kalyth, Hetan, Tool, Gesler, Stormy…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

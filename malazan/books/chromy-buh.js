@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.12, x1: 0.46, y0: 0.62, y1: 0.86 }, timelineMin: 6
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to The Crippled God', info_names: 'We use Erikson’s original names (Tavore, Cotillion, Shadowthrone, Kalyth, Gesler, Stormy…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Chromým bohem', info_names: 'Držíme se původních jmen Stevena Eriksona (Tavore, Cotillion, Shadowthrone, Kalyth, Gesler, Stormy…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to The Crippled God', info_names: 'We use Erikson’s original names (Tavore, Cotillion, Shadowthrone, Kalyth, Gesler, Stormy…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Chromým bohem', info_names: 'Držíme se původních jmen Stevena Eriksona (Tavore, Cotillion, Shadowthrone, Kalyth, Gesler, Stormy…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

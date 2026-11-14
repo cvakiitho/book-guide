@@ -25,7 +25,7 @@ Každý díl má šest částí rozdělených do dvou vnitřních knih (3 + 3), 
 - **Průvodce / Čtenář** — průvodcovský režim ukazuje úplné poznámky; čtenářský režim odkrývá děj, postavy a místa postupně podle označených částí.
 - **Postavy a vztahy** — společný soubor postav napříč deseti knihami, jejich příběhové oblouky a vztahové přehledy.
 - **Svět** — přehled národů, časová osa a stručná encyklopedie.
-- **Angličtina / čeština**, světlý a tmavý motiv.
+- **Angličtina / čeština** včetně popisků mapy, světlý a tmavý motiv.
 - **Samostatný HTML soubor pro každý díl** — sdílený engine, mapa a data se při sestavení vloží dovnitř souboru; není potřeba server ani externí knihovny.
 
 Režim, jazyk a motiv se sdílejí mezi svazky; přečtené části se ukládají pro každý svazek zvlášť v místním úložišti prohlížeče. Vztahové přehledy se v čtenářském režimu odemykají podle postupu.
@@ -57,7 +57,7 @@ Kontrolu hranic čtenářského postupu a trasy lze spustit z kořene příkazem
 - `books/routes.js` — barvy tras. Trasy při sestavení vznikají ze souřadnic zastávek v datech svazků.
 - `books/<slug>.js` — šest částí, zastávky, vztahy, shrnutí, kvízy a dvojjazyčné texty konkrétního svazku.
 - `build.mjs` — vloží data a obrázky do samostatných HTML výstupů.
-- `assets/map.svg` — stylizovaná mapa Malazského světa.
+- `assets/map.svg` — stylizovaná mapa Malazského světa s anglickými popisky a českými překlady v atributech `data-cs`.
 - `assets/scenes/<slug>/<n>.jpg` — nepovinné ilustrace částí, kde `n` je pořadové číslo 1–6.
 
 Chybějící ilustrace sestavení nezastaví; aplikace místo nich zobrazí ikonový náhradní prvek a skript vypíše seznam chybějících scén. Zájemci mohou vytvořit ilustrace a přidat je do příslušných složek `assets/scenes/`.

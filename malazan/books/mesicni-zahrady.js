@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.66, x1: 0.84, y0: 0.15, y1: 0.40 }, timelineMin: 1
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to Gardens of the Moon', info_names: 'We use Erikson’s original names (Whiskeyjack, Tattersail, Anomander Rake…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Měsíčními zahradami', info_names: 'Držíme se původních jmen Stevena Eriksona (Whiskeyjack, Tattersail, Anomander Rake…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to Gardens of the Moon', info_names: 'We use Erikson’s original names (Whiskeyjack, Tattersail, Anomander Rake…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Měsíčními zahradami', info_names: 'Držíme se původních jmen Stevena Eriksona (Whiskeyjack, Tattersail, Anomander Rake…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

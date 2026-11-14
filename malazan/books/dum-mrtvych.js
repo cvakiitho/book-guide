@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.28, x1: 0.47, y0: 0.11, y1: 0.42 }, timelineMin: 2
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to Deadhouse Gates', info_names: 'We use Erikson’s original names (Felisin, Coltaine, Icarium, Karsa Orlong…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Domem mrtvých', info_names: 'Držíme se původních jmen Stevena Eriksona (Felisin, Coltaine, Icarium, Karsa Orlong…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to Deadhouse Gates', info_names: 'We use Erikson’s original names (Felisin, Coltaine, Icarium, Karsa Orlong…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Domem mrtvých', info_names: 'Držíme se původních jmen Stevena Eriksona (Felisin, Coltaine, Icarium, Karsa Orlong…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

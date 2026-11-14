@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.08, x1: 0.33, y0: 0.56, y1: 0.86 }, timelineMin: 2
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to Midnight Tides', info_names: 'We use Erikson’s original names (Tehol, Bugg, Rhulad, Trull Sengar…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Půlnočními vlnami', info_names: 'Držíme se původních jmen Stevena Eriksona (Tehol, Bugg, Rhulad, Trull Sengar…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to Midnight Tides', info_names: 'We use Erikson’s original names (Tehol, Bugg, Rhulad, Trull Sengar…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Půlnočními vlnami', info_names: 'Držíme se původních jmen Stevena Eriksona (Tehol, Bugg, Rhulad, Trull Sengar…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

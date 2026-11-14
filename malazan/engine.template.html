@@ -451,7 +451,7 @@
       </div>
       <div class="map-viewport" id="mapVp">
         <div class="map-stage" id="mapStage">
-          <img class="map-img" id="mapImg" src="__MAP_DATA_URI__" alt="Map of the Malazan world" draggable="false">
+          <img class="map-img" id="mapImg" src="__MAP_DATA_URI__" data-src-cs="__MAP_CS_DATA_URI__" alt="Map of the Malazan world" draggable="false">
           <svg class="route" id="routeSvg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
           <div id="pinLayer"></div>
         </div>
@@ -496,7 +496,7 @@
       <summary data-i18n="info_summary">Jak to funguje · o jménech</summary>
       <p data-i18n-html="info_modes"><b>Dva režimy.</b> <i>Rodiče</i> = příprava na čtení (shrnutí, na co se zaměřit, otázky pro děti, „metr strašidelnosti“). <i>Děti</i> = bez spoilerů, jen to, co jste už četli, plus kvízy a sbírání postav.</p>
       <p data-i18n-html="info_unlock"><b>Odemykání.</b> U každé kapitoly klikni na <i>Přečteno</i> — tím se na mapě posune „Tady jsme“, přibudou míle a odemknou se nové postavy a místa. Postup se ukládá v prohlížeči.</p>
-      <p data-i18n-html="info_names"><b>Names.</b> We use Erikson’s original names (Whiskeyjack, Apsalar, Anomander Rake…). Czech notes follow the Czech editions; the map labels are in English.</p>
+      <p data-i18n-html="info_names"><b>Names.</b> We use Erikson’s original character names (Whiskeyjack, Apsalar, Anomander Rake…). The map follows the selected language.</p>
     </details>
     <p class="foot" data-i18n="footer">Postaveno s láskou k předčítání · v1</p>
   </div>
@@ -680,7 +680,7 @@
       info_summary:"How it works · about the names",
       info_modes:"<b>Two modes.</b> <i>Guide</i> = full spoiler notes (summary, what to watch for, questions, an intensity meter). <i>Reader</i> = no spoilers: only what you have already read, plus recaps and quizzes. The series is adult fiction; the intensity meter warns about the darkest scenes.",
       info_unlock:"<b>Unlocking.</b> On each movement, tap <i>Read</i> — that moves the “You are here” pin, adds leagues, and unlocks new characters and places. Progress is saved in your browser.",
-      info_names:"<b>Names.</b> We use Erikson’s original names (Whiskeyjack, Apsalar, Anomander Rake…). Czech notes follow the Czech editions; the map labels are in English.",
+      info_names:"<b>Names.</b> We use Erikson’s original character names (Whiskeyjack, Apsalar, Anomander Rake…). The map follows the selected language.",
       footer:"A fan-made reader’s guide · not affiliated with Steven Erikson or the publishers",
       here_label:"You are here", strip_empty:"The tale has not set out yet — stops appear here once you have read a movement.", stop_word:"Stop", place_locked:"The story has not reached this place yet — read on to unlock it.", place_empty:"Tap a stop below the map and it will carry you there.", fear_label:"Intensity",
       charhint_kids:"Characters unlock as you meet them in the story. Tap one to learn more.",
@@ -716,7 +716,7 @@
       info_summary:"Jak to funguje · o jménech",
       info_modes:"<b>Dva režimy.</b> <i>Průvodce</i> = plné poznámky se spoilery (shrnutí, na co se zaměřit, otázky, metr intenzity). <i>Čtenář</i> = bez spoilerů, jen to, co už jsi přečetl, plus rekapitulace a kvízy. Série je určená dospělým; metr intenzity upozorňuje na nejtemnější scény.",
       info_unlock:"<b>Odemykání.</b> U každé části klikni na <i>Přečteno</i> — tím se na mapě posune „Tady jsme“, přibudou ligy a odemknou se nové postavy a místa. Postup se ukládá v prohlížeči.",
-      info_names:"<b>Jména.</b> Držíme se původních jmen Stevena Eriksona (Whiskeyjack, Apsalar, Anomander Rake…). České poznámky sledují česká vydání; mapa má popisky anglicky.",
+      info_names:"<b>Jména.</b> Držíme se původních jmen postav Stevena Eriksona (Whiskeyjack, Apsalar, Anomander Rake…). Mapa používá zvolený jazyk.",
       footer:"Fanouškovský čtenářský průvodce · neoficiální, bez spojení se Stevenem Eriksonem či vydavateli",
       here_label:"Tady jsme", strip_empty:"Příběh ještě nevyrazil — po přečtení části se tu objeví zastávky.", stop_word:"zastávka", place_locked:"Sem příběh ještě nedošel — čti dál a místo se odemkne.", place_empty:"Klikni na zastávku pod mapou a mapa tě k ní zaveze.", fear_label:"Intenzita",
       charhint_kids:"Postavy se odemykají, jakmile je v příběhu potkáš. Klikni a dozvíš se víc.",
@@ -1014,6 +1014,7 @@
   // sharply — NOT transform:scale(), which only stretches a base-size GPU texture (blurry). Pan = translate.
   var scale=1,minS=1,maxS=5,tx=0,ty=0;
   var stage=$('#mapStage'), vp=$('#mapVp');
+  var mapImg=$('#mapImg'), mapSrcEn=mapImg.getAttribute('src');
   function applyLayout(){stage.style.width=(vp.clientWidth*scale)+'px';}
   function boundAxis(offset, viewport, content){
     return content<=viewport ? (viewport-content)/2 : Math.max(viewport-content,Math.min(0,offset));
@@ -1152,7 +1153,9 @@
     document.querySelectorAll('[data-i18n-title]').forEach(function(e){ var s=T(e.getAttribute('data-i18n-title')); e.title=s; e.setAttribute('aria-label',s); });
     document.querySelectorAll('#langsel .flagbtn').forEach(function(b){ var on=b.getAttribute('data-lang')===state.lang; b.classList.toggle('on',on); if(on) b.setAttribute('aria-current','true'); else b.removeAttribute('aria-current'); });
     var pp=$('#placePanel'); if(pp && pp.classList.contains('empty')) pp.textContent=T('place_empty');
-    var mi=$('#mapImg'); if(mi) mi.alt=T('map_alt');
+    mapImg.alt=T('map_alt');
+    var mapSrc=(state.lang==='cs' && mapImg.dataset.srcCs) || mapSrcEn;
+    if(mapImg.getAttribute('src')!==mapSrc) mapImg.setAttribute('src',mapSrc);
     buildVolSwitch();
     applyTheme();
   }

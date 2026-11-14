@@ -6,7 +6,7 @@
 //   /*__ROUTES_DATA__*/<- book stops and the colors in books/routes.js
 //   /*__BOOK_DATA__*/  <- books/<slug>.js     (this volume's chapters, map, scenes, relations…)
 // then inlines the images as data URIs:
-//   __MAP_DATA_URI__   -> assets/map.svg (or map.jpg)      (shared Malazan world map)
+//   __MAP_DATA_URI__ and __MAP_CS_DATA_URI__ -> English and Czech versions of assets/map.svg
 //   __IMG_<id>__       -> assets/portraits/<id>.jpg        (shared portraits; only characters introduced
 //                                                          up to this volume are inlined, the rest blanked)
 //   __SCENE_<n>__      -> assets/scenes/<slug>/<n>.jpg     (this volume's chapter illustrations)
@@ -44,6 +44,20 @@ const imageUri = (file) => {
   return 'data:' + mime + ';base64,' + fs.readFileSync(file).toString('base64');
 };
 const noBom = (s) => s.replace(/^\uFEFF/, '');
+
+const mapSvg = path.join(ASSETS, 'map.svg');
+const mapJpg = path.join(ASSETS, 'map.jpg');
+let mapUri = '', mapCsUri = '';
+if (fs.existsSync(mapSvg)) {
+  const svg = noBom(fs.readFileSync(mapSvg, 'utf8'));
+  // Replace only simple SVG text elements carrying a translation.
+  const translatedLabel = /(<(text|title|desc)\b[^<>]*?) data-cs="([^"]*)"([^<>]*>)([^<]*)(<\/\2>)/g;
+  const svgUri = (source) => 'data:image/svg+xml;base64,' + Buffer.from(source, 'utf8').toString('base64');
+  mapUri = svgUri(svg.replace(translatedLabel, '$1$4$5$6'));
+  mapCsUri = svgUri(svg.replace(translatedLabel, '$1$4$3$6'));
+} else if (fs.existsSync(mapJpg)) {
+  mapUri = imageUri(mapJpg);
+}
 
 // shared cast — needed by every volume, and used to decide which portraits to inline
 const CASTFILE = path.join(BOOKS, 'cast.js');
@@ -86,11 +100,8 @@ for (const { volume: vol, source } of volumesWithRoutes) {
   const volumes = switcher.map((v) => ({ ...v, current: v.file === vol.file }));
   html = html.replace('__VOLUMES_JSON__', () => JSON.stringify(volumes));
 
-  // 3) shared Malazan world map (SVG preferred, JPG fallback)
-  const mapSvg = path.join(ASSETS, 'map.svg');
-  const mapJpg = path.join(ASSETS, 'map.jpg');
-  const mapFile = fs.existsSync(mapSvg) ? mapSvg : mapJpg;
-  html = html.split('__MAP_DATA_URI__').join(fs.existsSync(mapFile) ? imageUri(mapFile) : '');
+  // 3) shared Malazan world map in both languages
+  html = html.replace('__MAP_DATA_URI__', mapUri).replace('__MAP_CS_DATA_URI__', mapCsUri);
 
   // 4) portraits — only characters introduced up to this volume; missing (but wanted) → shot-list
   const missing = { portraits: [], scenes: [] };

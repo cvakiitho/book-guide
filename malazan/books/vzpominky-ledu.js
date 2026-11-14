@@ -5,8 +5,8 @@ var BOOK = {
     mapFrame: { x0: 0.70, x1: 0.91, y0: 0.24, y1: 0.53 }, timelineMin: 3
   },
   ui: {
-    en: { brand_sub: 'A reader’s guide to Memories of Ice', info_names: 'We use Erikson’s original names (Whiskeyjack, Itkovian, Silverfox, Kallor…). Czech notes follow the Czech editions; the map labels are in English.' },
-    cs: { brand_sub: 'Průvodce Vzpomínkami ledu', info_names: 'Držíme se původních jmen Stevena Eriksona (Whiskeyjack, Itkovian, Silverfox, Kallor…). Poznámky sledují česká vydání; mapa má popisky anglicky.' }
+    en: { brand_sub: 'A reader’s guide to Memories of Ice', info_names: 'We use Erikson’s original names (Whiskeyjack, Itkovian, Silverfox, Kallor…). Czech notes follow the Czech editions; the map follows the selected language.' },
+    cs: { brand_sub: 'Průvodce Vzpomínkami ledu', info_names: 'Držíme se původních jmen Stevena Eriksona (Whiskeyjack, Itkovian, Silverfox, Kallor…). Poznámky sledují česká vydání; mapa používá zvolený jazyk.' }
   },
   relations: {
     blocks: [

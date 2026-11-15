@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'lovci-kosti', vol: 6, key: 'malazan_v6',
-    mapFrame: { x0: 0.4, x1: 0.63, y0: 0.12, y1: 0.57 }, timelineMin: 5
+    mapFrame: { x0: 0.4, x1: 0.63, y0: 0.12, y1: 0.57 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to The Bonehunters', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -28,10 +28,10 @@ var BOOK = {
     { ic: 'crown', min: 6, title: L('Two thrones', 'Dva trůny'), text: L('The Throne of Shadow is on Drift Avalii. The First Throne, defended by Trull and the T’lan Imass, commands the T’lan Imass bound to it.', 'Trůn stínu stojí na Drift Avalii. První trůn, který brání Trull a T’lan Imass, dává moc nad těmi T’lan Imass, kteří jsou k němu vázáni.') }
   ],
   timeline: [
-    [L('Seven Cities', 'Sedmiměstí'), L('Leoman retreats to Y’Ghatan', 'Leoman ustupuje do Y’Ghatanu'), L('The Fourteenth pursues what remains of Sha’ik’s rebellion.', 'Čtrnáctá armáda pronásleduje zbytky Ša’ičina povstání.')],
-    [L('G’dan(isban)', 'G’dan(isban)'), L('Poliel’s plague', 'Mor bohyně Poliel'), L('Paran confronts Poliel and takes command of Onearm’s Host.', 'Paran se postaví Poliel a převezme velení Jednorukého houfce.')],
-    [L('West from Aren', 'Z Arenu na západ'), L('The Edur fleet and Sepik', 'Flotila Edur a Sepik'), L('The Fourteenth meets Edur sorcery at sea and goes on to Sepik.', 'Čtrnáctá armáda se na moři střetne s magií Edur a pokračuje k Sepiku.')],
-    [L('Malaz Isle', 'Ostrov Malaz'), L('The summons to Malaz City', 'Povolání do města Malaz'), L('Tavore faces Laseen, Rel and Dom at Mock’s Hold.', 'Tavore čelí Laseen, Relovi a Domovi na Posměvákově tvrzi.')]
+    [L('Seven Cities', 'Sedmiměstí'), L('Leoman retreats to Y’Ghatan', 'Leoman ustupuje do Y’Ghatanu'), L('The Fourteenth pursues what remains of Sha’ik’s rebellion.', 'Čtrnáctá armáda pronásleduje zbytky Ša’ičina povstání.'), 1],
+    [L('G’dan(isban)', 'G’dan(isban)'), L('Poliel’s plague', 'Mor bohyně Poliel'), L('Paran confronts Poliel and takes command of Onearm’s Host.', 'Paran se postaví Poliel a převezme velení Jednorukého houfce.'), 2],
+    [L('West from Aren', 'Z Arenu na západ'), L('The Edur fleet and Sepik', 'Flotila Edur a Sepik'), L('The Fourteenth meets Edur sorcery at sea and goes on to Sepik.', 'Čtrnáctá armáda se na moři střetne s magií Edur a pokračuje k Sepiku.'), 4],
+    [L('Malaz Isle', 'Ostrov Malaz'), L('The summons to Malaz City', 'Povolání do města Malaz'), L('Tavore faces Laseen, Rel and Dom at Mock’s Hold.', 'Tavore čelí Laseen, Relovi a Domovi na Posměvákově tvrzi.'), 5]
   ],
   ILLUS: {
     1:{ cap:L('The Fourteenth searches for a way out of burning Y’Ghatan.', 'Čtrnáctá armáda hledá cestu z hořícího Y’Ghatanu.') },

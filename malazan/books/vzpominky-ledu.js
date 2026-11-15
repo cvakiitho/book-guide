@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'vzpominky-ledu', vol: 3, key: 'malazan_v3',
-    mapFrame: { x0: 0.62, x1: 0.79, y0: 0.23, y1: 0.43 }, timelineMin: 3
+    mapFrame: { x0: 0.62, x1: 0.79, y0: 0.23, y1: 0.43 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Memories of Ice', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -31,9 +31,9 @@ var BOOK = {
     { ic: 'warren', min: 6, title: L('Omtose Phellack', 'Omtose Phellack'), text: L('The elder warren of the Jaghut is a source of ice magic. At the end of the campaign, the Seer uses it to slow the poison spreading through Burn.', 'Prastará chodba Jaghutů je zdrojem ledové magie. Na konci tažení ji Věštec použije, aby zpomalil šíření jedu v Ohnici.') }
   ],
   timeline: [
-    [L('Prologue', 'Prolog'), L('The Jaghut war', 'Válka s Jaghuty'), L('During the hunt for a Jaghut family, the Bonecaster Kilava tries to save two children at Morn.', 'Při štvanici na jaghutskou rodinu se kostějka Kilava pokusí zachránit v Morn dvě děti.')],
-    [L('Prologue', 'Prolog'), L('The curse of Kallor', 'Kallorova kletba'), L('K’rul, Draconus and the Sister of Cold Nights confront the High King after the fall of the Crippled God.', 'K’rul, Draconus a Sestra chladných nocí se po pádu Chromého boha postaví velekráli.')],
-    [L('Campaign', 'Tažení'), L('The siege of Capustan', 'Obléhání Capustanu'), L('The Grey Swords defend the city from the Pannion armies as Onearm’s Host and its allies converge on Capustan.', 'Šedé meče brání město před pannionskými vojsky, zatímco se k Capustanu blíží Houfec Jednorukého a jeho spojenci.')],
+    [L('Prologue', 'Prolog'), L('The Jaghut war', 'Válka s Jaghuty'), L('During the hunt for a Jaghut family, the Bonecaster Kilava tries to save two children at Morn.', 'Při štvanici na jaghutskou rodinu se kostějka Kilava pokusí zachránit v Morn dvě děti.'), 1],
+    [L('Prologue', 'Prolog'), L('The curse of Kallor', 'Kallorova kletba'), L('K’rul, Draconus and the Sister of Cold Nights confront the High King after the fall of the Crippled God.', 'K’rul, Draconus a Sestra chladných nocí se po pádu Chromého boha postaví velekráli.'), 1],
+    [L('Campaign', 'Tažení'), L('The siege of Capustan', 'Obléhání Capustanu'), L('The Grey Swords defend the city from the Pannion armies as Onearm’s Host and its allies converge on Capustan.', 'Šedé meče brání město před pannionskými vojsky, zatímco se k Capustanu blíží Houfec Jednorukého a jeho spojenci.'), 2],
   ],
   ILLUS: {
     1: { cap: L('Onearm’s outlawed Host marches under Rake’s shadow.', 'Houfec Jednorukého pochoduje ve stínu Měsíčního Kamene.') },
@@ -50,22 +50,22 @@ var BOOK = {
     route: []
   },
   PLACES: [
-    { id:'morn', name:L('Morn', 'Morn'), en:'Morn', x:67.75, y:38.42, region:[16.83,91.35], ic:'tower', gi:1, mile:0,
+    { id:'morn', name:L('Morn', 'Morn'), en:'Morn', x:67.75, y:38.42, region:[16.83,91.35], ic:'tower', gi:1,
       dad:L('An ancient ruin where Toc the Younger emerges from Chaos and joins Lady Envy, Tool and the Seguleh. The printed campaign map gives the direction to Morn at its southern edge.', 'Dávné rozvaliny, kde se Toc Mladší vynoří z chaosu a připojí se k paní Závisti, Tolarovi a Segulehům. Mapa tažení ukazuje směr k Morn na jižním okraji.'),
       kid:L('An old ruin where a lost scout meets new traveling companions.', 'Staré rozvaliny, kde ztracený zvěd potká nové společníky na cestu.') },
-    { id:'capustan', name:L('Capustan', 'Capustan'), en:'Capustan', x:72.4, y:28.08, region:[91.15,63.78], ic:'town', gi:2, mile:150,
+    { id:'capustan', name:L('Capustan', 'Capustan'), en:'Capustan', x:72.4, y:28.08, region:[91.15,63.78], ic:'town', gi:2,
       dad:L('A city at the mouth of the Catlin River. The inset marks the Grey Swords’ barracks in the southeast, a landmark identified on the printed city plan.', 'Město při ústí řeky Catlin. Výřez podle knižního plánu označuje kasárna Šedých mečů na jihovýchodě města.'),
       kid:L('A rich city with strong walls, defended by priest-soldiers. A huge hungry army comes to destroy it.', 'Bohaté město se silnými hradbami, které brání kněží-vojáci. Přichází ho zničit obrovská hladová armáda.') },
-    { id:'pannion', name:L('Outlook', 'Vyhlídka'), en:'Outlook', x:71.35, y:35.9, region:[46.54,66.99], ic:'crown', gi:4, mile:300,
+    { id:'pannion', name:L('Outlook', 'Vyhlídka'), en:'Outlook', x:71.35, y:35.9, region:[46.54,66.99], ic:'crown', gi:4,
       dad:L('A stronghold in the Pannion Domin. Toc is held captive by the Seer and his K’Chain Che’Malle Matron during the campaign.', 'Pevnost v Pannionském dominiu. Věštec během tažení drží Toca v zajetí u matrony K’Chain Che’Malle.'),
       kid:L('A fortified city where the ruler of the Pannion Domin holds Toc prisoner.', 'Podivná a děsivá říše. Její lidé mají hlad a jejich vládce jim říká, že strašlivé věci jsou svaté.') },
-    { id:'coral', name:L('Coral', 'Korál'), en:'Coral', x:71.5, y:33.58, region:[46.83,43.43], ic:'town', gi:5, mile:420,
+    { id:'coral', name:L('Coral', 'Korál'), en:'Coral', x:71.5, y:33.58, region:[46.83,43.43], ic:'town', gi:5,
       dad:L('The Seer’s stronghold on the east coast of Genabackis, south of Capustan. The allied armies converge on the city and its citadel.', 'Věštcova pevnost na východním pobřeží Genabakis, jižně od Capustanu. Spojenecká vojska se tu sbíhají k městu a jeho citadele.'),
       kid:L('A dark city by the sea where the enemy leader hides. The biggest battle of the book happens here.', 'Temné město u moře, kde se skrývá vůdce nepřátel. Odehrává se tu největší bitva knihy.') },
-    { id:'blackcoral', name:L('Black Coral', 'Černý Korál'), en:'Black Coral', x:71.5, y:33.58, region:[46.83,43.43], ic:'tower', gi:6, mile:430,
+    { id:'blackcoral', name:L('Black Coral', 'Černý Korál'), en:'Black Coral', x:71.5, y:33.58, region:[46.83,43.43], ic:'tower', gi:6,
       dad:L('The name Coral takes after the war, when the Tiste Andii settle its ruins and a new court grows around the memory of the dead.', 'Jméno, které Korál dostane po válce, když se v jeho troskách usadí Tiste Andii a kolem památky mrtvých vyroste nový dvůr.'),
       kid:L('The same city after the battle. The Tiste Andii make their home there.', 'Stejné město po bitvě. Tiste Andii se v něm usadí.') },
-    { id:'moonspawn3', name:L('Moon’s Spawn', 'Měsíční Kámen'), en:'Moon’s Spawn', x:72.25, y:34.8, region:[50.2,44.6], ic:'moon', gi:6, mile:440,
+    { id:'moonspawn3', name:L('Moon’s Spawn', 'Měsíční Kámen'), en:'Moon’s Spawn', x:72.25, y:34.8, region:[50.2,44.6], ic:'moon', gi:6,
       dad:L('Rake’s floating fortress, hidden beneath the sea and then risen to break the siege. At the end it becomes a tomb for the Bridgeburners who fell at Coral.', 'Létající pevnost, skrytá pod mořem a potom vynořená, aby zlomila obléhání. Na konci se stane hrobkou pro Paliče mostů padlé u Korálu.'),
       kid:L('A huge fortress that can float and hide under the sea. At the end it becomes a quiet place for the dead.', 'Obrovská pevnost, která umí létat a skrývat se pod mořem. Na konci se stane tichým místem pro mrtvé.') }
   ],

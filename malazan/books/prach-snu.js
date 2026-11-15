@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'prach-snu', vol: 9, key: 'malazan_v9',
-    mapFrame: { x0: 0.12, x1: 0.35, y0: 0.6, y1: 0.81 }, timelineMin: 6
+    mapFrame: { x0: 0.12, x1: 0.35, y0: 0.6, y1: 0.81 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Dust of Dreams', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -30,9 +30,9 @@ var BOOK = {
     { ic: 'chain', min: 5, title: L('The Snake', 'Had'), text: L('A column of children fleeing Kolanse. Rutt carries a baby and Badalle gives voice to what happens to them.', 'Zástup dětí prchajících z Kolanse. Rutt nese nemluvně a Badalle vypráví o tom, co se jim děje.') }
   ],
   timeline: [
-    [L('Letheras', 'Lederas'), L('Departure', 'Odchod'), L('Tavore sets out and Brys accompanies the expedition with Letherii troops.', 'Tavore vyrazí a Brys ji doprovází s lederskými oddíly.')],
-    [L('Bolkando', 'Bolkando'), L('A difficult passage', 'Obtížný průchod'), L('The Perish and Khundryl negotiate passage and face resistance.', 'Zánické přílby a Chundrylové vyjednávají o průchodu a čelí odporu.')],
-    [L('The eastern wastes', 'Východní pustiny'), L('The Nah’ruk strike', 'Útok Nah’ruk'), L('The Nah’ruk hit the Bonehunters before fighting the Che’Malle separately.', 'Nah’ruk napadnou Lovce kostí a později se v samostatném střetu utkají s Che’Malle.')]
+    [L('Letheras', 'Lederas'), L('Departure', 'Odchod'), L('Tavore sets out and Brys accompanies the expedition with Letherii troops.', 'Tavore vyrazí a Brys ji doprovází s lederskými oddíly.'), 1],
+    [L('Bolkando', 'Bolkando'), L('A difficult passage', 'Obtížný průchod'), L('The Perish and Khundryl negotiate passage and face resistance.', 'Zánické přílby a Chundrylové vyjednávají o průchodu a čelí odporu.'), 4],
+    [L('The eastern wastes', 'Východní pustiny'), L('The Nah’ruk strike', 'Útok Nah’ruk'), L('The Nah’ruk hit the Bonehunters before fighting the Che’Malle separately.', 'Nah’ruk napadnou Lovce kostí a později se v samostatném střetu utkají s Che’Malle.'), 5]
   ],
   ILLUS: {
     1:{ cap:L('The Bonehunters prepare to march east from Letheras.', 'Lovci kostí se chystají vyrazit z Lederas na východ.') },

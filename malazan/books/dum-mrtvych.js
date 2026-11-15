@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dum-mrtvych', vol: 2, key: 'malazan_v2',
-    mapFrame: { x0: 0.44, x1: 0.65, y0: 0.1, y1: 0.37 }, timelineMin: 2
+    mapFrame: { x0: 0.44, x1: 0.65, y0: 0.1, y1: 0.37 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Deadhouse Gates', info_names: 'We use Erikson’s original names (Felisin, Coltaine, Icarium, Karsa Orlong…). Czech notes follow the Czech editions; the map follows the selected language.' },
@@ -52,22 +52,22 @@ var BOOK = {
     ]
   },
   PLACES: [
-    { id:'otataral', name:L('Skullcup (Otataral mines)', 'Lebeň (otataralové doly)'), en:'Skullcup (Otataral mines)', x:61.65, y:14, region:[89.9,42.0], ic:'water', gi:1, mile:0,
+    { id:'otataral', name:L('Skullcup (Otataral mines)', 'Lebeň (otataralové doly)'), en:'Skullcup (Otataral mines)', x:61.65, y:14, region:[89.9,42.0], ic:'water', gi:1,
       dad:L('A mining settlement on Otataral Island. The Empire sends prisoners here to mine the rust-coloured ore that suppresses magic. The marker is approximate.', 'Havířské město na otataralovém ostrově. Říše sem posílá vězně těžit rezavou rudu, která potlačuje magii. Značka ukazuje přibližnou polohu.'),
       kid:L('An island with dark mines and a prison. People are sent here when the empire wants them to disappear.', 'Ostrov s temnými doly a vězením. Lidé sem jsou posíláni, když je chce říše nechat zmizet.') },
-    { id:'ehrlitan', name:L('Ehrlitan', 'Ehrlitan'), en:'Ehrlitan', x:55.15, y:22.5, region:[68.75,36.06], ic:'town', gi:2, mile:120,
+    { id:'ehrlitan', name:L('Ehrlitan', 'Ehrlitan'), en:'Ehrlitan', x:55.15, y:22.5, region:[68.75,36.06], ic:'town', gi:2,
       dad:L('A great caravan city of Seven Cities, with high walls, crowded markets and far too many spies. Fiddler’s company comes here looking for a way into the Holy Desert.', 'Velké karavanní město Sedmiměstí s vysokými hradbami, přeplněnými trhy a až příliš mnoha špehy. Fiddlerova družina sem přijíždí hledat cestu do Svaté pouště.'),
       kid:L('A busy desert city with high walls and a big market. Travellers can buy supplies here — or lose their secrets.', 'Rušné pouštní město s vysokými hradbami a velkým trhem. Cestovatelé tu nakoupí zásoby — nebo přijdou o tajemství.') },
-    { id:'raraku', name:L('Raraku', 'Raraku'), en:'Raraku', x:53.05, y:27.33, region:[61.54,40.54], ic:'sun', gi:3, mile:240,
+    { id:'raraku', name:L('Raraku', 'Raraku'), en:'Raraku', x:53.05, y:27.33, region:[61.54,40.54], ic:'sun', gi:3,
       dad:L('The Holy Desert, a waste of salt and dust that was once an inland sea. Sha’ik’s rebellion gathers here, and the Path of Hands calls shapeshifters to the Azath house at its heart.', 'Svatá poušť, pustina soli a prachu, která bývala vnitrozemským mořem. Ša’ik tu shromažďuje povstalce a Stezka rukou láká převtělence do nitra pouště.'),
       kid:L('A huge, hot desert that used to be a sea. Strange people and stranger creatures are gathering here.', 'Obrovská horká poušť, která bývala mořem. Shromažďují se tu podivní lidé a ještě podivnější tvorové.') },
-    { id:'hissar', name:L('Hissar', 'Hissar'), en:'Hissar', x:56.85, y:24.83, region:[79.33,46.15], ic:'town', gi:4, mile:360,
+    { id:'hissar', name:L('Hissar', 'Hissar'), en:'Hissar', x:56.85, y:24.83, region:[79.33,46.15], ic:'town', gi:4,
       dad:L('A port on the Sahul Sea and the starting point of Coltaine’s march to Aren. The first printed map follows the column through Bat’rol, the Sekala Crossing and Gelor Ridge.', 'Přístav u Sahulského moře a výchozí bod Coltainova pochodu do Arenu. První knižní mapa sleduje kolonu přes Bat’rol, přechod přes Sekalu a Gelorský hřeben.'),
       kid:L('A port where Coltaine begins leading the refugees toward Aren.', 'Přístav, odkud Coltain vede uprchlíky do Arenu.') },
-    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:50.2, y:29.33, region:[56.73,76.6], ic:'town', gi:5, mile:600,
+    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:50.2, y:29.33, region:[56.73,76.6], ic:'town', gi:5,
       dad:L('High Fist Pormqual commands this coastal stronghold. The second printed map follows Coltaine’s march from the Vathar Crossing through the Dry March, Sanimon, Tathimon, Dojal and Balahn to the approach to Aren.', 'Této pobřežní pevnosti velí vrchní pěst Pormqual. Druhá knižní mapa sleduje Coltainův pochod od přechodu přes Vathar přes Suchý pochod, Sanimon, Tathimon, Dodžal a Balán až k Arenu.'),
       kid:L('A big coastal city with walls and ships. It is supposed to be a safe place, but the people in charge are afraid to help.', 'Velké pobřežní město s hradbami a loděmi. Má to být bezpečné místo, ale lidé ve vedení se bojí pomoci.') },
-    { id:'tremorlor', name:L('Tremorlor', 'Tremorlor'), en:'Tremorlor', x:53.05, y:27.33, region:[61.54,40.54], ic:'tower', gi:6, mile:640,
+    { id:'tremorlor', name:L('Tremorlor', 'Tremorlor'), en:'Tremorlor', x:53.05, y:27.33, region:[61.54,40.54], ic:'tower', gi:6,
       dad:L('The Azath house in the Holy Desert. The Path of Hands leads to its gates. Its marker indicates the Raraku region.', 'Dům Azath ve Svaté poušti. K jeho branám vede Stezka rukou. Značka označuje oblast Raraku.'),
       kid:L('A strange living house in the desert with doors that lead to other places. Many dangerous creatures want to get inside.', 'Podivný živý dům v poušti s dveřmi, které vedou jinam. Mnoho nebezpečných tvorů se chce dostat dovnitř.') }
   ],

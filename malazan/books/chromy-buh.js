@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'chromy-buh', vol: 10, key: 'malazan_v10',
-    mapFrame: { x0: 0.27, x1: 0.43, y0: 0.64, y1: 0.79 }, timelineMin: 4
+    mapFrame: { x0: 0.27, x1: 0.43, y0: 0.64, y1: 0.79 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to The Crippled God', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -27,9 +27,9 @@ var BOOK = {
     { ic: 'dragon', min: 5, title: L('Korabas', 'Korabas'), text: L('The otataral dragon suppresses sorcery wherever she passes. Heboric accepts the task of taking her chains.', 'Otataralová dračice tlumí magii všude, kudy projde. Heborik přijme úkol převzít její okovy.') }
   ],
   timeline: [
-    [L('Glass Desert', 'Skleněná poušť'), L('The Snake', 'Had'), L('The Bonehunters take in the children as they cross the desert.', 'Lovci kostí se při přechodu pouště ujmou dětí.')],
-    [L('Estobanse Province', 'Estobanská provincie'), L('The northern front', 'Severní fronta'), L('Ganoes Paran holds the North Citadel. The Letherii and Bolkando forces engage Kolanse’s defenders.', 'Ganoes Paran drží Severní hrad. Lederská a bolkandská vojska se utkají s obránci Kolanse.')],
-    [L('Kolanse Bay', 'Kolanský záliv'), L('The Spire', 'Jehla'), L('The attack on the Spire makes it possible to recover the heart.', 'Útok na Jehlu umožní získat srdce.')]
+    [L('Glass Desert', 'Skleněná poušť'), L('The Snake', 'Had'), L('The Bonehunters take in the children as they cross the desert.', 'Lovci kostí se při přechodu pouště ujmou dětí.'), 1],
+    [L('Estobanse Province', 'Estobanská provincie'), L('The northern front', 'Severní fronta'), L('Ganoes Paran holds the North Citadel. The Letherii and Bolkando forces engage Kolanse’s defenders.', 'Ganoes Paran drží Severní hrad. Lederská a bolkandská vojska se utkají s obránci Kolanse.'), 3],
+    [L('Kolanse Bay', 'Kolanský záliv'), L('The Spire', 'Jehla'), L('The attack on the Spire makes it possible to recover the heart.', 'Útok na Jehlu umožní získat srdce.'), 5]
   ],
   ILLUS: {
     1:{ cap:L('The Bonehunters meet the children in the Glass Desert.', 'Lovci kostí potkají děti ve Skleněné poušti.') },

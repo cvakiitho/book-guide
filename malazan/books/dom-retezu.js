@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dom-retezu', vol: 4, key: 'malazan_v4',
-    mapFrame: { x0: 0.44, x1: 0.77, y0: 0.1, y1: 0.36 }, timelineMin: 2
+    mapFrame: { x0: 0.44, x1: 0.77, y0: 0.1, y1: 0.36 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to House of Chains', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -34,9 +34,9 @@ var BOOK = {
     { ic: 'crown', min: 6, title: L('The First Throne', 'První trůn'), text: L('This throne grants authority over the T’lan Imass. Onrack explains that Logros moved it when the Nameless Ones came close to finding it.', 'Tento trůn dává moc nad T’lan Imassy. Onrack vysvětlí, že ho Logros přemístil, když se ho Bezejmenní téměř zmocnili.') }
   ],
   timeline: [
-    [L('Prologue', 'Prolog'), L('Trull’s exile', 'Trullovo vyhnanství'), L('Trull’s kin abandon him in the Nascent.', 'Trullovi příbuzní ho zanechají v Rodící se.')],
-    [L('Earlier', 'Dříve'), L('Karsa leaves Laederon', 'Karsa opouští Laederon'), L('Three Uryd warriors raid the lowlands on Genabackis.', 'Tři urydští bojovníci vyrazí na nájezd do nížin Genabakis.')],
-    [L('After the Chain of Dogs', 'Po Psím řetězu'), L('Aren', 'Aren'), L('Tavore takes command of the newly raised Fourteenth Army.', 'Tavore převezme velení nově sestavené 14. armády.')],
+    [L('Prologue', 'Prolog'), L('Trull’s exile', 'Trullovo vyhnanství'), L('Trull’s kin abandon him in the Nascent.', 'Trullovi příbuzní ho zanechají v Rodící se.'), 1],
+    [L('Earlier', 'Dříve'), L('Karsa leaves Laederon', 'Karsa opouští Laederon'), L('Three Uryd warriors raid the lowlands on Genabackis.', 'Tři urydští bojovníci vyrazí na nájezd do nížin Genabakis.'), 1],
+    [L('After the Chain of Dogs', 'Po Psím řetězu'), L('Aren', 'Aren'), L('Tavore takes command of the newly raised Fourteenth Army.', 'Tavore převezme velení nově sestavené 14. armády.'), 2],
   ],
   ILLUS: {
     1: { cap: L('Karsa Orlong leaves the Teblor mountains with Bairoth and Delum, carrying a sword and a promise that the lowlands will remember his name.', 'Karsa Orlong opouští Teblorské hory s Bairotem a Delumem, s mečem a slibem, že si nížiny zapamatují jeho jméno.') },
@@ -53,22 +53,22 @@ var BOOK = {
     route: []
   },
   PLACES: [
-    { id:'teblor', name:L('Laederon Plateau', 'Laederonská plošina'), en:'Laederon Plateau', x:70, y:14.5, region:[21.06,18.6], ic:'mountain', gi:1, mile:0,
+    { id:'teblor', name:L('Laederon Plateau', 'Laederonská plošina'), en:'Laederon Plateau', x:70, y:14.5, region:[21.06,18.6], ic:'mountain', gi:1,
       dad:L('The high, hard country of the Teblor, far from the roads of the Empire. Karsa Orlong leaves these peaks with two companions, certain that the lowlands are his to take.', 'Vysoká a drsná země Teblorů, daleko od cest říše. Karsa Orlong opouští tyto vrcholy se dvěma druhy, přesvědčený, že nížiny jsou jeho kořist.'),
       kid:L('A cold mountain land where giant warriors live. This is where Karsa starts his long journey.', 'Studená horská země, kde žijí obří bojovníci. Tady začíná Karsova dlouhá cesta.') },
-    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:50.2, y:29.33, region:[50.58,14.58], ic:'town', gi:2, mile:120,
+    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:50.2, y:29.33, region:[50.58,14.58], ic:'town', gi:2,
       dad:L('The great harbour city of Seven Cities and the end of the Chain of Dogs. Here the 14th Army gathers, the dead are counted and Tavore takes command of a war nobody wants to name.', 'Velké přístavní město Sedmiměstí a konec Psím řetězu. Tady se shromažďuje 14. armáda, počítají se mrtví a Tavore přebírá velení války, kterou nikdo nechce pojmenovat.'),
       kid:L('A big harbour city where a new army is getting ready. It is also a sad place, because many soldiers died on the road here.', 'Velké přístavní město, kde se chystá nová armáda. Je to i smutné místo, protože na cestě sem zemřelo mnoho vojáků.') },
-    { id:'drift-avalii', name:L('Drift Avalii', 'Drift Avalii'), en:'Drift Avalii', x:null, y:null, region:[39.23,93.11], ic:'tower', gi:3, mile:300,
+    { id:'drift-avalii', name:L('Drift Avalii', 'Drift Avalii'), en:'Drift Avalii', x:null, y:null, region:[39.23,93.11], ic:'tower', gi:3,
       dad:L('An island where Andarist guards the Throne of Shadow. The printed chart points toward Drift Avalii from the southwest edge of Quon Tali.', 'Ostrov, na kterém Darist střeží Trůn stínu. Knižní mapa ukazuje směr k Drift Avalii od jihozápadního okraje Quon Tali.'),
       kid:L('A lonely island with an old magical throne. Several dangerous people want it, and two friends arrive to guard it.', 'Osamělý ostrov se starým magickým trůnem. Několik nebezpečných lidí ho chce a dva přátelé přijedou, aby ho střežili.') },
-    { id:'raraku', name:L('Pan’arak Oasis', 'Oáza Pan’arak'), en:'Pan’arak Oasis', x:53.05, y:27.33, region:[85.87,60.9], ic:'sun', gi:4, mile:500,
+    { id:'raraku', name:L('Pan’arak Oasis', 'Oáza Pan’arak'), en:'Pan’arak Oasis', x:53.05, y:27.33, region:[85.87,60.9], ic:'sun', gi:4,
       dad:L('The oasis at the heart of Raraku. The printed map shows the ruined city, a basin, and the Dogslayers’ encampment.', 'Oáza v srdci Raraku. Knižní mapa vyznačuje zbořené město, kotlinu a tábor Psobijců.'),
       kid:L('In the middle of the desert, the rebels camp near a ruined city.', 'Uprostřed pouště táboří povstalci poblíž zbořeného města.') },
-    { id:'whirlwind-camp', name:L('Sha’ik’s Hill', 'Pahorek ša’ik'), en:'Sha’ik’s Hill', x:53.05, y:27.33, region:[81.73,50.96], ic:'crown', gi:5, mile:520,
+    { id:'whirlwind-camp', name:L('Sha’ik’s Hill', 'Pahorek ša’ik'), en:'Sha’ik’s Hill', x:53.05, y:27.33, region:[81.73,50.96], ic:'crown', gi:5,
       dad:L('The printed Pan’arak map places Sha’ik’s hill west of the three Dogslayer ramps, on the edge of the basin.', 'Knižní mapa oázy Pan’arak umísťuje pahorek ša’ik na okraj kotliny, západně od tří ramp Psobijců.'),
       kid:L('A hill on the edge of the basin where the rebel leader waits for Tavore.', 'Na pahorku u kotliny čeká vůdkyně povstalců na Tavore.') },
-    { id:'first-throne', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:null, y:null, region:null, ic:'tower', gi:6, mile:700,
+    { id:'first-throne', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:null, y:null, region:null, ic:'tower', gi:6,
       dad:L('A hidden seat of power over the T’lan Imass. Trull and Onrack reach it and find defenders already there. The maps printed in this volume leave its location unspecified.', 'Skrytý trůn, který dává moc nad T’lan Imassy. Trull s Onrackem u něj najdou obránce. Knižní mapy jeho polohu neuvádějí.'),
       kid:L('A very old throne in a secret place. Two travellers reach it at the end of the book, and it opens the door to the next story.', 'Velmi starý trůn na tajném místě. Dva poutníci k němu dorazí na konci knihy a on otevře dveře do dalšího příběhu.') }
   ],

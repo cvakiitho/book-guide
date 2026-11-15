@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'vichr-smrti', vol: 7, key: 'malazan_v7',
-    mapFrame: { x0: 0.06, x1: 0.31, y0: 0.59, y1: 0.77 }, timelineMin: 5
+    mapFrame: { x0: 0.06, x1: 0.31, y0: 0.59, y1: 0.77 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Reaper’s Gale', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -33,9 +33,9 @@ var BOOK = {
     { ic: 'forest', min: 4, title: L('The Refugium', 'Refugium'), text: L('A realm reached through magical gates where a community of Imass lives. A new Azath takes root there when Silchas uses the Finnest and Kettle.', 'Říše přístupná magickými branami, v níž žije skupina Imassů. Když Silchas použije Konývku a Finnest, zakoření tam nový Azath.') }
   ],
   timeline: [
-    [L('Letheras', 'Lederas'), L('The Edur return', 'Návrat Edur'), L('The fleet brings challengers for Rhulad’s arena.', 'Flotila přiváží vyzývatele do Rhuladovy arény.')],
-    [L('Eastern frontier', 'Východní pohraničí'), L('Redmask returns to Awl’dan', 'Rudomask se vrací do Oul’danu'), L('The Awl resist the army assembled at Drene.', 'Oulané se postaví armádě shromážděné v Drene.')],
-    [L('The western coast', 'Západní pobřeží'), L('The Bonehunters come ashore', 'Lovci kostí se vyloďují'), L('Marine detachments advance inland before the main army converges on the capital.', 'Oddíly mariňáků postupují do vnitrozemí, než hlavní vojsko dorazí k hlavnímu městu.')]
+    [L('Letheras', 'Lederas'), L('The Edur return', 'Návrat Edur'), L('The fleet brings challengers for Rhulad’s arena.', 'Flotila přiváží vyzývatele do Rhuladovy arény.'), 1],
+    [L('Eastern frontier', 'Východní pohraničí'), L('Redmask returns to Awl’dan', 'Rudomask se vrací do Oul’danu'), L('The Awl resist the army assembled at Drene.', 'Oulané se postaví armádě shromážděné v Drene.'), 2],
+    [L('The western coast', 'Západní pobřeží'), L('The Bonehunters come ashore', 'Lovci kostí se vyloďují'), L('Marine detachments advance inland before the main army converges on the capital.', 'Oddíly mariňáků postupují do vnitrozemí, než hlavní vojsko dorazí k hlavnímu městu.'), 3]
   ],
   ILLUS: {
     1:{ cap:L('The Edur fleet brings challengers to Rhulad’s capital.', 'Flotila Edur přiváží vyzývatele do Rhuladova hlavního města.') },

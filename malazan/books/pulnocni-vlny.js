@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'pulnocni-vlny', vol: 5, key: 'malazan_v5',
-    mapFrame: { x0: 0.09, x1: 0.23, y0: 0.54, y1: 0.73 }, timelineMin: 4
+    mapFrame: { x0: 0.09, x1: 0.23, y0: 0.54, y1: 0.73 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Midnight Tides', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -26,9 +26,9 @@ var BOOK = {
     { ic: 'tower', min: 4, title: L('The Azath Tower', 'Azatská věž'), text: L('The tower in Letheras holds prisoners beneath its grounds. As it dies, Kettle helps sustain it and Silchas Ruin prepares to emerge.', 'Věž v Lederas drží pod svým pozemkem vězně. Když umírá, Konývka ji pomáhá udržet při životě a Silchas Zmar se chystá vyjít ven.') }
   ],
   timeline: [
-    [L('Prologue', 'Prolog'), L('The ancient battle', 'Dávná bitva'), L('Tiste Edur and Tiste Andii fight the K’Chain Che’Malle. Scabandari turns on Silchas Ruin after the battle.', 'Tiste Edur a Tiste Andii bojují s K’Chain Che’Malle. Po bitvě se Scabandari obrátí proti Silchasi Zmarovi.')],
-    [L('Generations later', 'O generace později'), L('The confederacy', 'Konfederace'), L('Hannan Mosag unites the six Edur tribes as Warlock King.', 'Hannan Mosag sjednotí šest kmenů Tiste Edur jako král-zaklínač.')],
-    [L('The frontier', 'Pohraničí'), L('The expedition north', 'Výprava na sever'), L('The four Sengar brothers travel beyond the frontier in search of a gift.', 'Čtyři bratři Sengarové se vydají za severní pohraničí pro dar.')],
+    [L('Prologue', 'Prolog'), L('The ancient battle', 'Dávná bitva'), L('Tiste Edur and Tiste Andii fight the K’Chain Che’Malle. Scabandari turns on Silchas Ruin after the battle.', 'Tiste Edur a Tiste Andii bojují s K’Chain Che’Malle. Po bitvě se Scabandari obrátí proti Silchasi Zmarovi.'), 1],
+    [L('Generations later', 'O generace později'), L('The confederacy', 'Konfederace'), L('Hannan Mosag unites the six Edur tribes as Warlock King.', 'Hannan Mosag sjednotí šest kmenů Tiste Edur jako král-zaklínač.'), 1],
+    [L('The frontier', 'Pohraničí'), L('The expedition north', 'Výprava na sever'), L('The four Sengar brothers travel beyond the frontier in search of a gift.', 'Čtyři bratři Sengarové se vydají za severní pohraničí pro dar.'), 1],
   ],
   ILLUS: {
     1: { cap: L('Four Edur brothers cross the frozen north in search of a sword that should have stayed buried.', 'Čtyři bratři Edurů přecházejí mrazivý sever hledat meč, který měl zůstat pohřbený.') },
@@ -45,22 +45,22 @@ var BOOK = {
     route: []
   },
   PLACES: [
-    { id:'edur', name:L('Edur Lands', 'Území Tiste Edur'), en:'Edur Lands', x:14.2, y:60.75, region:[19.71,41.19], ic:'tower', gi:1, mile:0,
+    { id:'edur', name:L('Edur Lands', 'Území Tiste Edur'), en:'Edur Lands', x:14.2, y:60.75, region:[19.71,41.19], ic:'tower', gi:1,
       dad:L('The northern coastal homelands of the six Tiste Edur tribes. The map marks Hiroth territory near the fjords of the Letherii frontier.', 'Domov šesti kmenů Tiste Edur na severním pobřeží. Mapa vyznačuje území Hirotů poblíž fjordů lederského pohraničí.'),
       kid:L('The cold, wooded coast where the Sengar brothers live.', 'Studené zalesněné pobřeží, kde žijí bratři Sengarové.') },
-    { id:'letheras', name:L('Tehol’s Residence', 'Teholova rezidence'), en:'Tehol’s Residence', x:16.2, y:66.83, region:[83.85,38.78], ic:'town', gi:2, mile:200,
+    { id:'letheras', name:L('Tehol’s Residence', 'Teholova rezidence'), en:'Tehol’s Residence', x:16.2, y:66.83, region:[83.85,38.78], ic:'town', gi:2,
       dad:L('The printed plan of Letheras identifies Tehol’s home north of the Lether River, near Quillas Canal.', 'Knižní plán Lederas vyznačuje Teholův dům severně od řeky Leder, poblíž Quillasova kanálu.'),
       kid:L('Tehol and Bugg live here in the capital.', 'Tady v hlavním městě žijí Tehol s Buggem.') },
-    { id:'ice-fields', name:L('Ice Fields', 'Ledová pole'), en:'Ice Fields', x:null, y:null, region:[45.1,26.6], ic:'mountain', gi:3, mile:220,
+    { id:'ice-fields', name:L('Ice Fields', 'Ledová pole'), en:'Ice Fields', x:null, y:null, region:[45.1,26.6], ic:'mountain', gi:3,
       dad:L('The frontier map shows the ice fields beyond the northern settlements. Rhulad first takes up the sword on the brothers’ expedition into the frozen north.', 'Mapa pohraničí ukazuje ledová pole za severními osadami. Rhulad poprvé uchopí meč na výpravě bratrů na zmrzlý sever.'),
       kid:L('The frozen north where the brothers find the sword.', 'Zmrzlý sever, kde bratři najdou meč.') },
-    { id:'azathlether', name:L('Azath Tower', 'Azatská věž'), en:'Azath Tower', x:16.2, y:66.83, region:[70.87,51.6], ic:'tower', gi:4, mile:300,
+    { id:'azathlether', name:L('Azath Tower', 'Azatská věž'), en:'Azath Tower', x:16.2, y:66.83, region:[70.87,51.6], ic:'tower', gi:4,
       dad:L('The city plan puts the tower just west of the old palace complex, close to the river. Kettle tends the dying Azath and meets the prisoner Silchas Ruin.', 'Plán města ukazuje věž těsně západně od starého palácového komplexu u řeky. Konývka pečuje o umírající Azath a setká se s vězněm Silchasem Zmarem.'),
       kid:L('Kettle watches over this old tower and learns who is buried beneath it.', 'Konývka hlídá starou věž a zjišťuje, kdo je pod ní pohřbený.') },
-    { id:'palace', name:L('Old Palace Complex', 'Starý palácový komplex'), en:'Old Palace Complex', x:16.2, y:66.83, region:[75.58,49.52], ic:'crown', gi:5, mile:420,
+    { id:'palace', name:L('Old Palace Complex', 'Starý palácový komplex'), en:'Old Palace Complex', x:16.2, y:66.83, region:[75.58,49.52], ic:'crown', gi:5,
       dad:L('The royal complex north of the Lether River. The fighting reaches the court, where Brys faces Rhulad.', 'Královský komplex severně od řeky Leder. Boje dospějí až ke dvoru, kde se Brys střetne s Rhuladem.'),
       kid:L('The royal palace where the king’s champion faces Rhulad.', 'Královský palác, kde se králův šampion střetne s Rhuladem.') },
-    { id:'lether-river', name:L('Lether River', 'Řeka Leder'), en:'Lether River', x:16.2, y:66.83, region:[88.5,61.2], ic:'water', gi:6, mile:500,
+    { id:'lether-river', name:L('Lether River', 'Řeka Leder'), en:'Lether River', x:16.2, y:66.83, region:[88.5,61.2], ic:'water', gi:6,
       dad:L('The river that runs through the capital on the printed plan. The closing scenes follow the survivors of the conquest and reveal who Bugg really is.', 'Řeka, která na knižním plánu protéká hlavním městem. Závěr sleduje ty, kdo přežili dobytí, a odhaluje Buggovu totožnost.'),
       kid:L('The river running through the heart of the capital.', 'Řeka protékající srdcem hlavního města.') }
   ],

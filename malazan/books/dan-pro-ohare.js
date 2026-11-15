@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dan-pro-ohare', vol: 8, key: 'malazan_v8',
-    mapFrame: { x0: 0.63, x1: 0.77, y0: 0.22, y1: 0.43 }, timelineMin: 4
+    mapFrame: { x0: 0.63, x1: 0.77, y0: 0.22, y1: 0.43 }
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Toll the Hounds', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -29,9 +29,9 @@ var BOOK = {
     { ic: 'moon', min: 6, title: L('The Gate of Darkness', 'Brána do Kurald Galain'), text: L('The wagon in Dragnipur carries the Gate of Darkness. Rake’s sacrifice returns the Gate to Black Coral before Brood breaks the sword.', 'Vůz v Dragnipúru veze bránu do Kurald Galain. Anomanderova oběť ji vrátí do Černého Korálu, než Chmur meč rozbije.') }
   ],
   timeline: [
-    [L('After the Pannion War', 'Po pannionské válce'), L('Black Coral', 'Černý Korál'), L('The Tiste Andii settle in Coral and pilgrims visit Itkovian’s barrow.', 'Tiste Andii se usadí v Korálu a k Itkovianově mohyle přicházejí poutníci.')],
-    [L('Several years later', 'O několik let později'), L('Return to Darujhistan', 'Návrat do Darúdžhistánu'), L('Cutter returns to the city where the retired Bridgeburners run a bar.', 'Řezník se vrátí do města, kde vysloužilí Paliči mostů vedou bar.')],
-    [L('Across Genabackis', 'Na Genabakis'), L('Travellers approach the cities', 'Poutníci se blíží k městům'), L('Nimander’s group heads for Black Coral, while Karsa, Samar Dev and Traveller travel toward Darujhistan.', 'Nimanderova skupina míří k Černému Korálu, zatímco Karsa, Samar Dev a Poutník putují k Darúdžhistánu.')]
+    [L('After the Pannion War', 'Po pannionské válce'), L('Black Coral', 'Černý Korál'), L('The Tiste Andii settle in Coral and pilgrims visit Itkovian’s barrow.', 'Tiste Andii se usadí v Korálu a k Itkovianově mohyle přicházejí poutníci.'), 1],
+    [L('Several years later', 'O několik let později'), L('Return to Darujhistan', 'Návrat do Darúdžhistánu'), L('Cutter returns to the city where the retired Bridgeburners run a bar.', 'Řezník se vrátí do města, kde vysloužilí Paliči mostů vedou bar.'), 1],
+    [L('Across Genabackis', 'Na Genabakis'), L('Travellers approach the cities', 'Poutníci se blíží k městům'), L('Nimander’s group heads for Black Coral, while Karsa, Samar Dev and Traveller travel toward Darujhistan.', 'Nimanderova skupina míří k Černému Korálu, zatímco Karsa, Samar Dev a Poutník putují k Darúdžhistánu.'), 3]
   ],
   ILLUS: {
     1:{ cap:L('The retired Bridgeburners keep a bar in a former temple.', 'Vysloužilí Paliči mostů vedou bar v bývalém chrámu.') },

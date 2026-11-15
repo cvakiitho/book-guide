@@ -37,7 +37,8 @@
   <text class="small" x="739" y="179" text-anchor="end" data-cs="Modrá růže">Bluerose</text>
   <text x="858" y="218">Drene</text>
   <text class="region" x="923" y="299" text-anchor="middle" data-cs="OUL’DAN">AWL’DAN</text>
-  <text class="region" x="807" y="394" text-anchor="middle">Ak’ryn</text>
+  <text class="region" x="807" y="403" text-anchor="middle">Ak’ryn</text>
+  <text class="small" x="873" y="474" text-anchor="middle" data-cs="Království Bolkando">Kingdom of Bolkando</text>
   <path d="M1004 64v28m-6-17 6-11 6 11" fill="none" stroke="#5d5846" stroke-width="2"/>
   <text class="small" x="1004" y="54" text-anchor="middle" data-cs="S">N</text>
   <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1z"/>

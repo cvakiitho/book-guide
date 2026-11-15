@@ -47,6 +47,7 @@ var BOOK = {
   },
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   map: {
+    asset: 'lederska-rise',
     title: L('The Empire of Lether and its Neighbours', 'Lederská říše a její sousedé'),
     worldStops: [], route: []
   },

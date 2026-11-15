@@ -102,7 +102,7 @@ for (const { volume: vol, source, map } of volumesWithRoutes) {
 
   // 3) default map and world atlas, in both languages
   const [worldEn, worldCs] = worldMap;
-  const [mapEn, mapCs] = map ? localizedMap(path.join(ASSETS, vol.slug + '.svg')) : worldMap;
+  const [mapEn, mapCs] = map ? localizedMap(path.join(ASSETS, (map.asset || vol.slug) + '.svg')) : worldMap;
   html = html.replace('__MAP_DATA_URI__', mapEn).replace('__MAP_CS_DATA_URI__', mapCs)
     .replace('__WORLD_DATA_URI__', map ? worldEn : '').replace('__WORLD_CS_DATA_URI__', map ? worldCs : '');
 

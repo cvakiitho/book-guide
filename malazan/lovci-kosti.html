@@ -630,7 +630,7 @@ var CAST = [
         { vol: 3, gi: 5, text: L('Uses Hood’s own warren to trap the Pannion Seer.', 'Použije samotný warren Hooda, aby polapil Pannionského věštce.') },
         { vol: 6, gi: 3, text: L('Counters Edur sorcery at sea with help from Bottle and the Eres’al.', 'S pomocí Flašky a Eres’al čelí na moři magii Edur.') },
         { vol: 6, gi: 6, text: L('Helps Trull hold off Icarium at the First Throne.', 'Pomáhá Trullovi zadržet Icaria u Prvního trůnu.') },
-        { vol: 9, gi: 5, text: L('Faces the Nah’ruk beside the Bonehunters.', 'Postaví se Nah’rukům po boku Lovců kostí.') }
+        { vol: 9, gi: 6, text: L('Uses his sorcery against the Nah’ruk when they attack the Bonehunters.', 'Když Nah’ruk napadnou Lovce kostí, postaví se jim svou magií.') }
       ] }
   },
   {
@@ -762,7 +762,7 @@ var CAST = [
         { vol: 1, gi: 4, text: L('Fights the Tyrant he helped release.', 'Bojuje s Tyranem, kterého pomohl vypustit.') },
         { vol: 3, gi: 6, text: L('Is restored to mortal flesh at the end of the Pannion war.', 'Na konci pannionské války je navrácen do smrtelného těla.') },
         { vol: 7, gi: 2, text: L('Reaches the battlefield with the White Face Barghast and finds Toc dead.', 'Dorazí s Barghasty Bílé tváře na bojiště a najde Toce mrtvého.') },
-        { vol: 9, gi: 3, text: L('Faces the destruction of his family and his people.', 'Čelí zničení své rodiny a svého lidu.') }
+        { vol: 9, gi: 3, text: L('Dies trying to stop a clash between Barghast clans and is raised again as an undead Imass.', 'Zemře ve snaze zastavit střet barghastských klanů a znovu povstane jako nemrtvý Imass.') }
       ] }
   },
   {
@@ -1418,7 +1418,8 @@ var CAST = [
     kid: L('An officer who stands by Tavore and her soldiers.', 'Důstojník, který stojí při Tavore a jejích vojácích.'),
     dad: L('A soldier Kalam meets in Seven Cities. He later serves as one of Tavore’s Fists.', 'Voják, kterého Kalam potká v Sedmiměstí. Později slouží pod Tavore jako jedna z jejích pěstí.'),
     arc: { ahead: L('Whose orders will he obey?', 'Čí rozkazy poslechne?'), beats: [
-      { vol: 6, gi: 5, text: L('Keeps the ships at Malaz City until Tavore can return.', 'Zadrží lodě ve městě Malaz, dokud se Tavore nebude moci vrátit.') }
+      { vol: 6, gi: 5, text: L('Keeps the ships at Malaz City until Tavore can return.', 'Zadrží lodě ve městě Malaz, dokud se Tavore nebude moci vrátit.') },
+      { vol: 9, gi: 6, text: L('Dies in the Nah’ruk attack on the Bonehunters.', 'Zemře při útoku Nah’ruk na Lovce kostí.') }
     ] }
   },
   {
@@ -1764,28 +1765,129 @@ var CAST = [
       ] }
   },
   {
-    id: 'kalyth', intro: { vol: 9, gi: 1 },
+    id: 'krughava', intro: { vol: 9, gi: 1 },
+    name: L('Krughava', 'Krughava'), en: 'Krughava',
+    race: 'human', rlab: L('Mortal Sword of the Grey Helms', 'Smrtelný meč Zánických šedých příleb'), ic: 'sword',
+    kid: L('The commander of the Grey Helms, who march ahead of Tavore’s army.', 'Velitelka Zánických šedých příleb, které jdou před Tavořiným vojskem.'),
+    dad: L('The Mortal Sword of the Perish Grey Helms, sworn to Togg and Fanderay.', 'Smrtelný meč Zánických šedých příleb, zasvěcených Toggovi a Fanderay.')
+  },
+  {
+    id: 'tanakalian', intro: { vol: 9, gi: 1 },
+    name: L('Tanakalian', 'Tanakalian'), en: 'Tanakalian',
+    race: 'human', rlab: L('Shield Anvil of the Grey Helms', 'Nezdolný štít Zánických šedých příleb'), ic: 'sword',
+    kid: L('A priest and warrior of the Grey Helms.', 'Kněz a válečník Zánických šedých příleb.'),
+    dad: L('The Shield Anvil who marches with Krughava and Run’Thurvian.', 'Nezdolný štít, který táhne s Krughavou a Run’Thurvianem.')
+  },
+  {
+    id: 'gall', intro: { vol: 4, gi: 2 },
+    name: L('Gall', 'Drz'), en: 'Gall',
+    race: 'human', rlab: L('Khundryl warleader', 'Chundrylský vojevůdce'), ic: 'sword',
+    kid: L('A warleader whose riders fight alongside Tavore’s soldiers.', 'Vojevůdce, jehož jezdci bojují po boku Tavořiných vojáků.'),
+    dad: L('The warleader of the Khundryl Burned Tears, allies of the Fourteenth.', 'Vojevůdce Chundrylů, spojenců Čtrnácté armády.')
+  },
+  {
+    id: 'aranict', intro: { vol: 9, gi: 1 },
+    name: L('Aranict', 'Aranikt'), en: 'Aranict',
+    race: 'human', rlab: L('Letherii Atri-Ceda', 'Lederská atriceda'), ic: 'warren',
+    kid: L('A Letherii mage who travels east with Brys.', 'Lederská čarodějka, která cestuje na východ s Brysem.'),
+    dad: L('The Atri-Ceda of the Letherii troops who accompany Brys and Tavore.', 'Atriceda lederských vojáků doprovázejících Bryse a Tavore.')
+  },
+  {
+    id: 'abrastal', intro: { vol: 9, gi: 1 },
+    name: L('Queen Abrastal', 'Královna Abrastal'), en: 'Queen Abrastal',
+    race: 'human', rlab: L('Queen of Bolkando', 'Královna Bolkanda'), ic: 'crown',
+    kid: L('The queen of a country in the path of the armies.', 'Královna země, kterou chtějí vojska projít.'),
+    dad: L('The Bolkando queen who deals with the armies seeking a route through her kingdom.', 'Bolkandská královna, která jedná s vojsky hledajícími cestu jejím královstvím.')
+  },
+  {
+    id: 'maral', intro: { vol: 9, gi: 3 },
+    name: L('Maral Eb', 'Maral Eb'), en: 'Maral Eb',
+    race: 'human', rlab: L('Barghast clan chief', 'Barghastský válečný náčelník'), ic: 'sword',
+    kid: L('A clan chief who challenges Tool’s leadership.', 'Náčelník klanu, který se postaví proti Onosovu velení.'),
+    dad: L('A Barghast clan chief whose ambition brings his followers into conflict with Tool.', 'Barghastský válečný náčelník, jehož ctižádost přivede jeho lidi do střetu s Onosem.')
+  },
+  {
+    id: 'gurull', intro: { vol: 9, gi: 2 },
+    name: L('Gu’Rull', 'Gu’Rull'), en: 'Gu’Rull',
+    race: 'kchain', rlab: L('Shi’gal assassin', 'Asasín Shi’gal'), ic: 'kchain',
+    kid: L('A winged Che’Malle scout who helps Kalyth.', 'Okřídlený zvěd Che’Malle, který pomáhá Kalyth.'),
+    dad: L('A Shi’gal assassin who helps Kalyth and later scouts from the air for Gesler.', 'Asasín Shi’gal, který pomáhá Kalyth a později pro Geslera provádí průzkum ze vzduchu.')
+  },
+  {
+    id: 'gunthmach', intro: { vol: 7, gi: 2 },
+    name: L('Gunth Mach', 'Gunth Mach'), en: 'Gunth Mach',
+    race: 'kchain', rlab: L('K’Chain Che’Malle', 'K’Chain Che’Malle'), ic: 'kchain',
+    kid: L('One of the two strange warriors seen beside Redmask.', 'Jedna ze dvou podivných postav, které doprovázejí Rudomaska.'),
+    dad: L('A Che’Malle who travels with Sag’Churok.', 'Příslušnice Che’Malle, která putuje se Sag’Churokem.'),
+    arc: { ahead: L('What future can she offer her kind?', 'Jakou budoucnost může nabídnout svému lidu?'), beats: [
+      { vol: 9, gi: 6, text: L('Succeeds Gunth’an Acyl and pledges to help the humans travel east.', 'Stane se nástupkyní Gunth’an Acyl a přislíbí lidem ochranu při cestě na východ.') }
+    ] }
+  },
+  {
+    id: 'rutt', intro: { vol: 9, gi: 5 },
+    name: L('Rutt', 'Rutt'), en: 'Rutt',
+    race: 'human', rlab: L('Child of the Snake', 'Dítě Hada'), ic: 'eye',
+    kid: L('The boy who carries the smallest child as the group travels.', 'Chlapec, který cestou nese nejmenší dítě.'),
+    dad: L('One of the children leading the Snake. He carries the infant Held.', 'Jeden z dětí v čele Hada. Nese nemluvně Držánu.')
+  },
+  {
+    id: 'badalle', intro: { vol: 9, gi: 5 },
+    name: L('Badalle', 'Badalle'), en: 'Badalle',
+    race: 'human', rlab: L('Voice of the Snake', 'Hlas Hada'), ic: 'scroll',
+    kid: L('A child who puts the group’s journey into words.', 'Dívka, která slovy zachycuje putování dětí.'),
+    dad: L('A child among the refugees from Kolanse whose words record the journey and answer their pursuers.', 'Dívka mezi uprchlíky z Kolanse, která slovy zachycuje cestu a odpovídá pronásledovatelům.')
+  },
+  {
+    id: 'saddic', intro: { vol: 9, gi: 5 },
+    name: L('Saddic', 'Saddik'), en: 'Saddic',
+    race: 'human', rlab: L('Child of the Snake', 'Dítě Hada'), ic: 'eye',
+    kid: L('A boy who gathers small things as the children walk.', 'Chlapec, který cestou sbírá drobnosti.'),
+    dad: L('One of the children fleeing Kolanse. He collects objects that remind him of the world they left behind.', 'Jeden z dětí prchajících z Kolanse. Sbírá věci, které mu připomínají svět, jejž opustili.')
+  },
+  {
+    id: 'grub', intro: { vol: 6, gi: 1 },
+    name: L('Grub', 'Žrout'), en: 'Grub',
+    race: 'human', rlab: L('Foundling with the Fourteenth', 'Nalezenec u Čtrnácté armády'), ic: 'eye',
+    kid: L('A boy in the care of Keneb who notices things the soldiers miss.', 'Chlapec v Kenebově péči, který si všímá věcí, jež vojákům unikají.'),
+    dad: L('A foundling taken in by Keneb who shows a gift for magic.', 'Nalezenec, kterého se ujal Keneb a který projevuje nadání pro magii.'),
+    arc: { ahead: L('How will he use his gifts?', 'Jak využije své nadání?'), beats: [
+      { vol: 9, gi: 6, text: L('Helps Sinn burn the Nah’ruk sky keeps near the closing gate.', 'Pomůže Sinn spálit pevnosti Nah’ruk u zavírající se brány.') }
+    ] }
+  },
+  {
+    id: 'hedge', intro: { vol: 1, gi: 1 },
+    name: L('Hedge', 'Křovák'), en: 'Hedge',
+    race: 'malazan', rlab: L('Bridgeburner sapper', 'Sapér Paličů mostů'), ic: 'flame',
+    kid: L('A sapper and old friend of Fiddler.', 'Sapér a Šumařův starý přítel.'),
+    dad: L('A Bridgeburner sapper who worked closely with Fiddler.', 'Sapér Paličů mostů, který úzce spolupracoval se Šumařem.'),
+    arc: { ahead: L('How long can a soldier’s friendship last?', 'Jak dlouho může vydržet přátelství vojáků?'), beats: [
+      { vol: 3, gi: 6, text: L('Dies fighting at Coral.', 'Padne v boji u Korálu.') },
+      { vol: 7, gi: 4, text: L('Returns to mortal life in the Refugium.', 'V Refugiu se vrátí ke smrtelnému životu.') },
+      { vol: 9, gi: 1, text: L('Begins training sappers for Tavore’s army.', 'Začne cvičit sapéry pro Tavořino vojsko.') }
+    ] }
+  },
+  {
+    id: 'kalyth', intro: { vol: 9, gi: 2 },
     name: L('Kalyth', 'Kalyth'), en: 'Kalyth',
-    race: 'human', rlab: L('Destriant of the K’Chain', 'Destriant K’Chain'), ic: 'kchain',
+    race: 'human', rlab: L('Destriant of the K’Chain', 'Válečný jezdec K’Chain'), ic: 'kchain',
     kid: L('A woman chosen by the K’Chain Che’Malle to speak for them. She is terrified, stubborn and the only hope of a dying people.', 'Žena vyvolená K’Chain Che’Malle, aby za ně mluvila. Je vyděšená, tvrdohlavá a jediná naděje umírajícího lidu.'),
-    dad: L('The Destriant of the K’Chain Che’Malle, elevated by the Matron and burdened with a species’ survival. Her courage is the ordinary kind: getting up anyway.', 'Destriant K’Chain Che’Malle, povýšená Matronou a obtížená přežitím druhu. Její odvaha je toho obyčejného druhu: prostě vstát a jít dál.'),
+    dad: L('An Elan woman whom Gunth’an Acyl makes her Destriant and sends to find human allies.', 'Elanka, kterou Gunth’an Acyl jmenuje svým válečným jezdcem a vyšle hledat lidské spojence.'),
     arc: { ahead: L('What do you owe a people that chose you without asking?', 'Co dlužíš lidu, který si tě vybral, aniž by se ptal?'),
       beats: [
-        { vol: 9, gi: 1, text: L('Is named Destriant and sent to find the K’Chain’s Mortal Sword and Shield Anvil.', 'Je jmenována Destriant a vyslána najít K’Chainí Smrtelný meč a Kovadlinu štítu.') },
-        { vol: 9, gi: 5, text: L('Faces the Nah’ruk attack with the Bonehunters.', 'Čelí útoku Nah’ruků s Lovci kostí.') },
+        { vol: 9, gi: 2, text: L('Sets out with Gu’Rull to find the Che’Malle a Mortal Sword and Shield Anvil.', 'Vyrazí s Gu’Rullem hledat Che’Malle smrtelný meč a nezdolný štít.') },
+        { vol: 9, gi: 6, text: L('Brings Gesler and Stormy to the Che’Malle and stands with them against the Nah’ruk.', 'Přivede ke Che’Malle Geslera a Bouřňáka a postaví se s nimi proti Nah’ruk.') },
         { vol: 10, gi: 5, text: L('Stands with the K’Chain in the final battle at the Spire.', 'Stojí s K’Chain v poslední bitvě u Věže.') }
       ] }
   },
   {
-    id: 'hetan', intro: { vol: 9, gi: 1 },
+    id: 'hetan', intro: { vol: 3, gi: 3 },
     name: L('Hetan', 'Hetan'), en: 'Hetan',
-    race: 'human', rlab: L('Barghast warleader', 'Barghastská válečnice'), ic: 'sword',
-    kid: L('A fierce Barghast woman who leads warriors and argues with gods. She loves her family fiercely and shows it by shouting.', 'Divoká Barghastská žena, která vede bojovníky a hádá se s bohy. Svou rodinu miluje zuřivě a dává to najevo křikem.'),
-    dad: L('Tool’s wife and a warleader of the White Face Barghast. Her death at the hands of her own people breaks something in Tool that cannot be repaired.', 'Toolova žena a válečnice Bílých tváří Barghastů. Její smrt rukama vlastního lidu zlomí v Toolovi něco, co se nedá opravit.'),
+    race: 'human', rlab: L('White Face Barghast warrior', 'Válečnice klanu Bílé tváře'), ic: 'sword',
+    kid: L('A Barghast warrior and the daughter of Humbrall Taur.', 'Barghastská válečnice a dcera Humbralla Taura.'),
+    dad: L('A warrior of the White Face Barghast who fights in the Pannion War.', 'Válečnice Barghastů Bílé tváře, která bojuje v pannionské válce.'),
     arc: { ahead: L('What happens to a people when its leaders stop listening?', 'Co se stane s lidem, když jeho vůdci přestanou naslouchat?'),
       beats: [
-        { vol: 9, gi: 1, text: L('Leads her clan toward the Barghast gathering.', 'Vede svůj klan k barghastskému shromáždění.') },
-        { vol: 9, gi: 3, text: L('Is murdered by Barghast warriors during the succession struggle.', 'Je zavražděna barghastskými bojovníky během boje o nástupnictví.') }
+        { vol: 9, gi: 3, text: L('Dies after the clans turn against Tool’s family and attack her.', 'Zemře poté, co se klany obrátí proti Onosově rodině a napadnou ji.') }
       ] }
   },
   {
@@ -1798,7 +1900,7 @@ var CAST = [
       beats: [
         { vol: 2, gi: 3, text: L('Helps Kulp and the fugitives and boards the Silanda with Gesler.', 'Pomáhá Kulpovi a uprchlíkům a s Geslerem nastoupí na Silandu.') },
         { vol: 6, gi: 5, text: L('Names fallen comrades with Gesler and Fiddler in Malaz City.', 'Ve městě Malaz s Geslerem a Šumařem vzpomíná na padlé spolubojovníky.') },
-        { vol: 9, gi: 4, text: L('Faces the Nah’ruk in the Glass Desert.', 'Čelí Nah’rukům ve Skleněné poušti.') },
+        { vol: 9, gi: 6, text: L('Fights as Shield Anvil of the Che’Malle beside Gesler.', 'Bojuje po Geslerově boku jako nezdolný štít Che’Malle.') },
         { vol: 10, gi: 5, text: L('Stands with the Bonehunters at the Spire.', 'Stojí s Lovci kostí u Věže.') }
       ] }
   },
@@ -1812,7 +1914,7 @@ var CAST = [
       beats: [
         { vol: 2, gi: 3, text: L('Helps Kulp and the fugitives and boards the Silanda with Stormy.', 'Pomáhá Kulpovi a uprchlíkům a s Bouřňákem nastoupí na Silandu.') },
         { vol: 6, gi: 1, text: L('Survives the underground escape from Y’Ghatan.', 'Přežije útěk z Y’Ghatanu podzemím.') },
-        { vol: 9, gi: 4, text: L('Fights the Nah’ruk beside Stormy and the K’Chain.', 'Bojuje s Nah’ruky po boku Stormyho a K’Chain.') },
+        { vol: 9, gi: 6, text: L('Leads the Che’Malle against the Nah’ruk as their Mortal Sword.', 'Vede Che’Malle proti Nah’ruk jako jejich smrtelný meč.') },
         { vol: 10, gi: 5, text: L('Makes his last stand at the Spire.', 'Padne v posledním boji u Věže.') }
       ] }
   },
@@ -1869,8 +1971,8 @@ var VOLBOOKS = {
     { count: 3, label: 'II', title: L('The Night of the Hounds', 'Noc ohařů') }
   ],
   '9': [
-    { count: 3, label: 'I', title: L('The Wastelands', 'Pustiny') },
-    { count: 3, label: 'II', title: L('The Dust of Dreams', 'Prach snů') }
+    { count: 3, label: 'I', title: L('The March East', 'Pochod na východ') },
+    { count: 3, label: 'II', title: L('Roads through the Wastes', 'Cesty pustinou') }
   ],
   '10': [
     { count: 3, label: 'I', title: L('The Last March', 'Poslední pochod') },
@@ -1878,7 +1980,7 @@ var VOLBOOKS = {
   ]
 };
 
-  var ROUTES = [{"vol":1,"color":"#a94336","pts":[[72.8,25,1],[73.8,32,3]]},{"vol":2,"color":"#9b611f","pts":[[37.8,22,4],[35.4,36,5]]},{"vol":3,"color":"#30587a","pts":[[82.4,32,2],[86.2,41,5]]},{"vol":4,"color":"#3e6955","pts":[[35.4,36,2],[36.55,24.5,4]]},{"vol":5,"color":"#72517d","pts":[]},{"vol":6,"color":"#a94336","pts":[]},{"vol":7,"color":"#9b611f","pts":[]},{"vol":8,"color":"#30587a","pts":[]},{"vol":9,"color":"#3e6955","pts":[[15,71,1],[28.85,73.17,2],[32.95,75.92,3],[25.5,72.5,4],[37.9,78.17,5],[37.7,80.67,6]]},{"vol":10,"color":"#72517d","pts":[[15,71,1],[28.85,73.17,2],[42.05,72.75,3],[42.6,78,4],[40.9,76.5,5],[42.6,78,6]]}];
+  var ROUTES = [{"vol":1,"color":"#a94336","pts":[[72.8,25,1],[73.8,32,3]]},{"vol":2,"color":"#9b611f","pts":[[37.8,22,4],[35.4,36,5]]},{"vol":3,"color":"#30587a","pts":[[82.4,32,2],[86.2,41,5]]},{"vol":4,"color":"#3e6955","pts":[[35.4,36,2],[36.55,24.5,4]]},{"vol":5,"color":"#72517d","pts":[]},{"vol":6,"color":"#a94336","pts":[]},{"vol":7,"color":"#9b611f","pts":[]},{"vol":8,"color":"#30587a","pts":[]},{"vol":9,"color":"#3e6955","pts":[]},{"vol":10,"color":"#72517d","pts":[[15,71,1],[28.85,73.17,2],[42.05,72.75,3],[42.6,78,4],[40.9,76.5,5],[42.6,78,6]]}];
   // ===== per-book data (injected at build time) =====
   // The Bonehunters — volume 6.
 var BOOK = {

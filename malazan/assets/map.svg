@@ -1,336 +1,122 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1200" width="2000" height="1200" role="img" aria-labelledby="title desc">
-  <title id="title" data-cs="Malazský svět">The Malazan world</title>
-  <desc id="desc" data-cs="Stylizovaný čtenářský atlas zobrazuje Sedmiměstí na severozápadě, Genabakis na východě, Quon Tali uprostřed a Leder na jihozápadě.">A stylized reader’s atlas showing Seven Cities in the northwest, Genabackis in the east, Quon Tali in the center, and Lether in the southwest.</desc>
+  <title id="title" data-cs="Malazský svět">The Malazan World</title>
+  <desc id="desc" data-cs="Schéma Malazského světa podle knižních map a autorova raného náčrtu. Vzájemná poloha světadílů je přibližná.">A schematic of the Malazan world based on the books’ maps and the author’s early sketch. The relative positions of continents are approximate.</desc>
   <defs>
-    <radialGradient id="sea" cx="44%" cy="40%" r="76%">
-      <stop stop-color="#294a4e"/><stop offset=".65" stop-color="#1d373e"/><stop offset="1" stop-color="#13272e"/>
+    <radialGradient id="sea" cx="47%" cy="42%" r="74%">
+      <stop stop-color="#2d5053"/><stop offset=".67" stop-color="#203c43"/><stop offset="1" stop-color="#142930"/>
     </radialGradient>
-    <linearGradient id="land" x2=".2" y2="1">
-      <stop stop-color="#ddd7b6"/><stop offset=".52" stop-color="#c7c09a"/><stop offset="1" stop-color="#adab87"/>
+    <linearGradient id="land" x2=".25" y2="1">
+      <stop stop-color="#e1d8b2"/><stop offset=".62" stop-color="#c9bf96"/><stop offset="1" stop-color="#a9a782"/>
     </linearGradient>
-    <radialGradient id="sand">
-      <stop stop-color="#bc8a57" stop-opacity=".64"/><stop offset="1" stop-color="#bc8a57" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="green">
-      <stop stop-color="#556e56" stop-opacity=".52"/><stop offset="1" stop-color="#556e56" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="graticule" width="100" height="100" patternUnits="userSpaceOnUse" x="50" y="50">
-      <path d="M0 100V0H100" fill="none" stroke="#a6b8ae" stroke-opacity=".16"/>
-      <path d="M-4 0H4M0 0v4" stroke="#c6c8ab" stroke-opacity=".36"/>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0 100V0h100" fill="none" stroke="#b8ccb8" stroke-opacity=".115" stroke-width="2"/>
     </pattern>
-    <pattern id="paper" width="20" height="17" patternUnits="userSpaceOnUse">
-      <path d="M2 3h2m9 2h1m-5 8h2m7-4h1M3 16h1" stroke="#342d21" stroke-width=".8" stroke-opacity=".2"/>
-      <path d="M5 8h2m9 6h1m-8-13h1" stroke="#f7efce" stroke-width=".8" stroke-opacity=".26"/>
+    <pattern id="ridge" width="27" height="18" patternUnits="userSpaceOnUse">
+      <path d="m1 14 6-10 6 7 5-7 8 10" fill="none" stroke="#7e6d4e" stroke-width="1.7"/>
     </pattern>
-    <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-      <path d="M0 0v6" stroke="#655643" stroke-opacity=".28" stroke-width="1.6"/>
+    <pattern id="trees" width="18" height="16" patternUnits="userSpaceOnUse">
+      <path d="m1 10 4-7 4 7zm8 5 4-8 4 8z" fill="#536c57" opacity=".58"/>
     </pattern>
-    <path id="seven" d="M47 216
-      C58 186 101 190 130 180 C155 173 156 154 177 149
-      C206 141 216 147 237 132 C256 118 278 112 308 118
-      C338 123 349 112 373 119 C395 126 402 141 425 140
-      C452 139 467 129 495 131 C527 133 531 151 554 149
-      C575 147 584 151 601 156 C620 162 632 149 651 151
-      C682 157 696 152 718 156 C736 160 754 155 768 164
-      C777 169 778 177 793 180 C809 184 815 195 816 208
-      C817 226 830 230 839 243 C847 255 851 263 864 270
-      C877 277 883 292 872 305 C864 313 862 320 870 330
-      C878 342 867 357 856 365 C842 375 838 397 824 404
-      C813 410 812 398 796 406 C781 413 780 430 765 441
-      C753 449 744 447 735 460 C724 473 711 473 695 465
-      C678 456 670 463 652 456 C636 449 628 435 607 439
-      C591 442 586 455 565 454 C550 453 540 442 525 438
-      C505 432 494 411 478 407 C466 404 451 401 445 387
-      C436 369 425 376 413 369 C400 361 399 345 377 344
-      C354 343 345 353 320 357 C295 362 282 372 261 375
-      C242 377 229 368 211 370 C189 371 178 382 160 371
-      C148 364 149 351 131 348 C112 345 105 353 92 341
-      C82 332 84 319 67 310 C56 305 49 294 55 281
-      C61 266 45 258 44 244 C43 234 45 224 47 216Z"/>
-    <path id="genabackis" d="M1340 142
-      C1369 130 1393 130 1422 118 C1446 107 1463 116 1485 112
-      C1504 109 1523 106 1543 114 C1567 124 1585 121 1602 128
-      C1622 137 1637 137 1657 145 C1677 152 1679 168 1693 178
-      C1706 187 1716 189 1721 206 C1725 221 1718 231 1733 245
-      C1745 256 1764 256 1771 275 C1777 292 1775 308 1787 320
-      C1803 336 1791 351 1797 369 C1800 379 1794 387 1797 399
-      C1803 418 1794 427 1785 440 C1777 450 1784 462 1779 476
-      C1772 496 1757 504 1754 523 C1751 539 1753 548 1739 556
-      C1728 562 1730 576 1715 582 C1704 586 1695 580 1685 591
-      C1674 604 1670 619 1652 621 C1637 623 1626 616 1613 626
-      C1594 639 1572 635 1555 625 C1539 616 1531 619 1518 605
-      C1508 593 1509 580 1493 573 C1473 564 1467 552 1465 538
-      C1463 525 1447 527 1439 519 C1430 510 1435 501 1422 492
-      C1407 482 1393 483 1387 468 C1382 456 1389 444 1379 436
-      C1371 428 1369 419 1374 407 C1380 395 1373 386 1360 382
-      C1345 377 1341 361 1330 348 C1319 336 1320 324 1307 314
-      C1294 305 1296 294 1292 283 C1287 273 1281 263 1289 251
-      C1298 239 1291 227 1291 213 C1290 195 1308 185 1307 171
-      C1306 157 1324 148 1340 142Z"/>
-    <path id="quon" d="M788 535
-      C795 514 815 513 830 509 C847 504 850 491 871 493
-      C884 494 890 500 904 498 C923 495 936 488 947 502
-      C953 510 948 519 961 519 C975 519 990 516 995 533
-      C999 548 987 551 992 566 C995 577 1006 582 1003 596
-      C1000 610 1009 618 995 632 C986 640 972 642 966 655
-      C960 668 966 675 951 681 C937 687 930 700 914 704
-      C895 709 889 696 875 699 C862 703 845 691 844 678
-      C843 665 854 661 841 652 C828 642 812 650 812 633
-      C813 622 820 617 809 610 C797 603 787 603 791 588
-      C795 576 801 573 792 561 C785 552 784 545 788 535Z"/>
-    <path id="lether" d="M58 778
-      C71 767 71 746 94 734 C112 725 129 732 147 722
-      C165 711 187 719 200 706 C220 689 247 701 271 695
-      C296 688 316 696 340 696 C362 696 374 706 395 708
-      C420 710 433 715 456 715 C493 714 512 729 536 727
-      C565 725 576 726 598 735 C618 744 643 732 661 741
-      C674 748 686 747 704 747 C726 748 747 747 764 759
-      C777 768 791 766 804 777 C813 786 831 791 839 804
-      C844 814 838 826 851 832 C867 838 890 844 893 862
-      C895 875 884 884 894 896 C902 906 900 916 891 927
-      C881 939 896 943 886 955 C875 969 864 969 853 980
-      C837 993 820 990 807 1001 C790 1015 770 1012 750 1017
-      C729 1022 713 1017 696 1025 C675 1035 658 1028 639 1031
-      C611 1036 591 1035 573 1023 C552 1009 544 1018 521 1013
-      C504 1009 491 999 468 1002 C443 1005 427 994 409 987
-      C389 980 378 986 358 979 C341 972 327 969 308 969
-      C295 968 293 945 278 943 C268 941 264 949 252 951
-      C232 955 225 944 209 940
-      C185 933 167 937 151 923 C141 914 136 902 123 902
-      C111 902 100 896 100 884 C102 874 112 873 105 863
-      C100 855 88 858 82 850 C75 842 84 835 76 825
-      C67 816 69 809 63 800 C54 795 50 786 58 778Z"/>
-    <path id="jacuruku" d="M428 580
-      C435 568 447 556 462 551 C475 547 486 554 498 546
-      C509 538 520 536 536 544 C553 552 565 542 580 555
-      C591 565 604 566 602 584 C601 592 610 594 613 600
-      C618 612 603 619 592 624 C581 630 586 643 573 650
-      C560 658 549 652 537 661 C525 672 515 670 505 663
-      C490 653 481 667 472 657 C466 648 461 644 449 643
-      C434 640 458 629 443 621 C436 617 430 614 434 604
-      C438 594 424 591 428 580Z"/>
-    <path id="korel" d="M1044 757
-      C1054 746 1075 746 1086 742 C1098 738 1103 732 1118 737
-      C1133 743 1149 738 1161 745 C1171 751 1174 758 1188 759
-      C1202 760 1206 776 1219 782 C1230 788 1225 797 1237 803
-      C1251 809 1254 818 1247 830 C1240 841 1255 844 1251 853
-      C1247 861 1239 858 1237 866 C1231 884 1211 880 1196 878
-      C1184 877 1174 866 1158 869 C1141 872 1136 860 1126 852
-      C1114 842 1104 844 1101 832 C1098 819 1081 822 1077 812
-      C1073 805 1083 799 1074 792 C1066 786 1055 788 1056 777
-      C1057 770 1041 770 1044 757Z"/>
-    <path id="stratem" d="M1181 943
-      C1196 931 1207 930 1222 938 C1233 943 1243 934 1255 932
-      C1272 928 1280 945 1295 941 C1313 937 1328 952 1345 951
-      C1365 950 1371 965 1390 962 C1413 958 1418 975 1437 976
-      C1455 976 1454 993 1469 996 C1483 999 1493 1014 1483 1024
-      C1472 1035 1490 1041 1488 1053 C1485 1066 1464 1064 1459 1076
-      C1453 1089 1436 1084 1424 1092 C1408 1104 1390 1089 1377 1096
-      C1368 1101 1357 1100 1344 1096 C1327 1090 1323 1102 1304 1093
-      C1291 1086 1280 1088 1269 1086 C1254 1083 1249 1070 1233 1074
-      C1216 1079 1212 1066 1205 1060 C1198 1054 1189 1056 1188 1045
-      C1186 1036 1199 1029 1192 1023 C1185 1016 1172 1023 1177 1010
-      C1180 1000 1171 996 1174 984 C1177 969 1170 956 1181 943Z"/>
-    <path id="assail" d="M1514 785
-      C1527 777 1533 762 1543 746 C1551 733 1567 731 1581 730
-      C1597 729 1607 717 1623 721 C1642 726 1652 720 1669 727
-      C1683 734 1697 727 1704 744 C1709 756 1704 766 1715 777
-      C1724 785 1738 783 1736 797 C1734 804 1725 811 1733 819
-      C1747 831 1732 841 1737 851 C1743 861 1746 867 1733 875
-      C1722 880 1727 891 1715 898 C1703 904 1693 900 1688 913
-      C1684 922 1667 920 1655 929 C1644 937 1633 927 1620 929
-      C1605 931 1590 930 1580 921 C1569 911 1556 918 1547 909
-      C1540 902 1538 893 1527 891 C1519 888 1522 878 1517 872
-      C1512 865 1501 866 1506 852 C1510 841 1500 837 1504 827
-      C1507 819 1517 814 1515 806 C1512 798 1506 792 1514 785Z"/>
-    <path id="islands" d="M854 208c4-7 13-8 18-15 5-8 8-21 20-21 8 0 14 6 13 13
-      -1 6-6 10-6 16 0 5 6 9 3 16-4 10-13 16-24 13-8-2-13-8-17-11-5-3-9-6-7-11z
-      M915 222q4-4 7-10c4-5 10 1 8 6-2 5-1 11-8 13-5 1-8-3-7-9z
-      M823 444c2-6 13-12 21-12 5 0 7 3 8 8 1 6 9 9 6 15-3 5-9 5-15 3-6-2-8-6-14-6-5 1-8-3-6-8z
-      M876 416c4-5 11-8 18-8 5 0 5 4 7 9 1 4 8 6 6 12-2 7-15 9-20 4-4-4-15-9-11-17z
-      M922 434c1-6 12-12 18-10 6 2 3 8 6 11 4 4-2 10-7 12-7 3-7-5-12-6-3-1-6-3-5-7z
-      M961 456c2-5 10-10 15-8 6 2 3 8-1 11-4 3-1 8-7 8-5 0-8-7-7-11z
-      M838 722c1-8 14-13 22-11 6 2 4 7 9 9 5 3 8 9 4 14-4 6-15 8-20 3-3-3-7-4-11-6-3-1-5-5-4-9z
-      M809 706c0-4 5-8 9-7 3 0 3 3 6 4 6 2 2 8-3 8-4 0-3 5-7 3-3-1-6-4-5-8z
-      M1133 661c4-2 7-9 13-10 3 0 6 3 7 6 1 4 7 5 7 10-1 7-12 11-17 7-4-3-3-6-7-7-4 0-5-3-3-6z
-      M1322 403c3-5 10-5 14-9 3-3 8-3 10 1 3 4 9 7 7 11-1 4-5 4-8 8-6 9-14-1-18-2-4-1-7-5-5-9z
-      M1383 569c0-6 7-12 12-12 4 0 3 4 6 6 4 2 6 6 3 10-2 4-8 1-11 6-3 5-9-5-10-10z
-      M1478 641c3-6 7-10 12-10 3-1 4 3 7 3 7 0 9 6 5 10-3 3-6 2-8 6-4 6-17-2-16-9z
-      M265 963c2-5 10-10 17-10 6 0 8 4 9 7 1 4 8 2 10 7 3 7-8 12-14 10-5-1-6-6-11-5-6 1-13-4-11-9z
-      M840 1000c1-5 10-9 16-6 5 2 7 5 3 8-6 3-5 7-10 8-4 1-9-5-9-10z
-      M1642 659c1-4 4-8 9-11 5-3 6 3 9 4 5 3 0 7-2 10-3 5-8 2-11 2-3 0-6-2-5-5z
-      M1691 673c0-3 6-8 9-8 4 0 3 4 5 6 5 4-4 9-9 9-3 0-5-4-5-7z
-      M1812 482c2-4 8-5 11-11 3-5 8 2 12 3 5 3 3 7 0 12-3 4-1 9-7 10-5 1-6-4-11-6-4-1-7-4-5-8z"/>
-    <g id="shores">
-      <use href="#seven"/><use href="#genabackis"/><use href="#quon"/><use href="#lether"/>
-      <use href="#jacuruku"/><use href="#korel"/><use href="#stratem"/><use href="#assail"/><use href="#islands"/>
-    </g>
-    <clipPath id="landmask"><use href="#seven"/><use href="#genabackis"/><use href="#quon"/><use href="#lether"/><use href="#jacuruku"/><use href="#korel"/><use href="#stratem"/><use href="#assail"/><use href="#islands"/></clipPath>
-    <g id="peak" stroke="#584c38" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M-19 7q6-8 11-12l6-13 5 6 3-1 5 11 8 9q-12-4-19 1z" fill="#d9c8a1"/>
-      <path d="M-2-18l3 9-4 5 4 3-1 9q7-5 19-1l-8-9-5-11-3 1z" fill="url(#hatch)" stroke="none"/>
-      <path d="M-2-18l3 9-4 5 4 3-1 8M4 0l4 5m-14-8-5 7" fill="none"/>
-    </g>
-    <g id="ridge">
-      <use href="#peak" transform="translate(0 -9) scale(.91)"/>
-      <use href="#peak" transform="translate(22 -12) scale(1.03)"/>
-      <use href="#peak" transform="translate(39 3) scale(.78)"/>
-      <use href="#peak" transform="translate(-19 5) scale(.72)"/>
-      <use href="#peak" transform="translate(10 9) scale(.84)"/>
-    </g>
-    <g id="tree" fill="#849174" stroke="#3e5948" stroke-width="1" stroke-linejoin="round">
-      <path d="M0-10l-4 6h2l-4 6h12l-4-6h2z"/><path d="M0 2v4" fill="none"/>
-    </g>
-    <g id="woods">
-      <use href="#tree" transform="translate(3 -15)"/><use href="#tree" transform="translate(-14 -5) scale(.86)"/>
-      <use href="#tree" transform="translate(18 -10) scale(.76)"/><use href="#tree" transform="translate(1 1) scale(1.16)"/>
-      <use href="#tree" transform="translate(28 1) scale(.85)"/><use href="#tree" transform="translate(14 9)"/>
-      <use href="#tree" transform="translate(-13 11) scale(.8)"/><use href="#tree" transform="translate(30 13) scale(.67)"/>
-    </g>
-    <g id="dunes" fill="none" stroke="#886042" stroke-width="1.5" stroke-linecap="round">
-      <path d="M-31 8q13-15 25 0m-16 9q15-14 28 0m-1-23q14-14 28 1m-14 10q9-9 18 1m-61-14q9-8 17 1"/>
-      <path d="M-12 7h12m21-14h14M2 18h12" opacity=".53"/>
-    </g>
-    <g id="waves" stroke="#91ada6" stroke-width="1.6" stroke-linecap="round" fill="none">
-      <path d="M-27 0q9-6 18 0t18 0 18 0M-16 9q8-5 16 0t16 0"/>
-    </g>
-    <g id="town">
-      <circle r="5" fill="#f0dfb3" stroke="#3e3a2d" stroke-width="1.5"/>
-      <circle r="2" fill="#3e3a2d"/>
-    </g>
-    <g id="city">
-      <path d="M-7 5v-9h4v-5h6v5h4v9z" fill="#f2e4be" stroke="#3e3a2d" stroke-width="1.5"/>
-      <path d="M-1 5V1h2v4" fill="none" stroke="#3e3a2d" stroke-width="1.5"/>
-    </g>
-    <style>
-      text{font-family:Georgia,serif}
-      .continent,.area,.settlement{paint-order:stroke;stroke:#d8cba4;stroke-linejoin:round}
-      .continent{font-size:31px;font-weight:bold;letter-spacing:6px;fill:#343b2d;stroke-width:3;text-anchor:middle}
-      .continent .subregion{font-size:22px;letter-spacing:3px}
-      .continent .island{font-size:17px;letter-spacing:2px}
-      .area{font-size:16px;letter-spacing:2.7px;fill:#594e34;stroke-width:2.5;text-anchor:middle}
-      .settlement{font-size:17px;font-style:italic;fill:#332d25;stroke-width:2.6}
-      .ocean{font-size:19px;letter-spacing:6px;font-style:italic;fill:#bdd0c2;text-anchor:middle;opacity:.75}
-      .river{fill:none;stroke:#506e66;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-      .tributary{stroke-width:1.2;opacity:.75}
-    </style>
+    <g id="town"><circle r="5" fill="#71483a" stroke="#f5e9c2" stroke-width="2"/></g>
+    <g id="city"><path d="M0-7 7 0 0 7-7 0z" fill="#71483a" stroke="#f5e9c2" stroke-width="2"/></g>
+    <g id="waves" fill="none" stroke="#9bb7ad" stroke-width="1.6" opacity=".48"><path d="M-18 1q6-5 12 0T6 1t12 0m-25 7q7-4 14 0"/></g>
   </defs>
-
-  <rect width="2000" height="1200" fill="url(#sea)"/>
-  <rect x="30" y="30" width="1940" height="1140" fill="url(#graticule)"/>
-  <g fill="none" stroke="#a2b2a1" stroke-linejoin="round">
-    <use href="#shores" stroke-width="32" opacity=".08"/>
-    <use href="#shores" stroke-width="21" opacity=".11"/>
-    <use href="#shores" stroke-width="11" opacity=".18"/>
+  <style>
+    .land{fill:url(#land);stroke:#78958a;stroke-width:3.4;stroke-linejoin:round}
+    .water{fill:#2f5557;stroke:#78958a;stroke-width:2}.river{fill:none;stroke:#6a8d84;stroke-width:2.4}
+    text{font:600 19px Georgia,serif;fill:#393728;paint-order:stroke;stroke:#d7cba5;stroke-width:3.8;stroke-linejoin:round}
+    .continent,.ocean,.area{text-anchor:middle}.continent{font-size:24px;letter-spacing:2.2px}.area{font-size:16px;letter-spacing:1.2px}
+    .ocean{font-size:16px;letter-spacing:2px;font-style:italic;fill:#c5d1bc;stroke:#26444a}.settlements text:not(.ocean){font-size:16px}
+  </style>
+  <path fill="url(#sea)" d="M0 0h2000v1200H0z"/><path fill="url(#grid)" d="M30 30h1940v1140H30z"/>
+  <!-- Seven Cities spans a broad western interior and a deeply cut northeastern coast. -->
+  <path class="land" d="M557 305l27-18 8-30 36 13 20-31 22 14 8 35 34 4 21 30 41-11 13 20 32-13 31-1 21-29 30-4 20-22 3-29 21-24-8-22 20-13 13 18-4 34 20 6 20-17 15-37 32-7 27 15 29-20 25 12 26-8 25 17 4 22-15 17-21-1-10 21 18 28-7 24-39 7-15 22-35-6-22 20-30-4-15 24-38 4-22 31-25 8-23 35-27 6-18 38-24 12-13 28-48 14-24-10-21 29 15 21-11 36-29-8-18-24-27 12-18-32 10-22-18-22 15-38-35-10-10-28-25-14 1-31-27-10 7-25-27-18-22 12-24-24-5-29-16-21 7-30l17 8 20 23 22 12 20 4 20 7z"/>
+  <path class="land" d="m877 201 17-16 25 2 12 14-14 18-23 1zM905 226l13-7 10 5-4 11-16 1zM1147 116l19-19 31-3 15 16 24 4 13 20-5 21-23-7-22 10-36-12zM1219 163l14-12 18 11 4 21-10 21-21-11zM1017 535l22-11 15 9-6 16-23 12zM714 614l13-11 13 9-2 17-15 1zM664 613l14-8 13 14-8 16-15-6z"/>
+  <path class="water" d="m1001 266 21-12 24 2 23-15 20 6 13 16-14 11-29 3-20 16-17-7-21-3zM994 355l22-18 24 9 10 18-14 13-27 3-16-9z"/>
+  <path fill="url(#ridge)" d="m567 307 56-51 29 28 24 47-27 38-27-24-34-6zM685 420l51-13 38 26 35-12 55-45 68-24 51-18 20 23-50 15-41 24-40 21-58 50-52 12-46-31-42 5zM1022 199l52-15 38 16 38 10-13 20-59-17-41 14z"/>
+  <path fill="url(#trees)" d="m821 305 58-24 44-14 24-36 27 20-21 39-39 29-38 14-37-2z"/>
+  <path class="river" d="M976 320q18-5 31 13l6 14m96-63q-14 20-36 27l-17 37"/>
+  <!-- Genabackis runs north to south and broadens along the southern coast. -->
+  <path class="land" d="M1373 153l30-21 33 9 21-12 48 14 18 26-19 25 8 20-18 20 12 18-15 20-11 36-28 8 7 43-15 23 5 27 27 17 15 27 27 9 26-16 28 5 22-11 38 8 17 21-20 19-20-9-29 12-30-12-21 22-34-3-32 19-40-12-24-22-32 2-18-33 7-23-25-15-5-42 13-20-9-30 15-28-9-21 19-35-10-27 19-23-8-24 13-12 4 1z"/>
+  <path class="land" d="m1347 197 9-13 13 6-3 14-15 2zm212 322 12-14 19 7-1 15-19 4zm-17 23 13-10 13 9-5 16-13 1z"/>
+  <path fill="url(#ridge)" d="m1360 187 40-43 40 7 16 26-48 8-28 21-12 45-20-14zM1397 275l37-19 41 6 18-15-12 32-25 25-32 8-30 28-11-18zM1355 411l37 5 31 33 55 21 10 24-59-8-31-36-43-17z"/>
+  <path fill="url(#trees)" d="m1392 212 45-14 41 20-12 20-39-6-23 19-19-14zM1405 368l22 6 10 31-21 21-27-19zM1490 477l25-3 18 11-21 22-23-11z"/>
+  <path class="water" d="m1377 313 11-12 24 1 8 12-17 15-18 1zm51-111 14-12 19 3 7 11-16 10-22-4z"/>
+  <!-- Quon Tali, the Falari islands, and Malaz Isle to the southeast. -->
+  <path class="land" d="M975 486l22-18 25 8 20-8 24 16 24-8 31 3 26-13 20 19-4 22-14 18 14 24-19 27-27-2-16 17-39 4-28 22-33-10-22 5-24-17 9-19-21-23 6-24 14-17-11-17zM1036 438l12-21 24-14 13 15-3 17-16 13-13-6zM1078 386l13-23 16-6 24 12-4 18-20 12-15-4zM1114 417l12-17 17 10-5 19-14 3zM1145 373l9-9 14 7-3 11-15 5zM1140 607l12-11 17 5 4 11-14 6-15-3zM1172 548l12-8 13 6-5 12-13 2zM961 627l12-11 12 5-3 13-17 2z"/>
+  <path fill="url(#ridge)" d="m972 492 35-21 38 7 24 15-17 24-45-10-35 15z"/>
+  <path class="river" d="M1049 510q5 28 36 32l48-5m-88-14q-5 33-36 49l-17 16"/>
+  <!-- Lether continues well east of its empire, across the wastes to Kolanse. -->
+  <path class="land" d="M185 775l17-30 33-15 20-38 20-14 13-30 29 7 35-11 20 18-5 21-22 23 23 19 30-5 27 12 29-13 39 12 45-14 44 10 27 18 29-5 39 11 17 22 39 12 23 23-6 24 20 20-10 28 20 24-18 28 13 21-26 32-35 5-23-13-30 10-35-13-23-25-31 5-37-16-21 16-25-11-32 16-30-5-13-20-31 7-20-25-36 7-15-18-33 22-20-7 11-26-26-13-23 6-30-18-32 2-19-25 10-18-35-5-14-23 18-28z"/>
+  <path class="land" d="m174 759 9-15 14 4-4 14-14 6zm-6 16 13 2 3 11-16 6-8-8zM517 996l17-15 19 12-8 16-17 4z"/>
+  <path class="water" d="m377 753 22-13 26 9 25-12 26 12 8 22-11 14-23-7-21 12-27-5-27-14zM232 863l22-17 25 3 30-15 33 6 27 19-16 18-36 10-31-9-28 6-26-6z"/>
+  <path fill="#b88f5c" opacity=".62" d="m555 748 52 14 36-4 33 32 13 52-25 27 11 32-25 31-55-11-26-22-34-9-14-39 18-31-7-34z"/>
+  <path fill="url(#ridge)" d="m340 697 21-12 37 16-9 28-30 14 10 37 35 24 58-4 49 23 3 27-47-18-53 4-57-23-19-35-14-40zM673 769l34 1 25 22 28 28-11 24-53-34-29-14zM697 887l20 12 41-4 20 17-22 18-37-3-29-17z"/>
+  <path fill="url(#trees)" d="m206 752 26-17 40-47 38-9 19-18 22 8-15 28-27 13-31 29-44 27zM217 821l26-27 30-9 11 16-28 40-27 13z"/>
+  <path class="river" d="M403 791q-31 3-49 16l-31-3-36 6-33 18-31-6m488-8q-5 26 24 33l27 12"/>
+  <!-- Southern landmasses and northeastern islands, where fewer internal places are known. -->
+  <path class="land" d="M856 785l27-33 48-13 29 19 2 32 22 18-13 37-19 31-37 11-35-15-25-28-14-19zM1114 738l36-23 22-37 39-18 52-3 25 24-6 44-20 22-38 12-17 32-43 20-35-10-25-26zM1106 846l27-26 37 4 39-17 23-22 39 6 13 27 38 16-4 22-25 22 22 32-9 31-40 17-25-11-44 18-34-23-26 2-18-39-24-11-4-24zM1438 569l31-19 34 5 26-17 43 10 18 20-2 34-27 23 13 32-18 28 22 30-18 39-19 20 6 39 20 20-1 34-33 9-37 36-40-3-24-32 13-28-10-36 13-28-19-20 11-34-22-23 10-30-17-29 10-24-17-25zM1772 235l35-20 27-46 30-18 1-28 22-22 25 10 24-15 24 20-14 30-25 7-15 29-29 4-17 29-24 1-27 41-28 10-18-16zM1855 287l24-6 19-22 23 5 21 16-16 18 6 22-25 15-25-13-18 9-19-18z"/>
+  <path class="land" d="m1469 948 17-9 11 12-9 15-19-1zm-256 40 20-8 22 12-6 15-19 5-17-7zm499-646 12-9 15 5-1 11-17 7zm-25 28 15-12 10 6-6 11-16 3z"/>
+  <path fill="url(#ridge)" d="m869 795 29-23 47-15 15 21-35 17-28 32-30-5zM1126 735l51-29 87-49 19 20-25 29-53 14-44 39zM1125 852l41-20 57-9 31-23 18 19-33 27-49 8-57 22zM1453 589l47-27 42 2 17 19-21 23-45-10-45 16zM1474 679l24-43 20 15-10 44-17 24-24-12z"/>
+  <path fill="url(#trees)" d="m931 785 22 8 19 30-12 38-33 16-17-15 13-45zM1122 884l27-16 28 11 7 32-31 18-20-15zM1512 635l28-22 20 12-10 30-24 14z"/>
+  <path fill="#9aaea5" stroke="#78958a" stroke-width="3" d="M96 1135l45-12 36 10 58-13 68 4 54-17 51 8 61-17 39 11 77-9 56 18 57-9 65 17 76-19 48 10 75-19 56 16 63-20 50-7 42 11 53-17 18 12 69-22 42 7 39-32 22-36 38-3 38-27 56 25 41 5 54 40 52 4 58 22v42H96z"/>
+  <g>
+    <use href="#waves" x="326" y="268"/><use href="#waves" x="413" y="368"/><use href="#waves" x="175" y="503"/><use href="#waves" x="323" y="566"/>
+    <use href="#waves" x="831" y="557"/><use href="#waves" x="1049" y="699"/><use href="#waves" x="1245" y="490"/><use href="#waves" x="1328" y="658"/>
+    <use href="#waves" x="1663" y="522"/><use href="#waves" x="1801" y="620"/><use href="#waves" x="1848" y="756"/><use href="#waves" x="100" y="885"/>
+    <use href="#waves" x="931" y="962"/><use href="#waves" x="824" y="1065"/><use href="#waves" x="1394" y="997"/>
   </g>
-  <use href="#shores" fill="url(#land)" stroke="#c2b68d" stroke-width="4" stroke-linejoin="round"/>
-  <g clip-path="url(#landmask)">
-    <ellipse cx="656" cy="321" rx="237" ry="157" fill="url(#sand)"/>
-    <ellipse cx="290" cy="270" rx="230" ry="130" fill="url(#green)"/>
-    <ellipse cx="1540" cy="331" rx="210" ry="233" fill="url(#green)"/>
-    <ellipse cx="1655" cy="560" rx="153" ry="118" fill="url(#sand)"/>
-    <ellipse cx="320" cy="820" rx="237" ry="121" fill="url(#green)"/>
-    <ellipse cx="650" cy="937" rx="196" ry="148" fill="url(#sand)"/>
-    <ellipse cx="519" cy="611" rx="117" ry="83" fill="url(#green)"/>
-    <ellipse cx="885" cy="586" rx="103" ry="110" fill="url(#green)"/>
-    <rect width="2000" height="1200" fill="url(#paper)"/>
-    <use href="#shores" fill="none" stroke="#494c38" stroke-width="7" stroke-opacity=".28"/>
-    <use href="#shores" fill="none" stroke="#f4e8be" stroke-width="3.5" stroke-opacity=".63"/>
+  <g>
+    <text class="continent" x="833" y="371" data-cs="SEDMIMĚSTÍ">SEVEN CITIES</text>
+    <text class="continent" x="1420" y="246" data-cs="GENABAKIS">GENABACKIS</text>
+    <text class="continent" x="1060" y="568">QUON TALI</text><text class="ocean" x="1182" y="412">FALAR</text>
+    <text class="continent" x="476" y="939" data-cs="LEDER">LETHER</text><text class="continent" x="905" y="829">JACURUKU</text>
+    <text class="continent" x="1200" y="718">KORELRI</text><text class="continent" x="1210" y="902">STRATEM</text>
+    <text class="continent" x="1502" y="632">ASSAIL</text><text class="continent" x="1510" y="843">BAEL</text>
+    <text class="ocean" x="1820" y="166">GENOSTEL</text><text class="ocean" x="1893" y="365">UMRYG</text>
+    <text class="area" x="625" y="326" data-cs="ZÁNIK">PERISH</text><text class="area" x="675" y="364">NEMIL</text>
+    <text class="area" x="725" y="541">SHAL-MORZINN</text>
+    <text class="ocean" x="1220" y="226" data-cs="OTATARALOVÝ OSTROV">OTATARAL ISLAND</text>
+    <text class="area" x="1039" y="344">RARAKU</text><text class="area" x="1480" y="169" data-cs="LAEDERONSKÁ PLOŠINA">LAEDERON PLATEAU</text>
+    <text class="area" x="1451" y="449" data-cs="LAMATATHSKÁ PLÁŇ">PLAIN OF LAMATATH</text>
+    <text class="area" x="274" y="747" data-cs="ÚZEMÍ TISTE EDUR">TISTE EDUR LANDS</text>
+    <text class="area" x="512" y="835" data-cs="OUL’DAN">AWL’DAN</text><text class="area" x="619" y="845" data-cs="SKLENĚNÁ POUŠŤ">GLASS DESERT</text>
+    <text class="ocean" x="384" y="1144" data-cs="JIŽNÍ POLÁRNÍ ZEMĚ">SOUTHERN POLAR LANDS</text>
   </g>
-  <use href="#shores" fill="none" stroke="#514c38" stroke-width="1.65" stroke-linejoin="round"/>
-
-  <g class="river" clip-path="url(#landmask)">
-    <path d="M1574 210q-12 27-34 34t-20 26q1 18-33 23l-23-6-32 22-40 3-20 15"/>
-    <path d="M1690 353q-24 16-31 36l-29 15q-16 15-42 11l-21-11-25 18-52-2-26 17-45 1"/>
-    <path d="M1688 466l-18 20 7 18-19 30-5 24-25 20-13 46"/>
-    <path d="M580 244q14 20 5 38l-24 17-3 28-26 15-15 34-22 22"/>
-    <path d="M742 254l-20 20-31 3-17 17-6 23-31 18-9 23-21 15-13 40"/>
-    <path d="M898 549l-14 20 4 19-20 18 5 19-17 18-5 38"/>
-    <path d="M401 772l-34 22-27 1-20 16-43 9-21 23-37-2-26 19-39 4-29 23-24 4"/>
-    <path d="M810 900l-24 14-9 25-22 17-6 29-27 17-12 57"/>
-    <path d="M542 565l-20 27-7 23-38 27m1175 124-15 34 5 20-22 21-11 45"/>
-    <path class="tributary" d="M1530 209l-7 24 8 18m-109 32 10 26m244 31-11 21-6 28m-76 44 5-18m76 94 13-5m-998-208 29 11m-164 6 14 14m-251 53 12 24m2-161 13-22m14 291 1 20m-583 35 22-4 17 11m46-86 16 20 29 11m-24-55-15 25-14 10m466 135-17-5-12-17"/>
+  <g class="settlements">
+    <use href="#town" x="903" y="201"/><text x="903" y="163" text-anchor="middle">Sepik</text>
+    <use href="#town" x="947" y="316"/><text x="935" y="308" text-anchor="end">Y’Ghatan</text>
+    <use href="#town" x="1058" y="305"/><text x="1038" y="282" text-anchor="end">G’dan(isban)</text>
+    <use href="#town" x="1103" y="270"/><text x="1114" y="260">Ehrlitan</text>
+    <use href="#town" x="1137" y="298"/><text x="1151" y="297">Hissar</text>
+    <use href="#city" x="1004" y="352"/><text x="1014" y="367">Aren</text>
+    <use href="#town" x="1038" y="535"/><text x="1028" y="530" text-anchor="end">Li Heng</text>
+    <use href="#city" x="1145" y="515"/><text x="1162" y="516">Unta</text>
+    <use href="#city" x="1157" y="607"/><text x="1174" y="611" data-cs="Město Malaz">Malaz City</text>
+    <use href="#city" x="1374" y="279"/><text x="1362" y="274" text-anchor="end" data-cs="Dřevnov">Pale</text>
+    <use href="#city" x="1394" y="333"/><text x="1382" y="347" text-anchor="end" data-cs="Darúdžhistán">Darujhistan</text>
+    <use href="#town" x="1448" y="337"/><text x="1460" y="340">Capustan</text>
+    <use href="#city" x="1430" y="403"/><text x="1442" y="404" data-cs="Korál">Coral</text>
+    <use href="#town" x="1355" y="461"/><text x="1341" y="478" text-anchor="end">Morn</text>
+    <use href="#city" x="324" y="802"/><text x="315" y="789" text-anchor="end" data-cs="Lederas">Letheras</text>
+    <use href="#town" x="469" y="790"/><text x="481" y="787">Drene</text>
+    <text class="ocean" x="182" y="829" data-cs="TŘI DĚVÍNY">THREE MAIDEN FORTS</text>
+    <use href="#city" x="749" y="857"/><text x="764" y="861" data-cs="Město Kolanse">Kolanse City</text>
   </g>
-  <g fill="#738d79" stroke="#526751" stroke-width="1.4">
-    <path d="M1443 372l10-10 18 1 12-8 14 7-9 10-19 2-10 7z"/>
-    <path d="M311 785l8-14 13-7 14 6 4 12-11 12-12-4z"/>
-    <path d="M837 582l9-9 16 3 3 9-11 7-13-4z"/>
+  <g>
+    <text class="ocean" x="828" y="119" data-cs="DRYDŽHNANSKÝ OCEÁN">DRYJNA OCEAN</text>
+    <text class="ocean" x="1255" y="317" transform="rotate(-55 1255 317)" data-cs="MENINGALLESKÝ OCEÁN">MENINGALLE OCEAN</text>
+    <text class="ocean" x="839" y="608" data-cs="ROŽSKÝ OCEÁN">HORN OCEAN</text>
+    <text class="ocean" x="1263" y="565" data-cs="ŠÁHŮV OCEÁN">REACHER’S OCEAN</text>
+    <text class="ocean" x="1413" y="527" data-cs="RIVANSKÉ MOŘE">RIVAN SEA</text>
+    <text class="ocean" x="911" y="947" data-cs="BÍLÉ VĚŽE MOŘSKÉ">WHITE SPIRES OCEAN</text>
+    <text class="ocean" x="1646" y="259" data-cs="REZAVÝ OCEÁN">RUST OCEAN</text>
+    <text class="ocean" x="154" y="942" data-cs="ŘÍŠSKÝ OCEÁN">DOMINION OCEAN</text>
   </g>
-
-  <g opacity=".89" clip-path="url(#landmask)">
-    <use href="#ridge" transform="translate(215 174) rotate(-12) scale(1.2)"/><use href="#ridge" transform="translate(298 186) rotate(11)"/><use href="#ridge" transform="translate(370 208) rotate(15)"/><use href="#ridge" transform="translate(452 223) rotate(-9)"/><use href="#ridge" transform="translate(521 207) rotate(11) scale(.81)"/><use href="#ridge" transform="translate(663 211) rotate(-14)"/><use href="#ridge" transform="translate(724 229) rotate(23) scale(.82)"/>
-    <use href="#ridge" transform="translate(1416 171) rotate(-15)"/><use href="#ridge" transform="translate(1476 160) rotate(-16) scale(1.22)"/><use href="#ridge" transform="translate(1544 175) rotate(20) scale(1.1)"/><use href="#ridge" transform="translate(1609 190) rotate(20)"/><use href="#ridge" transform="translate(1654 226) rotate(40) scale(.91)"/><use href="#ridge" transform="translate(1683 275) rotate(26) scale(1.1)"/><use href="#ridge" transform="translate(1710 332) rotate(30) scale(.95)"/><use href="#ridge" transform="translate(1701 392) rotate(-36)"/><use href="#ridge" transform="translate(1614 370) rotate(-14) scale(.81)"/><use href="#ridge" transform="translate(1540 405) rotate(-14) scale(.7)"/><use href="#ridge" transform="translate(1691 457) rotate(47)"/><use href="#ridge" transform="translate(1570 554) rotate(-8) scale(.79)"/><use href="#ridge" transform="translate(1633 531) rotate(18) scale(.89)"/>
-    <use href="#ridge" transform="translate(872 545) rotate(-10) scale(.91)"/><use href="#ridge" transform="translate(923 573) rotate(43) scale(.8)"/><use href="#ridge" transform="translate(939 622) rotate(39) scale(.69)"/>
-    <use href="#ridge" transform="translate(224 762) rotate(-16) scale(.88)"/><use href="#ridge" transform="translate(419 759) rotate(18) scale(.93)"/><use href="#ridge" transform="translate(478 782) rotate(15) scale(.86)"/><use href="#ridge" transform="translate(559 812) rotate(49)"/><use href="#ridge" transform="translate(586 867) rotate(53)"/><use href="#ridge" transform="translate(601 916) rotate(66) scale(.81)"/><use href="#ridge" transform="translate(605 974) rotate(61) scale(.79)"/><use href="#ridge" transform="translate(773 856) rotate(14) scale(.87)"/><use href="#ridge" transform="translate(791 966) rotate(31) scale(.73)"/>
-    <use href="#ridge" transform="translate(509 583) rotate(-10) scale(.77)"/><use href="#ridge" transform="translate(1125 776) rotate(27) scale(.83)"/><use href="#ridge" transform="translate(1184 805) rotate(25) scale(.85)"/><use href="#ridge" transform="translate(1588 776) rotate(-30) scale(.77)"/><use href="#ridge" transform="translate(1638 754) rotate(4)"/><use href="#ridge" transform="translate(1695 780) rotate(45) scale(.87)"/><use href="#ridge" transform="translate(1677 833) rotate(-18) scale(.86)"/><use href="#ridge" transform="translate(1263 965) rotate(7)"/><use href="#ridge" transform="translate(1335 980) rotate(16)"/><use href="#ridge" transform="translate(1398 1002) rotate(20) scale(.8)"/>
+  <g transform="translate(175 158)" fill="none" stroke="#bfb38c" stroke-width="2">
+    <circle r="47"/><circle r="37" stroke-dasharray="2 5"/><path d="M-45 0h90M0-45v90"/>
+    <path d="M0-44 9 0 0 33-9 0z" fill="#d8c797" stroke="none"/>
+    <text x="0" y="-61" class="ocean" data-cs="S">N</text>
   </g>
-  <g opacity=".82" clip-path="url(#landmask)">
-    <use href="#woods" x="161" y="230"/><use href="#woods" x="205" y="251"/><use href="#woods" x="252" y="227"/><use href="#woods" x="313" y="294"/><use href="#woods" x="354" y="280"/><use href="#woods" x="403" y="319"/><use href="#woods" x="480" y="352"/><use href="#woods" x="528" y="374"/>
-    <use href="#woods" x="1397" y="222"/><use href="#woods" x="1432" y="239"/><use href="#woods" x="1593" y="265"/><use href="#woods" x="1627" y="282"/><use href="#woods" x="1656" y="320"/><use href="#woods" x="1586" y="451"/><use href="#woods" x="1623" y="434"/><use href="#woods" x="1649" y="462"/><use href="#woods" x="1550" y="495"/><use href="#woods" x="1586" y="507"/><use href="#woods" x="1625" y="589"/>
-    <use href="#woods" x="165" y="765"/><use href="#woods" x="197" y="787"/><use href="#woods" x="247" y="805"/><use href="#woods" x="268" y="827"/><use href="#woods" x="182" y="894"/><use href="#woods" x="211" y="921"/><use href="#woods" x="339" y="857"/><use href="#woods" x="367" y="880"/><use href="#woods" x="377" y="947"/><use href="#woods" x="411" y="955"/><use href="#woods" x="789" y="885"/><use href="#woods" x="817" y="958"/>
-    <use href="#woods" x="460" y="598"/><use href="#woods" x="496" y="625"/><use href="#woods" x="553" y="603"/><use href="#woods" x="568" y="631"/><use href="#woods" x="817" y="540"/><use href="#woods" x="835" y="558"/><use href="#woods" x="906" y="654"/><use href="#woods" x="1146" y="817"/><use href="#woods" x="1620" y="813"/><use href="#woods" x="1656" y="861"/><use href="#woods" x="1283" y="1044"/><use href="#woods" x="1340" y="1059"/>
-  </g>
-  <g opacity=".76" clip-path="url(#landmask)">
-    <use href="#dunes" x="486" y="255"/><use href="#dunes" x="541" y="266"/><use href="#dunes" x="611" y="242"/><use href="#dunes" x="600" y="292"/><use href="#dunes" x="647" y="265"/><use href="#dunes" x="620" y="317"/><use href="#dunes" x="698" y="337"/><use href="#dunes" x="661" y="373"/><use href="#dunes" x="730" y="373"/><use href="#dunes" x="766" y="307"/><use href="#dunes" x="803" y="330"/>
-    <use href="#dunes" x="648" y="883"/><use href="#dunes" x="676" y="907"/><use href="#dunes" x="649" y="936"/><use href="#dunes" x="687" y="954"/><use href="#dunes" x="656" y="983"/><use href="#dunes" x="694" y="1012"/><use href="#dunes" x="1542" y="580"/>
-  </g>
-
-  <g opacity=".53">
-    <use href="#waves" x="283" y="473"/><use href="#waves" x="374" y="518"/><use href="#waves" x="143" y="569"/><use href="#waves" x="212" y="627"/>
-    <use href="#waves" x="628" y="500"/><use href="#waves" x="705" y="535"/><use href="#waves" x="681" y="625"/><use href="#waves" x="776" y="691"/>
-    <use href="#waves" x="1002" y="193"/><use href="#waves" x="1071" y="252"/><use href="#waves" x="1230" y="216"/><use href="#waves" x="1027" y="411"/><use href="#waves" x="1162" y="413"/><use href="#waves" x="1232" y="471"/><use href="#waves" x="1076" y="582"/><use href="#waves" x="1272" y="592"/><use href="#waves" x="1237" y="695"/>
-    <use href="#waves" x="1841" y="352"/><use href="#waves" x="1827" y="579"/><use href="#waves" x="1870" y="712"/>
-    <use href="#waves" x="961" y="906"/><use href="#waves" x="1049" y="985"/><use href="#waves" x="1105" y="1121"/><use href="#waves" x="1517" y="1053"/><use href="#waves" x="1811" y="969"/><use href="#waves" x="480" y="1072"/>
-  </g>
-
-  <g class="continent">
-    <text x="356" y="254" data-cs="SEDMIMĚSTÍ">SEVEN CITIES</text><text x="1516" y="213" data-cs="GENABAKIS">GENABACKIS</text>
-    <text x="881" y="608" class="subregion">QUON TALI</text>
-    <text x="461" y="823" data-cs="LEDER">LETHER</text><text x="522" y="624" class="island">JACURUKU</text>
-    <text x="1146" y="842" class="subregion">KORELRI</text><text x="1325" y="1023" class="subregion">STRATEM</text>
-    <text x="1624" y="867" class="subregion">ASSAIL</text>
-  </g>
-  <g class="area">
-    <text x="636" y="310">RARAKU</text><text x="896" y="389" fill="#c9cdb5" stroke="#29474a">FALAR</text>
-    <text x="918" y="157" fill="#c9cdb5" stroke="#29474a" data-cs="OTATARALOVÝ OSTROV">OTATARAL ISLAND</text>
-    <text x="1566" y="317" data-cs="RHIVSKÁ PLÁŇ">RHIVI PLAINS</text><text x="1542" y="530" data-cs="LAMATATHSKÁ PLÁŇ">PLAIN OF LAMATATH</text>
-    <text x="259" y="751" data-cs="ÚZEMÍ TISTE EDUR">TISTE EDUR LANDS</text><text x="440" y="861" data-cs="OUL’DAN">AWL’DAN</text>
-    <text x="655" y="858" data-cs="SKLENĚNÁ POUŠŤ">GLASS DESERT</text>
-  </g>
-  <g class="settlement">
-    <use href="#town" x="756" y="264"/><text x="766" y="254">Hissar</text>
-    <use href="#town" x="768" y="216"/><text x="784" y="208">Ehrlitan</text>
-    <use href="#town" x="624" y="360"/><text x="611" y="355" text-anchor="end">Y’Ghatan</text>
-    <use href="#city" x="708" y="432"/><text x="722" y="442">Aren</text>
-    <use href="#town" x="876" y="564"/><text x="889" y="556">Li Heng</text>
-    <use href="#city" x="860" y="732"/><text x="879" y="739" data-cs="Město Malaz">Malaz City</text>
-    <use href="#city" x="1456" y="300"/><text x="1439" y="295" text-anchor="end" data-cs="Dřevnov">Pale</text>
-    <use href="#city" x="1476" y="384"/><text x="1459" y="402" text-anchor="end" data-cs="Darúdžhistán">Darujhistan</text>
-    <use href="#town" x="1648" y="384"/><text x="1660" y="371">Capustan</text>
-    <use href="#town" x="1724" y="492"/><text x="1736" y="506" data-cs="Korál">Coral</text>
-    <use href="#town" x="1596" y="576"/><text x="1585" y="600" text-anchor="end">Morn</text>
-    <use href="#city" x="300" y="852"/><text x="286" y="876" text-anchor="end" data-cs="Lederas">Letheras</text>
-    <use href="#town" x="360" y="804"/><text x="373" y="798" data-cs="Modrá růže">Bluerose</text>
-    <use href="#city" x="852" y="936"/><text x="867" y="931">Kolanse</text>
-  </g>
-  <g class="ocean">
-    <text x="332" y="78" data-cs="DRYDŽHNANSKÝ OCEÁN">DRYJNA OCEAN</text><text x="1150" y="333" data-cs="MENINGALLESKÝ OCEÁN">MENINGALLE OCEAN</text>
-    <text x="250" y="530" data-cs="ROŽSKÝ OCEÁN">HORN OCEAN</text><text x="1159" y="537" data-cs="ŠÁHŮV OCEÁN">REACHER’S OCEAN</text>
-    <text x="1417" y="709" data-cs="RIVANSKÉ MOŘE">RIVAN SEA</text><text x="1010" y="1036" data-cs="BÍLÉ VĚŽE MOŘSKÉ">WHITE SPIRES OCEAN</text>
-    <text x="1876" y="520" transform="rotate(90 1876 520)" data-cs="REZAVÝ OCEÁN">RUST OCEAN</text>
-  </g>
-
-  <g transform="translate(1853 153)" fill="none" stroke="#bfb38c">
-    <circle r="62" opacity=".68"/><circle r="49" opacity=".65"/><circle r="40" stroke-dasharray="1 4"/>
-    <path d="M-57 0H57M0-57V57M-35-35l70 70m0-70-70 70" opacity=".58"/>
-    <path d="M0-55 8-8 52 0 8 8 0 51-8 8-52 0-8-8z" fill="#182e36"/>
-    <path d="M0-55v55l-8-8zM52 0H0l8-8zM0 51V0l8 8zM-52 0H0l-8 8z" fill="#d4c399" stroke="none"/>
-    <circle r="4" fill="#e0cba0"/>
-    <text y="-73" fill="#ded0a8" stroke="none" text-anchor="middle" font-size="21" data-cs="S">N</text>
-  </g>
-  <g fill="none" stroke="#bfb38c" opacity=".65">
-    <rect x="25" y="25" width="1950" height="1150" stroke-width="2"/>
-    <rect x="32" y="32" width="1936" height="1136"/>
-    <path d="M48 67V48h19m1866 0h19v19M48 1133v19h19m1866 0h19v-19" stroke-width="2"/>
-  </g>
+  <rect x="25" y="25" width="1950" height="1150" fill="none" stroke="#bfb38c" stroke-width="2" opacity=".65"/>
 </svg>

@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'prach-snu', vol: 9, key: 'malazan_v9',
-    mapFrame: { x0: 0.12, x1: 0.41, y0: 0.62, y1: 0.87 }, timelineMin: 6
+    mapFrame: { x0: 0.12, x1: 0.35, y0: 0.6, y1: 0.81 }, timelineMin: 6
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Dust of Dreams', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -49,22 +49,22 @@ var BOOK = {
     worldStops: [], route: []
   },
   PLACES: [
-    { id:'letheras9', name:L('Letheras', 'Lederas'), en:'Letheras', x:15, y:71, region:[34.13,34.13], ic:'town', gi:1,
+    { id:'letheras9', name:L('Letheras', 'Lederas'), en:'Letheras', x:16.2, y:66.83, region:[34.13,34.13], ic:'town', gi:1,
       dad:L('The capital where King Tehol and Brys help arrange the eastern march.', 'Hlavní město, kde král Tehol a Brys pomáhají připravit výpravu na východ.'),
       kid:L('The capital where the soldiers get ready for their journey.', 'Hlavní město, kde se vojáci připravují na cestu.') },
-    { id:'bolkando', name:L('Kingdom of Bolkando', 'Království Bolkando'), en:'Kingdom of Bolkando', x:null, y:null, region:[86.83,68.27], ic:'crown', gi:1,
+    { id:'bolkando', name:L('Kingdom of Bolkando', 'Království Bolkando'), en:'Kingdom of Bolkando', x:26.65, y:74, region:[86.83,68.27], ic:'crown', gi:1,
       dad:L('A kingdom southeast of Awl’dan. The regional pin marks the kingdom through which the allied forces seek passage.', 'Království jihovýchodně od Oul’danu. Značka označuje území, kterým chtějí spojenci projít.'),
       kid:L('A kingdom the soldiers have to pass through on their way east.', 'Království, kterým vojáci potřebují projít cestou na východ.') },
     { id:'skykeep', name:L('Ampelas Rooted', 'Pevnost Ampelas'), en:'Ampelas Rooted', x:null, y:null, region:null, ic:'tower', gi:2,
       dad:L('The Che’Malle keep where Kalyth serves Gunth’an Acyl. The book map gives no location for the keep.', 'Pevnost K’Chain Che’Malle, kde Kalyth slouží Gunth’an Acyl. Knižní mapa její polohu neuvádí.'),
       kid:L('The fortress where the Matron asks Kalyth for help.', 'Pevnost, kde matrona požádá Kalyth o pomoc.') },
-    { id:'akryn', name:L('Ak’ryn', 'Ak’ryn'), en:'Ak’ryn', x:null, y:null, region:[77.6,58.81], ic:'forest', gi:3,
+    { id:'akryn', name:L('Ak’ryn', 'Ak’ryn'), en:'Ak’ryn', x:24.1, y:71.33, region:[77.6,58.81], ic:'forest', gi:3,
       dad:L('The Akrynnai country shown on the printed chart. Its people come into conflict with the Barghast.', 'Území Akryňanů na knižní mapě. Jeho obyvatelé se dostanou do střetu s Barghasty.'),
       kid:L('A region east of Lether where fighting breaks out.', 'Území východně od Lederu, kde propuknou boje.') },
     { id:'gallans-road', name:L('Gallan’s Road', 'Gallanova cesta'), en:'Gallan’s Road', x:null, y:null, region:null, ic:'moon', gi:4,
       dad:L('A magical route that brings the Shake to Kharkanas. Their journey continues to the First Shore.', 'Magická cesta, která dovede Třasy do Charkanas. Odtud pokračují k Prvnímu pobřeží.'),
       kid:L('A hidden route the Shake take to an old city.', 'Skrytá cesta, po které Třasové putují ke starému městu.') },
-    { id:'glass', name:L('The Glass Desert', 'Skleněná poušť'), en:'The Glass Desert', x:32.95, y:75.92, region:null, ic:'sun', gi:5,
+    { id:'glass', name:L('The Glass Desert', 'Skleněná poušť'), en:'The Glass Desert', x:30.95, y:70.92, region:null, ic:'sun', gi:5,
       dad:L('The desert the Snake enters after fleeing Kolanse. The next volume’s map shows the region farther east than the map of Lether’s empire.', 'Poušť, do níž vstoupí Had na útěku z Kolanse. Její oblast ukazuje dál na východ až mapa v dalším svazku.'),
       kid:L('A desert the children cross in search of safety.', 'Poušť, kterou děti přecházejí, když hledají bezpečí.') },
     { id:'nahruk', name:L('The Nah’ruk battles', 'Bitvy s Nah’ruk'), en:'The Nah’ruk battles', x:null, y:null, region:null, ic:'sword', gi:6,

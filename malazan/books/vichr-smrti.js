@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'vichr-smrti', vol: 7, key: 'malazan_v7',
-    mapFrame: { x0: 0.10, x1: 0.33, y0: 0.60, y1: 0.86 }, timelineMin: 5
+    mapFrame: { x0: 0.06, x1: 0.31, y0: 0.59, y1: 0.77 }, timelineMin: 5
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Reaper’s Gale', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -52,22 +52,22 @@ var BOOK = {
     worldStops: [], route: []
   },
   PLACES: [
-    { id:'letheras', name:L('Letheras', 'Lederas'), en:'Letheras', x:15, y:71, region:[34.13,34.13], ic:'town', gi:1,
+    { id:'letheras', name:L('Letheras', 'Lederas'), en:'Letheras', x:16.2, y:66.83, region:[34.13,34.13], ic:'town', gi:1,
       dad:L('Rhulad’s capital on the Lether River. The challengers come here while Tehol and Bugg work against the empire’s economy.', 'Rhuladovo hlavní město na řece Leder. Přijíždějí sem vyzývatelé, zatímco Tehol a Bugg oslabují hospodářství říše.'),
       kid:L('The capital where the emperor receives his challengers.', 'Hlavní město, kde císař přijímá vyzývatele.') },
-    { id:'drene', name:L('Drene', 'Drene'), en:'Drene', x:null, y:null, region:[80.77,32.21], ic:'town', gi:2,
+    { id:'drene', name:L('Drene', 'Drene'), en:'Drene', x:23.45, y:65.83, region:[80.77,32.21], ic:'town', gi:2,
       dad:L('The frontier city on the Bluerose Sea. Brohl Handar is its Edur overseer and Bivatt commands the Eastern Army.', 'Pohraniční město u Modrorůžského moře. Edurským dohližitelem je Brohl Handar a východnímu vojsku velí Bivatt.'),
       kid:L('The frontier city where the empire gathers soldiers to fight the Awl.', 'Pohraniční město, kde říše shromažďuje vojáky k boji proti Oulanům.') },
-    { id:'awl', name:L('Awl’dan', 'Oul’dan'), en:'Awl’dan', x:22.1, y:73.25, region:[88.65,43.91], ic:'forest', gi:2,
+    { id:'awl', name:L('Awl’dan', 'Oul’dan'), en:'Awl’dan', x:25.6, y:69.58, region:[88.65,43.91], ic:'forest', gi:2,
       dad:L('The plains east and southeast of Drene. The pin marks the area where Redmask’s clans fight the Eastern Army.', 'Pláně na východ a jihovýchod od Drene. Značka ukazuje oblast, kde Rudomaskovy klany bojují s Východní armádou.'),
       kid:L('The eastern grasslands where the Awl clans live with their herds.', 'Východní pláně, kde oulské klany žijí se svými stády.') },
-    { id:'maidens', name:L('Three Maiden Forts', 'Tři Děvíny'), en:'Three Maiden Forts', x:null, y:null, region:[11.44,23.24], ic:'tower', gi:3,
+    { id:'maidens', name:L('Three Maiden Forts', 'Tři Děvíny'), en:'Three Maiden Forts', x:8.8, y:64.83, region:[11.44,23.24], ic:'tower', gi:3,
       dad:L('The three forts off the northwest coast. The Second Maiden Fort is where the Malazans take control and where the Shake assemble.', 'Tři pevnosti u severozápadního pobřeží. Malažané ovládnou Druhý Děvín, kde se také shromáždí Třasové.'),
       kid:L('Three island forts. The Malazans hold the second one.', 'Tři ostrovní pevnosti. Tu druhou drží Malažané.') },
     { id:'refugium', name:L('The Refugium', 'Refugium'), en:'The Refugium', x:null, y:null, region:null, ic:'forest', gi:4,
       dad:L('A separate realm reached through gates, where Trull and Onrack meet a living community of Imass.', 'Samostatná říše přístupná branami, kde Trull a Onrak potkají skupinu živých Imassů.'),
       kid:L('A hidden valley that travellers reach through magical gates.', 'Skryté údolí, do kterého poutníci vstupují magickými branami.') },
-    { id:'palace', name:L('The Eternal Domicile', 'Císařský palác v Lederas'), en:'The Eternal Domicile', x:15, y:71, region:[34.13,34.13], ic:'crown', gi:5,
+    { id:'palace', name:L('The Eternal Domicile', 'Císařský palác v Lederas'), en:'The Eternal Domicile', x:16.2, y:66.83, region:[34.13,34.13], ic:'crown', gi:5,
       dad:L('The imperial palace in Letheras where Rhulad and Karsa fight. It shares the city’s marker at this scale.', 'Císařský palác v Lederas, kde se utkají Rhulad a Karsa. V tomto měřítku sdílí značku s městem.'),
       kid:L('The palace where Rhulad faces Karsa.', 'Palác, kde se Rhulad utká s Karsou.') }
   ],

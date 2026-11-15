@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dom-retezu', vol: 4, key: 'malazan_v4',
-    mapFrame: { x0: 0.28, x1: 0.80, y0: 0.08, y1: 0.59 }, timelineMin: 2
+    mapFrame: { x0: 0.44, x1: 0.77, y0: 0.1, y1: 0.36 }, timelineMin: 2
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to House of Chains', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -53,19 +53,19 @@ var BOOK = {
     route: []
   },
   PLACES: [
-    { id:'teblor', name:L('Laederon Plateau', 'Laederonská plošina'), en:'Laederon Plateau', x:72.1, y:13.92, region:[21.06,18.6], ic:'mountain', gi:1, mile:0,
+    { id:'teblor', name:L('Laederon Plateau', 'Laederonská plošina'), en:'Laederon Plateau', x:70, y:14.5, region:[21.06,18.6], ic:'mountain', gi:1, mile:0,
       dad:L('The high, hard country of the Teblor, far from the roads of the Empire. Karsa Orlong leaves these peaks with two companions, certain that the lowlands are his to take.', 'Vysoká a drsná země Teblorů, daleko od cest říše. Karsa Orlong opouští tyto vrcholy se dvěma druhy, přesvědčený, že nížiny jsou jeho kořist.'),
       kid:L('A cold mountain land where giant warriors live. This is where Karsa starts his long journey.', 'Studená horská země, kde žijí obří bojovníci. Tady začíná Karsova dlouhá cesta.') },
-    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:35.4, y:36, region:[50.58,14.58], ic:'town', gi:2, mile:120,
+    { id:'aren', name:L('Aren', 'Aren'), en:'Aren', x:50.2, y:29.33, region:[50.58,14.58], ic:'town', gi:2, mile:120,
       dad:L('The great harbour city of Seven Cities and the end of the Chain of Dogs. Here the 14th Army gathers, the dead are counted and Tavore takes command of a war nobody wants to name.', 'Velké přístavní město Sedmiměstí a konec Psím řetězu. Tady se shromažďuje 14. armáda, počítají se mrtví a Tavore přebírá velení války, kterou nikdo nechce pojmenovat.'),
       kid:L('A big harbour city where a new army is getting ready. It is also a sad place, because many soldiers died on the road here.', 'Velké přístavní město, kde se chystá nová armáda. Je to i smutné místo, protože na cestě sem zemřelo mnoho vojáků.') },
     { id:'drift-avalii', name:L('Drift Avalii', 'Drift Avalii'), en:'Drift Avalii', x:null, y:null, region:[39.23,93.11], ic:'tower', gi:3, mile:300,
       dad:L('An island where Andarist guards the Throne of Shadow. The printed chart points toward Drift Avalii from the southwest edge of Quon Tali.', 'Ostrov, na kterém Darist střeží Trůn stínu. Knižní mapa ukazuje směr k Drift Avalii od jihozápadního okraje Quon Tali.'),
       kid:L('A lonely island with an old magical throne. Several dangerous people want it, and two friends arrive to guard it.', 'Osamělý ostrov se starým magickým trůnem. Několik nebezpečných lidí ho chce a dva přátelé přijedou, aby ho střežili.') },
-    { id:'raraku', name:L('Pan’arak Oasis', 'Oáza Pan’arak'), en:'Pan’arak Oasis', x:36.55, y:24.5, region:[85.87,60.9], ic:'sun', gi:4, mile:500,
+    { id:'raraku', name:L('Pan’arak Oasis', 'Oáza Pan’arak'), en:'Pan’arak Oasis', x:53.05, y:27.33, region:[85.87,60.9], ic:'sun', gi:4, mile:500,
       dad:L('The oasis at the heart of Raraku. The printed map shows the ruined city, a basin, and the Dogslayers’ encampment.', 'Oáza v srdci Raraku. Knižní mapa vyznačuje zbořené město, kotlinu a tábor Psobijců.'),
       kid:L('In the middle of the desert, the rebels camp near a ruined city.', 'Uprostřed pouště táboří povstalci poblíž zbořeného města.') },
-    { id:'whirlwind-camp', name:L('Sha’ik’s Hill', 'Pahorek ša’ik'), en:'Sha’ik’s Hill', x:36.55, y:24.5, region:[81.73,50.96], ic:'crown', gi:5, mile:520,
+    { id:'whirlwind-camp', name:L('Sha’ik’s Hill', 'Pahorek ša’ik'), en:'Sha’ik’s Hill', x:53.05, y:27.33, region:[81.73,50.96], ic:'crown', gi:5, mile:520,
       dad:L('The printed Pan’arak map places Sha’ik’s hill west of the three Dogslayer ramps, on the edge of the basin.', 'Knižní mapa oázy Pan’arak umísťuje pahorek ša’ik na okraj kotliny, západně od tří ramp Psobijců.'),
       kid:L('A hill on the edge of the basin where the rebel leader waits for Tavore.', 'Na pahorku u kotliny čeká vůdkyně povstalců na Tavore.') },
     { id:'first-throne', name:L('The First Throne', 'První trůn'), en:'The First Throne', x:null, y:null, region:null, ic:'tower', gi:6, mile:700,

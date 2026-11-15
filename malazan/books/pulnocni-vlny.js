@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'pulnocni-vlny', vol: 5, key: 'malazan_v5',
-    mapFrame: { x0: 0.08, x1: 0.33, y0: 0.56, y1: 0.86 }, timelineMin: 4
+    mapFrame: { x0: 0.09, x1: 0.23, y0: 0.54, y1: 0.73 }, timelineMin: 4
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Midnight Tides', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -45,22 +45,22 @@ var BOOK = {
     route: []
   },
   PLACES: [
-    { id:'edur', name:L('Edur Lands', 'Území Tiste Edur'), en:'Edur Lands', x:12.25, y:61.25, region:[19.71,41.19], ic:'tower', gi:1, mile:0,
+    { id:'edur', name:L('Edur Lands', 'Území Tiste Edur'), en:'Edur Lands', x:14.2, y:60.75, region:[19.71,41.19], ic:'tower', gi:1, mile:0,
       dad:L('The northern coastal homelands of the six Tiste Edur tribes. The map marks Hiroth territory near the fjords of the Letherii frontier.', 'Domov šesti kmenů Tiste Edur na severním pobřeží. Mapa vyznačuje území Hirotů poblíž fjordů lederského pohraničí.'),
       kid:L('The cold, wooded coast where the Sengar brothers live.', 'Studené zalesněné pobřeží, kde žijí bratři Sengarové.') },
-    { id:'letheras', name:L('Tehol’s Residence', 'Teholova rezidence'), en:'Tehol’s Residence', x:15, y:71, region:[83.85,38.78], ic:'town', gi:2, mile:200,
+    { id:'letheras', name:L('Tehol’s Residence', 'Teholova rezidence'), en:'Tehol’s Residence', x:16.2, y:66.83, region:[83.85,38.78], ic:'town', gi:2, mile:200,
       dad:L('The printed plan of Letheras identifies Tehol’s home north of the Lether River, near Quillas Canal.', 'Knižní plán Lederas vyznačuje Teholův dům severně od řeky Leder, poblíž Quillasova kanálu.'),
       kid:L('Tehol and Bugg live here in the capital.', 'Tady v hlavním městě žijí Tehol s Buggem.') },
     { id:'ice-fields', name:L('Ice Fields', 'Ledová pole'), en:'Ice Fields', x:null, y:null, region:[45.1,26.6], ic:'mountain', gi:3, mile:220,
       dad:L('The frontier map shows the ice fields beyond the northern settlements. Rhulad first takes up the sword on the brothers’ expedition into the frozen north.', 'Mapa pohraničí ukazuje ledová pole za severními osadami. Rhulad poprvé uchopí meč na výpravě bratrů na zmrzlý sever.'),
       kid:L('The frozen north where the brothers find the sword.', 'Zmrzlý sever, kde bratři najdou meč.') },
-    { id:'azathlether', name:L('Azath Tower', 'Azatská věž'), en:'Azath Tower', x:15, y:71, region:[70.87,51.6], ic:'tower', gi:4, mile:300,
+    { id:'azathlether', name:L('Azath Tower', 'Azatská věž'), en:'Azath Tower', x:16.2, y:66.83, region:[70.87,51.6], ic:'tower', gi:4, mile:300,
       dad:L('The city plan puts the tower just west of the old palace complex, close to the river. Kettle tends the dying Azath and meets the prisoner Silchas Ruin.', 'Plán města ukazuje věž těsně západně od starého palácového komplexu u řeky. Konývka pečuje o umírající Azath a setká se s vězněm Silchasem Zmarem.'),
       kid:L('Kettle watches over this old tower and learns who is buried beneath it.', 'Konývka hlídá starou věž a zjišťuje, kdo je pod ní pohřbený.') },
-    { id:'palace', name:L('Old Palace Complex', 'Starý palácový komplex'), en:'Old Palace Complex', x:15, y:71, region:[75.58,49.52], ic:'crown', gi:5, mile:420,
+    { id:'palace', name:L('Old Palace Complex', 'Starý palácový komplex'), en:'Old Palace Complex', x:16.2, y:66.83, region:[75.58,49.52], ic:'crown', gi:5, mile:420,
       dad:L('The royal complex north of the Lether River. The fighting reaches the court, where Brys faces Rhulad.', 'Královský komplex severně od řeky Leder. Boje dospějí až ke dvoru, kde se Brys střetne s Rhuladem.'),
       kid:L('The royal palace where the king’s champion faces Rhulad.', 'Královský palác, kde se králův šampion střetne s Rhuladem.') },
-    { id:'lether-river', name:L('Lether River', 'Řeka Leder'), en:'Lether River', x:15, y:71, region:[88.5,61.2], ic:'water', gi:6, mile:500,
+    { id:'lether-river', name:L('Lether River', 'Řeka Leder'), en:'Lether River', x:16.2, y:66.83, region:[88.5,61.2], ic:'water', gi:6, mile:500,
       dad:L('The river that runs through the capital on the printed plan. The closing scenes follow the survivors of the conquest and reveal who Bugg really is.', 'Řeka, která na knižním plánu protéká hlavním městem. Závěr sleduje ty, kdo přežili dobytí, a odhaluje Buggovu totožnost.'),
       kid:L('The river running through the heart of the capital.', 'Řeka protékající srdcem hlavního města.') }
   ],

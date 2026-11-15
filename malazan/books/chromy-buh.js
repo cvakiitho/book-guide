@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'chromy-buh', vol: 10, key: 'malazan_v10',
-    mapFrame: { x0: 0.26, x1: 0.50, y0: 0.61, y1: 0.89 }, timelineMin: 4
+    mapFrame: { x0: 0.27, x1: 0.43, y0: 0.64, y1: 0.79 }, timelineMin: 4
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to The Crippled God', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -42,7 +42,7 @@ var BOOK = {
   SCENES: { 1:'__SCENE_1__', 2:'__SCENE_2__', 3:'__SCENE_3__', 4:'__SCENE_4__', 5:'__SCENE_5__', 6:'__SCENE_6__' },
   map: { title: L('Kolanse', 'Kolanse'), worldStops: [], route: [] },
   PLACES: [
-    { id:'glass', name:L('Toward the Glass Desert', 'Směr Skleněná poušť'), en:'Toward the Glass Desert', x:32.95, y:75.92, region:[9.04,62.98], ic:'sun', gi:1,
+    { id:'glass', name:L('Toward the Glass Desert', 'Směr Skleněná poušť'), en:'Toward the Glass Desert', x:30.95, y:70.92, region:[9.04,62.98], ic:'sun', gi:1,
       dad:L('Tavore’s army crosses the desert to the west. The printed map gives its direction from Kolanse with an arrow.', 'Tavořino vojsko přechází poušť na západě. Knižní mapa ukazuje směr z Kolanse šipkou.'),
       kid:L('The soldiers and the children meet in the desert west of this map.', 'Vojáci a děti se potkají v poušti západně od této mapy.') },
     { id:'shore', name:L('The First Shore', 'První pobřeží'), en:'The First Shore', x:null, y:null, region:null, ic:'water', gi:2,
@@ -51,10 +51,10 @@ var BOOK = {
     { id:'north-citadel', name:L('North Citadel', 'Severní hrad'), en:'North Citadel', x:null, y:null, region:[46.35,34.94], ic:'tower', gi:3,
       dad:L('The fortress in Estobanse Province where Paran’s Host confronts the Forkrul Assail.', 'Pevnost v Estobanské provincii, kde se Paranův houfec postaví Forkrul Assailům.'),
       kid:L('A northern fortress held by Paran’s soldiers.', 'Severní pevnost, kterou drží Paranovi vojáci.') },
-    { id:'kolanse', name:L('Kolanse City', 'Město Kolanse'), en:'Kolanse City', x:42.6, y:78, region:[61.44,55.45], ic:'town', gi:3,
+    { id:'kolanse', name:L('Kolanse City', 'Město Kolanse'), en:'Kolanse City', x:37.45, y:71.42, region:[61.44,55.45], ic:'town', gi:3,
       dad:L('The city at the inland side of Kolanse Bay, just northwest of the Spire.', 'Město na vnitřní straně Kolanského zálivu, severozápadně od Jehly.'),
       kid:L('The city beside the bay and the Spire.', 'Město u zálivu poblíž Jehly.') },
-    { id:'spire', name:L('The Spire', 'Jehla'), en:'The Spire', x:null, y:null, region:[67.12,56.57], ic:'tower', gi:4,
+    { id:'spire', name:L('The Spire', 'Jehla'), en:'The Spire', x:37.45, y:71.42, region:[67.12,56.57], ic:'tower', gi:4,
       dad:L('The rock formation on the headland by Kolanse City. The Forkrul Assail hold the heart at an altar above the sea.', 'Skalní útvar na výběžku u města Kolanse. Forkrul Assailové drží srdce na oltáři nad mořem.'),
       kid:L('A tall rock by the sea where the Forkrul Assail guard an altar.', 'Vysoká skála u moře, kde Forkrul Assailové hlídají oltář.') },
     { id:'barrow', name:L('The barrow', 'Mohyla'), en:'The barrow', x:null, y:null, region:null, ic:'chain', gi:5,

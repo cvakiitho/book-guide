@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'dan-pro-ohare', vol: 8, key: 'malazan_v8',
-    mapFrame: { x0: 0.69, x1: 0.91, y0: 0.27, y1: 0.53 }, timelineMin: 4
+    mapFrame: { x0: 0.63, x1: 0.77, y0: 0.22, y1: 0.43 }, timelineMin: 4
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to Toll the Hounds', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -47,19 +47,19 @@ var BOOK = {
     worldStops: [], route: []
   },
   PLACES: [
-    { id:'kruls-bar', name:L('K’rul’s Bar', 'K’rulův bar'), en:'K’rul’s Bar', x:73.8, y:32, region:[50.29,42.95], ic:'town', gi:1,
+    { id:'kruls-bar', name:L('K’rul’s Bar', 'K’rulův bar'), en:'K’rul’s Bar', x:69.7, y:27.75, region:[50.29,42.95], ic:'town', gi:1,
       dad:L('The retired Bridgeburners run a bar in K’rul’s former temple on the hill shown in the city plan.', 'Vysloužilí Paliči mostů vedou bar v bývalém K’rulově chrámu na pahorku vyznačeném v plánu města.'),
       kid:L('A bar run by retired soldiers in an old temple.', 'Bar ve starém chrámu, který vedou vysloužilí vojáci.') },
-    { id:'phoenix', name:L('The Phoenix Inn', 'Hostinec U Fénixe'), en:'The Phoenix Inn', x:73.8, y:32, region:[34.9,58.33], ic:'town', gi:1,
+    { id:'phoenix', name:L('The Phoenix Inn', 'Hostinec U Fénixe'), en:'The Phoenix Inn', x:69.7, y:27.75, region:[34.9,58.33], ic:'town', gi:1,
       dad:L('The inn run by Meese, numbered 4 on the printed map. Cutter and his old friends know it well.', 'Hostinec, který vede Meese. Na knižní mapě má číslo 4. Řezník a jeho staří přátelé ho dobře znají.'),
       kid:L('Meese’s inn and a meeting place for Cutter and his friends.', 'Hostinec Meese, kde se schází Řezník s přáteli.') },
-    { id:'blackcoral8', name:L('Black Coral', 'Černý Korál'), en:'Black Coral', x:86.2, y:41, region:[88.27,61.86], ic:'tower', gi:2,
+    { id:'blackcoral8', name:L('Black Coral', 'Černý Korál'), en:'Black Coral', x:71.5, y:33.58, region:[88.27,61.86], ic:'tower', gi:2,
       dad:L('The Tiste Andii’s city on Coral Bay. The Great Barrow lies outside its northern wall.', 'Město Tiste Andii u Korálového zálivu. Za jeho severní hradbou leží Velká mohyla.'),
       kid:L('The city where the Tiste Andii live after the war.', 'Město, kde Tiste Andii žijí po válce.') },
     { id:'barrow', name:L('The Great Barrow', 'Velká mohyla'), en:'The Great Barrow', x:null, y:null, region:[91.73,33.65], ic:'mountain', gi:2,
       dad:L('Itkovian’s burial mound at the end of the pilgrims’ track north of Black Coral.', 'Itkovianova mohyla na konci poutnické cesty severně od Černého Korálu.'),
       kid:L('Pilgrims walk from the city to this mound to remember Itkovian.', 'Poutníci sem chodí z města, aby si připomněli Itkoviana.') },
-    { id:'lamatath', name:L('The Plain of Lamatath', 'Lamatathská pláň'), en:'The Plain of Lamatath', x:77, y:45.67, region:null, ic:'forest', gi:3,
+    { id:'lamatath', name:L('The Plain of Lamatath', 'Lamatathská pláň'), en:'The Plain of Lamatath', x:69.7, y:37.83, region:null, ic:'forest', gi:3,
       dad:L('A plain in southern Genabackis where Karsa and Samar Dev meet Traveller. The atlas marker represents the plain.', 'Pláň na jihu Genabakis, kde Karsa a Samar Dev potkají Poutníka. Značka v atlasu označuje oblast pláně.'),
       kid:L('Open country where Karsa and Samar Dev meet a swordsman.', 'Otevřená krajina, kde Karsa a Samar Dev potkají šermíře.') },
     { id:'dragnipur', name:L('Inside Dragnipur', 'Uvnitř Dragnipúru'), en:'Inside Dragnipur', x:null, y:null, region:null, ic:'chain', gi:5,
@@ -68,7 +68,7 @@ var BOOK = {
     { id:'gate', name:L('The Gate of Darkness', 'Brána do Kurald Galain'), en:'The Gate of Darkness', x:null, y:null, region:null, ic:'moon', gi:6,
       dad:L('The ancient gate the wagon carries. It returns to Black Coral before Dragnipur breaks.', 'Prastará brána, kterou veze vůz. Vrátí se do Černého Korálu, než se Dragnipúr rozbije.'),
       kid:L('The gate the prisoners are pulling to safety.', 'Brána, kterou se vězni snaží odtáhnout do bezpečí.') },
-    { id:'baruk', name:L('Baruk’s Estate', 'Barúkův palác'), en:'Baruk’s Estate', x:73.8, y:32, region:[45.96,52.24], ic:'tower', gi:6,
+    { id:'baruk', name:L('Baruk’s Estate', 'Barúkův palác'), en:'Baruk’s Estate', x:69.7, y:27.75, region:[45.96,52.24], ic:'tower', gi:6,
       dad:L('The city plan marks Baruk’s house as number 11. The witnesses gather here when Brood breaks Dragnipur.', 'Plán města označuje Barúkův palác číslem 11. Svědci se tu sejdou, když Chmur rozbije Dragnipúr.'),
       kid:L('Baruk’s home, where people gather after the fighting.', 'Barúkovo sídlo, kde se po bojích sejdou svědci.') }
   ],

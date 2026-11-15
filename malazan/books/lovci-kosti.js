@@ -2,7 +2,7 @@
 var BOOK = {
   meta: {
     slug: 'lovci-kosti', vol: 6, key: 'malazan_v6',
-    mapFrame: { x0: 0.13, x1: 0.49, y0: 0.13, y1: 0.68 }, timelineMin: 5
+    mapFrame: { x0: 0.4, x1: 0.63, y0: 0.12, y1: 0.57 }, timelineMin: 5
   },
   ui: {
     en: { brand_sub: 'A reader’s guide to The Bonehunters', info_names: 'Czech names in this volume follow Dana Krejčová’s Talpress translation.' },
@@ -47,16 +47,16 @@ var BOOK = {
     worldStops: [], route: []
   },
   PLACES: [
-    { id:'yghatan', name:L('Y’Ghatan', 'Y’Ghatan'), en:'Y’Ghatan', x:31.2, y:30, region:[26.25,25.96], ic:'town', gi:1,
+    { id:'yghatan', name:L('Y’Ghatan', 'Y’Ghatan'), en:'Y’Ghatan', x:47.35, y:26.33, region:[26.25,25.96], ic:'town', gi:1,
       dad:L('A fortress city west of G’dan(isban), where Leoman makes his last stand against the Fourteenth.', 'Pevnostní město západně od G’dan(isbanu), kde se Leoman naposledy postaví Čtrnácté armádě.'),
       kid:L('An old fortress where Leoman takes refuge.', 'Stará pevnost, do které se uchýlí Leoman.') },
-    { id:'gdanisban', name:L('G’dan(isban)', 'G’dan(isban)'), en:'G’dan(isban)', x:null, y:null, region:[45.29,27.88], ic:'town', gi:2,
+    { id:'gdanisban', name:L('G’dan(isban)', 'G’dan(isban)'), en:'G’dan(isban)', x:52.9, y:25.42, region:[45.29,27.88], ic:'town', gi:2,
       dad:L('The city where Paran confronts Poliel. Both editions abbreviate the city name on the printed chart.', 'Město, kde se Paran postaví Poliel. Obě vydání na knižní mapě uvádějí zkrácený název města.'),
       kid:L('Paran comes here to find the source of the plague.', 'Paran sem přichází vypátrat příčinu moru.') },
-    { id:'sepik', name:L('Sepik', 'Sepik'), en:'Sepik', x:null, y:null, region:[8.27,18.75], ic:'town', gi:3,
+    { id:'sepik', name:L('Sepik', 'Sepik'), en:'Sepik', x:45.15, y:16.75, region:[8.27,18.75], ic:'town', gi:3,
       dad:L('An island principality off the northwest coast of Seven Cities. The Edur strike here before the Fourteenth arrives.', 'Ostrovní knížectví u severozápadního pobřeží Sedmiměstí. Tiste Edur tu udeří před příchodem Čtrnácté armády.'),
       kid:L('An island west of the main coast. The fleet stops here after a battle at sea.', 'Ostrov západně od pevniny. Flotila se tu zastaví po bitvě na moři.') },
-    { id:'malazcity', name:L('Malaz City', 'Město Malaz'), en:'Malaz City', x:43, y:61, region:[46.54,90.54], ic:'town', gi:4,
+    { id:'malazcity', name:L('Malaz City', 'Město Malaz'), en:'Malaz City', x:57.85, y:50.58, region:[46.54,90.54], ic:'town', gi:4,
       dad:L('The port on Malaz Isle where the Empire began. Unta on the mainland is the imperial capital.', 'Přístav na ostrově Malaz, kde vznikla říše. Hlavním městem říše je Unta na pevnině.'),
       kid:L('The fleet is ordered to return to this island port.', 'Flotila dostane rozkaz vrátit se do tohoto ostrovního přístavu.') },
     { id:'mocks-hold', name:L('Mock’s Hold', 'Posměvákova tvrz'), en:'Mock’s Hold', x:null, y:null, region:[85.48,18.59], ic:'tower', gi:5,

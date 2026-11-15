@@ -166,8 +166,8 @@
   .map-pin.selected,.map-pin:focus-visible{outline:2px solid #ffedc8; outline-offset:2px}
   @media(max-width:560px){
     .map-viewport.regional{height:clamp(290px,76vw,425px)}
-    .map-viewport.regional .map-ctrls{flex-direction:row}
-    .map-viewport.regional .map-pin{font-size:.65rem;min-height:20px;min-width:20px;padding:0 3px}
+    .map-viewport.regional .map-ctrls,.map-viewport.overview .map-ctrls{flex-direction:row}
+    .map-viewport.regional .map-pin,.map-viewport.overview .map-pin{font-size:.65rem;min-height:20px;min-width:20px;padding:0 3px}
   }
   .mapstrip{display:flex; gap:6px; overflow-x:auto; padding:4px 3px; margin-top:9px; scrollbar-width:thin}
   .strip-empty{font:.85rem var(--ui); color:var(--ink-3); padding:10px 4px}
@@ -722,7 +722,7 @@
       unlock_hint:"Once you have read the movement, tap <b>Read</b> and the recap, quiz and new characters unlock.",
       read_done_msg:"Read! The tale continues.",
       fear_ok:"all good.", fear_mid:"tense, but nothing graphic.", fear_high:"a dark scene — prepare yourself.",
-      key_moment:"Key moment:", illus_alt:"Illustration for the movement", map_alt:"Map of the Malazan world"
+      key_moment:"Key moment:", illus_alt:"Illustration for the movement", map_alt:"Schematic atlas of the Malazan world"
     },
     cs: {
       brand_title:"Kniha padlých",
@@ -758,7 +758,7 @@
       unlock_hint:"Až část přečteš, klikni na <b>Přečteno</b> a odemkne se rekapitulace, kvíz i nové postavy.",
       read_done_msg:"Přečteno! Příběh pokračuje.",
       fear_ok:"v pohodě.", fear_mid:"napínavé, ale nic grafického.", fear_high:"temnější scéna — připrav se.",
-      key_moment:"Klíčový moment:", illus_alt:"Ilustrace k části", map_alt:"Mapa Malazského světa"
+      key_moment:"Klíčový moment:", illus_alt:"Ilustrace k části", map_alt:"Schematický atlas Malazského světa"
     }
   };
   if(BOOK.ui){ ['en','cs'].forEach(function(L){ if(BOOK.ui[L]){ for(var k in BOOK.ui[L]) UI[L][k]=BOOK.ui[L][k]; } }); } // per-book UI overrides

@@ -17,7 +17,7 @@ Neoficiální dvojjazyčný průvodce světem série Stevena Eriksona *Malazská
 | `prach-snu.html` | *Prach snů* | *Dust of Dreams* |
 | `chromy-buh.html` | *Chromý bůh* | *The Crippled God* |
 
-Každý díl má šest částí rozdělených do dvou vnitřních knih (3 + 3), šest zastávek mapy, postavy, vztahy, světové poznámky, citlivostní upozornění a dvojjazyčné kvízy. Shrnutí a popisy jsou původní průvodcovský text, nikoli přepisy knih.
+Průvodce každým dílem má šest čtenářských částí ve dvou blocích, šest zastávek mapy, postavy, vztahy, světové poznámky, citlivostní upozornění a dvojjazyčné kvízy. Části průvodce sdružují děj z více knižních kapitol a souběžné dějové linie.
 
 ## Funkce aplikace
 
@@ -28,7 +28,7 @@ Každý díl má šest částí rozdělených do dvou vnitřních knih (3 + 3), 
 - **Angličtina / čeština** včetně popisků mapy, světlý a tmavý motiv.
 - **Samostatný HTML soubor pro každý díl** — sdílený engine, mapa a data se při sestavení vloží dovnitř souboru; není potřeba server ani externí knihovny.
 
-Režim, jazyk a motiv se sdílejí mezi svazky; přečtené části se ukládají pro každý svazek zvlášť v místním úložišti prohlížeče. Vztahové přehledy se v čtenářském režimu odemykají podle postupu.
+Režim, jazyk a motiv se sdílejí mezi svazky; přečtené části se ukládají pro každý svazek zvlášť v místním úložišti prohlížeče. Vztahy, přehled světa a body časové osy se v režimu Čtenář odemykají podle postupu v otevřeném díle.
 
 ## Sestavení
 
@@ -65,8 +65,8 @@ Světový atlas je schéma. Pobřeží a vzájemné polohy světadílů vycháze
 
 České názvy v atlasu vycházejí z map a textu vydání Talpress. Například Genabakis, Dřevnov a Korál jsou v *Měsíčních zahradách*, Drydžhnanský oceán v *Domě mrtvých*, Rožský a Šáhův oceán v *Lovcích kostí*, Říšský oceán ve *Vichru smrti* a Skleněná poušť a Bílé věže mořské v *Chromém bohu*. Rivanské moře je překlad pro tento atlas.
 
-- *Měsíční zahrady* mají schéma středního Genabakis a výřez Darúdžhistánu podle map na stranách 6–8. Měsíční Kámen je u Darúdžhistánu podle děje závěrečné části. Dům Azath sdílí zastávku se Simtaliným palácem, na jehož pozemku vyroste. [Ukázka Talpress v překladu Dany Krejčové](https://static.artforum.sk/media/products-files/55/59/124681-DB68540.pdf#page=7)
-- *Dům mrtvých* má schéma Sedmiměstí a trasu Psího řetězu z Hissaru do Arenu podle obou map Coltainova pochodu (strany 8–11 souboru PDF) a mapy Sedmiměstí (strany 12–13). Lebeň je umístěna přibližně podle děje a Tremorlor sdílí značku s oblastí Raraku. [Ukázka Talpress v překladu Dany Krejčové](https://static.artforum.sk/media/products-files/5f/18/124717-DB68547.pdf#page=8)
+- *Měsíční zahrady* mají schéma středního Genabakis a výřez Darúdžhistánu podle map na stranách 6–8. Měsíční Kámen je u Darúdžhistánu podle děje závěrečné části. Dům Azath sdílí zastávku se Simtaliným palácem, na jehož pozemku vyroste. Soupis osob uvádí mimo jiné Besanu, Líto, Pačese a Kvítka Berku. [Ukázka Talpress v překladu Dany Krejčové](https://static.artforum.sk/media/products-files/55/59/124681-DB68540.pdf#page=7)
+- *Dům mrtvých* má schéma Sedmiměstí a trasu Psího řetězu z Hissaru do Arenu podle obou map Coltainova pochodu (strany 8–11 souboru PDF) a mapy Sedmiměstí (strany 12–13). Lebeň je umístěna přibližně podle děje a Tremorlor sdílí značku s oblastí Raraku. Soupis osob uvádí podoby Coltain, Kalous, Baudín a Heborik Lehkoruký. [Ukázka Talpress v překladu Dany Krejčové](https://static.artforum.sk/media/products-files/5f/18/124717-DB68547.pdf#page=8)
 - *Vzpomínky ledu* mají schéma jižní části mapy pannionské války a výřez Capustanu. Knižní mapa ukazuje směr k Morn na jižním okraji. Poloha Měsíčního Kamene u Korálu je přibližná. České popisky a jména včetně Vrče, Stříbrné lišky a Bruchaliana vycházejí z úvodních map a soupisu osob v edici Talpress. [Ukázka Talpress v překladu Dany Krejčové](https://www.kosmas.cz/knihy/195394/ukazka/20246/vzpominky-ledu_Ukazka.epub) · [Anglické mapy, strany 11–12](https://cdn.penguin.co.uk/dam-assets/books/9781804995532/9781804995532-sample.pdf#page=12)
 - *Dóm řetězů* vychází z map hlavní části Malazské říše, severozápadního Genabakis a oázy Pan’arak. Regionální mapa ukazuje směr k Drift Avalii od Quon Tali. První trůn je dostupný v seznamu zastávek, protože knižní mapy jeho polohu neurčují. Názvy postav a míst vycházejí z map, soupisu osob a prologu vydání Talpress. [Ukázka Talpress v překladu Dany Krejčové](https://www.kosmas.cz/knihy/207081/ukazka/33924/dom-retezu_Ukazka.pdf) · [Anglická ukázka](https://cdn.penguin.co.uk/dam-assets/books/9781804995549/9781804995549-sample.pdf#page=14)
 - *Půlnoční vlny* mají schéma území Tiste Edur a severního pohraničí Lederu s výřezem středu Lederas. Zastávka na ledových polích ukazuje oblast výpravy, ostatní městské zastávky vycházejí z míst na knižním plánu. Soupis osob ve vydání Talpress uvádí například Stracha Sengara, Konývku, Seren Pedak a bratry Beddiktovy. [Ukázka Talpress v překladu Dany Krejčové](https://www.kosmas.cz/knihy/207084/ukazka/33926/pulnocni-vlny_Ukazka.pdf) · [Anglické mapy](https://cdn.penguin.co.uk/dam-assets/books/9781804995525/9781804995525-sample.pdf#page=13)

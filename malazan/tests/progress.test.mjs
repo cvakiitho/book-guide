@@ -14,7 +14,7 @@ const books = readdirSync(new URL('../books/', import.meta.url))
 test('reader content thresholds are reachable within each volume', () => {
   for (const book of books) {
     const max = book.CH.length;
-    const thresholds = [book.meta.timelineMin, ...(book.loreExtra || []).map(item => item.min),
+    const thresholds = [...(book.timeline || []).map(row => row[3]), ...(book.loreExtra || []).map(item => item.min),
       ...(book.relations?.blocks || []).map(block => block.min),
       ...(book.relations?.ensemble ? [book.relations.ensemble.min] : [])];
     for (const min of thresholds) {

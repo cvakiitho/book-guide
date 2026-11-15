@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 624">
+  <title>Kolanse</title>
+  <style>
+    text{font:600 17px Georgia,serif;fill:#373328;paint-order:stroke;stroke:#efe1ba;stroke-width:3;stroke-linejoin:round}
+    .heading{font-size:29px}.water{font-style:italic;fill:#20494e;stroke:#aec4b6}.small{font-size:14px}
+    .land{fill:#efe1ba;stroke:#627769;stroke-width:2.5}.river{fill:none;stroke:#658d87;stroke-width:3}
+    .town{fill:#7b4839;stroke:#fff2c8;stroke-width:2}.arrow{fill:none;stroke:#5d5846;stroke-width:2}
+  </style>
+  <defs>
+    <pattern id="ridge" width="23" height="16" patternUnits="userSpaceOnUse">
+      <path d="m1 12 5-9 5 7 4-5 7 8" fill="none" stroke="#8d7958" stroke-width="1.6"/>
+    </pattern>
+  </defs>
+  <path fill="#aec4b6" d="M0 0h1040v624H0z"/>
+  <!-- Eastern coast, Kolanse Bay and the southern river mouths on Pelasiar Sea. -->
+  <path class="land" d="M0 0h555l29 24 34 13 18 26-12 22-26 3 14 16 31-9 24-24 13-37-5-34h68l9 28-15 30-21 28 11 14 20-11 18 9-9 27-18 19 5 20 23-13 14 13-5 29-12 23 5 15 21 17 15 27 5 27-16 15-34-4-24 3-26 15-9 11 15 8 25-9 17 9 24 28 47 19 16 24 22 11 13 27 37 10 8 27-21 24 31 10 8 14-23 21-36 7-15 22 7 30-17 38H510l-25-13-24-14-39-12-10-20-21-13-23 2-35 14-32-4-31 14 10 21 22 12 7 13H0z"/>
+  <path class="land" d="m369 598 14-10 18 8-10 11-14 1zm48 9 12-9 18 5 6 11-19 2z"/>
+  <path fill="url(#ridge)" d="M65 72l61-6 76 26 76 22 69 1 63 22 60 8 86 31 78 15 67 39-15 22-54-30-93-15-65-34-68-5-76-31-91-7-72-29-83-18zM0 246l80-13 53 13 104 13 75 22 68 13 77 14 56 26 75 6 45 29 48-8 25-9 35 15-44 21-54 11-52-27-76-9-62-28-56-7-88-31-84-14-89-13-56 8-58-9zM188 411l60-32 71-2 63 26 60 12 55 46 45 12 33 32 50 30 64 20 54 69h-53l-31-37-65-21-52-22-45-37-33-10-60-45-65-14-56-30-53 14-50 22zM0 579l44-20 83-19 44-43 33-11 50 4-14 20-44 14-50 33-87 21L0 608z"/>
+  <path class="river" d="M555 177q-27 30-21 50t62 24q30 0 43 18l37 0 29 17m-37-16q10-24-21-55m31 74q-38 10-40 31l3 23 33 5m54 91q12-35 61-29l82 13m-87 77q37-34 81-24l64 8m-425-16q-37 16-35 39l3 49m-139-69q19 31 10 69l-37 18"/>
+  <g class="town"><circle cx="482" cy="218" r="5"/><circle cx="535" cy="234" r="4"/><circle cx="599" cy="252" r="4"/><circle cx="670" cy="276" r="4"/><circle cx="641" cy="320" r="4"/><circle cx="639" cy="346" r="5"/><circle cx="698" cy="353" r="5"/></g>
+  <text class="heading" x="32" y="43">Kolanse</text>
+  <text x="273" y="208" text-anchor="middle" data-cs="Estobanská provincie">Estobanse Province</text>
+  <text class="small" x="460" y="182" text-anchor="middle" data-cs="Severní hrad">North Citadel</text>
+  <text class="small" x="548" y="230" data-cs="Zád">Back</text>
+  <text class="small" x="608" y="246" data-cs="Danán">Danan</text>
+  <text class="small" x="684" y="272">Hetok</text>
+  <text class="small" x="621" y="312" text-anchor="end">Trelar</text>
+  <text class="small" x="588" y="170" text-anchor="middle" data-cs="Seské hory">Ses Mountains</text>
+  <text x="620" y="343" text-anchor="end" data-cs="Město Kolanse">Kolanse City</text>
+  <text class="small" x="580" y="379" text-anchor="middle" data-cs="Požehnaný dar">Blessed Gift</text>
+  <text class="water small" x="803" y="331" text-anchor="middle" data-cs="Kolanský záliv">Kolanse Bay</text>
+  <text x="720" y="374" data-cs="Jehla">The Spire</text>
+  <text class="water" x="875" y="153" text-anchor="middle" data-cs="Bílé věže mořské">White Spires Ocean</text>
+  <text class="water small" x="385" y="604" text-anchor="middle" data-cs="Pelasiarské moře">Pelasiar Sea</text>
+  <path class="arrow" d="M140 393H48l14-7m-14 7 14 7M962 585v-28l-6 12m6-12 6 12"/>
+  <text class="small" x="73" y="438" data-cs="Do Skleněné pouště">To the Glass Desert</text>
+  <text class="small" x="962" y="548" text-anchor="middle" data-cs="S">N</text>
+  <path fill="none" stroke="#627769" stroke-width="2" d="M1 1h1038v622H1z"/>
+</svg>

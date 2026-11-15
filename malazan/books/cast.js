@@ -17,7 +17,8 @@ var CAST = [
         { vol: 1, gi: 3, text: L('Is killed by the Hounds of Shadow — and returned to life by the twin gods of chance.', 'Zabijí ho Honiči stínu — a dvojčata náhody ho vrátí do života.') },
         { vol: 3, gi: 6, text: L('Becomes Master of the Deck of Dragons, a mortal voice among the gods.', 'Stane se Pánem Balíčku draků, smrtelným hlasem mezi bohy.') },
         { vol: 6, gi: 2, text: L('Takes command of Onearm’s Host after Dujek’s death.', 'Po Dujekově smrti převezme velení Onearmova vojska.') },
-        { vol: 10, gi: 5, text: L('Stands at the centre of the final game of the Deck.', 'Stojí ve středu poslední hry Balíčku.') }
+        { vol: 10, gi: 3, text: L('Leads the Host to the North Citadel in Estobanse.', 'Vede houfec k Severnímu hradu v Estobanské provincii.') },
+        { vol: 10, gi: 5, text: L('Reaches Tavore and the Bonehunters in the final battle.', 'V závěrečné bitvě se dostane k Tavore a Lovcům kostí.') }
       ] }
   },
   {
@@ -195,7 +196,7 @@ var CAST = [
         { vol: 1, gi: 5, text: L('Withdraws from Sorry as part of a bargain with Rake.', 'Stáhne se ze Sorry v rámci dohody s Rakem.') },
         { vol: 2, gi: 3, text: L('Reveals that he and Shadowthrone were Kellanved and Dancer.', 'Prozradí, že on a Shadowthrone byli Kellanved a Dancer.') },
         { vol: 4, gi: 3, text: L('Sends Cutter to Drift Avalii, and Apsalar joins him.', 'Pošle Řezníka na Drift Avalii a Apsalar se k němu přidá.') },
-        { vol: 10, gi: 5, text: L('Takes his place in the final game for the Crippled God.', 'Zaujme své místo v poslední hře o Chromého boha.') }
+        { vol: 10, gi: 6, text: L('Releases Kaminsod from his mortal body at the barrow.', 'U mohyly osvobodí Kaminsoda ze smrtelného těla.') }
       ] }
   },
   {
@@ -263,7 +264,8 @@ var CAST = [
       beats: [
         { vol: 2, gi: 1, text: L('Is shipped to the otataral mines with Felisin.', 'Je poslán do otataralských dolů s Felisin.') },
         { vol: 2, gi: 2, text: L('Touches the jade finger and pulls Fener into the mortal world.', 'Dotkne se jádrového prstu a vtáhne Fenera do smrtelného světa.') },
-        { vol: 4, gi: 4, text: L('Is known as Ghost Hands and serves among Sha’ik’s followers.', 'Je známý jako Heborik Neviditelné ruce a patří ke stoupencům ša’ik.') }
+        { vol: 4, gi: 4, text: L('Is known as Ghost Hands and serves among Sha’ik’s followers.', 'Je známý jako Heborik Neviditelné ruce a patří ke stoupencům ša’ik.') },
+        { vol: 10, gi: 5, text: L('Takes the chains of Korabas.', 'Převezme okovy Korabas.') }
       ] }
   },
   {
@@ -826,7 +828,7 @@ var CAST = [
       beats: [
         { vol: 2, gi: 5, text: L('Advises High Fist Pormqual in Aren.', 'Radí vrchní pěsti Pormqualovi v Arenu.') },
         { vol: 6, gi: 5, text: L('Accuses the Wickans of causing the disaster at Aren and demands Tavore hand over her allies.', 'Obviní Záchlumčany z pohromy u Arenu a požaduje, aby Tavore vydala své spojence.') },
-        { vol: 10, gi: 6, text: L('Is left standing when the old order falls.', 'Zůstane stát, když starý řád padne.') }
+        { vol: 10, gi: 1, text: L('Holds power in the Malazan Empire far from the campaign in Kolanse.', 'Vládne Malazské říši, daleko od tažení v Kolanse.') }
       ] }
   },
   {
@@ -1294,7 +1296,7 @@ var CAST = [
       beats: [
         { vol: 9, gi: 2, text: L('Sets out with Gu’Rull to find the Che’Malle a Mortal Sword and Shield Anvil.', 'Vyrazí s Gu’Rullem hledat Che’Malle smrtelný meč a nezdolný štít.') },
         { vol: 9, gi: 6, text: L('Brings Gesler and Stormy to the Che’Malle and stands with them against the Nah’ruk.', 'Přivede ke Che’Malle Geslera a Bouřňáka a postaví se s nimi proti Nah’ruk.') },
-        { vol: 10, gi: 5, text: L('Stands with the K’Chain in the final battle at the Spire.', 'Stojí s K’Chain v poslední bitvě u Věže.') }
+        { vol: 10, gi: 4, text: L('Accompanies the Che’Malle to the Spire.', 'Doprovází Che’Malle k Jehle.') }
       ] }
   },
   {
@@ -1319,7 +1321,7 @@ var CAST = [
         { vol: 2, gi: 3, text: L('Helps Kulp and the fugitives and boards the Silanda with Gesler.', 'Pomáhá Kulpovi a uprchlíkům a s Geslerem nastoupí na Silandu.') },
         { vol: 6, gi: 5, text: L('Names fallen comrades with Gesler and Fiddler in Malaz City.', 'Ve městě Malaz s Geslerem a Šumařem vzpomíná na padlé spolubojovníky.') },
         { vol: 9, gi: 6, text: L('Fights as Shield Anvil of the Che’Malle beside Gesler.', 'Bojuje po Geslerově boku jako nezdolný štít Che’Malle.') },
-        { vol: 10, gi: 5, text: L('Stands with the Bonehunters at the Spire.', 'Stojí s Lovci kostí u Věže.') }
+        { vol: 10, gi: 4, text: L('Dies at the Spire fighting alongside Gesler.', 'Padne u Jehly v boji po Geslerově boku.') }
       ] }
   },
   {
@@ -1333,22 +1335,70 @@ var CAST = [
         { vol: 2, gi: 3, text: L('Helps Kulp and the fugitives and boards the Silanda with Stormy.', 'Pomáhá Kulpovi a uprchlíkům a s Bouřňákem nastoupí na Silandu.') },
         { vol: 6, gi: 1, text: L('Survives the underground escape from Y’Ghatan.', 'Přežije útěk z Y’Ghatanu podzemím.') },
         { vol: 9, gi: 6, text: L('Leads the Che’Malle against the Nah’ruk as their Mortal Sword.', 'Vede Che’Malle proti Nah’ruk jako jejich smrtelný meč.') },
-        { vol: 10, gi: 5, text: L('Makes his last stand at the Spire.', 'Padne v posledním boji u Věže.') }
+        { vol: 10, gi: 4, text: L('Dies at the Spire while trying to stop Sinn.', 'Padne u Jehly, když se snaží zastavit Sinn.') }
       ] }
   },
   {
-    id: 'crippled', intro: { vol: 10, gi: 1 },
+    id: 'ruthan', intro: { vol: 9, gi: 1 },
+    name: L('Ruthan Gudd', 'Ruthan Gudd'), en: 'Ruthan Gudd',
+    race: 'malazan', rlab: L('Malazan captain', 'Malazský kapitán'), ic: 'sword',
+    kid: L('A captain who accompanies Tavore and keeps his past to himself.', 'Kapitán, který doprovází Tavore a o své minulosti nemluví.'),
+    dad: L('A captain in the Bonehunters who has powers associated with the Stormriders.', 'Kapitán Lovců kostí se schopnostmi spojenými s Bouřnými jezdci.')
+  },
+  {
+    id: 'blistig', intro: { vol: 2, gi: 5 },
+    name: L('Blistig', 'Blistig'), en: 'Blistig',
+    race: 'malazan', rlab: L('Malazan Fist', 'Malazská pěst'), ic: 'sword',
+    kid: L('An officer from Aren who later serves with Tavore.', 'Důstojník z Arenu, který později slouží pod Tavore.'),
+    dad: L('A former officer of the Aren garrison. He serves as a Fist in the Fourteenth Army.', 'Bývalý důstojník arenské posádky. Slouží jako pěst ve Čtrnácté armádě.')
+  },
+  {
+    id: 'kadagar', intro: { vol: 10, gi: 2 },
+    name: L('Kadagar Fant', 'Kadagar Fant'), en: 'Kadagar Fant',
+    race: 'tiste', rlab: L('Tiste Liosan warleader', 'Vojevůdce Tiste Liosan'), ic: 'sword',
+    kid: L('A commander trying to take the First Shore.', 'Velitel, který se snaží dobýt První pobřeží.'),
+    dad: L('The Tiste Liosan leader whose warriors attack the Shake at the First Shore.', 'Velitel Tiste Liosan, jehož bojovníci napadnou Třasy na Prvním pobřeží.')
+  },
+  {
+    id: 'reverence', intro: { vol: 10, gi: 3 },
+    name: L('Reverence', 'Velebnost'), en: 'Reverence',
+    race: 'forkrul', rlab: L('Forkrul Assail Pure', 'Zákonná inkvizitorka Forkrul Assail'), ic: 'eye',
+    kid: L('One of the rulers who guard the altar on the Spire.', 'Jedna z vládkyň, které střeží oltář na Jehle.'),
+    dad: L('One of the Forkrul Assail Pure who rules Kolanse and guards the heart at the Spire.', 'Jedna ze zákonných inkvizitorů Forkrul Assail, která vládne v Kolanse a střeží srdce na Jehle.')
+  },
+  {
+    id: 'diligence', intro: { vol: 10, gi: 3 },
+    name: L('Diligence', 'Pilnost'), en: 'Diligence',
+    race: 'forkrul', rlab: L('Forkrul Assail Pure', 'Zákonný inkvizitor Forkrul Assail'), ic: 'eye',
+    kid: L('A ruler who directs the soldiers opposing Brys in Kolanse.', 'Vládce, který v Kolanse vede vojáky proti Brysovi.'),
+    dad: L('A Forkrul Assail commander in Kolanse who uses the Voice against his enemies.', 'Velitel Forkrul Assail v Kolanse, který proti protivníkům používá Hlas.')
+  },
+  {
+    id: 'korabas', intro: { vol: 10, gi: 5 },
+    name: L('Korabas', 'Korabas'), en: 'Korabas',
+    race: 'dragon', rlab: L('Otataral dragon', 'Otataralová dračice'), ic: 'dragon',
+    kid: L('A dragon who makes magic fail when she comes near.', 'Dračice, v jejíž blízkosti přestává fungovat magie.'),
+    dad: L('The otataral dragon, hunted because her presence suppresses sorcery.', 'Otataralová dračice, kterou pronásledují, protože její přítomnost tlumí magii.')
+  },
+  {
+    id: 'noto', intro: { vol: 6, gi: 2 },
+    name: L('Noto Boil', 'Noto Nežit'), en: 'Noto Boil',
+    race: 'malazan', rlab: L('Medic in the Host', 'Ranhojič Jednorukého houfce'), ic: 'flask',
+    kid: L('A healer who helps Paran care for his soldiers.', 'Ranhojič, který Paranovi pomáhá pečovat o vojáky.'),
+    dad: L('A healer and mage of the Host, serving under Paran after the plague.', 'Ranhojič a mág houfce, který po moru slouží pod Paranem.')
+  },
+  {
+    id: 'crippled', intro: { vol: 3, gi: 5 },
     name: L('The Crippled God', 'Chromý bůh'), en: 'The Crippled God',
     race: 'god', rlab: L('The chained god', 'Spoutaný bůh'), ic: 'chain',
     kid: L('A broken god from another world, chained and used by powerful people. He is terrifying, but he is also in terrible pain.', 'Zlomený bůh z jiného světa, spoutaný a využívaný mocnými. Je děsivý, ale také strašně trpí.'),
-    dad: L('A god torn from his own world, broken and chained beneath the earth. His pain poisons the warrens; his freedom is the prize every faction in the saga is really fighting over.', 'Bůh vytržený ze svého světa, zlomený a spoutaný pod zemí. Jeho bolest otravuje warreny; jeho svoboda je cena, o kterou ve skutečnosti bojují všechny frakce ságy.'),
+    dad: L('A god from another world whose body was shattered in his fall. The other gods chained him to this world.', 'Bůh z jiného světa, jehož tělo se při pádu roztříštilo. Ostatní bohové ho připoutali k tomuto světu.'),
     arc: { ahead: L('Does a god deserve mercy?', 'Zaslouží si bůh milosrdenství?'),
       beats: [
-        { vol: 1, gi: 2, text: L('His influence is felt in the games of gods and mortals.', 'Jeho vliv je cítit ve hrách bohů i smrtelníků.') },
         { vol: 3, gi: 5, text: L('Kallor serves his interests during the Pannion war.', 'Kallor během pannionské války slouží jeho zájmům.') },
         { vol: 5, gi: 3, text: L('Resurrects Rhulad and makes him Emperor of the Edur.', 'Vzkřísí Rhulada a učiní ho císařem Edurů.') },
         { vol: 7, gi: 5, text: L('Offers Karsa the sword and is refused.', 'Nabídne Karsovi meč a je odmítnut.') },
-        { vol: 10, gi: 5, text: L('Faces the final choice between revenge and release.', 'Čelí poslední volbě mezi pomstou a vysvobozením.') }
+        { vol: 10, gi: 6, text: L('Leaves the world after Cotillion frees him from his mortal body.', 'Opustí svět poté, co ho Kotilion osvobodí ze smrtelného těla.') }
       ] }
   }
 ];

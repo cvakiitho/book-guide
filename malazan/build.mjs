@@ -7,7 +7,7 @@
 //   /*__BOOK_DATA__*/  <- books/<slug>.js     (this volume's chapters, map, scenes, relations…)
 // then inlines the images as data URIs:
 //   __MAP_DATA_URI__ and __MAP_CS_DATA_URI__ -> English and Czech versions of assets/map.svg
-//   __IMG_<id>__       -> assets/portraits/<id>.jpg        (shared portraits; only characters introduced
+//   __PORTRAITS_JSON__ -> assets/portraits/<id>.jpg        (shared portraits; only characters introduced
 //                                                          up to this volume are inlined, the rest blanked)
 //   __SCENE_<n>__      -> assets/scenes/<slug>/<n>.jpg     (this volume's chapter illustrations)
 //
@@ -63,8 +63,11 @@ const CASTFILE = path.join(BOOKS, 'cast.js');
 if (!fs.existsSync(CASTFILE)) { console.error('✗ Chybí books/cast.js — nemám sdílené postavy.'); process.exit(1); }
 const castJs = noBom(fs.readFileSync(CASTFILE, 'utf8'));
 const CAST = new Function(castJs + '\nreturn CAST;')();
-const introVol = {};
-CAST.forEach((c) => { introVol[c.id] = c.intro.vol; });
+const castPortraits = new Map();
+for (const { id } of CAST) {
+  const file = path.join(ASSETS, 'portraits', id + '.jpg');
+  if (fs.existsSync(file)) castPortraits.set(id, imageUri(file));
+}
 
 // Only volumes that have a data file get built — and only those appear in the switcher.
 const present = VOLUMES.filter((v) => fs.existsSync(bookData(v)));
@@ -108,13 +111,13 @@ for (const { volume: vol, source, map } of volumesWithRoutes) {
 
   // 4) portraits — only characters introduced up to this volume; missing (but wanted) → shot-list
   const missing = { portraits: [], scenes: [] };
-  html = html.replace(/__IMG_([a-z0-9-]+)__/g, (_, id) => {
-    const wanted = introVol[id] !== undefined && introVol[id] <= vol.order;
-    if (!wanted) return ''; // character not in this volume yet
-    const f = path.join(ASSETS, 'portraits', id + '.jpg');
-    if (fs.existsSync(f)) return imageUri(f);
-    missing.portraits.push(id); return '';
-  });
+  const portraits = {};
+  for (const { id, intro } of CAST) {
+    if (intro.vol > vol.order) continue;
+    if (castPortraits.has(id)) portraits[id] = castPortraits.get(id);
+    else missing.portraits.push(id);
+  }
+  html = html.replace('__PORTRAITS_JSON__', () => JSON.stringify(portraits));
 
   // 5) scenes — this volume's chapter illustrations
   html = html.replace(/__SCENE_(\d+)__/g, (_, n) => {

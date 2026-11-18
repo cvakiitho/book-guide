@@ -578,7 +578,6 @@
   };
   function icon(name,cls){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"'+(cls?' class="'+cls+'"':'')+'>'+(IC[name]||IC.star)+'</svg>';}
 
-  // ===== painted portraits (inlined at build time from Midjourney) =====
   // ===== shared saga cast (injected at build time; defines CAST + VOLBOOKS) =====
   /*__CAST_DATA__*/
   /*__ROUTES_DATA__*/
@@ -587,7 +586,7 @@
   var VOLUMES = __VOLUMES_JSON__;            // the book switcher (all volumes; current flagged)
   var VOL = BOOK.meta.vol;                    // which volume this is (1/2/3)
   var ILLUS=BOOK.ILLUS, SCENES=BOOK.SCENES, PLACES=BOOK.PLACES, CH=BOOK.CH, KIDSUM=BOOK.KIDSUM, KIDINTRO=BOOK.KIDINTRO;
-  var PORTRAITS={}; CAST.forEach(function(c){ if(c.portrait) PORTRAITS[c.id]=c.portrait; });
+  var PORTRAITS = __PORTRAITS_JSON__;
   function hasPortrait(id){var u=PORTRAITS[id];return !!(u&&u.slice(0,5)==='data:');}
   function imgPortrait(id,alt){return hasPortrait(id)?'<img src="'+PORTRAITS[id]+'" alt="'+esc(alt||'')+'" loading="lazy">':null;}
   // ===== painted chapter scenes (inlined at build time from Midjourney) =====

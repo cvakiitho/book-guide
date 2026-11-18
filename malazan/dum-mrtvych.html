@@ -137,6 +137,10 @@
   nav.tabs button.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
   nav.tabs button.on{background:linear-gradient(180deg,#3a2c1e,#2b2118); color:#f1ead7}
 
+  .spoiler-warning{margin:0 0 16px; padding:9px 12px; border:1px solid var(--line-2);
+    border-inline-start:3px solid var(--ember); border-radius:11px;
+    background:color-mix(in srgb,var(--ember) 10%,var(--panel)); font:.85rem/1.45 var(--ui)}
+
   .view{display:none; animation:fade .3s ease}
   .view.on{display:block}
   @keyframes fade{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
@@ -464,6 +468,13 @@
       <button data-view="postavy" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c.6-3.6 3.2-6 6.5-6s5.9 2.4 6.5 6"/></svg><span data-i18n="tab_characters">Postavy</span></button>
       <button data-view="svet" role="tab" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span data-i18n="tab_world">Svět</span></button>
     </nav>
+
+    <div role="status">
+      <p class="spoiler-warning" id="spoilerWarning" hidden>
+        <strong data-i18n="spoiler_title">Spoiler alert!</strong>
+        <span data-i18n="spoiler_text">Guide mode can reveal events you haven’t read yet. Switch to Reader to hide spoilers.</span>
+      </p>
+    </div>
 
     <!-- MAPA -->
     <section class="view on" id="view-mapa">
@@ -2366,6 +2377,8 @@ var BOOK = {
       brand_title:"The Book of the Fallen",
       brand_sub:"A reader’s guide to Steven Erikson’s Malazan Book of the Fallen",
       mode_parent:"Guide", mode_kids:"Reader",
+      spoiler_title:"Spoiler alert!",
+      spoiler_text:"Guide mode can reveal events you haven’t read yet. Switch to Reader to hide spoilers.",
       theme_to_light:"Switch to light theme", theme_to_dark:"Switch to dark theme",
       lang_switch:"Switch to Czech",
       journey:"Saga", chapters_of:"movements",
@@ -2402,6 +2415,8 @@ var BOOK = {
       brand_title:"Kniha padlých",
       brand_sub:"Čtenářský průvodce Malazskou knihou padlých Stevena Eriksona",
       mode_parent:"Průvodce", mode_kids:"Čtenář",
+      spoiler_title:"Pozor na spoilery!",
+      spoiler_text:"Režim Průvodce může prozradit, co se v příběhu stane dál. Pokud se chceš spoilerům vyhnout, přepni do režimu Čtenář.",
       theme_to_light:"Přepnout na světlý motiv", theme_to_dark:"Přepnout na tmavý motiv",
       lang_switch:"Přepnout do angličtiny",
       journey:"Sága", chapters_of:"částí",
@@ -2902,6 +2917,7 @@ var BOOK = {
     applyTheme();
   }
   function syncMode(){
+    $('#spoilerWarning').hidden=state.mode!=='tata';
     Array.prototype.forEach.call($('#modeswitch').children,function(b){b.classList.toggle('on',b.getAttribute('data-mode')===state.mode);});
   }
   $('#tabs').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return;

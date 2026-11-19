@@ -241,6 +241,7 @@
   .place-ic svg{width:100%; height:100%}
   .caret svg{width:100%; height:100%}
   .block p{margin:0}
+  .block p+p{margin-top:.7em}
   .bullets{margin:0; padding-left:2px; list-style:none}
   .bullets li{position:relative; padding-left:22px; margin:5px 0}
   .bullets li::before{content:""; position:absolute; left:4px; top:.55em; width:7px; height:7px; border-radius:2px;
@@ -2181,6 +2182,7 @@ var BOOK = {
   CH: [
     { book:1, n:1, title:L('The Sengar Brothers', 'Bratři Sengarové'), en:'The Sengar Brothers', fear:3,
       sum:L('The Warlock King Hannan Mosag sends Fear, Trull, Binadas and Rhulad Sengar into the ice fields to recover a gift. A Jheck attack breaks out, and Rhulad takes up the sword despite his orders and dies. The brothers bring his body home, and Udinaas prepares it for burial.', 'Král-zaklínač Hannan Mosag vyšle Stracha, Trulla, Binadase a Rhulada Sengara pro dar na ledová pole. Při útoku Jhecků Rhulad proti rozkazu uchopí meč a zemře. Bratři přivezou jeho tělo domů a Udinaas ho připraví k pohřbu.'),
+      detail:L('Rhulad is the youngest brother, keenly aware that Fear and Trull have already earned their standing. In the ice he gets one chance to do something they will have to acknowledge. Back home it falls to Udinaas, an enslaved Letherii, to prepare the young warrior for burial. Udinaas presses the gold coins into place one at a time. The last person to tend Rhulad this closely is a man he could have ordered about only days ago.', 'Rhulad je z bratrů nejmladší a dobře ví, že Strach i Trull už si uznání vydobyli. Na ledových polích má jedinkrát možnost udělat něco, co budou muset ocenit i oni. Doma připadne práce na pohřbu lederskému otrokovi Udinaasovi. Vtlačuje mince do vosku na mladíkově těle. Z takové blízkosti se teď o Rhulada stará člověk, kterému ještě před pár dny mohl poroučet.'),
       focus:{en:['The Edur as a proud, wounded people','Rhulad’s hunger for glory','The sword as a trap, not a gift'],cs:['Edurové jako hrdý, zraněný lid','Rhuladova touha po slávě','Meč jako past, ne dar']},
       q:{en:['Was Rhulad brave, foolish, or both?','Why do the Edur need a sword to feel strong?'],cs:['Byl Rhulad statečný, hloupý, nebo obojí?','Proč Edurové potřebují meč, aby se cítili silní?']},
       words:{en:[['Jheck','a tribe of Soletaken wolves'],['Warlock King','the ruler and chief sorcerer of the Edur']],cs:[['Jheck','kmen vlčích Soletakenů'],['král-zaklínač','vládce a vrchní čaroděj Edurů']]},
@@ -2189,6 +2191,7 @@ var BOOK = {
       quiz:{en:[['Which brother takes the sword?',['Trull','Rhulad','Fear'],1],['Who attacks the brothers?',['Jheck shapeshifters','Malazan soldiers','K’Chain Che’Malle'],0]],cs:[['Který bratr vezme meč?',['Trull','Rhulad','Strach'],1],['Kdo na bratry zaútočí?',['Převtělenci Jheck','Malažští vojáci','K’Chain Che’Malle'],0]]} },
     { book:1, n:2, title:L('The City of Canals', 'Město kanálů'), en:'The City of Canals', fear:2,
       sum:L('In Letheras, Tehol Beddict is hired to turn the kingdom’s financial system against itself. Bugg, his manservant, helps him. Tehol’s brother Brys serves as the king’s champion, while Hull, the eldest brother, works on the northern frontier and has turned against the kingdom’s expansion.', 'V Lederas najmou Tehola Beddikta, aby obrátil peněžní systém království proti němu samému. Pomáhá mu sluha Bugg. Teholův bratr Brys slouží jako králův šampion. Nejstarší bratr Hull působí na severním pohraničí a staví se proti rozpínání království.'),
+      detail:L('The Beddict brothers know three different sides of the same kingdom. Brys has sworn to protect the king. Hull has seen whole peoples lose their independence after trusting Letherii promises. From his rooftop bed, Tehol can follow the money that makes both the palace and the distant conquests possible.', 'Každý z bratrů Beddiktových zná jejich království z jiné strany. Brys přísahal, že ochrání krále. Hull viděl, jak celé národy přišly o samostatnost poté, co uvěřily lederským slibům. Tehol dokáže i z postele na střeše vysledovat, kudy tečou peníze, které vydržují palác a platí výboje na hranicích.'),
       focus:{en:['Letherii wealth built on debt and slavery','Tehol’s comedy as camouflage','A prophecy that flatters the powerful'],cs:['Lederské bohatství postavené na dluzích a otroctví','Teholova komedie jako maska','Proroctví, které lichotí mocným']},
       q:{en:['Who pays for Letheras’s beauty?','Why does Tehol pretend to have nothing?'],cs:['Kdo platí za krásu Lederas?','Proč Tehol předstírá, že nic nemá?']},
       words:{en:[['Seventh Closure','the Letherii prophecy of a coming emperor'],['Azath','a living house that contains dangerous power']],cs:[['Sedmé uzavření','lederské proroctví o příchodu císaře'],['Azath','živý dům, který drží nebezpečnou moc']]},
@@ -2197,6 +2200,7 @@ var BOOK = {
       quiz:{en:[['Who is Tehol’s servant?',['Brys','Bugg','Udinaas'],1],['What is Brys’s role?',['King’s champion','High Priest','Slave'],0]],cs:[['Kdo je Teholův sluha?',['Brys','Bugg','Udinaas'],1],['Jakou roli má Brys?',['Králův šampion','Velekněz','Otrok'],0]]} },
     { book:1, n:3, title:L('The Emperor’s Sword', 'Císařův meč'), en:'The Emperor’s Sword', fear:4,
       sum:L('The sword returns Rhulad from death. He declares himself emperor and eclipses Hannan Mosag, who remains at his side. Rhulad keeps Udinaas close, while Hull Beddict sides with the Edur as war approaches.', 'Meč vrátí Rhulada ze smrti. Rhulad se prohlásí císařem a zastíní Hannana Mosaga, který zůstává po jeho boku. Rhulad si u sebe drží Udinaase a Hull Beddikt se před hrozící válkou přidá k Edur.'),
+      detail:L('The gold coins are still embedded in Rhulad’s skin when he moves again. His brothers have to look at the preparations for his burial every time they face their emperor. Udinaas has already touched that body and heard the terrified young man inside it. Rhulad can ask things of him that he cannot bring himself to ask of Fear.', 'Když se Rhulad znovu pohne, zlaté mince mu pořád vězí v kůži. Kdykoli teď bratři předstoupí před císaře, vidí, jak ho předtím připravili k pohřbu. Udinaas se toho těla dotýkal a slyšel i hlas vyděšeného mladíka, který v něm vězí. Na něj se Rhulad dokáže obrátit i s tím, o co by se Stracha neodvážil požádat.'),
       focus:{en:['Resurrection as a curse','The Edur war machine gathering','Hull’s bitterness choosing a side'],cs:['Vzkříšení jako prokletí','Shromažďování edurské válečné mašinérie','Hullova hořkost, která si vybírá stranu']},
       q:{en:['Is Rhulad still responsible for what he does?','What does a people gain by following a wounded emperor?'],cs:['Je Rhulad pořád odpovědný za to, co dělá?','Co lid získá tím, že následuje zraněného císaře?']},
       words:{en:[['Edur empire','the new order Rhulad forces on the tribes'],['Hull Beddict','a Letherii who chose the Edur']],cs:[['edurská říše','nový řád, který Rhulad vnucuje kmenům'],['Hull Beddikt','Letherijec, který si vybral Edury']]},
@@ -2205,6 +2209,7 @@ var BOOK = {
       quiz:{en:[['Who resurrects Rhulad?',['The Crippled God','Mael','The Errant'],0],['Who was Warlock King when Rhulad returned?',['Hannan Mosag','King Diskanar','Brys'],0]],cs:[['Kdo vzkřísí Rhulada?',['Chromý bůh','Mael','Errant'],0],['Kdo byl králem-zaklínačem, když se Rhulad vrátil?',['Hannan Mosag','Král Diskanar','Brys'],0]]} },
     { book:2, n:1, title:L('The Dying House', 'Umírající dům'), en:'The Dying House', fear:4,
       sum:L('The Azath tower is dying, and Kettle comes to know Silchas Ruin, one of its buried prisoners. She helps sustain the tower while its prisoners press against their confinement. In the north, the Edur and Letherii move from negotiations to war.', 'Azatská věž umírá a Konývka se seznámí se Silchasem Zmarem, jedním z pohřbených vězňů. Pomáhá věž udržet při životě, zatímco se vězni snaží dostat ven. Na severu se vyjednávání Edur a Ledeřanů mění ve válku.'),
+      detail:L('For Kettle the grounds of the tower are home. She knows where it is safe to walk and which voices under the earth are hungry. The news that the Azath is dying upsets that familiar order. Trusting one of the buried voices may be the only way she and the people outside the walls will survive the others.', 'Pozemek kolem věže je pro Konývku domov. Ví, kudy může bezpečně projít a které hlasy zpod země mají hlad. Zpráva, že Azath umírá, obrátí její důvěrně známý svět naruby. Má-li spolu s lidmi za zdí přežít, až se vězni dostanou ven, možná bude muset jednomu z těch hlasů důvěřovat.'),
       focus:{en:['Kettle’s courage','The purpose of the Azath','The prisoners’ attempts to escape'],cs:['Konývčina odvaha','Úloha Azathu','Pokusy vězňů o útěk']},
       q:{en:['What is the Azath really protecting the city from?','Why does Bugg hide what he is?'],cs:['Před čím vlastně Azath město chrání?','Proč Bugg skrývá, co je?']},
       words:{en:[['Kettle','the child bound to the Azath'],['Silchas Ruin','Anomander Rake’s brother, imprisoned for millennia']],cs:[['Konývka','dítě připoutané k Azathu'],['Silchas Zmar','bratr Anomandera Raka, vězněný tisíciletí']]},
@@ -2213,6 +2218,7 @@ var BOOK = {
       quiz:{en:[['Who tends the Azath?',['Seren','Kettle','Feather Witch'],1],['Whom does Kettle meet beneath the tower?',['Silchas Ruin','Brys','Hannan Mosag'],0]],cs:[['Kdo se stará o Azath?',['Seren','Konývka','Péřová čarodějka'],1],['Koho Konývka potká pod věží?',['Silchase Zmara','Bryse','Hannana Mosaga'],0]]} },
     { book:2, n:2, title:L('The Fall of Letheras', 'Pád Lederas'), en:'The Fall of Letheras', fear:5,
       sum:L('The Edur take Letheras. Trull strikes down Ceda Kuru Qan, who is close to defeating Hannan Mosag. Brys disables Rhulad without killing him, then drinks poisoned wine and dies. Rhulad begs his brothers to end his agony.', 'Edur dobyjí Lederas. Trull zabije cedu Kuru Qana, který málem porazí Hannana Mosaga. Brys Rhulada znehybní a ponechá ho naživu, vzápětí však vypije otrávené víno a zemře. Rhulad prosí bratry, aby ukončili jeho utrpení.'),
+      detail:L('Brys has understood the catch in fighting Rhulad. Every time someone kills the emperor the sword brings him back to fight again. Leaving him alive and helpless breaks that pattern, but it leaves the Sengar brothers listening to someone they love beg for the one kindness that would put the sword back in his hand.', 'Brys pochopil, jakou léčku meč chystá každému, kdo se s Rhuladem utká. Pokaždé když císaře někdo zabije, meč ho vrátí do boje. Brys ten koloběh přeruší tím, že Rhulada znehybní a nechá naživu. Bratři Sengarové pak musejí poslouchat, jak je někdo, koho mají rádi, prosí právě o tu úlevu, která by mu meč vrátila do ruky.'),
       focus:{en:['The cost of Rhulad’s invulnerability','Brys’s honour in a rotten court','A city’s elite saving itself'],cs:['Cena Rhuladovy nezranitelnosti','Brysova čest ve shnilém dvoře','Elita města, která zachraňuje sebe']},
       q:{en:['Why does Brys leave Rhulad alive?','What is left of Letheras when its rulers are gone?'],cs:['Proč Brys nechá Rhulada naživu?','Co zůstane z Lederas, když zmizí jeho vládci?']},
       words:{en:[['Ceda','the Letherii high mage'],['champion','a duelist who fights for the crown']],cs:[['Ceda','lederský vrchní mág'],['šampion','soubojník, který bojuje za korunu']]},
@@ -2221,6 +2227,7 @@ var BOOK = {
       quiz:{en:[['Who fights Rhulad?',['Brys Beddict','Tehol','Hull'],0],['Whom does Trull strike down during the conquest?',['Brys','Kuru Qan','Diskanar'],1]],cs:[['Kdo bojuje s Rhuladem?',['Brys Beddikt','Tehol','Hull'],0],['Koho Trull při dobývání srazí?',['Bryse','Kuru Qana','Diskanara'],1]]} },
     { book:2, n:3, title:L('The Sea God', 'Bůh moře'), en:'The Sea God', fear:3,
       sum:L('Bugg saves Tehol and is revealed as Mael, the Elder God of the sea. Silchas Ruin emerges from the Azath grounds. Kettle, Silchas, Udinaas and Fear prepare to leave with Seren Pedac, while Trull chooses to return to Rhulad.', 'Bugg zachrání Tehola a vyjde najevo, že je Mael, starší bůh moře. Silchas Zmar vyjde z pozemku Azathu. Konývka, Silchas, Udinaas a Strach se chystají odejít se Seren Pedak, zatímco Trull se rozhodne vrátit k Rhuladovi.'),
+      detail:L('Bugg has spent much of the book finding meals and making clothes for a man clever enough to ruin a kingdom. Seeing what he can do when Tehol is hurt changes the memory of those small domestic jobs. An Elder God had the freedom to go anywhere and kept choosing that draughty rooftop and his friend.', 'Bugg podstatnou část knihy shání jídlo a obstarává oblečení pro člověka dost chytrého na to, aby zruinoval království. Když čtenář uvidí, co Bugg dokáže, když Teholovi ublíží, dostanou ty drobné domácí práce jiný význam. Starší bůh si mohl vybrat jakékoli místo na světě a vracel se na větrnou střechu za přítelem.'),
       focus:{en:['Revealed divinity and old friendship','Trull’s choice to stay','The Crippled God’s longer game'],cs:['Odhalené božství a staré přátelství','Trullova volba zůstat','Delší hra Chromého boha']},
       q:{en:['Why does Mael serve Tehol?','Can Trull save Rhulad, or only witness him?'],cs:['Proč Mael slouží Teholovi?','Může Trull Rhulada zachránit, nebo ho jen sledovat?']},
       words:{en:[['Mael','the Elder God of the Sea'],['Elder God','a power older than the current pantheon']],cs:[['Mael','starý bůh moře'],['starý bůh','mocnost starší než současný panteon']]},
@@ -2609,7 +2616,9 @@ var BOOK = {
 
   function chapterBody(c, full, peek){
     if(state.mode==='tata'){
-      var h=illusFigure(c.gi)+blk('star',T('h_summary'),'<p>'+esc(t(c.sum))+'</p>');
+      var summary='<p>'+esc(t(c.sum))+'</p>';
+      if(c.detail) summary+='<p>'+esc(t(c.detail))+'</p>';
+      var h=illusFigure(c.gi)+blk('star',T('h_summary'),summary);
       h+=blk('star',T('h_focus'),'<ul class="bullets">'+t(c.focus).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
       if(c.q)h+=blk('star',T('h_questions'),'<ul class="bullets q-list">'+t(c.q).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
       if(c.words)h+=blk('star',T('h_words'),'<div class="words">'+t(c.words).map(function(w){return '<span class="word"><b>'+esc(w[0])+'</b> — <span>'+esc(w[1])+'</span></span>';}).join('')+'</div>');
@@ -2630,6 +2639,7 @@ var BOOK = {
     }
     var k=illusFigure(c.gi);
     var ks=t(KIDSUM[c.gi]);
+    if(ks && c.detail) ks=ks.concat(t(c.detail));
     if(ks) k+=blk('scroll',T('h_what_happened'),ks.map(function(pp){return '<p class="kidrecap">'+esc(pp)+'</p>';}).join(''));
     if(c.quiz){ k+=quizHtml(c); }
     else{ k+='<p class="locknote">'+icon('check')+esc(T('read_done_msg'))+'</p>'; }

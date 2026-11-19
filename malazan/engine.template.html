@@ -241,6 +241,7 @@
   .place-ic svg{width:100%; height:100%}
   .caret svg{width:100%; height:100%}
   .block p{margin:0}
+  .block p+p{margin-top:.7em}
   .bullets{margin:0; padding-left:2px; list-style:none}
   .bullets li{position:relative; padding-left:22px; margin:5px 0}
   .bullets li::before{content:""; position:absolute; left:4px; top:.55em; width:7px; height:7px; border-radius:2px;
@@ -945,7 +946,9 @@
 
   function chapterBody(c, full, peek){
     if(state.mode==='tata'){
-      var h=illusFigure(c.gi)+blk('star',T('h_summary'),'<p>'+esc(t(c.sum))+'</p>');
+      var summary='<p>'+esc(t(c.sum))+'</p>';
+      if(c.detail) summary+='<p>'+esc(t(c.detail))+'</p>';
+      var h=illusFigure(c.gi)+blk('star',T('h_summary'),summary);
       h+=blk('star',T('h_focus'),'<ul class="bullets">'+t(c.focus).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
       if(c.q)h+=blk('star',T('h_questions'),'<ul class="bullets q-list">'+t(c.q).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
       if(c.words)h+=blk('star',T('h_words'),'<div class="words">'+t(c.words).map(function(w){return '<span class="word"><b>'+esc(w[0])+'</b> — <span>'+esc(w[1])+'</span></span>';}).join('')+'</div>');
@@ -966,6 +969,7 @@
     }
     var k=illusFigure(c.gi);
     var ks=t(KIDSUM[c.gi]);
+    if(ks && c.detail) ks=ks.concat(t(c.detail));
     if(ks) k+=blk('scroll',T('h_what_happened'),ks.map(function(pp){return '<p class="kidrecap">'+esc(pp)+'</p>';}).join(''));
     if(c.quiz){ k+=quizHtml(c); }
     else{ k+='<p class="locknote">'+icon('check')+esc(T('read_done_msg'))+'</p>'; }

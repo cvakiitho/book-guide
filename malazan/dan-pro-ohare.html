@@ -241,6 +241,7 @@
   .place-ic svg{width:100%; height:100%}
   .caret svg{width:100%; height:100%}
   .block p{margin:0}
+  .block p+p{margin-top:.7em}
   .bullets{margin:0; padding-left:2px; list-style:none}
   .bullets li{position:relative; padding-left:22px; margin:5px 0}
   .bullets li::before{content:""; position:absolute; left:4px; top:.55em; width:7px; height:7px; border-radius:2px;
@@ -2189,6 +2190,7 @@ var BOOK = {
   CH: [
     { book:1, n:1, title:L('Return to Darujhistan', 'Návrat do Darúdžhistánu'), en:'Return to Darujhistan', fear:3,
       sum:L('Cutter returns to Darujhistan with Scillara, Barathol and Chaur. Kruppe tells much of the city’s story. The retired Bridgeburners run K’rul’s Bar, while Meese keeps the Phoenix Inn. Assassins target the Bridgeburners, and rival councillors manoeuvre for power.', 'Řezník se vrací do Darúdžhistánu se Scillarou, Baratholem a Chaurem. Značnou část příběhu města vypráví Kruppe. Vysloužilí Paliči mostů vedou K’rulův bar a Meese hostinec U Fénixe. Po Paličích jdou asasíni a soupeřící radní usilují o moc.'),
+      detail:L('The people around the Phoenix Inn knew Cutter when he was a boy called Crokus. He can walk the same streets and even visit the same friends, yet he has no easy way to tell them what he has learned to do for a living. Kruppe lets us see the familiar city going about its business while Cutter struggles to find his place in it.', 'Lidé od Fénixe pamatují Řezníka ještě jako kluka, kterému říkali Kvítko. Může chodit stejnými ulicemi a navštěvovat staré přátele, jen se mu těžko vysvětluje, čím se mezitím naučil živit. Kruppe nás nechává nahlédnout do běžného ruchu důvěrně známého města, zatímco Řezník v něm znovu hledá své místo.'),
       focus:{en:['Cutter’s return to his old city','Kruppe as a narrator'],cs:['Řezníkův návrat do rodného města','Kruppe jako vypravěč']},
       q:{en:['How has the city changed since Cutter left it as Crokus?'],cs:['Jak se město změnilo od doby, kdy je Řezník opustil ještě jako Kvítko?']},
       words:{en:[['K’rul’s Bar','the tavern run by surviving Bridgeburners']],cs:[['K’rulův bar','podnik vysloužilých Paličů mostů']]},
@@ -2197,6 +2199,7 @@ var BOOK = {
       quiz:{en:[['What name does Crokus use now?',['Cutter','Toc','Traveller'],0],['Where do the retired Bridgeburners work?',['K’rul’s Bar','Mock’s Hold','The Azath'],0]],cs:[['Jaké jméno teď používá Kvítko?',['Řezník','Toc','Poutník'],0],['Kde pracují vysloužilí Paliči mostů?',['V K’rulově baru','Na Posměvákově tvrzi','V Azathu'],0]]} },
     { book:1, n:2, title:L('The Great Barrow', 'Velká mohyla'), en:'The Great Barrow', fear:3,
       sum:L('Pilgrims come to Itkovian’s Great Barrow near Black Coral. Seerdomin keeps vigil there and befriends Spinnock Durav. Gradithan and his followers spread a devotion to the Dying God. Salind, a priestess of the Redeemer, is caught between the two cults.', 'K Itkovianově Velké mohyle u Černého Korálu přicházejí poutníci. Věštdomin tam drží stráž a spřátelí se se Spinnokem Duravem. Gradithan a jeho stoupenci šíří uctívání umírajícího boha. Salind, kněžka Vykupitele, se ocitne mezi oběma kulty.'),
+      detail:L('Seerdomin once served the Pannion Domin. He knows what men can do when their leaders give cruelty a holy name. At the barrow he sits quietly with the dead man who once took other people’s pain upon himself. It is the one place where he can keep someone company without having to account for his whole past.', 'Věštdomin kdysi sloužil Pannionskému dominiu. Ví, čeho jsou lidé schopni, když jejich velitelé dají krutosti posvátné jméno. U mohyly tiše sedává s mrtvým mužem, který kdysi přijal cizí bolest za svou. Aspoň tady může někomu dělat společnost, aniž by musel skládat účty z celé své minulosti.'),
       focus:{en:['Itkovian’s memory among the pilgrims','The friendship of Spinnock and Seerdomin'],cs:['Itkovianova památka mezi poutníky','Přátelství Spinnoka a Věštdomina']},
       q:{en:['What brings people to the Redeemer’s barrow?'],cs:['Co přivádí lidi k mohyle Vykupitele?']},
       words:{en:[['barrow','a mound raised over a burial']],cs:[['mohyla','násep navršený nad hrobem']]},
@@ -2205,6 +2208,7 @@ var BOOK = {
       quiz:{en:[['Who is buried in the Great Barrow?',['Itkovian','Rake','Trull'],0],['Who keeps watch at the barrow?',['Seerdomin','Cutter','Kallor'],0]],cs:[['Kdo je pohřbený ve Velké mohyle?',['Itkovian','Anomander Dlouhý vlas','Trull'],0],['Kdo hlídá u mohyly?',['Věštdomin','Řezník','Kallor'],0]]} },
     { book:1, n:3, title:L('The travellers', 'Poutníci'), en:'The travellers', fear:3,
       sum:L('Karsa Orlong and Samar Dev travel across the Plain of Lamatath and meet Traveller. Elsewhere, Nimander’s Tiste Andii follow Clip toward Black Coral. At Bastion they encounter the worship of the Dying God, and Clip falls under the god’s influence.', 'Karsa Orlong a Samar Dev přecházejí Lamatathskou pláň a potkají Poutníka. Jinde vede Stříž Nimanderovy Tiste Andii k Černému Korálu. V Bastionu narazí na uctívání umírajícího boha a Stříž se dostane pod jeho vliv.'),
+      detail:L('At Bastion the worshippers drink a substance called kelyk. Nimander’s companions can see what it does to the people in the streets long before they understand who is behind it. Once Clip is stricken, leaving him behind would mean abandoning the very person they have been relying on to guide them.', 'V Baštách pijí vyznavači podivnou tekutinu zvanou kelyk. Nimanderovi druhové na lidech v ulicích vidí její účinky mnohem dřív, než pochopí, kdo za tím vším stojí. Když to postihne i Stříže, museli by při odchodu opustit právě toho, na koho až dosud spoléhali jako na průvodce.'),
       focus:{en:['Why Traveller is going to Darujhistan','The dangers facing Nimander’s group'],cs:['Proč Poutník míří do Darúdžhistánu','Nebezpečí, kterým čelí Nimanderova skupina']},
       q:{en:['What makes Nimander stay with the group when the journey gets harder?'],cs:['Co Nimandera drží u skupiny, když cesta začne být těžší?']},
       words:{en:[['Genabackis','the continent of Darujhistan and Black Coral']],cs:[['Genabakis','světadíl, na kterém leží Darúdžhistán a Černý Korál']]},
@@ -2213,6 +2217,7 @@ var BOOK = {
       quiz:{en:[['Whom do Karsa and Samar Dev meet?',['Traveller','Hood','Gorlas'],0],['Where does Clip lead Nimander?',['Black Coral','Letheras','Malaz City'],0]],cs:[['Koho potkají Karsa a Samar Dev?',['Poutníka','mistra Kápě','Gorlase'],0],['Kam vede Stříž Nimandera?',['Do Černého Korálu','Do Lederas','Do města Malaz'],0]]} },
     { book:2, n:1, title:L('The missing boy', 'Pohřešovaný chlapec'), en:'The missing boy', fear:5,
       sum:L('Harllo is sold to work in a mine, where Bainisk befriends him. Murillio tries to bring Harllo home, but Gorlas Vidikas kills him in a duel. Cutter learns what happened, goes to the mine and kills Gorlas. Harllo makes his way back to Darujhistan.', 'Harlla prodají na práci v dole, kde se s ním spřátelí Bainisk. Murillio se pokusí přivést Harlla domů, ale Gorlas Vidikas ho zabije v souboji. Řezník se dozví, co se stalo, vydá se k dolu a Gorlase zabije. Harllo se dostane zpět do Darúdžhistánu.'),
+      detail:L('Murillio has worn his feet raw walking to the mine. Gorlas meets him on ground of his own choosing, with the right to challenge him and every advantage that money can buy. All Harllo knows below ground is that Bainisk wants to hear about the city. Giving his friend a picture of home is one thing the boy can still do.', 'Murillio si cestou k dolu rozedřel nohy do krve. Gorlas se s ním střetne tam, kde si sám vybral, a má na své straně právo výzvy i všechny výhody, které mu dávají peníze. Harllo dole v šachtě ví jen to, že by si Bainisk rád poslechl něco o městě. Vyprávět kamarádovi o domově je jedna z mála věcí, které pro něj může udělat.'),
       focus:{en:['What Murillio risks for Harllo','How Harllo and Bainisk help one another'],cs:['Co Murillio riskuje kvůli Harllovi','Jak si Harllo a Bainisk pomáhají']},
       q:{en:['How do Harllo’s actions change what the adults around him think they know?'],cs:['Jak Harllovy činy mění představy dospělých, kteří ho obklopují?']},
       words:{en:[['foreman','the person directing work at the mine']],cs:[['předák','člověk, který řídí práci v dole']]},
@@ -2221,6 +2226,7 @@ var BOOK = {
       quiz:{en:[['Who helps Harllo at the mine?',['Bainisk','Gorlas','Endest'],0],['Who kills Murillio?',['Gorlas Vidikas','Cutter','Traveller'],0]],cs:[['Kdo pomáhá Harllovi v dole?',['Bainisk','Gorlas','Endest'],0],['Kdo zabije Murillia?',['Gorlas Vidikas','Řezník','Poutník'],0]]} },
     { book:2, n:2, title:L('The night of the Hounds', 'Noc ohařů'), en:'The night of the Hounds', fear:5,
       sum:L('The Hounds of Shadow break into Darujhistan. Hood manifests, and Rake kills him with Dragnipur so he can reach the realm inside the sword. Traveller, revealed as Dassem Ultor, comes looking for Hood. Rake faces him and dies by his own blade. The Hounds of Light arrive to claim it.', 'Ohaři stínu vtrhnou do Darúdžhistánu. Zjeví se mistr Kápě a Anomander ho zabije Dragnipúrem, aby se mistr Kápě dostal do říše uvnitř meče. Poutník, jímž je Dassem Ultor, hledá mistra Kápě. Anomander se mu postaví a zemře vlastní čepelí. Ohaři světla přicházejí, aby se meče zmocnili.'),
+      detail:L('Dassem has come a very long way to demand an answer from Hood. By the time he reaches Rake, the god he means to confront is already beyond his reach, inside Dragnipur. The two swordsmen face each other with very different knowledge of what a death in that street could accomplish.', 'Dassem urazil ohromnou vzdálenost, aby se mohl mistra Kápě dožadovat odpovědi. Než však dojde k Anomanderovi, bůh, kterého hledá, už je mimo jeho dosah, uvnitř Dragnipúru. Dva šermíři stojí proti sobě v jedné ulici a každý přitom ví něco jiného o tom, k čemu může jejich souboj posloužit.'),
       focus:{en:['Hood’s agreement with Rake','What Traveller knows when he fights Rake'],cs:['Dohoda mistra Kápě a Anomandera','Co Poutník ví, když s Anomanderem bojuje']},
       q:{en:['Why does Rake need to enter his own sword?'],cs:['Proč Anomander potřebuje vstoupit do vlastního meče?']},
       words:{en:[['Hounds of Shadow','the great hounds associated with Shadow']],cs:[['ohaři stínu','obrovští ohaři spojení se Stínem']]},
@@ -2229,6 +2235,7 @@ var BOOK = {
       quiz:{en:[['Who is Traveller?',['Dassem Ultor','Kellanved','Draconus'],0],['What blade kills Rake?',['Dragnipur','Traveller’s own sword','Karsa’s sword'],0]],cs:[['Kdo je Poutník?',['Dassem Ultor','Kellanved','Draconus'],0],['Která čepel zabije Anomandera?',['Dragnipúr','Poutníkův meč','Karsův meč'],0]]} },
     { book:2, n:3, title:L('The gate and the sword', 'Brána a meč'), en:'The gate and the sword', fear:4,
       sum:L('Inside Dragnipur, Hood brings the dead to hold back Chaos. Rake’s sacrifice frees the Gate of Darkness, and Mother Dark returns to her people in Black Coral. At the Great Barrow, the Redeemer takes in the pain of the Dying God. Caladan Brood breaks Dragnipur at Baruk’s estate. Harllo finds Stonny, and she accepts him as her son.', 'Uvnitř Dragnipúru přivede mistr Kápě mrtvé, aby zadrželi Chaos. Anomanderova oběť osvobodí bránu do Kurald Galain a Matka Noc se vrátí ke svému lidu v Černém Korálu. U Velké mohyly přijme Vykupitel bolest umírajícího boha. Caladan Chmur rozbije Dragnipúr v Barúkově paláci. Harllo najde Stonny a ta ho přijme za syna.'),
+      detail:L('For ages, the prisoners inside the sword have hauled a wagon to keep the Gate ahead of Chaos. Hood’s dead give them a little time in which someone else can take that burden. In Darujhistan there is another, quieter homecoming. Harllo finally gets to stand before Stonny and find out whether there is room for him.', 'Vězni v meči celé věky táhli vůz, aby bránu nedostihl Chaos. Mrtví, které přivede mistr Kápě, jim získají trochu času, aby mohl jejich břemeno převzít někdo jiný. V Darúdžhistánu se mezitím odehraje ještě jiný, tišší návrat. Harllo může konečně předstoupit před Stonny a zjistit, jestli je u ní místo i pro něj.'),
       focus:{en:['Mother Dark’s return to the Tiste Andii','What happens to the sword and its prisoners','Harllo and Stonny’s reunion'],cs:['Návrat Matky Noci k Tiste Andii','Co se stane s mečem a jeho vězni','Setkání Harlla a Stonny']},
       q:{en:['How do Itkovian and Rake respond to two different kinds of suffering?'],cs:['Jak Itkovian a Anomander odpovídají na dva druhy utrpení?']},
       words:{en:[['Gate of Darkness','the gate carried on the wagon in Dragnipur']],cs:[['brána do Kurald Galain','brána, kterou veze vůz v Dragnipúru']]},
@@ -2605,7 +2612,9 @@ var BOOK = {
 
   function chapterBody(c, full, peek){
     if(state.mode==='tata'){
-      var h=illusFigure(c.gi)+blk('star',T('h_summary'),'<p>'+esc(t(c.sum))+'</p>');
+      var summary='<p>'+esc(t(c.sum))+'</p>';
+      if(c.detail) summary+='<p>'+esc(t(c.detail))+'</p>';
+      var h=illusFigure(c.gi)+blk('star',T('h_summary'),summary);
       h+=blk('star',T('h_focus'),'<ul class="bullets">'+t(c.focus).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
       if(c.q)h+=blk('star',T('h_questions'),'<ul class="bullets q-list">'+t(c.q).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>');
       if(c.words)h+=blk('star',T('h_words'),'<div class="words">'+t(c.words).map(function(w){return '<span class="word"><b>'+esc(w[0])+'</b> — <span>'+esc(w[1])+'</span></span>';}).join('')+'</div>');
@@ -2626,6 +2635,7 @@ var BOOK = {
     }
     var k=illusFigure(c.gi);
     var ks=t(KIDSUM[c.gi]);
+    if(ks && c.detail) ks=ks.concat(t(c.detail));
     if(ks) k+=blk('scroll',T('h_what_happened'),ks.map(function(pp){return '<p class="kidrecap">'+esc(pp)+'</p>';}).join(''));
     if(c.quiz){ k+=quizHtml(c); }
     else{ k+='<p class="locknote">'+icon('check')+esc(T('read_done_msg'))+'</p>'; }

@@ -23,6 +23,8 @@ const BOOKS = path.join(ROOT, 'books');
 
 // The saga's volumes. `short` labels the book switcher (localized); `order` = volume number (= cast intro.vol).
 const VOLUMES = [
+  { slug: 'hobit', file: 'hobit.html', order: 0, short: { en: 'The Hobbit', cs: 'Hobit' }, standalone: true,
+    description: 'A family read-aloud guide to The Hobbit with chapter notes for parents, quizzes for kids and a map of Bilbo’s journey.' },
   { slug: 'spolecenstvo', file: 'spolecenstvo.html', order: 1, short: { en: 'Fellowship',         cs: 'Společenstvo' } },
   { slug: 'dve-veze',     file: 'dve-veze.html',     order: 2, short: { en: 'Two Towers',         cs: 'Dvě věže' } },
   { slug: 'navrat-krale', file: 'navrat-krale.html', order: 3, short: { en: 'Return of the King', cs: 'Návrat krále' } },
@@ -36,13 +38,10 @@ const noBom = (s) => s.replace(/^﻿/, '');
 const CASTFILE = path.join(BOOKS, 'cast.js');
 if (!fs.existsSync(CASTFILE)) { console.error('✗ Chybí books/cast.js — nemám sdílené postavy.'); process.exit(1); }
 const castJs = noBom(fs.readFileSync(CASTFILE, 'utf8'));
-const CAST = new Function(castJs + '\nreturn CAST;')();
-const introVol = {};
-CAST.forEach((c) => { introVol[c.id] = c.intro.vol; });
 
 // shared saga journey map (routes) — injected into every volume too
 const ROUTESFILE = path.join(BOOKS, 'routes.js');
-const routesJs = fs.existsSync(ROUTESFILE) ? noBom(fs.readFileSync(ROUTESFILE, 'utf8')) : '';
+const routesJs = fs.existsSync(ROUTESFILE) ? noBom(fs.readFileSync(ROUTESFILE, 'utf8')) : 'var ROUTES = [];';
 
 // Only volumes that have a data file get built — and only those appear in the switcher.
 const present = VOLUMES.filter((v) => fs.existsSync(bookData(v)));
@@ -56,9 +55,14 @@ for (const vol of present) {
   let html = engineSrc;
 
   // 1) shared cast + shared routes, then this volume's data
-  html = html.replace('/*__CAST_DATA__*/', () => castJs);
-  html = html.replace('/*__ROUTES_DATA__*/', () => routesJs);
+  const bookCast = vol.standalone ? noBom(fs.readFileSync(path.join(BOOKS, vol.slug + '-cast.js'), 'utf8')) : castJs;
+  const cast = new Function(bookCast + '\nreturn CAST;')();
+  const portraits = new Set(cast.filter(c => c.intro.vol <= vol.order).map(c => c.id));
+  html = html.replace('/*__CAST_DATA__*/', () => bookCast);
+  html = html.replace('/*__ROUTES_DATA__*/', () => vol.standalone ? 'var ROUTES = [];' : routesJs);
   html = html.replace('/*__BOOK_DATA__*/', () => noBom(fs.readFileSync(bookData(vol), 'utf8')));
+  html = html.replace('__PAGE_TITLE__', vol.standalone ? vol.short.en : 'The Ring’s Journey');
+  html = html.replace('__PAGE_DESCRIPTION__', vol.description || 'An interactive read-aloud guide to Tolkien’s The Lord of the Rings for reading to kids — a map of the journey, characters, chapters in two modes, and the world of Middle-earth.');
 
   // 2) book switcher — this volume flagged as current
   const volumes = switcher.map((v) => ({ ...v, current: v.file === vol.file }));
@@ -71,8 +75,7 @@ for (const vol of present) {
   // 4) portraits — only characters introduced up to this volume; missing (but wanted) → shot-list
   const missing = { portraits: [], scenes: [] };
   html = html.replace(/__IMG_([a-z0-9-]+)__/g, (_, id) => {
-    const wanted = introVol[id] !== undefined && introVol[id] <= vol.order;
-    if (!wanted) return ''; // character not in this volume yet
+    if (!portraits.has(id)) return '';
     const f = path.join(ASSETS, 'portraits', id + '.jpg');
     if (fs.existsSync(f)) return jpgUri(f);
     missing.portraits.push(id); return '';
@@ -90,7 +93,7 @@ for (const vol of present) {
   if (leftover) { console.error(`✗ ${vol.file}: nenahrazený token ${leftover[0]}`); hadError = true; continue; }
 
   fs.writeFileSync(path.join(ROOT, vol.file), html, 'utf8');
-  if (vol === present[0]) fs.writeFileSync(path.join(ROOT, 'index.html'), html, 'utf8');
+  if (vol.slug === 'spolecenstvo') fs.writeFileSync(path.join(ROOT, 'index.html'), html, 'utf8');
   const mb = (Buffer.byteLength(html, 'utf8') / 1048576).toFixed(2);
   console.log(`✓ ${vol.file.padEnd(20)} ${mb} MB`);
   if (missing.portraits.length || missing.scenes.length) {

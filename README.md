@@ -4,6 +4,7 @@ Interactive reading companions in English and Czech. Each guide has a map, chapt
 
 | Guide | Volumes | Source |
 | --- | --- | --- |
+| [The Hobbit](lotr/hobit.html) | All 19 chapters · Parent and Kids modes | [Tolkien guide](lotr/README.md) |
 | [The Lord of the Rings](lotr/index.html) | All three Tolkien volumes | [Tolkien guide](lotr/README.md) |
 | [Malazan Book of the Fallen](malazan/index.html) | All ten Steven Erikson volumes | [Malazan guide](malazan/README.md) |
 

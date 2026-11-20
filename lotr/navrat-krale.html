@@ -121,8 +121,7 @@
     display:flex; align-items:center; gap:8px; transition:.15s}
   nav.tabs button svg{width:17px;height:17px}
   nav.tabs button:hover{border-color:var(--gold); color:var(--ink)}
-  nav.tabs button.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
-  nav.tabs button.on{background:linear-gradient(180deg,#3a2c1e,#2b2118); color:var(--paper-2)}
+  nav.tabs button.on{background:linear-gradient(180deg,#3a2c1e,#2b2118); color:#f1ead7; border-color:var(--ink)}
 
   .view{display:none; animation:fade .3s ease}
   .view.on{display:block}
@@ -3765,8 +3764,8 @@ var BOOK = {
   }
 };
 
-  var VOLUMES = [{"file":"spolecenstvo.html","order":1,"short":{"en":"Fellowship","cs":"Společenstvo"},"current":false},{"file":"dve-veze.html","order":2,"short":{"en":"Two Towers","cs":"Dvě věže"},"current":false},{"file":"navrat-krale.html","order":3,"short":{"en":"Return of the King","cs":"Návrat krále"},"current":true}];            // the book switcher (all volumes; current flagged)
-  var VOL = BOOK.meta.vol;                    // which volume this is (1/2/3)
+  var VOLUMES = [{"file":"hobit.html","order":0,"short":{"en":"The Hobbit","cs":"Hobit"},"current":false},{"file":"spolecenstvo.html","order":1,"short":{"en":"Fellowship","cs":"Společenstvo"},"current":false},{"file":"dve-veze.html","order":2,"short":{"en":"Two Towers","cs":"Dvě věže"},"current":false},{"file":"navrat-krale.html","order":3,"short":{"en":"Return of the King","cs":"Návrat krále"},"current":true}];            // the book switcher (all volumes; current flagged)
+  var VOL = BOOK.meta.vol;                    // standalone Hobbit (0) or trilogy volume (1/2/3)
   var ILLUS=BOOK.ILLUS, SCENES=BOOK.SCENES, PLACES=BOOK.PLACES, CH=BOOK.CH, KIDSUM=BOOK.KIDSUM, KIDINTRO=BOOK.KIDINTRO;
   var PORTRAITS={}; CAST.forEach(function(c){ if(c.portrait) PORTRAITS[c.id]=c.portrait; });
   function hasPortrait(id){var u=PORTRAITS[id];return !!(u&&u.slice(0,5)==='data:');}
@@ -3816,9 +3815,10 @@ var BOOK = {
   var BOOKLABEL={}; VBOOKS.forEach(function(d,i){ BOOKLABEL[i+1]=d.label; });
   (function(){ var off={}, acc=0; VBOOKS.forEach(function(d,i){ off[i+1]=acc; acc+=d.count; });
     CH.forEach(function(c){ c.gi = (off[c.book]||0) + c.n; }); })();
-  var GIMETA={}; CH.forEach(function(c){ GIMETA[c.gi]={lab:(BOOKLABEL[c.book]||c.book)+'·'+c.n, title:c.title}; });
+  function chapterNumber(label, n){ return label ? label+'·'+n : String(n); }
+  var GIMETA={}; CH.forEach(function(c){ GIMETA[c.gi]={lab:chapterNumber(BOOKLABEL[c.book],c.n), title:c.title}; });
   // saga-wide label for any (vol, gi) — used by the cross-volume character diary
-  function sagaLabel(vol, gi){ var bs=VOLBOOKS[vol]||[], acc=0; for(var i=0;i<bs.length;i++){ if(gi<=acc+bs[i].count) return bs[i].label+'·'+(gi-acc); acc+=bs[i].count; } return String(gi); }
+  function sagaLabel(vol, gi){ var bs=VOLBOOKS[vol]||[], acc=0; for(var i=0;i<bs.length;i++){ if(gi<=acc+bs[i].count) return chapterNumber(bs[i].label,gi-acc); acc+=bs[i].count; } return String(gi); }
 
   // ===== Kids' chapter recap "What happened in this chapter" (after reading) =====
 
@@ -3928,7 +3928,7 @@ var BOOK = {
     // One continuous, cumulative journey map (shared ROUTES): earlier volumes in full, this volume up to
     // where you've read (Kids) / all of it (Parent); later volumes stay hidden. Legs coloured by group.
     var svg=$('#routeSvg'), rg=reachedGi(), isDad=state.mode==='tata', h='';
-    (typeof ROUTES!=='undefined'?ROUTES:[]).forEach(function(leg){
+    (BOOK.routes || ROUTES).forEach(function(leg){
       if(leg.vol>VOL) return;
       var full = leg.vol<VOL;
       var pts = leg.pts.filter(function(p){ return full || isDad || p[2]<=rg; });
@@ -3951,10 +3951,17 @@ var BOOK = {
     (function(cur){ $('.hm-in',m).addEventListener('click',function(ev){ev.stopPropagation(); showPlace(cur,true);}); })(cur);
     box.appendChild(m);
   }
+  var selectedPlace=null;
   function renderStrip(){
     var rg=reachedGi();
     var strip=$('#mapstrip'); if(!strip) return; strip.innerHTML='';
     var list = state.mode==='tata' ? PLACES : PLACES.filter(function(p){return p.gi<=rg;});
+    if(selectedPlace && list.includes(selectedPlace)) showPlace(selectedPlace,selectedPlace.gi<=rg);
+    else {
+      selectedPlace=null;
+      $('#placePanel').className='place-panel empty';
+      $('#placePanel').textContent=T('place_empty');
+    }
     if(!list.length){ strip.innerHTML='<div class="strip-empty">'+esc(T('strip_empty'))+'</div>'; return; }
     var cur=currentPlace(), curId=cur?cur.id:null;
     list.forEach(function(p){
@@ -3968,6 +3975,7 @@ var BOOK = {
   }
 
   function showPlace(p, reached){
+    selectedPlace=p;
     var pan=$('#placePanel'); pan.className='place-panel';
     var txt = t(state.mode==='kluci' ? p.kid : p.dad);
     var sub = state.lang==='en' ? (T('stop_word')+' '+p.seq) : (esc(p.en)+' · '+T('stop_word')+' '+p.seq);
@@ -3993,7 +4001,7 @@ var BOOK = {
         var card=el('div','ch'+(peek?'':' locked'));
         card.setAttribute('data-gi',c.gi);
         var head=el('div','ch-head');
-        head.innerHTML='<span class="ch-num">'+((BOOKLABEL[bk]||bk)+'·'+c.n)+'</span>'+
+        head.innerHTML='<span class="ch-num">'+chapterNumber(BOOKLABEL[bk],c.n)+'</span>'+
           '<div class="ch-t"><h3>'+esc(t(c.title))+'</h3>'+(state.lang==='cs'?'<span class="en">'+esc(c.en)+'</span>':'')+
           '<div class="fear">'+flames(c.fear)+'</div></div>';
         var right=el('div',null,'');
@@ -4074,6 +4082,7 @@ var BOOK = {
   // unlocked from the start (with their earlier diary); newcomers unlock as you read this volume.
   function charUnlocked(c){ return state.mode==='tata' || c.intro.vol<VOL || (c.intro.vol===VOL && c.intro.gi<=reachedGi()); }
   function renderChars(){
+    openCharId=null;
     $('#charHint').textContent = T(state.mode==='kluci' ? 'charhint_kids' : 'charhint_parent');
     var grid=$('#charGrid'); grid.innerHTML='';
     CAST.filter(function(c){return c.intro.vol<=VOL;}).forEach(function(ch){
@@ -4083,9 +4092,9 @@ var BOOK = {
       if(!unlocked){ frame='<div class="pframe fallback">'+icon('lock')+'</div>'; }
       else { var im=imgPortrait(ch.id,t(ch.name));
         frame = im ? '<div class="pframe">'+im+'</div>'
-                   : '<div class="pframe fallback">'+icon('lock')+'</div>'; }
+                   : '<div class="pframe fallback">'+icon(ch.ic)+'</div>'; }
       card.innerHTML=frame+
-        '<h4>'+(unlocked?esc(t(ch.name)):'? ? ?')+'</h4><div class="race">'+esc(t(ch.rlab))+'</div>';
+        '<h4>'+(unlocked?esc(t(ch.name)):'? ? ?')+'</h4><div class="race">'+(unlocked?esc(t(ch.rlab)):'')+'</div>';
       if(unlocked){ card.setAttribute('tabindex','0'); card.setAttribute('role','button');
         card.addEventListener('click',function(){ toggleChar(ch, card); });
         card.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleChar(ch, card); } }); }
@@ -4221,7 +4230,7 @@ var BOOK = {
     var box=$('#volswitch'); if(!box) return;
     if(!VOLUMES || VOLUMES.length<2){ box.style.display='none'; return; }
     box.innerHTML=VOLUMES.map(function(v){
-      var inner='<span class="voln">'+esc(roman(v.order))+'</span><span>'+esc(t(v.short))+'</span>';
+      var inner=(v.order ? '<span class="voln">'+esc(roman(v.order))+'</span>' : '')+'<span>'+esc(t(v.short))+'</span>';
       return v.current ? '<span class="vol on" aria-current="page">'+inner+'</span>'
                        : '<a class="vol" href="'+esc(v.file)+'">'+inner+'</a>';
     }).join('');
@@ -4256,14 +4265,14 @@ var BOOK = {
   function renderWorld(){
     // In Kids mode we only reveal what will not spoil the story: lore by min-gi, the Ring history only from chapter 2.
     var isDad=state.mode==='tata', rg=reachedGi();
-    var LOREALL = LORE.concat(BOOK.loreExtra||[]);
+    var LOREALL = BOOK.lore || LORE.concat(BOOK.loreExtra||[]);
     var lore = isDad ? LOREALL : LOREALL.filter(function(l){return (l.min||0)<=rg;});
     var h='<div class="lore-grid">';
     lore.forEach(function(l){
       h+='<div class="lore"><div class="lore-head"><span class="lore-ic">'+icon(l.ic)+'</span><h3>'+esc(t(l.title))+'</h3></div><p>'+esc(t(l.text))+'</p></div>';
     });
     h+='<div class="lore wide"><div class="lore-head"><span class="lore-ic">'+icon('elf')+'</span><h3>'+esc(T('world_races'))+'</h3></div><div class="race-list">'+
-      RACES.map(function(r){return '<div class="race-row r-'+r[0]+'"><div class="medallion">'+icon(r[0])+'</div><div><b>'+esc(t(r[1]))+'</b> — <span>'+esc(t(r[2]))+'</span></div></div>';}).join('')+'</div></div>';
+      (BOOK.races||RACES).filter(function(r){return isDad || (r[3]||0)<=rg;}).map(function(r){return '<div class="race-row r-'+r[0]+'"><div class="medallion">'+icon(r[0])+'</div><div><b>'+esc(t(r[1]))+'</b> — <span>'+esc(t(r[2]))+'</span></div></div>';}).join('')+'</div></div>';
     if(isDad || rg>=(BOOK.meta.timelineMin||2)){
       h+='<div class="lore wide"><div class="lore-head"><span class="lore-ic">'+icon('scroll')+'</span><h3>'+esc(T('world_history'))+'</h3></div><ul class="timeline">'+
         (BOOK.timeline||TL).map(function(tl){return '<li><span class="tage">'+esc(t(tl[0]))+'</span><span class="tt">'+esc(t(tl[1]))+'</span> — '+esc(t(tl[2]))+'</li>';}).join('')+'</ul></div>';
@@ -4291,6 +4300,7 @@ var BOOK = {
     $('#relHint').textContent = T(state.mode==='kluci' ? 'relhint_kids' : 'relhint_parent');
     var R=BOOK.relations||{}, h='';
     (R.blocks||[]).forEach(function(b){
+      if(state.mode==='kluci' && b.min>reachedGi()) return;
       h+='<div class="rel-block"><h3>'+esc(t(b.title))+'</h3><p class="rsub">'+esc(t(b.sub))+'</p><div class="chain">'+
         (b.chain||[]).map(function(s){ return s.id!=null ? relNode(s.id, s.role?t(s.role):'') : relArrow(t(s.arrow)); }).join('')+'</div></div>';
     });

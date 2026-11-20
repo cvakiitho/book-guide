@@ -1,11 +1,12 @@
 # The Ring's Journey 💍
 
-An interactive, read-aloud guide to Tolkien's *The Lord of the Rings*, built for reading to kids. One shared engine, **one built file per volume**, tied together by a book switcher. Bilingual (English + Czech), with more languages easy to add.
+Interactive read-aloud guides to Tolkien's *The Hobbit* and *The Lord of the Rings*, built for reading to kids. One shared engine, **one built file per book**, tied together by a book switcher. Bilingual (English + Czech), with more languages easy to add.
 
 ➡️ Open a volume in a browser (each works offline — it's a single file):
 
 | file | volume |
 | --- | --- |
+| **[`hobit.html`](hobit.html)** | *The Hobbit* · all 19 chapters |
 | **`index.html`** or **`spolecenstvo.html`** | *The Fellowship of the Ring* |
 | **`dve-veze.html`** | *The Two Towers* |
 | **`navrat-krale.html`** | *The Return of the King* |
@@ -25,7 +26,7 @@ An interactive, read-aloud guide to Tolkien's *The Lord of the Rings*, built for
 Everything book-specific lives in data; the engine is book-agnostic and reads it from a `BOOK` object. That's what keeps each built file light (a tablet only ever loads one volume) while the app *feels* like one.
 
 - **`engine.template.html`** — the **shared engine**: HTML/CSS/JS, icons, i18n, and the world backdrop (races, Ring-history timeline, lore). Edit engine behaviour here.
-- **`books/<slug>.js`** — **one file per volume** (`spolecenstvo`, `dve-veze`, `navrat-krale`). Defines `var BOOK = {…}`: `meta`, `ui`, `relations`, and the content — `CH` (chapters), `CHARS` + `ARC` (characters and their diary), `PLACES`, `ILLUS`/`SCENES`, `KIDSUM`/`KIDINTRO`, `PORTRAITS`. Structural data (chapter order, `gi` indices, the internal book split, map coordinates, quiz answers) is shared across languages, so it can't drift.
+- **`books/<slug>.js`** holds each book’s bilingual chapters, quizzes, places and scene captions. The trilogy uses `books/cast.js` and `books/routes.js`. *The Hobbit* uses `books/hobit-cast.js` and its own outward and homeward routes, so a child can start with Bilbo and meet each character in reading order.
 - **`build.mjs`** — builds `<slug>.html` for every volume that has a data file, inlining images and injecting the switcher (which lists only the volumes that exist).
 - **`assets/`**:
   - `map.jpg` — the **shared** map of Middle-earth (all volumes use it; each frames its own region),
@@ -58,7 +59,7 @@ The app is **English-first**; Czech is an optional alternate, switchable in the 
 - **UI strings** live in the engine's `UI = { en, cs }` dictionary (a volume can override a few via `BOOK.ui`), read via `T('key')`.
 - **Content** fields are per-field language maps, e.g. `sum: { en: '…', cs: '…' }`, read via `t(field)` (which falls back to English).
 
-To add a language, add its key (e.g. `de`) to `UI` and to the content maps. Czech character and place names follow the translation by **Stanislava Pošustová**; English uses Tolkien's original names.
+To add a language, add its key (e.g. `de`) to `UI` and to the content maps. Czech names follow **František Vrba** in *The Hobbit* and **Stanislava Pošustová** in the trilogy. English uses Tolkien's original names.
 
 ## Adding a volume
 

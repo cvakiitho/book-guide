@@ -86,7 +86,7 @@
   <g class="settlements">
     <use href="#town" x="903" y="201"/><text x="903" y="163" text-anchor="middle">Sepik</text>
     <use href="#town" x="947" y="316"/><text x="935" y="308" text-anchor="end">Y’Ghatan</text>
-    <use href="#town" x="1058" y="305"/><text x="1038" y="282" text-anchor="end">G’dan(isban)</text>
+    <use href="#town" x="1058" y="305"/><text x="1038" y="282" text-anchor="end" data-cs="G’danisban">G’dan(isban)</text>
     <use href="#town" x="1103" y="270"/><text x="1114" y="260">Ehrlitan</text>
     <use href="#town" x="1137" y="298"/><text x="1151" y="297">Hissar</text>
     <use href="#city" x="1004" y="352"/><text x="1014" y="367">Aren</text>

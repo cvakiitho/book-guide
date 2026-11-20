@@ -27,7 +27,7 @@
   <text class="water small" x="107" y="69" data-cs="Drydžhnanský oceán">Dryjna Ocean</text>
   <text class="small" x="87" y="151" text-anchor="middle">Sepik</text>
   <text class="small" x="272" y="185" text-anchor="end">Y’Ghatan</text>
-  <text class="small" x="451" y="191" text-anchor="end">G’dan(isban)</text>
+  <text class="small" x="451" y="191" text-anchor="end" data-cs="G’danisban">G’dan(isban)</text>
   <text class="small" x="307" y="213">Ugarat</text>
   <text class="small" x="511" y="165" text-anchor="end">Ehrlitan</text>
   <text class="small" x="567" y="200">Hissar</text>

@@ -22,7 +22,7 @@ var BOOK = {
       ids: ['tavore','fiddler','bottle','ruthan','sort','blistig'], cap: L('Six soldiers on the last march', 'Šest vojáků na posledním pochodu') }
   },
   loreExtra: [
-    { ic: 'eye', min: 1, title: L('The Forkrul Assail in Kolanse', 'Forkrul Assail v Kolanse'), text: L('The Pure use their Voice to compel others. In Kolanse, they rule through local armies and claim the right to judge those they conquer.', 'Zákonní dokážou Hlasem přinutit druhé k poslušnosti. V Kolanse vládnou prostřednictvím místních vojsk a osobují si právo soudit podrobené.') },
+    { ic: 'eye', min: 1, title: L('The Forkrul Assail in Kolanse', 'Forkrul Assail v Kolanse'), text: L('The Pure use their Voice to compel others. In Kolanse, they rule through local armies and claim the right to judge those they conquer.', 'Zákonní inkvizitoři dokážou Hlasem přinutit druhé k poslušnosti. V Kolanse vládnou prostřednictvím místních vojsk a osobují si právo soudit podrobené.') },
     { ic: 'water', min: 2, title: L('The First Shore', 'První pobřeží'), text: L('The border between the realms of Darkness and Light. The Shake defend it from the Tiste Liosan.', 'Hranice mezi říšemi Noci a Světla. Třasové ji brání před Tiste Liosan.') },
     { ic: 'dragon', min: 5, title: L('Korabas', 'Korabas'), text: L('The otataral dragon suppresses sorcery wherever she passes. Heboric accepts the task of taking her chains.', 'Otataralová dračice tlumí magii všude, kudy projde. Heborik přijme úkol převzít její okovy.') }
   ],
@@ -34,7 +34,7 @@ var BOOK = {
   ILLUS: {
     1:{ cap:L('The Bonehunters meet the children in the Glass Desert.', 'Lovci kostí potkají děti ve Skleněné poušti.') },
     2:{ cap:L('The Watch faces the Liosan at the First Shore.', 'Stráž se postaví Liosanům na Prvním pobřeží.') },
-    3:{ cap:L('Paran’s Host comes to the North Citadel.', 'Paranův houfec dorazí k Severnímu hradu.') },
+    3:{ cap:L('Paran’s Host comes to the North Citadel.', 'Paranův Houfec dorazí k Severnímu hradu.') },
     4:{ cap:L('The Che’Malle and the T’lan Imass attack the Spire.', 'Che’Malle a T’lan Imass zaútočí na Jehlu.') },
     5:{ cap:L('The marines form a line around the barrow.', 'Mariňáci se postaví kolem mohyly.') },
     6:{ cap:L('The survivors remember the fallen.', 'Přeživší vzpomínají na padlé.') }
@@ -49,7 +49,7 @@ var BOOK = {
       dad:L('A border between two magical realms, reached from Kharkanas. The Shake hold it against the Tiste Liosan.', 'Hranice dvou magických říší, k níž vede cesta z Charkanas. Třasové ji brání proti Tiste Liosan.'),
       kid:L('A shore of light where the Shake defend their home.', 'Pobřeží světla, kde Třasové brání svůj domov.') },
     { id:'north-citadel', name:L('North Citadel', 'Severní hrad'), en:'North Citadel', x:null, y:null, region:[46.35,34.94], ic:'tower', gi:3,
-      dad:L('The fortress in Estobanse Province where Paran’s Host confronts the Forkrul Assail.', 'Pevnost v Estobanské provincii, kde se Paranův houfec postaví Forkrul Assailům.'),
+      dad:L('The fortress in Estobanse Province where Paran’s Host confronts the Forkrul Assail.', 'Pevnost v Estobanské provincii, kde se Paranův Houfec postaví Forkrul Assailům.'),
       kid:L('A northern fortress held by Paran’s soldiers.', 'Severní pevnost, kterou drží Paranovi vojáci.') },
     { id:'kolanse', name:L('Kolanse City', 'Město Kolanse'), en:'Kolanse City', x:37.45, y:71.42, region:[61.44,55.45], ic:'town', gi:3,
       dad:L('The city at the inland side of Kolanse Bay, just northwest of the Spire.', 'Město na vnitřní straně Kolanského zálivu, severozápadně od Jehly.'),
@@ -81,14 +81,14 @@ var BOOK = {
       teaser:L('The Liosan try to break through at the First Shore.', 'Liosané se snaží prolomit obranu Prvního pobřeží.'),
       quiz:{en:[['Who attacks the First Shore?',['Tiste Liosan','Tiste Edur','The Nah’ruk'],0],['Who is the Watch?',['Yedan Derryg','Nimander','Kadagar Fant'],0]],cs:[['Kdo útočí na První pobřeží?',['Tiste Liosan','Tiste Edur','Nah’ruk'],0],['Kdo je Stráž?',['Yedan Derryg','Nimander','Kadagar Fant'],0]]} },
     { book:1, n:3, title:L('The North Citadel', 'Severní hrad'), en:'The North Citadel', fear:4,
-      sum:L('Ganoes Paran and the Host occupy the North Citadel in Estobanse. The Forkrul Assail lay siege to it while Brys and Queen Abrastal draw the Kolansii to battle. Tanakalian leads the Perish away from Tavore, and Krughava joins the allied forces after losing command.', 'Ganoes Paran a jeho houfec obsadí Severní hrad v Estobanské provincii. Forkrul Assailové ho oblehnou a Brys s královnou Abrastal mezitím vylákají kolanské vojsko do bitvy. Tanakalian odvede Zánické přílby od Tavore a Krughava se po ztrátě velení připojí ke spojencům.'),
+      sum:L('Ganoes Paran and the Host occupy the North Citadel in Estobanse. The Forkrul Assail lay siege to it while Brys and Queen Abrastal draw the Kolansii to battle. Tanakalian leads the Perish away from Tavore, and Krughava joins the allied forces after losing command.', 'Ganoes Paran a jeho Houfec obsadí Severní hrad v Estobanské provincii. Forkrul Assailové ho oblehnou a Brys s královnou Abrastal mezitím vylákají kolanské vojsko do bitvy. Tanakalian odvede Zánické přílby od Tavore a Krughava se po ztrátě velení připojí ke spojencům.'),
       detail:L('Holding the citadel gives the enemy a target they cannot afford to leave behind. Every Kolansii company facing Paran or Brys is one fewer that can turn on Tavore. The people doing the fighting on this front have to take it on trust that a different army, somewhere out of sight, can make use of the time they buy.', 'Obsazený hrad představuje pro nepřítele hrozbu, kterou si nemůže dovolit nechat v zádech. Každý kolanský oddíl vyslaný proti Paranovi nebo Brysovi bude chybět v boji proti Tavore. Lidem na severním bojišti nezbývá než věřit, že někde mimo jejich dohled dokáže jiné vojsko využít čas, který mu získají.'),
-      focus:{en:['Paran and the Host on the northern front','The separate aims of the allies'],cs:['Paran a jeho houfec na severní frontě','Různé cíle spojenců']},
+      focus:{en:['Paran and the Host on the northern front','The separate aims of the allies'],cs:['Paran a jeho Houfec na severní frontě','Různé cíle spojenců']},
       q:{en:['Why do the allies try to draw defenders away from the Spire?'],cs:['Proč se spojenci snaží odlákat obránce od Jehly?']},
-      words:{en:[['the Host','Paran’s Malazan army']],cs:[['houfec','Paranovo malazské vojsko']]},
+      words:{en:[['the Host','Paran’s Malazan army']],cs:[['Houfec','Paranovo malazské vojsko']]},
       fearnote:L('Siege warfare, desertion and coercion by the Forkrul Assail.', 'Obléhání, odchod spojenců a nátlak Forkrul Assailů.'),
       teaser:L('The defenders of Kolanse face a threat in the north.', 'Obránci Kolanse čelí hrozbě na severu.'),
-      quiz:{en:[['Who holds the North Citadel?',['Paran and the Host','Tavore and the Bonehunters','The Shake'],0],['Who leads the Bolkando force?',['Abrastal','Yan Tovis','Aranict'],0]],cs:[['Kdo drží Severní hrad?',['Paran a jeho houfec','Tavore a Lovci kostí','Třasové'],0],['Kdo vede bolkandské vojsko?',['Abrastal','Yan Tovis','Aranikt'],0]]} },
+      quiz:{en:[['Who holds the North Citadel?',['Paran and the Host','Tavore and the Bonehunters','The Shake'],0],['Who leads the Bolkando force?',['Abrastal','Yan Tovis','Aranict'],0]],cs:[['Kdo drží Severní hrad?',['Paran a jeho Houfec','Tavore a Lovci kostí','Třasové'],0],['Kdo vede bolkandské vojsko?',['Abrastal','Yan Tovis','Aranikt'],0]]} },
     { book:2, n:1, title:L('The Spire', 'Jehla'), en:'The Spire', fear:5,
       sum:L('The Che’Malle and T’lan Imass attack the Spire. Gesler and Stormy try to stop Sinn from reaching the heart and die in the fighting. Hood confronts Reverence at the altar, and Gu’Rull takes the freed heart to the Bonehunters’ position.', 'Che’Malle a T’lan Imass zaútočí na Jehlu. Gesler a Bouřňák se snaží zabránit Sinn v přístupu k srdci a v boji padnou. Mistr Kápě se u oltáře postaví Velebnosti a Gu’Rull odnese osvobozené srdce k Lovcům kostí.'),
       detail:L('For the Forkrul Assail, the heart on the altar is a source of power they can draw on to pass judgement on others. For the allies climbing the Spire, it belongs to someone who has been kept apart from it. Even after they reach the altar, the rescue depends on Gu’Rull carrying that vulnerable piece of a god across a battlefield.', 'Pro Forkrul Assaily je srdce na oltáři zdrojem moci, z něhož čerpají, když soudí ostatní. Spojenci stoupající k vrcholu Jehly vědí, že to srdce patří někomu, komu je dávno odňali. Ani dosažením oltáře záchrana nekončí. Gu’Rull musí tu zranitelnou část boha přenést přes bojiště.'),

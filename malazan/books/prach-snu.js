@@ -25,13 +25,13 @@ var BOOK = {
   },
   loreExtra: [
     { ic: 'sword', min: 1, title: L('The Perish Grey Helms', 'Zánické šedé přílby'), text: L('Warriors devoted to Togg and Fanderay. Krughava is their Mortal Sword and Tanakalian their Shield Anvil.', 'Válečníci zasvěcení Toggovi a Fanderay. Krughava je jejich smrtelný meč a Tanakalian nezdolný štít.') },
-    { ic: 'kchain', min: 2, title: L('Ampelas Rooted', 'Ampelas'), text: L('Gunth’an Acyl’s K’Chain Che’Malle keep. Kalyth serves the Matron while Gu’Rull scouts beyond it.', 'Pevnost matrony Gunth’an Acyl a jejích K’Chain Che’Malle. Kalyth slouží matroně, zatímco Gu’Rull vyráží na průzkum.') },
+    { ic: 'kchain', min: 2, title: L('Ampelas Rooted', 'Ampelas Vrostlá'), text: L('Gunth’an Acyl’s K’Chain Che’Malle keep. Kalyth serves the Matron while Gu’Rull scouts beyond it.', 'Pevnost matrony Gunth’an Acyl a jejích K’Chain Che’Malle. Kalyth slouží matroně, zatímco Gu’Rull vyráží na průzkum.') },
     { ic: 'water', min: 4, title: L('Gallan’s Road', 'Gallanova cesta'), text: L('The Shake use this magical road to reach Kharkanas and continue to the First Shore, where Darkness meets Light.', 'Třasové se touto magickou cestou dostanou do Charkanas a pokračují k Prvnímu pobřeží, kde se Noc stýká se Světlem.') },
     { ic: 'chain', min: 5, title: L('The Snake', 'Had'), text: L('A column of children fleeing Kolanse. Rutt carries a baby and Badalle gives voice to what happens to them.', 'Zástup dětí prchajících z Kolanse. Rutt nese nemluvně a Badalle vypráví o tom, co se jim děje.') }
   ],
   timeline: [
     [L('Letheras', 'Lederas'), L('Departure', 'Odchod'), L('Tavore sets out and Brys accompanies the expedition with Letherii troops.', 'Tavore vyrazí a Brys ji doprovází s lederskými oddíly.'), 1],
-    [L('Bolkando', 'Bolkando'), L('A difficult passage', 'Obtížný průchod'), L('The Perish and Khundryl negotiate passage and face resistance.', 'Zánické přílby a Chundrylové vyjednávají o průchodu a čelí odporu.'), 4],
+    [L('Bolkando', 'Bolkando'), L('A difficult passage', 'Obtížný průchod'), L('The Perish and Khundryl negotiate passage and face resistance.', 'Zánické šedé přílby a chundrylské Spálené slzy vyjednávají o průchodu a čelí odporu.'), 4],
     [L('The eastern wastes', 'Východní pustiny'), L('The Nah’ruk strike', 'Útok Nah’ruk'), L('The Nah’ruk hit the Bonehunters before fighting the Che’Malle separately.', 'Nah’ruk napadnou Lovce kostí a později se v samostatném střetu utkají s Che’Malle.'), 5]
   ],
   ILLUS: {
@@ -55,7 +55,7 @@ var BOOK = {
     { id:'bolkando', name:L('Kingdom of Bolkando', 'Království Bolkando'), en:'Kingdom of Bolkando', x:26.65, y:74, region:[86.83,68.27], ic:'crown', gi:1,
       dad:L('A kingdom southeast of Awl’dan. The regional pin marks the kingdom through which the allied forces seek passage.', 'Království jihovýchodně od Oul’danu. Značka označuje území, kterým chtějí spojenci projít.'),
       kid:L('A kingdom the soldiers have to pass through on their way east.', 'Království, kterým vojáci potřebují projít cestou na východ.') },
-    { id:'skykeep', name:L('Ampelas Rooted', 'Pevnost Ampelas'), en:'Ampelas Rooted', x:null, y:null, region:null, ic:'tower', gi:2,
+    { id:'skykeep', name:L('Ampelas Rooted', 'Ampelas Vrostlá'), en:'Ampelas Rooted', x:null, y:null, region:null, ic:'tower', gi:2,
       dad:L('The Che’Malle keep where Kalyth serves Gunth’an Acyl. The book map gives no location for the keep.', 'Pevnost K’Chain Che’Malle, kde Kalyth slouží Gunth’an Acyl. Knižní mapa její polohu neuvádí.'),
       kid:L('The fortress where the Matron asks Kalyth for help.', 'Pevnost, kde matrona požádá Kalyth o pomoc.') },
     { id:'akryn', name:L('Ak’ryn', 'Ak’ryn'), en:'Ak’ryn', x:24.1, y:71.33, region:[77.6,58.81], ic:'forest', gi:3,
@@ -73,7 +73,7 @@ var BOOK = {
   ],
   CH: [
     { book:1, n:1, title:L('The march east', 'Pochod na východ'), en:'The march east', fear:3,
-      sum:L('From Letheras, Tavore prepares to lead the Bonehunters east. King Tehol sends Brys with a Letherii force. The Perish and Khundryl go ahead to negotiate passage through Bolkando. They meet resistance before the armies can move into the wastes.', 'Tavore se chystá vést Lovce kostí z Lederas na východ. Král Tehol vyšle Bryse s lederským vojskem. Zánické šedé přílby a Chundrylové jdou napřed vyjednat průchod přes Bolkando. Než se vojska dostanou do pustin, narazí na odpor.'),
+      sum:L('From Letheras, Tavore prepares to lead the Bonehunters east. King Tehol sends Brys with a Letherii force. The Perish and Khundryl go ahead to negotiate passage through Bolkando. They meet resistance before the armies can move into the wastes.', 'Tavore se chystá vést Lovce kostí z Lederas na východ. Král Tehol vyšle Bryse s lederským vojskem. Zánické šedé přílby a chundrylské Spálené slzy jdou napřed vyjednat průchod přes Bolkando. Než se vojska dostanou do pustin, narazí na odpor.'),
       detail:L('Before the march Tavore asks Fiddler to read the Deck of Dragons in Letheras. The prospect alarms soldiers who have followed him into battle. Being dealt a card can mean being drawn into the business of a god. Around one table, people who thought they knew their jobs in the army discover how little they know about the journey ahead.', 'Ještě v Lederas požádá Tavore Šumaře, aby vyložil balíček draků. Vyděsí tím i vojáky, kteří se Šumařem prošli bitvou. Kdo dostane kartu, může se zaplést do záležitostí některého z bohů. Kolem jednoho stolu tak lidé, kteří své místo ve vojsku dobře znají, zjistí, jak málo vědí o cestě, která je čeká.'),
       focus:{en:['The allies who march with the Bonehunters','What Tavore tells her officers'],cs:['Kdo táhne po boku Lovců kostí','Co Tavore říká svým důstojníkům']},
       q:{en:['Why does Brys want to accompany Tavore?'],cs:['Proč chce Brys Tavore doprovodit?']},

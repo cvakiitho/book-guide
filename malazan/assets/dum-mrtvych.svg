@@ -42,7 +42,7 @@
   <text class="small" x="899" y="311">Dosin Pali</text>
   <text class="water" x="883" y="363" data-cs="Sahulské moře">Sahul Sea</text>
   <text class="small" x="569" y="348" text-anchor="middle" data-cs="Vatharský hvozd">Vathar Forest</text>
-  <text class="small" x="655" y="405" data-cs="Ubarýd">Ubaryd</text>
+  <text class="small" x="655" y="405">Ubaryd</text>
   <text class="small" x="532" y="418" text-anchor="end">Bylan</text>
   <text class="water small" x="681" y="452" data-cs="Moře Dodžal Hading">Dojal Hading Sea</text>
   <text x="574" y="497" text-anchor="end">Aren</text>

@@ -51,8 +51,25 @@ article,.cast-card{background:var(--panel);border:1px solid var(--rule);border-r
     get(key) { try { return localStorage.getItem('hp-guide:' + key); } catch { return null; } },
     set(key, value) { try { localStorage.setItem('hp-guide:' + key, value); } catch { /* Reading also works without storage. */ } },
   };
-  let lang = storage.get('language') === 'cs' ? 'cs' : 'en';
-  let kids = storage.get('mode') === 'kids';
+  // A volume link can carry preferences when storage is blocked or isolated per local file.
+  const linkPrefs = new URLSearchParams(location.hash.slice(1));
+  let lang = (linkPrefs.get('lang') ?? storage.get('language')) === 'cs' ? 'cs' : 'en';
+  let kids = (linkPrefs.get('mode') ?? storage.get('mode')) === 'kids';
+  function preferenceHash() {
+    const mode = kids ? 'kids' : 'parent';
+    const savedMode = storage.get('mode') || 'parent';
+    const savedLanguage = storage.get('language') || 'en';
+    if (location.protocol !== 'file:' && savedMode === mode && savedLanguage === lang) return '';
+    return '#' + new URLSearchParams({ mode, lang });
+  }
+  function savePreferences() {
+    storage.set('mode', kids ? 'kids' : 'parent');
+    storage.set('language', lang);
+    const hash = preferenceHash();
+    if (hash !== location.hash) {
+      try { history.replaceState(null, '', location.href.split('#')[0] + hash); } catch { /* Volume links still carry the preferences. */ }
+    }
+  }
   const progressKey = 'read:' + book.slug;
   function readCount() {
     const value = Number(storage.get(progressKey));
@@ -164,11 +181,11 @@ article,.cast-card{background:var(--panel);border:1px solid var(--rule);border-r
     renderChapters(); renderCast();
   }
   for (const id of ['parent', 'kids']) $(id).onclick = () => {
-    kids = id === 'kids'; storage.set('mode', id); choose(selected);
+    kids = id === 'kids'; savePreferences(); choose(selected);
   };
   for (const id of ['chapters', 'characters']) $(id).onclick = () => { section = id; render(); };
-  $('language').onchange = e => { lang = e.target.value; storage.set('language', lang); render(); };
-  $('volume').onchange = e => { location.href = e.target.value; };
+  $('language').onchange = e => { lang = e.target.value; savePreferences(); render(); };
+  $('volume').onchange = e => { location.href = e.target.value + preferenceHash(); };
   $('chapter').onchange = e => choose(Number(e.target.value));
   $('next').onclick = () => choose(selected + 1);
   $('mark').onclick = () => setProgress(selected <= done ? selected - 1 : selected);

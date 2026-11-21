@@ -1,0 +1,212 @@
+[
+  {
+    "title": ["News behind closed doors", "Zprávy za zavřenými dveřmi"],
+    "recap": ["The Muggle prime minister learns that some terrible events have [magical causes]. Two governments are trying to understand the same summer.", "Mudlovský premiér zjistí, že některé děsivé události mají [kouzelnické příčiny]. Dvě vlády se snaží pochopit totéž léto."],
+    "discuss": ["Tell one piece of news first as the public hears it and then as the minister hears it.", "Povyprávějte jednu zprávu nejprve tak, jak ji slyší veřejnost, a pak tak, jak ji slyší premiér."],
+    "alt": ["A lamplit ministerial office.", "Ministrova pracovna ve světle lampy."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A promise at Spinner's End", "Slib v Tkalcovské ulici"],
+    "recap": ["Narcissa asks Snape to protect Draco. He makes [an Unbreakable Vow] with Bellatrix as witness and binder.", "Narcisa prosí Snapea, aby chránil Draca. Před Belatrix s ní uzavře [neporušitelný slib]."],
+    "discuss": ["What does each person in the room hope the promise will settle?", "Co si od slibu každý v místnosti slibuje?"],
+    "alt": ["Three strands of golden light.", "Tři vlákna zlatého světla."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A visitor for the Dursleys", "Návštěva u Dursleyových"],
+    "recap": ["Dumbledore comes to collect Harry and explains what [Sirius] has left him. The visit is uncomfortable for his hosts.", "Brumbál přijde pro Harryho a vysvětlí mu, co mu odkázal [Sirius]. Hostitelům není návštěva příliš příjemná."],
+    "discuss": ["Which things left to Harry are responsibilities as well as possessions?", "Které zděděné věci přinášejí Harrymu také odpovědnost?"],
+    "alt": ["A glass of mead floating over a chair.", "Sklenice medoviny se vznáší nad křeslem."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An armchair with slippers", "Křeslo v bačkorách"],
+    "recap": ["A wrecked room hides a nervous wizard disguised as [an armchair]. Dumbledore wants Slughorn back at Hogwarts.", "V poničeném pokoji se skrývá nervózní kouzelník převlečený [za křeslo]. Brumbál chce Křiklana zpátky v Bradavicích."],
+    "discuss": ["Which invitation does Slughorn find hardest to resist?", "Které nabídce Křiklan nejhůř odolává?"],
+    "alt": ["Slippers tucked beneath a plump armchair.", "Bačkory pod měkkým křeslem."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["Summer results", "Letní výsledky"],
+    "recap": ["At the Burrow Harry learns how he did in [his O.W.L. exams]. The marks seem to close one door in his plans.", "V Doupěti se Harry dozví výsledky [zkoušek NKÚ]. Zdá se, že známky mu překazí jeden z plánů."],
+    "discuss": ["Why can a perfectly good mark still feel disappointing?", "Proč může i docela dobrá známka zklamat?"],
+    "alt": ["Exam results on the breakfast table.", "Výsledky zkoušek na snídaňovém stole."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A detour after shopping", "Oklika po nákupech"],
+    "recap": ["The friends follow Draco to [Borgin and Burkes]. What they overhear leaves Harry with questions about Draco's plans.", "Přátelé sledují Draca [k Borginovi a Burkesovi]. Po zaslechnutém rozhovoru Harry přemítá, co má Draco v plánu."],
+    "discuss": ["Which details come from watching Draco, and which are guesses?", "Které podrobnosti pocházejí z pozorování a které jsou domněnkami?"],
+    "alt": ["An antique cabinet in a dim shop.", "Starožitná skříň v potemnělém obchodě."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An invitation on the train", "Pozvání ve vlaku"],
+    "recap": ["Slughorn gathers guests for lunch. Later Harry hides [on the luggage rack] to listen to Draco and is discovered.", "Křiklan sezve hosty k obědu. Harry se později schová [v síti na zavazadla], aby vyslechl Draca, ale ten ho odhalí."],
+    "discuss": ["Compare being invited to listen with listening in secret.", "Porovnejte rozhovor, k němuž jste pozváni, s tajným nasloucháním."],
+    "alt": ["A luggage rack inside a train compartment.", "Síť na zavazadla ve vlakovém kupé."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Late at the gates", "Pozdě u brány"],
+    "recap": ["[Tonks] finds Harry on the train and helps him reach school. At the feast he hears that Snape will teach Defence.", "[Tonksová] najde Harryho ve vlaku a pomůže mu dostat se do školy. Při hostině se dozví, že obranu bude učit Snape."],
+    "discuss": ["Who takes time to help after an embarrassing experience?", "Kdo si udělá čas pomoci Harrymu po nepříjemném zážitku?"],
+    "alt": ["The school gates at night.", "Školní brána v noci."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Notes in the margin", "Poznámky na okraji"],
+    "recap": ["An old [Potions textbook] gives Harry a different way to brew. Following its notes earns him a little bottle of luck.", "Stará [učebnice lektvarů] poradí Harrymu jiný postup. Za lektvar podle poznámek získá lahvičku štěstí."],
+    "discuss": ["When should a set of handwritten instructions earn a reader's trust?", "Kdy si ručně připsaný návod zaslouží důvěru čtenáře?"],
+    "alt": ["Handwritten notes in a worn Potions book.", "Rukopisné poznámky v ohmatané učebnici lektvarů."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A family in a memory", "Rodina ve vzpomínce"],
+    "recap": ["Dumbledore takes Harry into a memory of [the Gaunt family]. A ring and a locket carry a great deal of family pride.", "Brumbál zavede Harryho do vzpomínky na [rodinu Gauntových]. Prsten i medailon pro ni mají velkou cenu."],
+    "discuss": ["Notice how the adults treat Merope. What do their treasured objects seem to mean to them?", "Všímejte si, jak dospělí jednají s Meropou. Co pro ně jejich cennosti znamenají?"],
+    "alt": ["An old gold ring on a rough table.", "Starý zlatý prsten na hrubém stole."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Tryouts at the hoops", "Zkouška u obručí"],
+    "recap": ["Ron wins the Keeper tryout. Hermione admits using [a Confundus Charm] on his rival.", "Ron vyhraje konkurz na brankáře. Hermiona se přizná, že na jeho soupeře seslala [matoucí kouzlo]."],
+    "discuss": ["Where is the line between supporting a friend and deciding the result for them?", "Kde je hranice mezi podporou kamaráda a tím, že za něj rozhodnete výsledek?"],
+    "alt": ["A keeper's glove and a broom.", "Brankářská rukavice a koště."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The torn parcel", "Natržený balíček"],
+    "recap": ["On the way back from Hogsmeade Katie touches [a cursed necklace]. Harry suspects Draco but cannot prove who sent it.", "Při cestě z Prasinek se Katie dotkne [prokletého náhrdelníku]. Harry podezírá Draca, ale nedokáže, kdo ho poslal."],
+    "discuss": ["Katie is badly hurt. Pause when help comes and sort facts from suspicions.", "Katie utrpí vážné zranění. Až přijde pomoc, oddělte fakta od podezření."],
+    "alt": ["Opals spilling from torn brown paper.", "Opály vyklouzly z roztrženého hnědého papíru."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A visit to an orphanage", "Návštěva sirotčince"],
+    "recap": ["In an old memory Dumbledore visits [young Tom Riddle]. The boy already knows he can do things the other children cannot.", "V dávné vzpomínce navštíví Brumbál [mladého Toma Raddlea]. Chlapec už ví, že dokáže věci, které ostatní děti neumějí."],
+    "discuss": ["Which questions does Dumbledore ask before offering Tom a place?", "Na co se Brumbál zeptá, než Tomovi nabídne místo?"],
+    "alt": ["A plain wardrobe in a little room.", "Prostá skříň v malém pokoji."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A hint of luck", "Náznak štěstí"],
+    "recap": ["Ron thinks Harry gave him [liquid luck] before the match. He plays brilliantly even though he never drank it.", "Ron si myslí, že mu Harry před zápasem dal [tekuté štěstí]. Chytá skvěle, i když ho vůbec nevypil."],
+    "discuss": ["What does Ron do for himself that he credits to the potion?", "Co Ron zvládne sám, a přitom to přičítá lektvaru?"],
+    "alt": ["A tiny vial of liquid gold.", "Lahvička tekutého zlata."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Voices at the party", "Hlasy na večírku"],
+    "recap": ["At Slughorn's party Harry slips away to overhear [Snape and Draco]. Their conversation deepens his suspicions.", "Na Křiklanově večírku se Harry vytratí a vyslechne [Snapea a Draca]. Rozhovor jeho podezření ještě prohloubí."],
+    "discuss": ["What would you need to know to understand both sides of this conversation?", "Co byste potřebovali vědět, abyste porozuměli oběma stranám rozhovoru?"],
+    "alt": ["Christmas baubles and party drapes.", "Vánoční ozdoby a slavnostní závěsy."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A Christmas visitor", "Vánoční host"],
+    "recap": ["Scrimgeour visits the Burrow hoping Harry will [publicly support the Ministry]. Harry remembers how the Ministry treated him.", "Brousek přijde do Doupěte s nadějí, že Harry [veřejně podpoří ministerstvo]. Harry si pamatuje, jak s ním ministerstvo zacházelo."],
+    "discuss": ["What would have to change for Harry to trust the minister?", "Co by se muselo změnit, aby Harry ministrovi důvěřoval?"],
+    "alt": ["Paper crowns at the Christmas table.", "Papírové koruny u vánočního stolu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A gap in a memory", "Mezera ve vzpomínce"],
+    "recap": ["Slughorn's memory of a question from Tom has been [altered]. Dumbledore needs Harry's help to obtain the true version.", "Křiklanova vzpomínka na Tomovu otázku byla [pozměněna]. Brumbál potřebuje Harryho pomoc, aby získal její skutečnou podobu."],
+    "discuss": ["How can trying to hide something draw attention to it?", "Jak může snaha něco skrýt přitáhnout pozornost právě k tomu?"],
+    "alt": ["A cloudy memory in a vial.", "Zakalená vzpomínka v lahvičce."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A dangerous toast", "Nebezpečný přípitek"],
+    "recap": ["Poisoned mead puts Ron in danger. Harry remembers [a bezoar] and gets it to Ron in time.", "Otrávená medovina ohrozí Rona. Harry si vzpomene na [bezoár] a podá mu ho včas."],
+    "discuss": ["Which old lesson becomes important in a completely different setting?", "Která dřívější lekce nabude důležitosti ve zcela jiné situaci?"],
+    "alt": ["A bezoar beside an overturned goblet.", "Bezoár u převrženého poháru."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Two watchers", "Dva pozorovatelé"],
+    "recap": ["Trying to follow Draco's movements, Harry asks [Dobby and Kreacher] to watch him.", "Když se Harry snaží přijít Dracovi na stopu, požádá [Dobbyho a Kráturu], aby ho sledovali."],
+    "discuss": ["How do the two elves react to receiving the same instructions?", "Jak dva skřítci reagují na stejné pokyny?"],
+    "alt": ["Two house-elf towels on a kitchen stool.", "Dvě utěrky domácích skřítků na kuchyňské stoličce."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Treasures on velvet", "Poklady na sametu"],
+    "recap": ["A memory shows Tom visiting Hepzibah Smith. She proudly displays a locket and [Hufflepuff's cup].", "Vzpomínka zachycuje Toma u Hepziby Smithové. S hrdostí mu ukáže medailon a [pohár Helgy z Mrzimoru]."],
+    "discuss": ["Who thinks this is a friendly visit? Who has another reason to be there?", "Kdo považuje návštěvu za přátelskou? Kdo přišel ještě z jiného důvodu?"],
+    "alt": ["A gold cup and locket displayed on velvet.", "Zlatý pohár a medailon vystavené na sametu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A wall that stays shut", "Zeď, která se neotevře"],
+    "recap": ["The elves trace Draco to [the Room of Requirement]. Knowing the place still does not tell Harry how to enter it.", "Skřítci vysledují Draca [do Komnaty nejvyšší potřeby]. Ani znalost místa Harrymu nestačí k tomu, aby se dostal dovnitř."],
+    "discuss": ["What makes asking the right question more useful than trying the same door again?", "Proč může správná otázka pomoci víc než další pokus otevřít stejné dveře?"],
+    "alt": ["A stretch of wall on a castle corridor.", "Kus zdi v hradní chodbě."],
+    "mood": "tense"
+  },
+  {
+    "title": ["By Hagrid's fire", "U Hagridova ohně"],
+    "recap": ["After Aragog's burial, Harry persuades Slughorn to share [his real memory]. Talking about Lily helps him find the words.", "Po Aragogově pohřbu přesvědčí Harry Křiklana, aby mu dal [pravou vzpomínku]. Rozhovor o Lily mu pomůže najít slova."],
+    "discuss": ["Listen for the moment Slughorn's pride gives way to regret.", "Všimněte si okamžiku, kdy Křiklanovu pýchu vystřídá lítost."],
+    "alt": ["A spade beside freshly turned earth.", "Rýč vedle čerstvě obrácené země."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Pieces of a soul", "Kousky duše"],
+    "recap": ["The memory explains Tom's question about [Horcruxes]. Harry and Dumbledore work out what this means for finding Voldemort's hiding places.", "Vzpomínka vysvětlí Tomovu otázku o [viteálech]. Harry a Brumbál uvažují, co to znamená pro hledání Voldemortových skrýší."],
+    "discuss": ["Sort the objects they know about from the ones they are still guessing at.", "Rozdělte předměty na známé a ty, o nichž se zatím jen dohadují."],
+    "alt": ["An hourglass and curious old objects.", "Přesýpací hodiny a podivné starožitnosti."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An untested spell", "Nevyzkoušené kouzlo"],
+    "recap": ["Harry tries [a spell from the book] during a fight and badly wounds Draco. Snape arrives in time to help.", "Při souboji Harry zkusí [kouzlo z učebnice] a vážně Draca zraní. Snape stihne přijít na pomoc."],
+    "discuss": ["This injury is graphic. Pause after help arrives and revisit the choice Harry wishes he could undo.", "Zranění je popsáno výrazně. Až dorazí pomoc, vraťte se k rozhodnutí, které by Harry rád vzal zpět."],
+    "alt": ["A cracked mirror above wet tiles.", "Prasklé zrcadlo nad mokrou dlažbou."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A secret overheard", "Vyslechnuté tajemství"],
+    "recap": ["Trelawney's story tells Harry who overheard part of [the prophecy]. Dumbledore asks Harry to come on a journey.", "Z vyprávění Trelawneyové Harry zjistí, kdo kdysi zaslechl část [věštby]. Brumbál ho požádá, aby se s ním vydal na cestu."],
+    "discuss": ["How does the news change Harry's feelings just before the journey?", "Jak zpráva změní Harryho pocity těsně před cestou?"],
+    "alt": ["A crystal ball beside a bottle.", "Křišťálová koule vedle lahve."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The green basin", "Zelená mísa"],
+    "recap": ["In a seaside cave Dumbledore drinks [the potion in the basin]. Harry must keep a frightening promise to his teacher.", "V jeskyni u moře vypije Brumbál [lektvar z mísy]. Harry musí dodržet děsivý slib, který dal učiteli."],
+    "discuss": ["This is a distressing scene. Let the listener set the pace as the two try to leave.", "Je to tíživá scéna. Při odchodu z jeskyně nechte tempo na posluchači."],
+    "alt": ["A glowing green basin in a dark cave.", "Zelená mísa září v tmavé jeskyni."],
+    "mood": "intense"
+  },
+  {
+    "title": ["On the tower", "Na věži"],
+    "recap": ["On the tower Draco hesitates. [Snape] kills Dumbledore while Harry is unable to move or speak.", "Na věži Draco zaváhá. [Snape] zabije Brumbála, zatímco Harry se nemůže pohnout ani promluvit."],
+    "discuss": ["A trusted adult dies here. Give the listener time before the chase begins.", "Zde zemře dospělý, kterému děti věřily. Dopřejte posluchači čas, než začne pronásledování."],
+    "alt": ["The battlements beneath a night sky.", "Cimbuří proti noční obloze."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Across the grounds", "Přes školní pozemky"],
+    "recap": ["Harry chases Snape across the grounds. Snape reveals that he was [the Half-Blood Prince].", "Harry pronásleduje Snapea přes školní pozemky. Snape odhalí, že býval [princem dvojí krve]."],
+    "discuss": ["Which moments with the book sound different once Harry knows its owner?", "Které chvíle s učebnicí působí jinak, když Harry zná jejího majitele?"],
+    "alt": ["A cloaked figure races away from a burning hut.", "Zahalená postava prchá od hořící hájenky."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A song over the school", "Píseň nad školou"],
+    "recap": ["The survivors gather in the hospital wing. Over the castle they hear [Fawkes singing] for Dumbledore.", "Ti, kdo přežili, se sejdou na ošetřovně. Nad hradem slyší, jak [Fawkes zpívá] Brumbálovi."],
+    "discuss": ["Who sits beside someone else when words are difficult?", "Kdo přisedne k druhému, když se těžko hledají slova?"],
+    "alt": ["A phoenix soaring over the castle.", "Fénix se vznáší nad hradem."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Beside the white tomb", "U bílé hrobky"],
+    "recap": ["After the funeral Harry prepares to search for Horcruxes. [Ron and Hermione] intend to go with him.", "Po pohřbu se Harry chystá hledat viteály. [Ron a Hermiona] se rozhodnou, že půjdou s ním."],
+    "discuss": ["What promise can the friends make even though they do not know the route?", "Co si přátelé mohou slíbit, i když ještě neznají cestu?"],
+    "alt": ["A white tomb by the lake.", "Bílá hrobka u jezera."],
+    "mood": "intense"
+  }
+]

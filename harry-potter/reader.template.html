@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An illustrated Harry Potter chapter companion for family reading in English and Czech.">
+<title>__TITLE__ · Harry Potter · Book Guide</title>
+<style>
+:root{color-scheme:light dark;--paper:#f4efe3;--panel:#fffaf0;--ink:#222e2a;--dim:#56625a;--rule:#c8c6b2;--green:#24554d;--mint:#e0eae0;--oak:#81532b;--shadow:0 .4rem 1.6rem #243c3210}
+@media(prefers-color-scheme:dark){:root{--paper:#182321;--panel:#202e2b;--ink:#f3eddf;--dim:#bec9bf;--rule:#52635a;--green:#b0dac7;--mint:#30473d;--oak:#e4b98a;--shadow:none}}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--paper);font:1rem/1.55 system-ui,sans-serif}
+button,select{font:inherit;color:inherit}button,select,a{touch-action:manipulation}button,select{cursor:pointer}button{background:var(--panel);border:1px solid var(--rule);border-radius:.45rem;padding:.55rem .9rem}button:disabled{opacity:.45;cursor:auto}button:hover:enabled,select:hover,a:hover{text-decoration:underline}a{color:var(--green)}
+:focus-visible{outline:3px solid #dd9e2c;outline-offset:3px}[hidden]{display:none!important}h1,h2,h3,p,figure{margin:0}h1,h2,h3,.shelf{font-family:Georgia,'Times New Roman',serif}h1,h2,h3{line-height:1.14;font-weight:500}
+header,.wrap{max-width:74rem;margin:auto;padding-inline:clamp(1rem,4vw,3rem)}header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.9rem}
+.shelf{font-size:1.17rem;font-weight:bold;color:var(--ink);text-decoration:none}.controls,.switch,.section-nav,.actions{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.switch{border:1px solid var(--rule);border-radius:.5rem;gap:0;overflow:hidden}.switch button{border:0;border-radius:0;padding:.35rem .85rem}.switch [aria-pressed=true],.primary{background:var(--green);color:var(--panel)}
+select{background:var(--panel);border:1px solid var(--rule);border-radius:.4rem;max-width:100%;padding:.35rem .5rem}
+.hero{background:#1a302e url('__BANNER__') center 54%/cover;color:#fff8e5;border-radius:.85rem;overflow:hidden;box-shadow:var(--shadow)}
+.hero-inner{padding:clamp(1.6rem,5vw,3.7rem);background:linear-gradient(90deg,#101e25ed,#15282aab 48%,transparent 87%)}.series{font:italic 1.35rem Georgia,serif;color:#f8d897}
+h1{font-size:clamp(2.45rem,6vw,4.7rem);max-width:17ch;margin:.35rem 0 .6rem;text-wrap:balance}.lead{max-width:34rem;font-size:1.03rem;text-shadow:0 1px 3px #102025}.volume-picker{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.35rem}.volume-picker select{color:#fff8e5;background:#203431;border-color:#9aab96;font-size:.9rem}
+.section-nav{gap:1.6rem;border-bottom:1px solid var(--rule);margin:1.25rem 0;flex-wrap:nowrap}.section-nav button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:.6rem 0;font-weight:650;color:var(--dim)}.section-nav [aria-pressed=true]{color:var(--green);border-bottom-color:var(--green)}
+.progress{margin-left:auto;color:var(--dim);font-size:.85rem;text-align:right}.progress progress{display:block;width:100%;height:.3rem;accent-color:var(--green)}
+.reader{display:grid;grid-template-columns:minmax(13rem,17rem) minmax(0,1fr);gap:clamp(1rem,3vw,2.5rem);align-items:start;margin-bottom:3rem}
+aside label,.eyebrow,.subhead{font-size:.79rem;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:var(--oak)}aside select{display:none;width:100%;margin:.5rem 0 0;padding:.55rem}.chapter-list{margin:.8rem 0 0;list-style:none;padding:0;max-height:30rem;overflow:auto}.chapter-list button{border:0;border-left:2px solid var(--rule);border-radius:0;background:transparent;width:100%;text-align:left;font-size:.92rem;padding:.45rem .65rem}.chapter-list button[aria-current]{background:var(--mint);border-color:var(--green);color:var(--green);font-weight:650}
+article,.cast-card{background:var(--panel);border:1px solid var(--rule);border-radius:.75rem;box-shadow:var(--shadow);overflow:hidden}.chapter-inner{padding:clamp(1rem,3vw,2rem)}article h2{font-size:clamp(1.7rem,3.4vw,2.75rem);margin:.4rem 0 1rem}.scene{width:clamp(8rem,32%,14rem);aspect-ratio:1;object-fit:cover;float:right;margin:0 0 1rem 1.25rem;border-radius:.4rem}
+.copy{font-family:Georgia,serif;font-size:1.2rem;line-height:1.6}.mood{color:var(--dim);font-size:.88rem;margin:.65rem 0}.note{margin-top:1.25rem;border-top:1px solid var(--rule);padding-top:1rem}.subhead{margin-bottom:.35rem}.actions{clear:both;margin-top:1.5rem}.actions button{font-size:.9rem}.primary{border-color:var(--green);font-weight:650}
+.cast{margin-bottom:3rem}.cast h2{font-size:2rem}.cast-intro{color:var(--dim);margin:.4rem 0 1rem}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1rem}.cast-card{padding:1rem}.cast-card img{width:100%;height:11rem;object-fit:contain;background:var(--paper);border-radius:.4rem}.cast-card h3{font-size:1.45rem;margin:.65rem 0 .4rem}.cast-card p{font-size:.94rem}.cast-card details{margin-top:.65rem;color:var(--green)}summary{cursor:pointer}details p{color:var(--ink);margin-top:.35rem}
+@media(max-width:700px){.reader{grid-template-columns:1fr}.chapter-list{display:none}aside select{display:block}.section-nav{gap:.85rem}.hero-inner{background:linear-gradient(90deg,#101e25e6,#15282a9c)}}
+@media(max-width:460px){header{flex-wrap:wrap;gap:.5rem}.scene{width:100%;height:min(70vw,18rem);object-fit:contain;background:var(--paper);float:none;margin:0 0 .7rem}.progress{font-size:.73rem}.switch button{padding-inline:.6rem}.hero-inner{padding:1.25rem}}
+</style>
+</head>
+<body>
+<header><a class="shelf" href="../index.html">← Book Guide</a><div class="controls"><div class="switch"><button id="parent"></button><button id="kids"></button></div><select id="language" aria-label="Language / Jazyk"><option value="en">English</option><option value="cs">Čeština</option></select></div></header>
+<main class="wrap">
+<section class="hero"><div class="hero-inner"><div class="series">Harry Potter</div><h1 id="title"></h1><p id="lead" class="lead"></p><label class="volume-picker"><span id="volumeLabel"></span><select id="volume"></select></label></div></section>
+<nav class="section-nav" aria-label="Guide"><button id="chapters"></button><button id="characters"></button><div class="progress"><span id="progressText" aria-live="polite"></span><progress id="meter"></progress></div></nav>
+<section id="reader" class="reader"><aside><label for="chapter" id="chapterLabel"></label><select id="chapter"></select><ol class="chapter-list" id="list"></ol></aside>
+<article><div class="chapter-inner"><div id="locator" class="eyebrow"></div><h2 id="heading"></h2><img class="scene" id="scene" alt=""><p id="copy" class="copy" tabindex="-1"></p><p class="mood" id="mood"></p>
+<div id="note" class="note"><div class="subhead" id="noteTitle"></div><p id="prompt"></p></div>
+<div class="actions"><button id="reveal"></button><button id="mark" class="primary"></button><button id="next"></button></div>
+</div></article></section>
+<section id="cast" class="cast" hidden><h2 id="castTitle"></h2><p class="cast-intro" id="castIntro"></p><div class="cards" id="cards"></div></section>
+</main>
+<script type="application/json" id="guide">__GUIDE__</script>
+<script>
+__READER__
+</script></body></html>

@@ -1,0 +1,156 @@
+[
+  {
+    "title": ["Birthday post", "Narozeninová pošta"],
+    "recap": ["Harry does his homework by torchlight. This time his birthday brings [owl post] from friends who remember him.", "Harry píše úkol při baterce. Letos mu k narozeninám přiletí [soví pošta] od přátel, kteří na něj myslí."],
+    "discuss": ["Which parcel tells you most about the person who sent it?", "Který balíček vám nejvíc prozradí o svém odesílateli?"],
+    "alt": ["An owl carrying a parcel through the night.", "Sova nese balíček noční oblohou."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["An aunt aloft", "Teta ve vzduchu"],
+    "recap": ["Aunt Marge insults Harry's parents once too often. She starts [swelling up] and Harry leaves with his trunk.", "Teta Marge znovu urazí Harryho rodiče. Začne se [nafukovat] a Harry si vezme kufr a odejde."],
+    "discuss": ["When does the visit stop feeling bearable for Harry?", "Kdy už je pro Harryho návštěva k nesnesení?"],
+    "alt": ["A glass and a deflated balloon at the dinner table.", "Sklenice a vyfouknutý balonek na jídelním stole."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A bus in the dark", "Autobus ve tmě"],
+    "recap": ["Stranded with his trunk, Harry gets a lift on [the Knight Bus]. Its beds slide about as it rockets towards London.", "Harry stojí s kufrem na ulici a sveze ho [Záchranný autobus]. Postele kloužou po podlaze, jak se řítí do Londýna."],
+    "discuss": ["Read the bus ride in jolts. Which noises make the journey funny?", "Čtěte o jízdě trochu trhaně. Které zvuky jí dodávají na komičnosti?"],
+    "alt": ["A purple triple-decker on a wet street.", "Fialový třípatrový autobus v mokré ulici."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A new pet", "Nový mazlíček"],
+    "recap": ["In Diagon Alley Hermione chooses [Crookshanks], a large ginger cat. Ron's rat would much rather keep its distance.", "Hermiona si v Příčné ulici vybere velkého zrzavého kocoura [Křivonožku]. Ronova krysa by raději zůstala opodál."],
+    "discuss": ["What makes the same animal look wonderful to Hermione and alarming to Ron?", "Proč připadá stejné zvíře Hermioně úžasné a Ronovi nebezpečné?"],
+    "alt": ["A ginger cat atop a counter.", "Zrzavý kocour na pultě."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["Cold on the train", "Chlad ve vlaku"],
+    "recap": ["A Dementor boards the train and Harry faints. Professor Lupin offers [chocolate] when the warmth returns.", "Do vlaku vstoupí mozkomor a Harry omdlí. Když se vrátí teplo, profesor Lupin nabídne [čokoládu]."],
+    "discuss": ["After the frightening interruption, find the small things people do to look after Harry.", "Po děsivém přerušení najděte maličkosti, kterými ostatní pečují o Harryho."],
+    "alt": ["Chocolate on the train seat.", "Čokoláda na sedadle ve vlaku."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A careful bow", "Opatrná úklona"],
+    "recap": ["Hagrid teaches the class how to meet a hippogriff. Harry [bows] and waits for Buckbeak to answer.", "Hagrid učí třídu, jak se seznámit s hipogryfem. Harry se [ukloní] a čeká na Klofanovu odpověď."],
+    "discuss": ["What does Harry have to let the animal decide?", "O čem musí nechat Harry rozhodnout samotné zvíře?"],
+    "alt": ["A hippogriff resting on a hillside.", "Hipogryf odpočívá na stráni."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Laughter in the wardrobe", "Smích u skříně"],
+    "recap": ["The boggart takes the shape of Neville's fear. Neville gives it [his grandmother's clothes] and the class laughs.", "Bubák na sebe vezme podobu Nevillova strachu. Neville mu přičaruje [babiččiny šaty] a třída se rozesměje."],
+    "discuss": ["Why might it help Neville to rehearse his idea before opening the wardrobe?", "Proč Nevillovi může pomoct, když si svůj nápad vyzkouší ještě před otevřením skříně?"],
+    "alt": ["A tall wardrobe casts a long shadow.", "Vysoká skříň vrhá dlouhý stín."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An empty frame", "Prázdný rám"],
+    "recap": ["Halloween ends with a shock. The Fat Lady is gone and [her portrait] has been slashed.", "Halloween skončí leknutím. Buclatá dáma je pryč a [její portrét] někdo rozřezal."],
+    "discuss": ["What makes a damaged picture especially worrying in this castle?", "Proč je poškozený obraz na tomto hradě tak znepokojivý?"],
+    "alt": ["An empty gilded picture frame.", "Prázdný pozlacený rám obrazu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Rain over the pitch", "Déšť nad hřištěm"],
+    "recap": ["Dementors appear during the stormy match. Harry falls, and [his broom] is smashed by the willow.", "Při zápase v bouři se objeví mozkomorové. Harry spadne a vrba mu rozbije [koště]."],
+    "discuss": ["Look at Cedric's reaction to winning. What would a fair result mean to him?", "Všimněte si Cedrikovy reakce na výhru. Co by podle něj byl spravedlivý výsledek?"],
+    "alt": ["A broken broomstick on wet grass.", "Zlomené koště v mokré trávě."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A moving map", "Živá mapa"],
+    "recap": ["Fred and George entrust Harry with [a map] that shows people moving through Hogwarts and passages out of it.", "Fred a George svěří Harrymu [mapu], na které vidí pohyb lidí po Bradavicích i tajné chodby ven."],
+    "discuss": ["What responsibilities come with a gift that can show where other people are?", "Jakou zodpovědnost nese člověk s dárkem, který prozradí polohu ostatních?"],
+    "alt": ["An old map covered in tiny footprints.", "Stará mapa posetá drobnými stopami."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An unsigned parcel", "Balíček bez podpisu"],
+    "recap": ["A magnificent Firebolt arrives without a sender's name. Hermione tells [Professor McGonagall] because she fears it could be dangerous.", "Přijde nádherný Kulový blesk bez podpisu. Hermiona to poví [profesorce McGonagallové], protože se bojí, že je nebezpečný."],
+    "discuss": ["What might Hermione say if she had another chance to explain herself?", "Co by Hermiona řekla, kdyby měla ještě jednu možnost svůj krok vysvětlit?"],
+    "alt": ["A new broom by a Christmas tree.", "Nové koště u vánočního stromku."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A lesson in remembering", "Lekce vzpomínání"],
+    "recap": ["Lupin has Harry practise a protective spell. To call a Patronus, Harry tries to hold on to [a happy memory].", "Lupin s Harrym nacvičuje ochranné kouzlo. Aby přivolal patrona, snaží se Harry udržet si [šťastnou vzpomínku]."],
+    "discuss": ["How does Lupin help Harry begin again after a hard attempt?", "Jak Lupin pomáhá Harrymu začít znovu po nepovedeném pokusu?"],
+    "alt": ["Silver mist streams from Harry's wand.", "Z Harryho hůlky proudí stříbrná mlha."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A silver surprise", "Stříbrné překvapení"],
+    "recap": ["Harry flies his new broom against Ravenclaw. The supposed Dementors on the pitch turn out to be [students in disguise].", "Harry letí proti Havraspáru na novém koštěti. Z domnělých mozkomorů na hřišti se vyklubou [převlečení studenti]."],
+    "discuss": ["Which fear does Harry face before he knows it is a trick?", "Jakému strachu se Harry postaví ještě předtím, než odhalí podvod?"],
+    "alt": ["A golden Snitch against blue banners.", "Zlatonka před modrými prapory."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Caught near a tunnel", "U tajné chodby"],
+    "recap": ["A village adventure nearly exposes Harry's secret route. Lupin takes charge of [the map] when Snape questions Harry.", "Výprava do vesnice málem prozradí Harryho tajnou cestu. Když ho Snape vyslýchá, Lupin převezme [mapu]."],
+    "discuss": ["Why do Lupin's quiet words sting more than a punishment might?", "Proč mohou Lupinova tichá slova zabolet víc než trest?"],
+    "alt": ["A winding tunnel under the street.", "Klikatý tunel pod ulicí."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The final whistle", "Poslední hvizd"],
+    "recap": ["Harry times his catch carefully. The team wins [the Quidditch Cup], a moment Wood has waited years to see.", "Harry si chycení zlatonky dobře načasuje. Tým získá [famfrpálový pohár], na který Wood čekal celé roky."],
+    "discuss": ["Why does Harry have to keep watching the score as well as the Snitch?", "Proč musí Harry kromě zlatonky sledovat i skóre?"],
+    "alt": ["Teammates celebrate with the Quidditch Cup.", "Spoluhráči oslavují s famfrpálovým pohárem."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A strange voice", "Podivný hlas"],
+    "recap": ["After Harry's exam, Trelawney speaks in [a strange voice]. Later the friends go down to be with Hagrid and Buckbeak.", "Po Harryho zkoušce promluví Trelawneyová [podivným hlasem]. Později jdou kamarádi za Hagridem a Klofanem."],
+    "discuss": ["Contrast the noisy exam day with the walk down to Hagrid's hut. What are the friends trying to do for him?", "Porovnejte rušný den zkoušek s cestou k hájence. Co se přátelé snaží pro Hagrida udělat?"],
+    "alt": ["A crystal ball in an attic classroom.", "Křišťálová koule v podkrovní učebně."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Under the willow", "Pod vrbou"],
+    "recap": ["A black dog drags Ron into a tunnel. At the far end Harry faces [Sirius Black] in the Shrieking Shack.", "Černý pes vtáhne Rona do tunelu. Na druhé straně Harry v Chroptící chýši stane před [Siriusem Blackem]."],
+    "discuss": ["Listen for the moment Harry is asked to wait and hear an explanation.", "Zachyťte okamžik, kdy má Harry počkat a vyslechnout si vysvětlení."],
+    "alt": ["A black dog under a knotted tree.", "Černý pes pod sukovitým stromem."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Four old friends", "Čtyři staří kamarádi"],
+    "recap": ["Lupin tells how his school friends learned to become [animals] so he would have company during his transformations.", "Lupin vypráví, jak se jeho spolužáci naučili měnit [ve zvířata], aby při proměnách nezůstával sám."],
+    "discuss": ["Which part of the friends' secret was generous, and where did they take risks for others?", "V čem byli přátelé velkorysí a kdy vystavili riziku i ostatní?"],
+    "alt": ["A dusty bed in an abandoned shack.", "Zaprášená postel v opuštěné chýši."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The rat's secret", "Krysí tajemství"],
+    "recap": ["Scabbers is made to turn back into [Peter Pettigrew]. Harry stops Lupin and Sirius from settling the matter themselves.", "Prašivka se musí proměnit zpátky [v Petra Pettigrewa]. Harry zastaví Lupina a Siriuse, než věc vyřeší po svém."],
+    "discuss": ["Why does Harry speak up even after hearing what Peter did?", "Proč se Harry ozve, přestože ví, co Petr udělal?"],
+    "alt": ["Wands light up a rat on the floorboards.", "Hůlky ozařují krysu na prkenné podlaze."],
+    "mood": "intense"
+  },
+  {
+    "title": ["At the lakeshore", "U jezera"],
+    "recap": ["Moonlight changes everything outside the shack. By the lake a bright [Patronus] drives the Dementors back.", "Měsíční světlo před chýší všechno změní. U jezera pak zářivý [patron] zažene mozkomory."],
+    "discuss": ["Notice how little Harry can see across the water. What does he know for sure?", "Všimněte si, jak málo toho Harry na druhém břehu vidí. Co ví jistě?"],
+    "alt": ["A silver stag beside the lake.", "Stříbrný jelen u jezera."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Three turns back", "Třikrát nazpět"],
+    "recap": ["With Hermione's [Time-Turner], two friends live part of the evening again. A different view of the lake helps Harry act.", "Díky Hermioninu [obraceči času] prožijí dva přátelé část večera znovu. Jiný výhled na jezero pomůže Harrymu jednat."],
+    "discuss": ["Trace the two journeys round the lake with your fingers. When do they meet?", "Prsty sledujte obě cesty kolem jezera. Kdy se protnou?"],
+    "alt": ["A little gold hourglass on a chain.", "Zlaté přesýpací hodiny na řetízku."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A letter on the train", "Dopis ve vlaku"],
+    "recap": ["A little owl brings good news from Sirius, including [permission to visit Hogsmeade]. Harry has something to look forward to.", "Sovička přinese dobré zprávy od Siriuse, včetně [povolení k návštěvám Prasinek]. Harry se má na co těšit."],
+    "discuss": ["How is this goodbye different from saying goodbye without a way to stay in touch?", "Jaké je loučení, když víte, že si můžete psát?"],
+    "alt": ["A small owl delivers a letter to a train carriage.", "Sovička nese dopis do vlakového kupé."],
+    "mood": "quiet"
+  }
+]

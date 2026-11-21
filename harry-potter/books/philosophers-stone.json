@@ -1,0 +1,121 @@
+[
+  {
+    "title": ["The doorstep", "Na prahu"],
+    "recap": ["While wizards celebrate, Hagrid brings [baby Harry] to a quiet street. His new family sleeps through the whole visit.", "Zatímco kouzelníci slaví, Hagrid přináší do tiché ulice [malého Harryho]. Jeho nová rodina celou návštěvu prospí."],
+    "discuss": ["Read the street scenes in Vernon's serious voice. Which odd sight would have made you stop?", "Přečtěte scény z ulice Vernonovým vážným hlasem. U čeho byste se zastavili?"],
+    "alt": ["A baby wrapped in blankets on a doorstep.", "Miminko zabalené v přikrývkách na prahu domu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Behind the glass", "Za sklem"],
+    "recap": ["At the zoo Harry discovers that [a snake] seems to understand him. Dudley gets a much closer look than he wanted.", "V zoo Harry zjistí, že mu zřejmě rozumí [had]. Dudley si ho prohlédne mnohem zblízka, než si přál."],
+    "discuss": ["When does the trip feel different if you imagine it from inside the tank?", "Jak by výlet vypadal očima někoho za sklem?"],
+    "alt": ["A boa behind the glass at the zoo.", "Hroznýš za sklem v zoo."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Post for Harry", "Pošta pro Harryho"],
+    "recap": ["Someone knows exactly where Harry sleeps. Uncle Vernon tries to stop [the letters] and takes the family all the way out to sea.", "Někdo ví úplně přesně, kde Harry spí. Strýc Vernon se snaží zastavit [dopisy] a odveze rodinu až na moře."],
+    "discuss": ["Trace the addresses as the family moves. What does each new envelope tell Harry?", "Sledujte adresy, jak se rodina stěhuje. Co každá nová obálka Harrymu prozradí?"],
+    "alt": ["Envelopes tumbling down the chimney.", "Obálky padají komínem."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A birthday visitor", "Narozeninová návštěva"],
+    "recap": ["The huge visitor brings a cake and an even bigger surprise. Harry has a place at [a school for witches and wizards].", "Obrovský návštěvník přinese dort a ještě větší překvapení. Harry má místo [ve škole čar a kouzel]."],
+    "discuss": ["Let Harry's questions set the pace. Which answer changes what he knows about his parents?", "Nechte tempo určovat Harryho otázkami. Která odpověď změní jeho představu o rodičích?"],
+    "alt": ["A pink birthday cake in a lamplit hut.", "Růžový dort v hájence osvětlené lampou."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A shop full of wands", "Krámek plný hůlek"],
+    "recap": ["Harry tries wand after wand until [one wand chooses him]. Hagrid has another birthday present, a snowy owl.", "Harry zkouší jednu hůlku za druhou, až si [jedna vybere jeho]. Hagrid pro něj má ještě sovici sněžní."],
+    "discuss": ["Which purchase feels most personal to Harry, and why?", "Který nákup má pro Harryho největší význam a proč?"],
+    "alt": ["Harry tries a wand in a shop lined with boxes.", "Harry zkouší hůlku v obchodě plném krabiček."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["Room in the carriage", "Místo v kupé"],
+    "recap": ["A family shows Harry the way to the hidden platform. On the train he shares his sweets with [Ron].", "Jedna rodina ukáže Harrymu cestu na skryté nástupiště. Ve vlaku se Harry rozdělí o sladkosti [s Ronem]."],
+    "discuss": ["Find one small thing someone does to help a stranger feel welcome.", "Najděte maličkost, díky které se někdo cizí začne cítit vítaný."],
+    "alt": ["A scarlet engine waits at the platform.", "U nástupiště čeká šarlatová lokomotiva."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A hat with a voice", "Klobouk s hlasem"],
+    "recap": ["Harry has a say in his first big decision at school. The old hat sends him to [Gryffindor].", "Do prvního velkého rozhodnutí ve škole může Harry také promluvit. Starý klobouk ho pošle [do Nebelvíru]."],
+    "discuss": ["Pause while the hat weighs its choice. What might Harry wish he could tell it?", "Zastavte se, když klobouk váhá. Co by mu Harry rád vysvětlil?"],
+    "alt": ["A patched hat rests on a stool.", "Záplatovaný klobouk leží na stoličce."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A difficult first lesson", "Těžká první hodina"],
+    "recap": ["In his first [Potions] lesson Harry faces questions he cannot answer. A visit to Hagrid offers a quieter end to the week.", "Při první hodině [lektvarů] dostává Harry otázky, na které nezná odpověď. Týden končí klidnější návštěvou u Hagrida."],
+    "discuss": ["How would you help a classmate after a lesson like Harry's?", "Jak byste pomohli spolužákovi po takové hodině?"],
+    "alt": ["Green potion bubbles over the lip of a cauldron.", "Zelený lektvar přetéká přes okraj kotlíku."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Three enormous heads", "Tři obrovské hlavy"],
+    "recap": ["A midnight expedition leads Harry and his friends to a three-headed dog. Hermione notices [a trapdoor] under its paws.", "Půlnoční výprava zavede děti k trojhlavému psovi. Hermiona si pod jeho tlapami všimne [padacích dveří]."],
+    "discuss": ["Compare what each child notices when the door opens.", "Porovnejte, čeho si každé dítě všimne, když se dveře otevřou."],
+    "alt": ["A three-headed dog guards the trapdoor.", "Trojhlavý pes střeží padací dveře."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Friends at Halloween", "Přátelé o Halloweenu"],
+    "recap": ["Harry and Ron run to warn Hermione about a troll. Ron finally makes [the club] float, and three classmates become friends.", "Harry a Ron běží varovat Hermionu před trollem. Ron konečně nechá vzlétnout [kyj] a ze tří spolužáků jsou kamarádi."],
+    "discuss": ["What changes between the feather lesson and the moment Ron needs the spell?", "Co se změní od hodiny s pírkem do chvíle, kdy Ron kouzlo potřebuje?"],
+    "alt": ["A troll's club beside broken bathroom tiles.", "Trollí kyj vedle rozbitých dlaždic."],
+    "mood": "intense"
+  },
+  {
+    "title": ["High above the pitch", "Vysoko nad hřištěm"],
+    "recap": ["Harry's broom bucks wildly during his first match. He catches [the Snitch] in a way nobody expects.", "Při prvním zápase se pod Harrym splaší koště. [Zlatonku] chytí tak, jak nikdo nečekal."],
+    "discuss": ["Tell the same few seconds as a spectator and then as the player on the broom.", "Popište stejných pár vteřin nejprve jako diváci a potom jako hráč na koštěti."],
+    "alt": ["A golden ball with two delicate wings.", "Zlatá kulička se dvěma jemnými křídly."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A winter reflection", "Zimní odraz"],
+    "recap": ["An invisible Christmas walk leads Harry to a mirror. In it he can see [his family] gathered behind him.", "O Vánocích se Harry neviděn zatoulá k zrcadlu. Vidí v něm, jak za ním stojí [jeho rodina]."],
+    "discuss": ["Give the first look in the mirror a little silence. Why is walking away so hard?", "Po prvním pohledu do zrcadla dopřejte dětem chvíli ticha. Proč je tak těžké odejít?"],
+    "alt": ["An ornate mirror catches a shaft of light.", "Zdobené zrcadlo v paprsku světla."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A name on a card", "Jméno na kartičce"],
+    "recap": ["A wizard card jogs Harry's memory. Hermione connects Nicolas Flamel with [the Philosopher's Stone].", "Kartička s kouzelníkem osvěží Harrymu paměť. Hermiona si spojí Nicolase Flamela [s kamenem mudrců]."],
+    "discuss": ["Which two scraps of information finally fit together?", "Které dvě drobné informace do sebe konečně zapadnou?"],
+    "alt": ["An old book open to a picture of an alchemist.", "Stará kniha otevřená u obrázku alchymisty."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["Hagrid's hatchling", "Hagridovo mládě"],
+    "recap": ["The egg by Hagrid's fire hatches into [a dragon]. Finding Norbert a safe home proves harder than hiding an egg.", "Z vejce u Hagridova ohně se vylíhne [drak]. Najít Norbertovi bezpečný domov je těžší než schovat vejce."],
+    "discuss": ["How can giving up a pet be an act of care?", "Kdy může být rozloučení se zvířetem projevem péče?"],
+    "alt": ["A little dragon nestled in an eggshell.", "Dráček schoulený ve skořápce."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A trail in the trees", "Stopa mezi stromy"],
+    "recap": ["In the forest Harry follows a wounded unicorn's trail. [Firenze the centaur] carries him away from danger.", "V lese jde Harry po stopě raněného jednorožce. Před nebezpečím ho odnese [kentaur Firenze]."],
+    "discuss": ["The unicorn scene can feel frightening. Pause when help arrives and name who is safe.", "Scéna s jednorožcem může děsit. Až přijde pomoc, zastavte se a řekněte si, kdo je v bezpečí."],
+    "alt": ["A silver hoofprint on a woodland path.", "Stříbrná stopa kopyta na lesní cestě."],
+    "mood": "intense"
+  },
+  {
+    "title": ["On the chessboard", "Na šachovnici"],
+    "recap": ["Beneath the trapdoor each friend has a turn to lead. Ron makes a brave move in [a life-sized chess game].", "Pod padacími dveřmi se kamarádi vystřídají ve vedení. Ron udělá odvážný tah [v šachu s obřími figurami]."],
+    "discuss": ["Name one obstacle each friend knows how to approach. Who trusts someone else to lead?", "Přiřaďte každému překážku, se kterou si ví rady. Kdo nechá rozhodovat kamaráda?"],
+    "alt": ["Oversized chess pieces on a chequered floor.", "Obří šachové figury na kostkované podlaze."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A stone in a pocket", "Kámen v kapse"],
+    "recap": ["Harry faces Quirrell at the mirror. Wanting to keep the Stone safe helps Harry find it [in his own pocket].", "U zrcadla stojí Harry proti Quirrellovi. Kámen chce ochránit a objeví ho [ve vlastní kapse]."],
+    "discuss": ["At the feast, why might Neville's points mean as much as the others' awards?", "Proč mohou Nevillovy body při hostině znamenat stejně mnoho jako odměny ostatních?"],
+    "alt": ["A red stone gleams against velvet.", "Na sametu se leskne červený kámen."],
+    "mood": "intense"
+  }
+]

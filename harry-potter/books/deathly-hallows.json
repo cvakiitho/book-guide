@@ -1,0 +1,261 @@
+[
+  {
+    "title": ["At the long table", "U dlouhého stolu"],
+    "recap": ["At Malfoy Manor Voldemort gathers his followers and takes [Lucius's wand]. A captive teacher is killed in front of the guests.", "V sídle Malfoyových svolá Voldemort své stoupence a vezme si [Luciusovu hůlku]. Před hosty je zabita zajatá učitelka."],
+    "discuss": ["This opening shows cruelty to a prisoner. Agree on a place to pause with your listener.", "Úvod ukazuje krutost vůči zajatkyni. Domluvte si s posluchačem místo pro přestávku."],
+    "alt": ["Cloaked guests gather at a long manor table.", "Zahalení hosté u dlouhého stolu v sídle."],
+    "mood": "intense"
+  },
+  {
+    "title": ["What to keep", "Co si nechat"],
+    "recap": ["Packing for the last time, Harry keeps [a shard of mirror]. Newspaper tributes leave him wondering how well he knew Dumbledore.", "Když se Harry naposledy balí, schová si [střep ze zrcátka]. Po vzpomínkách v novinách přemítá, jak dobře znal Brumbála."],
+    "discuss": ["Which of Harry's possessions would look unimportant to somebody else?", "Které Harryho věci by někomu cizímu připadaly bezcenné?"],
+    "alt": ["Harry's face reflected in a shard of mirror.", "Harryho tvář ve střepu zrcátka."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A different goodbye", "Jiné rozloučení"],
+    "recap": ["As the Dursleys leave for safety, [Dudley] surprises Harry by showing concern for him.", "Když Dursleyovi odcházejí do bezpečí, [Dudley] Harryho překvapí tím, že mu na něm záleží."],
+    "discuss": ["Which small gesture might Harry remember after the door shuts?", "Které drobné gesto si Harry asi zapamatuje i po zavření dveří?"],
+    "alt": ["Packed cases on the doorstep.", "Sbalené kufry na prahu domu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Seven lookalikes", "Sedm dvojníků"],
+    "recap": ["Six helpers take [Polyjuice Potion] to look like Harry. During the dangerous flight Harry loses Hedwig.", "Šest pomocníků vypije [mnoholičný lektvar], aby vypadali jako Harry. Při nebezpečném letu Harry přijde o Hedviku."],
+    "discuss": ["A pet dies during a fast scene. Slow down if the listener wants time to say goodbye.", "V rychlé scéně zahyne zvířecí přítel. Pokud se dítě potřebuje rozloučit, zpomalte."],
+    "alt": ["Seven young wizards with identical glasses.", "Sedm mladých kouzelníků se stejnými brýlemi."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Counting arrivals", "Počítání příchozích"],
+    "recap": ["At the Burrow everyone waits and counts who has returned. The news about [Moody] brings the celebration to a halt.", "V Doupěti všichni čekají a počítají, kdo se vrátil. Zpráva o [Moodym] jim vezme radost."],
+    "discuss": ["What is it like to wait at home without knowing what the travellers have seen?", "Jaké je čekat doma a nevědět, co cestující zažili?"],
+    "alt": ["A motorbike wheel beside a lantern at dawn.", "Kolo motorky a lucerna za úsvitu."],
+    "mood": "intense"
+  },
+  {
+    "title": ["An attic disguise", "Převlek na půdě"],
+    "recap": ["Ron's family ghoul is dressed [in pyjamas] as part of his cover story. Hermione has made painful preparations of her own.", "Rodinný ghúl je oblečený [v pyžamu], aby Ronova výmluva působila věrohodně. Hermiona se na odchod připravila po svém a hodně ji to stálo."],
+    "discuss": ["What do the preparations tell us about the cost of leaving?", "Co nám přípravy říkají o tom, jak těžké je odejít?"],
+    "alt": ["A ghoul in striped pyjamas.", "Ghúl v pruhovaném pyžamu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Three bequests", "Tři odkazy"],
+    "recap": ["Dumbledore has left Ron a Deluminator, Hermione a book and Harry [his first Snitch]. The meanings of the gifts are still hidden.", "Brumbál odkázal Ronovi zhasínadlo, Hermioně knihu a Harrymu [jeho první zlatonku]. Význam darů jim zatím uniká."],
+    "discuss": ["Guess why these gifts might suit their owners. Save the guesses for later.", "Zkuste odhadnout, proč se dary hodí k majitelům. Odhady si schovejte na později."],
+    "alt": ["A Snitch, a book and a silver Deluminator.", "Zlatonka, kniha a stříbrné zhasínadlo."],
+    "mood": "tense"
+  },
+  {
+    "title": ["At the wedding", "Na svatbě"],
+    "recap": ["A silver [lynx] interrupts Bill and Fleur's wedding with a message. The Ministry has fallen and the guests must act quickly.", "Svatbu Billa a Fleur přeruší stříbrný [rys] se zprávou. Ministerstvo padlo a hosté musí rychle jednat."],
+    "discuss": ["Where does the sound and pace of the celebration suddenly change?", "Kde se náhle promění zvuk a tempo oslavy?"],
+    "alt": ["A silver lynx in a wedding marquee.", "Stříbrný rys ve svatebním stanu."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A table for three", "Stůl pro tři"],
+    "recap": ["After danger finds them in a café, the three friends take shelter at [Grimmauld Place]. Hermione's bag holds their supplies.", "Po nebezpečném setkání v kavárně hledají tři přátelé útočiště [na Grimmauldově náměstí]. Zásoby má Hermiona v kabelce."],
+    "discuss": ["Which ordinary preparations let the friends act quickly?", "Jaké docela obyčejné přípravy přátelům pomohou rychle jednat?"],
+    "alt": ["Abandoned cups at a London café.", "Opuštěné šálky v londýnské kavárně."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Kreacher remembers", "Krátura vzpomíná"],
+    "recap": ["Kreacher describes how [Regulus Black] tried to take the real locket. Hearing his story changes how Harry treats the elf.", "Krátura vylíčí, jak se [Regulus Black] pokusil odnést pravý medailon. Po tomto příběhu se k němu Harry začne chovat jinak."],
+    "discuss": ["What does Kreacher need before he can finish telling his story?", "Co Krátura potřebuje, aby mohl příběh dovyprávět?"],
+    "alt": ["Kreacher looks down at a locket.", "Krátura se dívá na medailon."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A visitor's offer", "Nabídka návštěvníka"],
+    "recap": ["Lupin offers to come along, but Harry challenges him about leaving his family. Later the friends trace the locket to [Umbridge].", "Lupin chce jít s přáteli, Harry se ho ale zeptá na rodinu, kterou by opustil. Později přátelé vystopují medailon [k Umbridgeové]."],
+    "discuss": ["What worries lie underneath the harsh words Harry and Lupin exchange?", "Jaké obavy se skrývají za tvrdými slovy Harryho a Lupina?"],
+    "alt": ["A visitor's cloak left on a chair.", "Návštěvníkův plášť na židli."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Inside the Ministry", "Uvnitř ministerstva"],
+    "recap": ["The friends enter the Ministry looking like [three employees]. Their disguises do not tell them how to do the employees' jobs.", "Přátelé vstoupí na ministerstvo v podobě [tří zaměstnanců]. Jejich převleky jim ovšem neprozradí, jak dělat jejich práci."],
+    "discuss": ["Which little details threaten the plan before anyone spots a disguise?", "Které drobnosti ohrožují plán ještě dříve, než někdo odhalí převlek?"],
+    "alt": ["Robed employees enter the Ministry.", "Zaměstnanci v hábitech vstupují na ministerstvo."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Beneath the courtroom", "Pod soudní síní"],
+    "recap": ["Harry takes [the locket] from Umbridge. The friends also help people escape from unfair hearings about their families.", "Harry vezme Umbridgeové [medailon]. Přátelé pomohou k útěku také lidem nespravedlivě souzeným kvůli jejich původu."],
+    "discuss": ["When does the rescue become about more people than the three friends?", "Kdy přestane jít při útěku jen o tři přátele?"],
+    "alt": ["A silvery cat shines in the courtroom.", "V soudní síni září stříbrná kočka."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A tent in the trees", "Stan mezi stromy"],
+    "recap": ["The friends hide in [a tent] while Ron recovers from a painful injury. Carrying the locket wears on them all.", "Zatímco se Ron zotavuje po bolestivém zranění, skryjí se přátelé [ve stanu]. Nošení medailonu doléhá na všechny."],
+    "discuss": ["What jobs have to be done to keep a hiding place livable?", "Co vše je potřeba udělat, aby se dalo v úkrytu žít?"],
+    "alt": ["A canvas tent in an autumn wood.", "Plátěný stan v podzimním lese."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Across the river", "Za řekou"],
+    "recap": ["An overheard conversation brings news of Gryffindor's sword. After an argument [Ron] leaves the tent.", "Z vyslechnutého rozhovoru se přátelé dozvědí novinky o Nebelvírově meči. Po hádce ze stanu odejde [Ron]."],
+    "discuss": ["What has each friend been carrying besides their share of the luggage?", "Co si každý přítel nesl kromě svého dílu zavazadel?"],
+    "alt": ["A campfire across the river.", "Táborák na druhé straně řeky."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Snow on the graves", "Sníh na hrobech"],
+    "recap": ["In Godric's Hollow Harry finally visits [his parents' grave]. Hermione stays beside him in the snow.", "V Godrikově Dole Harry konečně navštíví [hrob svých rodičů]. Hermiona s ním zůstane stát ve sněhu."],
+    "discuss": ["Give the visit some silence. What kind of company does Hermione offer?", "Dopřejte návštěvě chvíli ticha. Jakou oporu nabízí Hermiona?"],
+    "alt": ["Two friends at a snowy village grave.", "Dva přátelé u zasněženého hrobu ve vesnici."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A trap in the cottage", "Past v domku"],
+    "recap": ["In Bathilda's house [Nagini] lies in wait. Harry and Hermione escape, but Harry's wand is broken.", "V Batildině domě číhá [Nagini]. Harry a Hermiona uniknou, Harryho hůlka se však zlomí."],
+    "discuss": ["This ambush is frightening. Pause after the escape to check where the two friends are.", "Přepadení může vyděsit. Po útěku se zastavte a ujasněte si, kde přátelé jsou."],
+    "alt": ["A serpent's shadow in an old cottage.", "Hadí stín ve starém domku."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A book of claims", "Kniha plná tvrzení"],
+    "recap": ["A biography forces Harry to face questions about [Dumbledore's youth]. He and Hermione read the same evidence differently.", "Životopis přiměje Harryho klást si otázky o [Brumbálově mládí]. S Hermionou si stejné doklady vykládají různě."],
+    "discuss": ["Which claims could the friends check, and which rely on the author's judgement?", "Která tvrzení by přátelé mohli ověřit a která závisí na úsudku autorky?"],
+    "alt": ["A biography and a snapped wand.", "Životopis a zlomená hůlka."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A light among the trees", "Světlo mezi stromy"],
+    "recap": ["A silver doe guides Harry to the sword under the ice. [Ron] pulls Harry out and destroys the locket.", "Stříbrná laň dovede Harryho k meči pod ledem. [Ron] Harryho vytáhne a medailon zničí."],
+    "discuss": ["What is easier for Ron to do with a friend standing beside him?", "Co se Ronovi udělá snadněji, když vedle něj stojí přítel?"],
+    "alt": ["A silver doe shining beside a frozen pool.", "Stříbrná laň září u zamrzlého jezírka."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A tower on a hill", "Věž na kopci"],
+    "recap": ["The friends visit [Luna's father] to ask about a symbol in Hermione's book. His welcome has an uneasy edge.", "Přátelé navštíví [Lenčina otce] a ptají se na symbol z Hermioniny knihy. Jeho přivítání je poněkud rozpačité."],
+    "discuss": ["What makes the house feel as if someone important is missing?", "Co v domě vyvolává dojem, že tam někdo důležitý schází?"],
+    "alt": ["A crooked tower on a hill.", "Křivá věž na kopci."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Three travellers", "Tři poutníci"],
+    "recap": ["Hermione reads a tale about three brothers. A wand, a stone and [a cloak] are the gifts in the story.", "Hermiona přečte příběh o třech bratrech. Dary v příběhu jsou hůlka, kámen a [plášť]."],
+    "discuss": ["Give each brother a different voice. What does each hope his gift will do?", "Dejte každému bratrovi jiný hlas. Co si každý od daru slibuje?"],
+    "alt": ["Three travellers crossing a bridge.", "Tři poutníci přecházejí most."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A choice of quests", "Volba výpravy"],
+    "recap": ["Harry keeps thinking about the Hallows. The friends tune in to [Potterwatch] for news of people they miss.", "Harry pořád myslí na relikvie. Přátelé si naladí [Potterovu hodinku], aby slyšeli zprávy o lidech, kteří jim chybějí."],
+    "discuss": ["How does hearing a familiar voice change the mood in the tent?", "Jak slyšení známého hlasu změní náladu ve stanu?"],
+    "alt": ["A wireless set inside the tent.", "Rádio uvnitř stanu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A rescue from the cellar", "Záchrana ze sklepa"],
+    "recap": ["At Malfoy Manor [Dobby] gets the prisoners out. At the cottage Harry holds his friend as the elf dies.", "V sídle Malfoyových dostane [Dobby] zajatce na svobodu. U lasturové vily drží Harry umírajícího přítele v náručí."],
+    "discuss": ["This chapter includes torture and Dobby's death. Agree on pauses and leave room for grief.", "V této kapitole se objevuje mučení a Dobby zemře. Domluvte si přestávky a nechte místo pro smutek."],
+    "alt": ["An elf holds a lantern in a dark cellar.", "Skřítek drží lucernu v temném sklepě."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Above the beach", "Nad pláží"],
+    "recap": ["Harry digs [Dobby's grave] by hand. Afterwards he chooses whom to question first and asks about wands and a vault.", "Harry vlastníma rukama vykope [Dobbymu hrob]. Potom zvolí pořadí rozhovorů a vyptává se na hůlky i na trezor."],
+    "discuss": ["Why might doing a slow task by hand matter to Harry here?", "Proč je pro Harryho důležité udělat tu pomalou práci vlastníma rukama?"],
+    "alt": ["A simple memorial stone above the shore.", "Prostý náhrobek nad pobřežím."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A bargain by the sea", "Dohoda u moře"],
+    "recap": ["Griphook offers help at the bank in exchange for [Gryffindor's sword]. The two sides see ownership quite differently.", "Griphook nabídne pomoc v bance výměnou za [Nebelvírův meč]. Obě strany si vlastnictví představují úplně jinak."],
+    "discuss": ["What would each side say it is agreeing to?", "Jak by každá strana vlastními slovy popsala dohodu?"],
+    "alt": ["A sword hilt near a cottage window.", "Jílec meče u okna chalupy."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Out of the vault", "Ven z trezoru"],
+    "recap": ["In the vault the treasures multiply. The friends seize the cup and escape on [a dragon].", "V trezoru poklady přibývají s každým dotykem. Přátelé popadnou pohár a uniknou [na drakovi]."],
+    "discuss": ["Which part of the escape depends on something they could never have planned?", "Která část útěku závisí na něčem, co nemohli předem naplánovat?"],
+    "alt": ["A pale dragon over the city roofs.", "Světlý drak nad střechami města."],
+    "mood": "intense"
+  },
+  {
+    "title": ["On the lake shore", "Na břehu jezera"],
+    "recap": ["Safely off the dragon, Harry glimpses Voldemort checking his hiding places. The trail points to [Hogwarts].", "Když jsou z draka bezpečně dole, Harry zahlédne, jak Voldemort kontroluje skrýše. Stopa vede [do Bradavic]."],
+    "discuss": ["Which new fact makes the friends ready to travel again so soon?", "Kvůli které nové informaci jsou přátelé ochotni tak brzy znovu vyrazit?"],
+    "alt": ["A piece of chain left by the lake.", "Kus řetězu u jezera."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A face in the mirror", "Tvář v zrcátku"],
+    "recap": ["[Aberforth] shelters the friends in Hogsmeade. Harry learns who has been watching through the mirror.", "V Prasinkách přátele ukryje [Aberforth]. Harry zjistí, kdo ho pozoroval přes zrcátko."],
+    "discuss": ["How does hearing a brother's memories change the family's story?", "Jak vzpomínky bratra promění rodinný příběh?"],
+    "alt": ["A cracked mirror on a pub shelf.", "Prasklé zrcadlo na polici v hostinci."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A way back inside", "Cesta zpět dovnitř"],
+    "recap": ["Neville leads the friends through a portrait passage. At school Harry asks about [Ravenclaw's diadem].", "Neville provede přátele chodbou za obrazem. Ve škole se Harry ptá na [diadém Roweny z Havraspáru]."],
+    "discuss": ["What has Neville learned to do while his friends were away?", "Co se Neville naučil, zatímco byli jeho přátelé pryč?"],
+    "alt": ["A portrait opens on a secret passage.", "Za otevřeným obrazem se ukáže tajná chodba."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The school takes a stand", "Škola se postaví na odpor"],
+    "recap": ["McGonagall confronts Snape. After he flees, she calls on [the castle's defenders] to prepare the school.", "McGonagallová se postaví Snapeovi. Když uprchne, svolá [obránce hradu], aby školu připravili."],
+    "discuss": ["Who needs protection before the defenders can take their places?", "Kdo potřebuje ochranu ještě předtím, než obránci zaujmou místa?"],
+    "alt": ["A bird-shaped knocker on a tower door.", "Klepadlo ve tvaru ptáka na dveřích věže."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Fire in a hidden room", "Oheň ve skryté místnosti"],
+    "recap": ["A magical fire destroys [the diadem]. The friends escape the room, but the battle costs lives, including Fred's.", "Čarovný oheň zničí [diadém]. Přátelé z místnosti uniknou, boj však stojí život několik lidí včetně Freda."],
+    "discuss": ["Fred's death comes amid the rush. Pause long enough for listeners to take it in.", "Fredova smrt přijde uprostřed shonu. Zastavte se, aby ji posluchači mohli vstřebat."],
+    "alt": ["Suits of armour march down the stairs.", "Brnění pochodují po schodech."],
+    "mood": "intense"
+  },
+  {
+    "title": ["At the Shrieking Shack", "V Chroptící chýši"],
+    "recap": ["Voldemort thinks Snape stands between him and the Elder Wand. Dying, Snape gives Harry [his memories].", "Voldemort má za to, že mezi ním a bezovou hůlkou stojí Snape. Umírající Snape předá Harrymu [své vzpomínky]."],
+    "discuss": ["Notice the difference between what Voldemort believes and what he can prove.", "Všimněte si rozdílu mezi tím, čemu Voldemort věří, a tím, co může dokázat."],
+    "alt": ["An elder wand on worn wooden boards.", "Bezová hůlka na ošuntělých prknech."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A lifetime in a basin", "Život v myslánce"],
+    "recap": ["In the Pensieve Harry sees Snape's friendship with [Lily] and learns what Dumbledore asked of him.", "V myslánce Harry spatří Snapeovo přátelství [s Lily] a dozví se, oč ho Brumbál požádal."],
+    "discuss": ["Which earlier scene would Harry understand differently after seeing these memories?", "Kterou dřívější scénu by Harry po těchto vzpomínkách pochopil jinak?"],
+    "alt": ["A vial of memories beside the Pensieve.", "Lahvička vzpomínek vedle myslánky."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Walking into the woods", "Cestou do lesa"],
+    "recap": ["On his walk to Voldemort, Harry opens the Snitch. [The Resurrection Stone] lets loved ones keep him company.", "Cestou za Voldemortem Harry otevře zlatonku. Díky [kameni vzkříšení] ho mohou doprovodit jeho blízcí."],
+    "discuss": ["Harry expects to die. Offer a break and let listeners say what the companionship means to them.", "Harry očekává vlastní smrt. Nabídněte přestávku a nechte děti říct, co pro ně znamená jeho doprovod."],
+    "alt": ["A little black stone on a woodland path.", "Černý kamínek na lesní cestě."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A bright, still station", "Světlé, tiché nádraží"],
+    "recap": ["In a place like King's Cross, Harry speaks with Dumbledore. Harry chooses [to go back].", "Na místě podobném nádraží King's Cross promluví Harry s Brumbálem. Rozhodne se [vrátit]."],
+    "discuss": ["What does Harry ask before making his choice?", "Na co se Harry zeptá před svým rozhodnutím?"],
+    "alt": ["A white railway station with an empty bench.", "Bílé nádraží s prázdnou lavičkou."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Dawn in the Great Hall", "Úsvit ve Velké síni"],
+    "recap": ["Neville destroys Nagini. In the final duel [the Elder Wand] will not defeat Harry for Voldemort, and the battle ends.", "Neville zabije Nagini. V závěrečném souboji [bezová hůlka] Voldemortovi nepomůže Harryho přemoci a bitva skončí."],
+    "discuss": ["Trace the wand's allegiance together, one change of hands at a time.", "Sledujte společně věrnost hůlky krok za krokem, jak přecházela z ruky do ruky."],
+    "alt": ["A wand above the sunlit floor of the hall.", "Hůlka nad podlahou síně ozářenou sluncem."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Back on the platform", "Zpátky na nástupišti"],
+    "recap": ["Nineteen years later, Harry takes his children to [the station]. He listens to his son's worry about being Sorted.", "O devatenáct let později vyprovází Harry děti [na nádraží]. Vyslechne synovy obavy z rozřazování do kolejí."],
+    "discuss": ["Remember Harry's first trip to this platform. What can he offer a nervous child now?", "Vzpomeňte na Harryho první cestu na nástupiště. Co teď může nabídnout nervóznímu dítěti?"],
+    "alt": ["Families saying goodbye at the train.", "Rodiny se loučí u vlaku."],
+    "mood": "quiet"
+  }
+]

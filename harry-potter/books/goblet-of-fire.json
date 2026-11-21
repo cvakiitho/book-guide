@@ -1,0 +1,261 @@
+[
+  {
+    "title": ["A light upstairs", "Světlo v patře"],
+    "recap": ["An old gardener sees [a light] in the empty Riddle house. Frank climbs the stairs to investigate and never comes home.", "Starý zahradník uvidí v prázdném domě Raddleových [světlo]. Frank jde nahoru zjistit, co se děje, a už se nevrátí."],
+    "discuss": ["Frank dies at the end of the scene. Give listeners time to ask what happened.", "Frank na konci scény zemře. Dopřejte dětem čas zeptat se, co se stalo."],
+    "alt": ["An isolated manor above a quiet village.", "Osamělé sídlo nad tichou vesnicí."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A midnight letter", "Půlnoční dopis"],
+    "recap": ["Harry wakes with a burning scar. The person he chooses to write to is [Sirius].", "Harry se probudí s pálící jizvou. Rozhodne se napsat [Siriusovi]."],
+    "discuss": ["What makes someone the right person to tell about a worry?", "Komu se člověk svěří, když ho něco trápí?"],
+    "alt": ["A quill beside an open bedroom window.", "Brk u otevřeného okna ložnice."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An envelope of stamps", "Obálka plná známek"],
+    "recap": ["Mrs Weasley sends an invitation to [the World Cup]. Her enthusiasm for Muggle stamps is hard to miss.", "Paní Weasleyová pošle pozvánku [na mistrovství světa]. Její nadšení pro mudlovské známky se nedá přehlédnout."],
+    "discuss": ["How does the outside of the envelope tell part of the joke?", "Jak k vtipu přispívá už samotná obálka?"],
+    "alt": ["An envelope covered in colourful stamps.", "Obálka pokrytá barevnými známkami."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A blocked fireplace", "Zazděný krb"],
+    "recap": ["The visitors try to collect Harry through [the fireplace]. The Dursleys' home was never set up for that sort of arrival.", "Návštěva si přijde pro Harryho [krbem]. Na takové příchody u Dursleyových rozhodně nejsou zařízeni."],
+    "discuss": ["Retell the arrival from the sofa where the Dursleys are sitting.", "Převyprávějte příjezd z pohovky, na které sedí Dursleyovi."],
+    "alt": ["An old brick fireplace.", "Starý cihlový krb."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The twins' ambition", "Plány dvojčat"],
+    "recap": ["Fred and George dream of running [a joke shop]. At home their inventions meet with very different opinions.", "Fred a George sní o vlastním [obchodě s žertovnými předměty]. Doma však jejich vynálezy vyvolávají různé ohlasy."],
+    "discuss": ["Which worries would a parent have about the twins' experiments?", "Co může rodiče na pokusech dvojčat znepokojovat?"],
+    "alt": ["Toffees tumbling out of a striped bag.", "Karamely vysypané z pruhovaného sáčku."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A boot on the hill", "Bota na kopci"],
+    "recap": ["Everyone puts a finger on [an old boot]. This Portkey whisks the travellers to the World Cup together.", "Všichni položí prst na [starou botu]. Přenášedlo je dopraví společně na mistrovství světa."],
+    "discuss": ["Pick an ordinary object you might walk past without a second glance.", "Vyberte obyčejnou věc, kolem které byste prošli bez povšimnutí."],
+    "alt": ["An old boot on a grassy hill.", "Stará bota na travnatém kopci."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A field of tents", "Pole plné stanů"],
+    "recap": ["Harry discovers that [a little tent] can have rooms inside. The campsite fills with visitors from all over the world.", "Harry zjistí, že [malý stan] může uvnitř skrývat celé pokoje. Tábořiště se plní hosty z celého světa."],
+    "discuss": ["Which details show people trying to blend in and getting it slightly wrong?", "Podle čeho poznáte, že se někdo snaží zapadnout a trochu se mu to nedaří?"],
+    "alt": ["Fields of colourful tents.", "Pole plná barevných stanů."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["From the top box", "Z čestné lóže"],
+    "recap": ["Krum catches the Snitch, yet [Ireland] wins the match. Harry has seen how much a team's total score matters.", "Krum chytí zlatonku, přesto utkání vyhraje [Irsko]. Harry vidí, jakou váhu má skóre celého týmu."],
+    "discuss": ["How can the best-known player and the winning team be on different sides?", "Jak může být nejslavnější hráč v týmu, který nevyhrál?"],
+    "alt": ["A great stadium ringed by trees.", "Velký stadion mezi stromy."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A shape in the sky", "Znamení na obloze"],
+    "recap": ["Trouble scatters families at the campsite. In the woods a green [Dark Mark] shines overhead and people start blaming one another.", "Zmatek rozdělí rodiny v táboře. Nad lesem se zeleně rozzáří [znamení zla] a lidé se začnou navzájem obviňovat."],
+    "discuss": ["What would help a frightened witness feel able to speak?", "Co by pomohlo vyděšenému svědkovi promluvit?"],
+    "alt": ["An eerie green glow over a pine forest.", "Podivná zelená záře nad borovým lesem."],
+    "mood": "intense"
+  },
+  {
+    "title": ["The morning paper", "Ranní noviny"],
+    "recap": ["After the attack, [a newspaper story] adds to the pressure on Arthur and the Ministry. Home feels busy even before school starts.", "Po útoku ještě zvýší tlak na Artura a ministerstvo [článek v novinách]. Doma je rušno dávno před začátkem školy."],
+    "discuss": ["Compare what the family saw with what people at home read.", "Porovnejte zážitek rodiny s tím, co se lidé doma dočetli."],
+    "alt": ["The newspaper lies open on the breakfast table.", "Na stole u snídaně leží otevřené noviny."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Rain at departure", "Odjezd v dešti"],
+    "recap": ["On [the Hogwarts Express] Draco hints that he knows a school secret. The friends reach the castle in a downpour.", "V [bradavickém expresu] Draco naznačuje, že zná školní tajemství. Kamarádi dorazí na hrad v lijáku."],
+    "discuss": ["Why can a hint draw more attention than a straight answer?", "Proč někdy náznak přitáhne víc pozornosti než přímá odpověď?"],
+    "alt": ["A red train under a rainy station roof.", "Červený vlak pod zmoklou nádražní střechou."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A feast announcement", "Oznámení při hostině"],
+    "recap": ["Dumbledore announces [a tournament for three schools]. An age limit rules Harry and his friends out of entering.", "Brumbál ohlásí [turnaj tří škol]. Věková hranice vylučuje Harryho a jeho přátele ze soutěže."],
+    "discuss": ["What might the organisers hope an age limit will do?", "Co si asi pořadatelé slibují od věkové hranice?"],
+    "alt": ["Lightning outside a candlelit feast.", "Za okny hodovní síně osvětlené svíčkami se blýská."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A white ferret", "Bílá fretka"],
+    "recap": ["Moody turns Draco into [a ferret] after Draco attacks Harry from behind. McGonagall objects to the punishment.", "Když Draco zaútočí na Harryho zezadu, Moody ho promění [ve fretku]. McGonagallová proti takovému trestu zasáhne."],
+    "discuss": ["Does an adult's response make the corridor feel safer for everyone?", "Cítí se po zásahu dospělého na chodbě všichni bezpečněji?"],
+    "alt": ["A white ferret on the stone floor.", "Bílá fretka na kamenné podlaze."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A difficult demonstration", "Těžká ukázka"],
+    "recap": ["Moody demonstrates three forbidden curses on [spiders]. Neville finds the lesson especially upsetting.", "Moody předvede tři zakázané kletby na [pavoucích]. Nevilla hodina zvlášť rozruší."],
+    "discuss": ["Watch Neville after the lesson. How might a friend check on him privately?", "Všímejte si Nevilla po hodině. Jak se ho kamarád může v soukromí zeptat, jak mu je?"],
+    "alt": ["Three spiders and a glass bell jar.", "Tři pavouci a skleněný poklop."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Guests from abroad", "Hosté z ciziny"],
+    "recap": ["One visiting school arrives by flying carriage. The other emerges from the lake in [a ship].", "Jedna hostující škola přiletí kočárem. Druhá se vynoří z jezera [na lodi]."],
+    "discuss": ["Imagine welcoming these travellers. What would each group see first?", "Představte si, že vítáte hosty. Co každá skupina uvidí jako první?"],
+    "alt": ["Winged horses pull a carriage over the lake.", "Okřídlení koně táhnou kočár nad jezerem."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["One extra slip", "Lístek navíc"],
+    "recap": ["The Goblet chooses a champion for each school. Then it produces [Harry's name] on a fourth slip.", "Pohár vybere šampiona každé školy. Pak vydá čtvrtý lístek [s Harryho jménem]."],
+    "discuss": ["Leave a beat between the third name and the fourth. What changes in the room?", "Mezi třetím a čtvrtým jménem se odmlčte. Co se v síni změní?"],
+    "alt": ["A goblet filled with blue flame.", "Pohár plný modrých plamenů."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An unwanted place", "Nevyžádané místo"],
+    "recap": ["The adults say that Harry [must compete]. Even Ron finds it hard to believe Harry never put his name in.", "Dospělí řeknou Harrymu, že [musí soutěžit]. Ani Ron nechce věřit, že Harry své jméno do poháru nehodil."],
+    "discuss": ["Whose trust might matter more to Harry than the adults' decision?", "Čí důvěra může pro Harryho znamenat víc než rozhodnutí dospělých?"],
+    "alt": ["Four champions in the trophy room.", "Čtyři šampioni v pamětní síni."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A quill with opinions", "Brk s vlastní hlavou"],
+    "recap": ["At the wand inspection Rita uses [a self-writing quill]. The story taking shape on the page sounds very unlike Harry.", "Při kontrole hůlek používá Rita [samopisný brk]. Příběh na papíře se Harrymu podobá pramálo."],
+    "discuss": ["What could a listener ask to check whether a quotation is fair?", "Na co se může posluchač zeptat, aby zjistil, zda je citát poctivý?"],
+    "alt": ["A green quill beside an open wand box.", "Zelený brk vedle otevřené krabičky na hůlku."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Beyond the trees", "Za stromy"],
+    "recap": ["Hagrid shows Harry [dragons] waiting in the grounds. Suddenly the first task is a lot easier to picture.", "Hagrid ukáže Harrymu [draky], kteří čekají u školy. První úkol má najednou mnohem jasnější obrysy."],
+    "discuss": ["What difference does it make to know what is coming?", "Jak pomůže vědět, co člověka čeká?"],
+    "alt": ["A dragon's footprint in the mud.", "Dračí stopa v blátě."],
+    "mood": "intense"
+  },
+  {
+    "title": ["An egg to bring back", "Vejce k získání"],
+    "recap": ["Harry summons his broom and uses his flying skill to collect [a golden egg] from the Horntail.", "Harry si přivolá koště a leteckým uměním získá od maďarského trnoocasého draka [zlaté vejce]."],
+    "discuss": ["Which parts of Harry's solution come from practice he did before the tournament?", "Které části řešení vycházejí z toho, co Harry uměl už před turnajem?"],
+    "alt": ["A golden egg in a nest of rocks.", "Zlaté vejce mezi kameny."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Down in the kitchens", "Dole v kuchyni"],
+    "recap": ["A ticklish pear opens the kitchens. There Harry meets [Dobby] again and hears about his new paid job.", "Po polechtání hrušky se otevře kuchyně. Harry tam znovu potká [Dobbyho] a dozví se o jeho nové placené práci."],
+    "discuss": ["What does a good job mean to Dobby? Listen to the way he describes it.", "Co pro Dobbyho znamená dobrá práce? Poslechněte si, jak ji popisuje."],
+    "alt": ["A pear in a framed painting of fruit.", "Hruška na zarámovaném obraze s ovocem."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["Someone to ask", "Koho pozvat"],
+    "recap": ["The champions must open [the Yule Ball] with their partners. Asking someone to go feels like another task for Harry.", "Šampioni mají s partnery zahájit [vánoční ples]. Pro Harryho je samotné pozvání skoro jako další úkol."],
+    "discuss": ["What would make an invitation easy to accept or turn down?", "Jak by se dala pozvánka formulovat, aby bylo snadné ji přijmout i odmítnout?"],
+    "alt": ["A corsage pinned to dress robes.", "Květina připnutá na slavnostním hábitu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Music in the hall", "Hudba ve Velké síni"],
+    "recap": ["At the ball Hermione arrives with [Viktor Krum]. Ron's reaction puts a chill on the evening for his friends.", "Na ples přijde Hermiona [s Viktorem Krumem]. Ronova reakce přátelům večer pocuchá."],
+    "discuss": ["What does Ron say, and what feeling might he be trying to hide?", "Co Ron říká a jaký pocit se tím asi snaží zakrýt?"],
+    "alt": ["Lights reflected on a ballroom floor.", "Světla se odrážejí na parketu."],
+    "mood": "tense"
+  },
+  {
+    "title": ["At Hagrid's door", "U Hagridových dveří"],
+    "recap": ["A hurtful article makes Hagrid withdraw. His friends go to [his hut] to make sure he hears their side.", "Kvůli zraňujícímu článku se Hagrid stáhne. Přátelé přijdou [do jeho hájenky], aby slyšel i jejich názor."],
+    "discuss": ["How is turning up at a door different from talking about a friend elsewhere?", "V čem se liší přijít ke dveřím od toho, že o kamarádovi mluvíte jinde?"],
+    "alt": ["Letters delivered to a cottage door.", "Dopisy doručené ke dveřím hájenky."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Listening underwater", "Poslech pod vodou"],
+    "recap": ["Cedric's hint pays off. Underwater, the egg's shriek becomes [a song] that Harry can understand.", "Cedrikova rada zabere. Pod vodou se skřek vejce změní [v píseň], které Harry rozumí."],
+    "discuss": ["Which clue was useless until Harry changed how he listened?", "Která stopa nepomáhala, dokud Harry nezměnil způsob naslouchání?"],
+    "alt": ["A mermaid mural beside a tap.", "Malba mořské panny u kohoutku."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Under the lake", "Pod hladinou"],
+    "recap": ["Gillyweed lets Harry breathe underwater. Down by the merpeople he waits to make sure [the other captives] are safe.", "Žaberník umožní Harrymu dýchat pod vodou. U jezerních lidí čeká, dokud nemá jistotu, že jsou v bezpečí i [ostatní zajatci]."],
+    "discuss": ["What does Harry think the rules mean, and what do the judges see in his choice?", "Jak si Harry vyloží pravidla a co v jeho rozhodnutí vidí porota?"],
+    "alt": ["Silvery weeds in the water.", "Stříbrné vodní rostliny."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Food for a friend", "Jídlo pro přítele"],
+    "recap": ["The friends take provisions up a mountain to [Sirius]. He has been following the worrying news from hiding.", "Přátelé vynesou do hor zásoby [Siriusovi]. Z úkrytu sledoval znepokojivé zprávy."],
+    "discuss": ["Which ordinary comforts matter most to someone living out of sight?", "Jaké obyčejné pohodlí nejvíc chybí někomu, kdo se skrývá?"],
+    "alt": ["Bread and cheese by a mountain cave.", "Chléb a sýr u horské jeskyně."],
+    "mood": "tense"
+  },
+  {
+    "title": ["At the forest edge", "Na kraji lesa"],
+    "recap": ["A confused Mr Crouch appears by the forest and asks for [Dumbledore]. When help arrives, Crouch has vanished.", "U lesa se objeví zmatený pan Skrk a chce mluvit [s Brumbálem]. Když přijde pomoc, Skrk zmizí."],
+    "discuss": ["Work out which parts of the meeting Harry sees for himself.", "Určete, které části setkání Harry zažije na vlastní oči."],
+    "alt": ["A dishevelled visitor at the forest's edge.", "Rozcuchaný návštěvník na okraji lesa."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A dream in class", "Sen při hodině"],
+    "recap": ["Harry falls asleep in Divination. Worried by [his dream], he goes to find the headmaster.", "Při jasnovidectví Harry usne. Znepokojí ho [sen], a tak se vydá za ředitelem."],
+    "discuss": ["What would you tell a trusted adult first after waking like that?", "Co byste po takovém probuzení svěřili dospělému jako první?"],
+    "alt": ["Harry dozes over an open book.", "Harry dřímá nad otevřenou knihou."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A basin of memories", "Mísa vzpomínek"],
+    "recap": ["In the Pensieve Harry watches [old trials]. Faces and names he has heard before begin to fit together.", "V myslánce sleduje Harry [dávné soudní procesy]. Tváře a jména, která už zná, do sebe začnou zapadat."],
+    "discuss": ["Who gets a chance to speak at the trials? Who is spoken about?", "Kdo má při procesech možnost promluvit? O kom jen mluví ostatní?"],
+    "alt": ["Memories swirl inside a stone basin.", "Vzpomínky víří v kamenné míse."],
+    "mood": "tense"
+  },
+  {
+    "title": ["At the maze's heart", "Uprostřed bludiště"],
+    "recap": ["In the maze Harry and Cedric agree to take [the Cup together]. Touching it carries them somewhere else.", "Harry a Cedrik se v bludišti dohodnou, že uchopí [pohár společně]. Dotyk je přenese jinam."],
+    "discuss": ["Why might sharing first place feel right to both boys?", "Proč může společné první místo připadat správné oběma chlapcům?"],
+    "alt": ["A trophy gleams among the hedges.", "Mezi živými ploty září pohár."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Far from the stands", "Daleko od tribun"],
+    "recap": ["In the graveyard Cedric is killed. A ritual gives [Voldemort] a body again while Harry is held captive.", "Na hřbitově je Cedrik zabit. Obřad vrátí [Voldemortovi] tělo a Harry zůstává v zajetí."],
+    "discuss": ["Cedric's sudden death can land hard. Pause here and let the listener choose when to continue.", "Cedrikova náhlá smrt může silně zapůsobit. Nechte posluchače zvolit, kdy budete pokračovat."],
+    "alt": ["A cauldron in a moonlit graveyard.", "Kotel na hřbitově v měsíčním světle."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A circle of cloaks", "Kruh plášťů"],
+    "recap": ["Voldemort calls [the Death Eaters] to the graveyard and demands an account of their loyalty.", "Voldemort přivolá na hřbitov [smrtijedy] a žádá je, aby se zodpovídali ze své věrnosti."],
+    "discuss": ["What does the silence of the people in the circle tell you?", "Co vám říká mlčení lidí v kruhu?"],
+    "alt": ["A ring of cloaked figures between the graves.", "Kruh zahalených postav mezi hroby."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Connected wands", "Spojené hůlky"],
+    "recap": ["The two wands connect. Echoes of people Voldemort killed give Harry time to reach [the Portkey] with Cedric.", "Hůlky se spojí. Ozvěny lidí, které Voldemort zabil, dají Harrymu čas dostat se s Cedrikem [k přenášedlu]."],
+    "discuss": ["Follow the few things Harry can still choose in the middle of danger.", "Sledujte těch několik věcí, o nichž Harry může uprostřed nebezpečí ještě rozhodnout."],
+    "alt": ["Two wands joined by golden light.", "Dvě hůlky spojené zlatým světlem."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Inside the trunk", "Uvnitř kufru"],
+    "recap": ["The real Moody is found [in a trunk]. The man who taught Harry has been using Polyjuice Potion all year.", "Skutečného Moodyho najdou [v kufru]. Muž, který Harryho učil, užíval celý rok mnoholičný lektvar."],
+    "discuss": ["Which familiar habit takes on a new meaning after this discovery?", "Který známý zvyk dostane po tomto odhalení nový význam?"],
+    "alt": ["A travel trunk with brass locks.", "Cestovní kufr s mosaznými zámky."],
+    "mood": "intense"
+  },
+  {
+    "title": ["At Harry's bedside", "U Harryho lůžka"],
+    "recap": ["Dumbledore believes Harry's account. [Fudge] refuses to accept that Voldemort is back.", "Brumbál Harrymu věří. [Popletal] odmítá přijmout, že se Voldemort vrátil."],
+    "discuss": ["Who lets Harry rest after he has told his story?", "Kdo dopřeje Harrymu odpočinek, když dovypráví svůj příběh?"],
+    "alt": ["A phoenix feather on a white pillow.", "Fénixovo pero na bílém polštáři."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A place at the feast", "Místo při hostině"],
+    "recap": ["The school remembers Cedric. Before going home Harry gives his winnings to [Fred and George] for their shop.", "Škola zavzpomíná na Cedrika. Před cestou domů dá Harry výhru [Fredovi a Georgeovi] na jejich obchod."],
+    "discuss": ["Why might Harry want there still to be things that make people laugh?", "Proč asi Harrymu záleží na tom, aby se lidé dál měli čemu smát?"],
+    "alt": ["A bag of coins on the train seat.", "Měšec mincí na sedadle ve vlaku."],
+    "mood": "tense"
+  }
+]

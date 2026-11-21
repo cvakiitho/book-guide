@@ -1,11 +1,12 @@
 # Book Guide
 
-Interactive reading companions in English and Czech. Each guide has a map, chapter notes, characters, and reading progress stored in the browser.
+Interactive reading companions in English and Czech. Each guide has chapter notes, characters, and reading progress stored in the browser. The Tolkien and Malazan guides also include journey maps.
 
 | Guide | Volumes | Source |
 | --- | --- | --- |
 | [The Hobbit](lotr/hobit.html) | All 19 chapters · Parent and Kids modes | [Tolkien guide](lotr/README.md) |
 | [The Lord of the Rings](lotr/index.html) | All three Tolkien volumes | [Tolkien guide](lotr/README.md) |
+| [Harry Potter](harry-potter/index.html) | All seven novels and the epilogue · Parent and Kids modes | [Harry Potter guide](harry-potter/README.md) |
 | [Malazan Book of the Fallen](malazan/index.html) | All ten Steven Erikson volumes | [Malazan guide](malazan/README.md) |
 
 Open the [published site](https://cvakiitho.github.io/book-guide/) or open `index.html` from a local checkout. The generated volume pages work offline.

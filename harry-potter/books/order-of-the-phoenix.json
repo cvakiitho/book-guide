@@ -1,0 +1,268 @@
+[
+  {
+    "title": ["Cold in the alley", "Chlad v uličce"],
+    "recap": ["Harry and Dudley are cornered by Dementors. Harry summons [his Patronus] to get them both out alive.", "Harryho a Dudleyho zaženou do kouta mozkomorové. Harry přivolá [svého patrona] a oba zachrání."],
+    "discuss": ["What does Harry do for Dudley even after their quarrel?", "Co Harry pro Dudleyho udělá i po jejich hádce?"],
+    "alt": ["An empty alley in a quiet suburb.", "Prázdná ulička na předměstí."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Owls at the window", "Sovy u okna"],
+    "recap": ["Letters arrive in a rush after Harry uses magic. Aunt Petunia receives [a Howler] that changes the conversation.", "Poté co Harry kouzlil, přiletí rychle za sebou několik dopisů. Teta Petunie dostane [huláka], který změní celý rozhovor."],
+    "discuss": ["List the decisions Harry is waiting for other people to make.", "Vyjmenujte rozhodnutí, která mají o Harrym učinit jiní."],
+    "alt": ["Owls on the rooftops.", "Sovy na střechách."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Brooms over London", "Košťata nad Londýnem"],
+    "recap": ["A group of wizards comes to escort Harry. They travel [on broomsticks] to a secret address.", "Skupina kouzelníků přijde pro Harryho. Na tajnou adresu se vydají [na košťatech]."],
+    "discuss": ["What does Tonks do that makes the visitors feel less like strangers?", "Co udělá Tonksová, aby příchozí nepůsobili tak cize?"],
+    "alt": ["Broomsticks by an open window.", "Košťata u otevřeného okna."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The missing house", "Chybějící dům"],
+    "recap": ["Between two London houses Harry finds [number twelve]. Being with Ron and Hermione again brings out the anger he has been holding in.", "Mezi dvěma londýnskými domy najde Harry [číslo dvanáct]. S Ronem a Hermionou konečně může dát najevo dlouho zadržovaný vztek."],
+    "discuss": ["What has each friend been allowed to know over the summer?", "Co se kdo z přátel během léta směl dozvědět?"],
+    "alt": ["A narrow townhouse behind iron railings.", "Úzký městský dům za železným zábradlím."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A kitchen meeting", "Porada v kuchyni"],
+    "recap": ["The adults debate how much to tell Harry about [the Order]. Listening from the sidelines has been hard for everyone.", "Dospělí se přou, co Harrymu říct [o Řádu]. Čekání stranou bylo pro všechny těžké."],
+    "discuss": ["Which grown-ups disagree, and what do both want for Harry?", "Kteří dospělí se neshodnou a co přitom oba pro Harryho chtějí?"],
+    "alt": ["A kitchen table beneath a lamp.", "Kuchyňský stůl pod lampou."],
+    "mood": "tense"
+  },
+  {
+    "title": ["On the tapestry", "Na tapisérii"],
+    "recap": ["As the house is cleaned, Sirius shows Harry [the family tree]. Some names have been burned away.", "Při úklidu domu Sirius ukáže Harrymu [rodokmen]. Některá jména z něj byla vypálena."],
+    "discuss": ["Can leaving somebody out tell a story of its own?", "Může vynechané jméno vyprávět vlastní příběh?"],
+    "alt": ["A family tree woven into a tapestry.", "Rodokmen vetkaný do tapisérie."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Down to the Ministry", "Dolů na ministerstvo"],
+    "recap": ["Arthur takes Harry to work through [a telephone box]. The hearing changes time and room at short notice.", "Artur vezme Harryho do práce [telefonní budkou]. Na poslední chvíli se změní čas i místo jednání."],
+    "discuss": ["Imagine finding the courtroom for the first time. What makes the trip confusing?", "Představte si první cestu do soudní síně. Co ji komplikuje?"],
+    "alt": ["A red telephone box.", "Červená telefonní budka."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A witness speaks", "Svědkyně promluví"],
+    "recap": ["At the hearing [Mrs Figg] describes the Dementors. Harry is cleared to return to school.", "U soudu popíše [paní Figgová] přítomnost mozkomorů. Harry se může vrátit do školy."],
+    "discuss": ["Which details can the witness describe from her own experience?", "Které podrobnosti může svědkyně popsat z vlastní zkušenosti?"],
+    "alt": ["Dark benches in a courtroom.", "Tmavé lavice soudní síně."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A badge in the post", "Odznak v obálce"],
+    "recap": ["Ron and Hermione receive [prefect badges]. Later a boggart shows Harry what Mrs Weasley fears losing.", "Ron a Hermiona dostanou [prefektské odznaky]. Později Harry díky bubákovi pozná, o koho se paní Weasleyová bojí."],
+    "discuss": ["The boggart shows imagined losses. Help listeners distinguish fear from something that has happened.", "Bubák ukáže obávané ztráty. Pomozte dětem odlišit strach od toho, co se opravdu stalo."],
+    "alt": ["A prefect's badge.", "Prefektský odznak."],
+    "mood": "intense"
+  },
+  {
+    "title": ["An upside-down magazine", "Časopis vzhůru nohama"],
+    "recap": ["Harry meets [Luna Lovegood] on the train. She can see the strange creatures pulling the carriages too.", "Ve vlaku se Harry seznámí [s Lenkou Láskorádovou]. I ona vidí podivné tvory, kteří táhnou kočáry."],
+    "discuss": ["How does Luna respond when other people find her strange?", "Jak Lenka reaguje, když druhým připadá podivná?"],
+    "alt": ["An illustrated magazine turned upside down.", "Obrázkový časopis vzhůru nohama."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["A warning in song", "Varování v písni"],
+    "recap": ["The Sorting Hat urges the school to [stand together]. A new teacher interrupts the welcoming speeches.", "Moudrý klobouk vyzve celou školu, aby [držela při sobě]. Do úvodních proslovů vstoupí nová učitelka."],
+    "discuss": ["Why is it striking to hear this advice from the hat that divides the houses?", "Proč je zajímavé slyšet takovou radu od klobouku, který žáky rozděluje?"],
+    "alt": ["An old hat surrounded by candles.", "Starý klobouk mezi svíčkami."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["Books on desks", "Knihy na lavicích"],
+    "recap": ["Umbridge wants Defence students to learn [only from the textbook]. Harry challenges her account of Cedric's death.", "Umbridgeová chce, aby se žáci učili obranu [jen z učebnice]. Harry se ohradí proti tomu, co říká o Cedrikově smrti."],
+    "discuss": ["What can reading teach the students, and what do they need to practise?", "Co se studenti naučí četbou a co si potřebují vyzkoušet?"],
+    "alt": ["A thick textbook on a desk.", "Tlustá učebnice na lavici."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A cruel detention", "Krutý trest"],
+    "recap": ["In detention [an enchanted quill] hurts Harry as he writes. He struggles to decide whom he can tell.", "Při školním trestu Harryho při psaní zraňuje [očarovaný brk]. Těžko se rozhoduje, komu se svěřit."],
+    "discuss": ["An adult deliberately hurts a pupil here. Ask who Harry could turn to for support.", "Dospělá osoba zde záměrně ubližuje žákovi. Zeptejte se, u koho by Harry mohl hledat podporu."],
+    "alt": ["A black quill on pink lace.", "Černý brk na růžové krajce."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Two kinds of advice", "Dvě různé rady"],
+    "recap": ["Percy sends Ron a letter telling him to distance himself from [Harry]. Ron makes his own choice about his friend.", "Percy v dopise radí Ronovi, aby se držel dál [od Harryho]. Ron se o přátelství rozhodne sám."],
+    "discuss": ["What does Ron already know that his brother's letter leaves out?", "Co už Ron ví a v bratrově dopise to chybí?"],
+    "alt": ["An envelope beside the common-room fire.", "Obálka u krbu ve společenské místnosti."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A clipboard in class", "S deskami do třídy"],
+    "recap": ["As High Inquisitor, Umbridge starts [inspecting teachers]. Hermione wants students to find a way to practise Defence.", "Jako vrchní vyšetřovatelka začne Umbridgeová [kontrolovat učitele]. Hermiona chce najít způsob, jak by žáci mohli cvičit obranu."],
+    "discuss": ["Compare two teachers' reactions to being watched at work.", "Porovnejte reakce dvou učitelů na to, že je někdo při práci sleduje."],
+    "alt": ["A clipboard bearing a list.", "Desky se seznamem."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A meeting in the village", "Schůzka ve vesnici"],
+    "recap": ["Students gather at [the Hog's Head] to discuss practical lessons. Harry discovers how many people are prepared to learn from him.", "Studenti se sejdou [u Prasečí hlavy] kvůli praktickým lekcím. Harry zjistí, kolik lidí je ochotno se od něj učit."],
+    "discuss": ["When does the conversation turn from asking for proof to asking for help?", "Kdy v rozhovoru vystřídá žádost o důkaz žádost o pomoc?"],
+    "alt": ["A worn pub sign above a door.", "Ošuntělý vývěsní štít nad dveřmi hospody."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A notice on the wall", "Vyhláška na stěně"],
+    "recap": ["A new decree bans [unapproved student groups]. The friends must rethink how to meet.", "Nová vyhláška zakáže [neschválené studentské skupiny]. Přátelé musí promyslet, jak se dál scházet."],
+    "discuss": ["What would make an ordinary club meeting look different after the decree?", "Proč bude i běžná schůzka kroužku po vydání vyhlášky vypadat jinak?"],
+    "alt": ["A sheet of parchment pinned to a wall.", "Pergamen připevněný na zdi."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A room to practise in", "Místnost na cvičení"],
+    "recap": ["Dobby tells Harry about [the Room of Requirement]. Inside, students pair up to practise disarming one another.", "Dobby poví Harrymu [o Komnatě nejvyšší potřeby]. Uvnitř se žáci rozdělí do dvojic a cvičí odzbrojování."],
+    "discuss": ["Which details make it easier for a beginner to try a spell here?", "Co tu pomáhá začátečníkovi odhodlat se ke kouzlení?"],
+    "alt": ["A stack of practice cushions.", "Hromádka polštářů na cvičení."],
+    "mood": "quiet"
+  },
+  {
+    "title": ["After the match", "Po zápase"],
+    "recap": ["A cruel chant follows Ron around the pitch. After a fight, Umbridge bans Harry and the twins from [Quidditch].", "Zlý popěvek provází Rona po hřišti. Po rvačce Umbridgeová zakáže Harrymu i dvojčatům [famfrpál]."],
+    "discuss": ["What is the difference between cheering for your team and targeting a player?", "Kde vede hranice mezi fanděním svému týmu a útokem na hráče?"],
+    "alt": ["Opposing team banners over the pitch.", "Prapory soupeřících týmů nad hřištěm."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Back at the hut", "Zpátky v hájence"],
+    "recap": ["Hagrid tells the friends about travelling with Madame Maxime to meet [the giants]. Gifts alone could not make the journey safe.", "Hagrid přátelům vypráví o cestě s madame Maxime [za obry]. Samotné dary jim bezpečí zajistit nedokázaly."],
+    "discuss": ["Which parts of Hagrid's story show the value of listening to local customs?", "Kde v Hagridově vyprávění pomohlo naslouchat místním zvyklostem?"],
+    "alt": ["A heavy pack on a snowy mountain trail.", "Těžká torna na zasněžené horské stezce."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Behind a snake's eyes", "Za hadíma očima"],
+    "recap": ["In a terrifying vision Harry sees [Arthur Weasley] attacked. He wakes Ron and insists on getting help.", "V děsivém vidění spatří Harry útok [na Artura Weasleyho]. Vzbudí Rona a trvá na tom, aby našli pomoc."],
+    "discuss": ["Name the actions Harry can take even before he understands what he saw.", "Vyjmenujte kroky, které může Harry podniknout ještě předtím, než vidění pochopí."],
+    "alt": ["A snake beside a dark door.", "Had u tmavých dveří."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A hospital visit", "Návštěva nemocnice"],
+    "recap": ["The family visits Arthur at [St Mungo's]. Harry worries about the strange way he saw the attack.", "Rodina navštíví Artura [u svatého Munga]. Harryho trápí, jak zvláštně útok viděl."],
+    "discuss": ["How can hearing half a conversation make a worry grow?", "Jak se mohou obavy zvětšit, když člověk zaslechne jen část rozhovoru?"],
+    "alt": ["Flowers beside a hospital bed.", "Květiny u nemocničního lůžka."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A small wrapper", "Malý obal"],
+    "recap": ["At the hospital Harry sees Neville with his parents. Neville keeps [a sweet wrapper] his mother gives him.", "V nemocnici Harry potká Nevilla u rodičů. Neville si schová [obal od sladkosti], který mu dá maminka."],
+    "discuss": ["Leave room for a quiet reaction. Why might this bit of paper matter to Neville?", "Dopřejte dětem chvíli klidu. Proč může mít ten papírek pro Nevilla cenu?"],
+    "alt": ["A striped sweet wrapper.", "Pruhovaný obal od sladkosti."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Guarding a thought", "Jak chránit myšlenku"],
+    "recap": ["Snape begins teaching Harry [Occlumency], a way of protecting the mind. Being teacher and pupil together is difficult for them both.", "Snape začne Harryho učit [nitrobraně], která chrání mysl. Role učitele a žáka je pro oba obtížná."],
+    "discuss": ["What kind of trust would make such a lesson easier?", "Jaká důvěra by takovou hodinu usnadnila?"],
+    "alt": ["Glass jars beside a shallow silver dish.", "Sklenice vedle mělké stříbrné mísy."],
+    "mood": "tense"
+  },
+  {
+    "title": ["An interview over tea", "Rozhovor u čaje"],
+    "recap": ["After a difficult outing with Cho, Harry meets Hermione. She arranges for Rita to interview him for [The Quibbler].", "Po nepovedeném rande s Cho se Harry sejde s Hermionou. Ta mu domluví rozhovor s Ritou [pro Jinotaj]."],
+    "discuss": ["What does Harry want the readers of the interview to hear in his own words?", "Co chce Harry čtenářům rozhovoru sdělit vlastními slovy?"],
+    "alt": ["Pink teacups and lace.", "Růžové šálky a krajka."],
+    "mood": "tense"
+  },
+  {
+    "title": ["The issue everybody wants", "Číslo, které chce každý"],
+    "recap": ["Umbridge bans the magazine with Harry's story. That makes [the interview] even more sought after.", "Umbridgeová zakáže časopis s Harryho příběhem. O [rozhovor] je pak ještě větší zájem."],
+    "discuss": ["Why might a rule make people more curious about what it hides?", "Proč může zákaz zvětšit zvědavost?"],
+    "alt": ["A stack of magazines at breakfast.", "Hromádka časopisů u snídaně."],
+    "mood": "tense"
+  },
+  {
+    "title": ["When a meeting ends", "Konec schůzky"],
+    "recap": ["The practice group is discovered. [Dumbledore] takes responsibility and leaves the school in spectacular fashion.", "Cvičná skupina je odhalena. [Brumbál] na sebe vezme odpovědnost a z hradu okázale zmizí."],
+    "discuss": ["How does the name the children picked change what the adults believe?", "Jak jméno vybrané dětmi ovlivní představu dospělých?"],
+    "alt": ["A centaur beneath an indoor night sky.", "Kentaur pod noční oblohou v učebně."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Someone else's memory", "Cizí vzpomínka"],
+    "recap": ["In the Pensieve Harry sees [his father] humiliating young Snape. The memory unsettles his picture of James.", "V myslánce uvidí Harry [svého otce], jak ponižuje mladého Snapea. Vzpomínka otřese jeho představou o Jamesovi."],
+    "discuss": ["Which people in the memory could have interrupted the bullying?", "Kdo z přítomných ve vzpomínce mohl šikanu přerušit?"],
+    "alt": ["A beech tree at the edge of the lake.", "Buk na břehu jezera."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A plan for the future", "Plán do budoucna"],
+    "recap": ["Harry asks about becoming [an Auror]. McGonagall offers him support while Umbridge tries to discourage him.", "Harry se ptá, jak se stát [bystrozorem]. McGonagallová mu nabídne podporu, zatímco Umbridgeová ho odrazuje."],
+    "discuss": ["What difference can one encouraging adult make in a conversation like this?", "Co může v takovém rozhovoru změnit jediný povzbuzující dospělý?"],
+    "alt": ["Careers leaflets under a reading lamp.", "Letáky o povoláních pod lampou."],
+    "mood": "tense"
+  },
+  {
+    "title": ["A brother in the woods", "Bratr v lese"],
+    "recap": ["Deep in the forest Hagrid introduces Harry and Hermione to [Grawp], his enormous younger half-brother.", "Hluboko v lese představí Hagrid Harrymu a Hermioně [Drápa], svého obrovského mladšího nevlastního bratra."],
+    "discuss": ["What is Hagrid asking of his friends, and how might it feel to them?", "Co Hagrid od přátel žádá a jaké to pro ně asi je?"],
+    "alt": ["Huge footprints in a forest clearing.", "Obrovské stopy na lesní mýtině."],
+    "mood": "tense"
+  },
+  {
+    "title": ["Exam week", "Týden zkoušek"],
+    "recap": ["During [the History of Magic exam], Harry has a vision of Sirius in danger. It feels desperately real.", "Při [zkoušce z dějin čar a kouzel] má Harry vidění, v němž je Sirius v nebezpečí. Působí děsivě opravdově."],
+    "discuss": ["What makes it particularly hard for Harry to stop and check his impression?", "Proč je pro Harryho zrovna teď těžké zastavit se a ověřit svůj dojem?"],
+    "alt": ["A telescope under the stars.", "Dalekohled pod hvězdami."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A risky call", "Riskantní hovor"],
+    "recap": ["Harry tries to check on Sirius using [Umbridge's fireplace]. His friends help until the Inquisitorial Squad intervenes.", "Harry se snaží ověřit, kde je Sirius, pomocí [krbu Umbridgeové]. Přátelé mu pomáhají, dokud nezasáhne vyšetřovatelský sbor."],
+    "discuss": ["Whom could Harry reach, and whom did he actually speak to?", "Koho chtěl Harry zastihnout a s kým nakonec mluvil?"],
+    "alt": ["Firelight reflected on decorative kitten plates.", "Odlesky ohně na ozdobných talířcích s koťaty."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Into the trees", "Mezi stromy"],
+    "recap": ["Hermione leads Umbridge to the forest. Umbridge's insults bring her face to face with [angry centaurs].", "Hermiona zavede Umbridgeovou do lesa. Kvůli urážkám se učitelka ocitne tváří v tvář [rozzlobeným kentaurům]."],
+    "discuss": ["Where does Hermione's plan rely on other people behaving as she expects?", "Kde Hermionin plán závisí na tom, že se ostatní zachovají podle jejího očekávání?"],
+    "alt": ["Centaurs among the forest trees.", "Kentauři mezi lesními stromy."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Rows of glass", "Řady skleněných koulí"],
+    "recap": ["The students search the Department of Mysteries. On a shelf Harry finds [a glass sphere] bearing his name.", "Studenti prohledají odbor záhad. V polici Harry najde [skleněnou kouli] se svým jménem."],
+    "discuss": ["Notice the doors and shelves. What makes it easy for the group to lose its way?", "Všímejte si dveří a polic. Proč tu skupina tak snadno zabloudí?"],
+    "alt": ["Tall shelves of glass spheres.", "Vysoké police plné skleněných koulí."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Beyond the arch", "Za obloukem"],
+    "recap": ["The Order comes to help in the struggle. Sirius falls through [the veil], and Harry cannot bring him back.", "Řád přijde na pomoc v boji. Sirius propadne [závojem] a Harry ho nedokáže přivést zpět."],
+    "discuss": ["Sirius dies very suddenly. Stay with Harry's confusion and allow a pause before turning the page.", "Sirius zemře velmi náhle. Dejte prostor Harryho zmatku a před otočením stránky chvíli počkejte."],
+    "alt": ["A veil hangs in a stone arch.", "V kamenném oblouku visí závoj."],
+    "mood": "intense"
+  },
+  {
+    "title": ["In the atrium", "V atriu"],
+    "recap": ["Dumbledore faces Voldemort at the Ministry. This time [Fudge] sees Voldemort with his own eyes.", "Brumbál se na ministerstvu postaví Voldemortovi. Tentokrát [Popletal] uvidí Voldemorta na vlastní oči."],
+    "discuss": ["How might the witnesses change what happens after the duel?", "Jak může přítomnost svědků změnit to, co přijde po souboji?"],
+    "alt": ["Golden statues in the Ministry fountain.", "Zlaté sochy ve fontáně na ministerstvu."],
+    "mood": "intense"
+  },
+  {
+    "title": ["Words long withheld", "Dlouho zadržovaná slova"],
+    "recap": ["In his office Dumbledore finally explains [the prophecy]. Harry's grief and anger come tumbling out.", "Brumbál ve své pracovně konečně vysvětlí [věštbu]. Harry dá naplno průchod žalu i hněvu."],
+    "discuss": ["When does Dumbledore stop giving answers and accept responsibility?", "Kdy Brumbál přestane jen odpovídat a přijme odpovědnost?"],
+    "alt": ["A broken silver instrument on a desk.", "Rozbitý stříbrný přístroj na stole."],
+    "mood": "intense"
+  },
+  {
+    "title": ["A quiet conversation", "Tichý rozhovor"],
+    "recap": ["Harry looks for ways to feel close to Sirius. [Luna] talks with him about loss before the journey home.", "Harry hledá způsob, jak být Siriusovi zase blíž. Před cestou domů si s ním o ztrátě promluví [Lenka]."],
+    "discuss": ["What can someone offer a grieving friend even without an answer?", "Co může člověk nabídnout truchlícímu kamarádovi, i když nemá odpověď?"],
+    "alt": ["A boy beside a still lake at sunset.", "Chlapec u tichého jezera při západu slunce."],
+    "mood": "tense"
+  }
+]
